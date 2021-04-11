@@ -1,6 +1,6 @@
 package com.company;
 
-public class Cottage extends Places {
+public class Cottage extends Location {
     private Hunter hunter;
     private Psychopath psychopath;
     private HuntingKit huntingKit;
@@ -10,6 +10,10 @@ public class Cottage extends Places {
         this.hunter = hunter;
         this.huntingKit = huntingKit;
         this.psychopath = psychopath;
+    }
+
+    public Cottage(boolean visited) {
+        super(visited);
     }
 
     public void takeHuntingKit() {

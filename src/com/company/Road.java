@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Road extends Places {
+public class Road extends Location {
     private boolean isBlocked;           // Is the road blocked for the taxi driver? If false => Player can get a free ride without helping the taxi driver unblock the road.
     private TaxiDriver taxiDriver;
     private int hungerLossFromHelping;   // Amount of hunger that the player loses by helping the taxi driver unblock the road.

@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Forest extends Places {
+public class Forest extends Location {
     private Animal animal;
     private Psychopath psychopath;
     private ArrayList<Zombie> zombies;

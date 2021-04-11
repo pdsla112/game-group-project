@@ -1,9 +1,9 @@
 package com.company;
 
-public class Places {
+public class Location {
     private boolean visited;  // True => Place has been visited before. False => Never been visited by the player.
 
-    public Places(boolean visited) {
+    public Location(boolean visited) {
         this.visited = visited;
     }
 

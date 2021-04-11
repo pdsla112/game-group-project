@@ -1,6 +1,6 @@
 package com.company;
 
-public class Hospital extends Places {
+public class Hospital extends Location {
     private Doctor doctor;
     private FirstAidKit firstAidKit;
     private Psychopath psychopath;
@@ -10,6 +10,10 @@ public class Hospital extends Places {
         this.doctor = doctor;
         this.firstAidKit = firstAidKit;
         this.psychopath = psychopath;
+    }
+
+    public Hospital(boolean visited) {
+        super(visited);
     }
 
     public void takeFirstAidKit() {
