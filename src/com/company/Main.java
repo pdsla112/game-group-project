@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,6 +16,18 @@ public class Main {
         map.addEdge(hospital, cottage, 4);
         map.addEdge(cottage, hospital, 4);
         map.setCurrentLocation(hospital);
+
+        boolean end = false;
+        Scanner in = new Scanner(System.in);
+        while (end == false) {
+            String input = in.nextLine();
+            if (input.equals("quit")) {
+                end = true;
+            } else {
+
+            }
+        }
+
 
 
 
