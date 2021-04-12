@@ -34,7 +34,7 @@ public class Main {
         map.setCurrentLocation(start);
         
         // setup story
-        Player player = new Player(1,1,false);
+        Player player = new Player(100,1,false);
 
 
         // house
@@ -50,6 +50,18 @@ public class Main {
                 map.currentLocation.runStory(player, map, "textfile.txt");
             }
         }
+
+
+        // Hospital template
+        Node s1 = new Node(0,"You are now in the hospital. While walking in the hallway, you found the first aid kit near the staircase",null);
+        Node s2 = new Node(0,"Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase. At third floor, you found someone walking towards you.","kill someone");
+        Node s3 = new Node(1,": He looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips. ", "dont kill him");
+
+        StoryGraph hospitalStory = new StoryGraph(s1);
+        hospitalStory.addEdge(s1,s2);
+        hospitalStory.addEdge(s1,s3);
+
+        // convert hospital story to json
 
 
 

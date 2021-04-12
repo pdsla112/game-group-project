@@ -28,4 +28,10 @@ public class Forest extends Location {
     public ArrayList<Zombie> getZombies() {
         return this.zombies;
     }
+
+    @Override
+    public void runStory(Player player, GameMap map, String filename) {
+        //load story
+
+    }
 }
