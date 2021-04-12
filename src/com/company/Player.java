@@ -4,6 +4,7 @@ public class Player {
     private int health;
     private int hunger;
     private int attackLevel;
+    public String name;
     private boolean deathValue;  // True => Player is dead.  False => Player is alive.
 
     public Player(int health, int hunger, int attackLevel, boolean deathValue) {

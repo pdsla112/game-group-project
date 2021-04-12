@@ -9,8 +9,8 @@ public class Main {
         GameMap map = new GameMap();
 
         //setup map
-        Location house = new House(false);
-        map.addLocation(house);
+        Location start = new Start(false);
+        map.addLocation(start);
         Location hospital = new Hospital(false);
         map.addLocation(hospital);
         Location cottage = new Cottage(false);
@@ -22,8 +22,8 @@ public class Main {
         Location road = new Road(false);
         map.addLocation(road);
 
-        map.addEdge(house, cottage, 5);
-        map.addEdge(house, forest, 9);
+        map.addEdge(start, cottage, 5);
+        map.addEdge(start, forest, 9);
         map.addEdge(cottage, hospital, 6);
         map.addEdge(cottage, forest, 4);
         map.addEdge(forest, hospital, 7);
@@ -31,7 +31,14 @@ public class Main {
         map.addEdge(hospital, road, 10);
         map.addEdge(road, lab, 4);
 
-        map.setCurrentLocation(house);
+        map.setCurrentLocation(start);
+        
+        // setup story
+
+
+
+        // house
+        
 
         boolean end = false;
         Scanner in = new Scanner(System.in);
