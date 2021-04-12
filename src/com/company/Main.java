@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -47,7 +48,15 @@ public class Main {
             if (input.equals("quit")) {
                 end = true;
             } else {
-                map.currentLocation.runStory(player, map, "textfile.txt");
+                map.currentLocation.runStory(player);
+                System.out.println("where do you want to go?");
+                ArrayList<Location> choices = map.getAdjacent(map.currentLocation);
+                for (int i = 0; i < choices.size(); i++) {
+                    System.out.println("[" + i + "]" + choices.get(i).name);
+                }
+                //print out choices
+                int choice = in.nextInt();
+                map.setCurrentLocation(map.getAdjacent(map.currentLocation).get(choice));
             }
         }
 

@@ -10,7 +10,7 @@ public class Location {
     }
 
     private StoryGraph story;
-    public void runStory(Player player, GameMap map, String filename) {
+    public void runStory(Player player) {
 
     }
 
