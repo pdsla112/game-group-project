@@ -9,7 +9,7 @@ public class Start extends Location{
     }
 
     @Override
-    public void runStory(Player player, GameMap map) {
+    public void runStory(Player player, GameMap map, String filename) {
         Scanner in = new Scanner(System.in);
         // load from text file
         System.out.println("At the end of 2021, COVID-19 vaccines were being supplied smoothly and borders were loosened one by one, showing signs of recovery.");

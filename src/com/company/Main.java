@@ -34,7 +34,7 @@ public class Main {
         map.setCurrentLocation(start);
         
         // setup story
-
+        Player player = new Player(1,1,false);
 
 
         // house
@@ -47,7 +47,7 @@ public class Main {
             if (input.equals("quit")) {
                 end = true;
             } else {
-
+                map.currentLocation.runStory(player, map, "textfile.txt");
             }
         }
 
