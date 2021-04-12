@@ -15,6 +15,10 @@ public class Road extends Location {
         this.zombies = zombies;
     }
 
+    public Road(boolean visited) {
+        super(visited);
+    }
+
     public void clearBlocking() {
         this.isBlocked = false;
     }

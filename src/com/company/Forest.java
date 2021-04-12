@@ -13,6 +13,9 @@ public class Forest extends Location {
         this.psychopath = psychopath;
         this.zombies = zombies;
     }
+    public Forest(boolean visited) {
+        super(visited);
+    }
 
     public void takeOrLoseAnimal() {
         this.animal = null;
