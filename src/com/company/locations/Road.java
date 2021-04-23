@@ -12,15 +12,18 @@ public class Road extends Location {
     private int hungerLossFromHelping;   // Amount of hunger that the player loses by helping the taxi driver unblock the road.
     private ArrayList<Zombie> zombies;
 
-    public Road(boolean visited, TaxiDriver taxiDriver, int hungerLossFromHelping, ArrayList<Zombie> zombies) {
-        super(visited);
-        this.taxiDriver = taxiDriver;
-        this.hungerLossFromHelping = hungerLossFromHelping;
-        this.zombies = zombies;
-    }
-
-    public Road(boolean visited) {
-        super(visited);
+//    public Road(boolean visited, TaxiDriver taxiDriver, int hungerLossFromHelping, ArrayList<Zombie> zombies) {
+//        super(visited);
+//        this.taxiDriver = taxiDriver;
+//        this.hungerLossFromHelping = hungerLossFromHelping;
+//        this.zombies = zombies;
+//    }
+//
+//    public Road(boolean visited) {
+//        super(visited);
+//    }
+    public Road (String name, String description) {
+        super(name, description);
     }
 
     public void clearBlocking() {

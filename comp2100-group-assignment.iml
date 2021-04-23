@@ -19,5 +19,15 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="2100_jarfiles" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../junit" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../junit" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

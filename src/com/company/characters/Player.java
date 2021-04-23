@@ -13,7 +13,10 @@ public class Player extends Character{
     //protected static LocationRepo locationRepo = new LocationRepo();
     private Location location;
     //private boolean deathValue;  // True => Player is dead.  False => Player is alive.
-    public Player() {}
+    public Player() {
+        //temporary (load from json)
+        setIntro("Intro: there are zombies here.");
+    }
 
     protected static String getProfileFileName(String name) {
         //todo
@@ -23,6 +26,14 @@ public class Player extends Character{
         //todo
         return false;
 
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public static Player load(String fileName) {

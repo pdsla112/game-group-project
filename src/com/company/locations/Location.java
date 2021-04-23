@@ -4,19 +4,22 @@ import com.company.characters.Player;
 
 public class Location {
     private boolean visited;  // True => Place has been visited before. False => Never been visited by the player.
-    public String name = "";
+    public String name;
+    public String description;
 
 
-    public Location(boolean visited) {
-        this.visited = visited;
+    public Location(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
-    private StoryGraph story;
-    public void runStory(Player player) {
-
-    }
 
     public boolean isVisited() {
         return this.visited;
+    }
+
+    public void displayInformation() {
+        System.out.println("Location: " + name);
+        System.out.println("Description: " + description);
     }
 }

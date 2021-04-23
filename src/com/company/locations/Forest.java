@@ -11,14 +11,14 @@ public class Forest extends Location {
     private Psychopath psychopath;
     private ArrayList<Zombie> zombies;
 
-    public Forest(boolean visited, Animal animal, Psychopath psychopath, ArrayList<Zombie> zombies) {
-        super(visited);
-        this.animal = animal;
-        this.psychopath = psychopath;
-        this.zombies = zombies;
-    }
-    public Forest(boolean visited) {
-        super(visited);
+//    public Forest(boolean visited, Animal animal, Psychopath psychopath, ArrayList<Zombie> zombies) {
+//        super(visited);
+//        this.animal = animal;
+//        this.psychopath = psychopath;
+//        this.zombies = zombies;
+//    }
+    public Forest() {
+        super("Forest", "A place with trees");
     }
 
     public void takeOrLoseAnimal() {
