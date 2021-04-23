@@ -1,12 +1,14 @@
-package com.company;
+package com.company.enemies;
 
-public class Psychopath extends Character {
+import com.company.characters.NPC;
+
+public class Psychopath extends NPC {
     private int attackAmount;    // Amount that the psychopath deducts from the player's health.
     private boolean deathValue;  // True => Psychopath is dead. False => Psychopath is alive.
     private boolean isApproached;
 
-    public Psychopath(int attackLevel, int attackAmount, boolean deathValue, boolean isApproached) {
-        super(attackLevel);
+    public Psychopath(String id, int attackAmount, boolean deathValue, boolean isApproached) {
+        super(id);
         this.attackAmount = attackAmount;
         this.deathValue = deathValue;
         this.isApproached = isApproached;

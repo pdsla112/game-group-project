@@ -1,4 +1,6 @@
-package com.company;
+package com.company.locations;
+
+import com.company.locations.Location;
 
 import java.util.ArrayList;
 

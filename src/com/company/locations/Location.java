@@ -1,4 +1,6 @@
-package com.company;
+package com.company.locations;
+
+import com.company.characters.Player;
 
 public class Location {
     private boolean visited;  // True => Place has been visited before. False => Never been visited by the player.

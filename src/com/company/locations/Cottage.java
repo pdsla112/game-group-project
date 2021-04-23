@@ -1,4 +1,8 @@
-package com.company;
+package com.company.locations;
+
+import com.company.characters.Hunter;
+import com.company.enemies.Psychopath;
+import com.company.items.HuntingKit;
 
 public class Cottage extends Location {
     private Hunter hunter;

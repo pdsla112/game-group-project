@@ -1,11 +1,11 @@
-package com.company;
+package com.company.characters;
 
-public class TaxiDriver extends Character {
+public class TaxiDriver extends NPC {
     private int shortcutDistance;
     private boolean isApproached;
 
-    public TaxiDriver(int attackLevel, int shortcutDistance, boolean isApproached) {
-        super(attackLevel);
+    public TaxiDriver(String id, int shortcutDistance, boolean isApproached) {
+        super(id);
         this.shortcutDistance = shortcutDistance;
         this.isApproached = isApproached;
     }

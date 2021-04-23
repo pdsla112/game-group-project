@@ -1,4 +1,9 @@
-package com.company;
+package com.company.locations;
+
+import com.company.characters.Doctor;
+import com.company.enemies.Psychopath;
+import com.company.items.FirstAidKit;
+import com.company.locations.Location;
 
 public class Hospital extends Location {
     private Doctor doctor;

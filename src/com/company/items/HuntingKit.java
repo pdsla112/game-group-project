@@ -1,4 +1,4 @@
-package com.company;
+package com.company.items;
 
 public class HuntingKit {
     private int durability;  // Number of times the hunting kit can be used before becoming unusable.

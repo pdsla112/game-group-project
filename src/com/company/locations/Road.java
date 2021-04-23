@@ -1,4 +1,8 @@
-package com.company;
+package com.company.locations;
+
+import com.company.characters.TaxiDriver;
+import com.company.enemies.Zombie;
+import com.company.locations.Location;
 
 import java.util.ArrayList;
 

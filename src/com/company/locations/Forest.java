@@ -1,4 +1,8 @@
-package com.company;
+package com.company.locations;
+
+import com.company.enemies.Animal;
+import com.company.enemies.Psychopath;
+import com.company.enemies.Zombie;
 
 import java.util.ArrayList;
 
@@ -29,9 +33,9 @@ public class Forest extends Location {
         return this.zombies;
     }
 
-    @Override
-    public void runStory(Player player, GameMap map, String filename) {
-        //load story
-
-    }
+//    @Override
+//    public void runStory(Player player, GameMap map, String filename) {
+//        //load story
+//
+//    }
 }

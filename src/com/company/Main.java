@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.characters.Player;
+import com.company.locations.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

@@ -1,11 +1,13 @@
-package com.company;
+package com.company.characters;
 
-public class Hunter extends Character {
+import com.company.enemies.Animal;
+
+public class Hunter extends NPC {
     private Animal game;  // "game" as in wild animal game.
     private boolean isApproached;
 
-    public Hunter(int attackLevel, Animal game, boolean isApproached) {
-        super(attackLevel);
+    public Hunter(String id, Animal game, boolean isApproached) {
+        super(id);
         this.game = game;
         this.isApproached = isApproached;
     }

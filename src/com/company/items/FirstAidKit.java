@@ -1,4 +1,4 @@
-package com.company;
+package com.company.items;
 
 public class FirstAidKit {
     private int healValue;   // Amount that the first aid kit heals the player per use.
