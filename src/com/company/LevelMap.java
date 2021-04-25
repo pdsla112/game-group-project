@@ -20,13 +20,5 @@ public class LevelMap {
         edges.put(from, to);
     }
 
-    public class Node {
-        String text;
-        List<String> actions;
 
-        public Node(String text, List<String> actions) {
-            this.text = text;
-            this.actions = actions;
-        }
-    }
 }
