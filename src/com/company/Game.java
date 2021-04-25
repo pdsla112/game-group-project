@@ -23,6 +23,8 @@ public class Game {
         player.setLocation(forest);
         player.getLocation().displayInformation();
 
+        //forest.levelMap = new LevelMap();
+
         boolean running = true;
         try {
             while (running) {
