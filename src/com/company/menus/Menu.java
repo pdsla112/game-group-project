@@ -8,11 +8,20 @@ public class Menu {
     protected List<MenuItem> menuItems = new ArrayList<>();
     protected Map<String, MenuItem> optionMap = new HashMap<String, MenuItem>();
 
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
+    public void setMenuItems(List<MenuItem> menuItems) {
+        this.menuItems = menuItems;
+    }
+
     public void addMenuItem(MenuItem m) {
         menuItems.add(m);
         optionMap.put(m.getOptionKey().toLowerCase(), m);
     }
     public void printMenuItems(List<MenuItem> m) {
+        System.out.println("Options:");
         for (MenuItem menuItem: m) {
             System.out.println(menuItem.getOptionKey() + " - " + menuItem.getDescription());
         }
