@@ -10,7 +10,7 @@ public class MainMenu extends Menu{
 
     public void start() {
         addMenuItem(new MenuItem("Start", "Starts a new Game"));
-        addMenuItem(new MenuItem("Exit", null));
+        addMenuItem(new MenuItem("Exit", "Exit game"));
 
         boolean running = true;
         do {

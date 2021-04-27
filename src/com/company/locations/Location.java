@@ -31,7 +31,7 @@ public class Location {
     }
 
     public void displayChooseOptions() {
-        if (levelMap.getCurrentNode().getCommand() == null) {
+        if (levelMap.getCurrentNode().getDescription() == null) {
             System.out.println(levelMap.getCurrentNode().getText());
         }
         List<LevelNode> adjacent = levelMap.getAdjacent();
@@ -41,14 +41,16 @@ public class Location {
         }
 
         Menu levelMenu = new Menu();
-        for (LevelNode n : adjacent) {
-            levelMenu.addMenuItem(new MenuItem(n.getCommand(),n.getDescription()));
+
+        for (int i=0;i<adjacent.size();i++) {
+            levelMenu.addMenuItem(new MenuItem(i+"",adjacent.get(i).getDescription()));
         }
 
-        String command = levelMenu.displayChooseOption(levelMenu.getMenuItems()).getOptionKey();
+        MenuItem item = levelMenu.displayChooseOption(levelMenu.getMenuItems());
 
-        for (LevelNode n : adjacent) {
-            if (n.getCommand().equals(command)) {
+        for (int i=0;i<adjacent.size();i++) {
+            if ((i+"").equals(item.getOptionKey())) {
+                LevelNode n = adjacent.get(i);
                 System.out.println(n.getText());
                 levelMap.setCurrentNode(n);
                 return;

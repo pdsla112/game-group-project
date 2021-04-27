@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Menu {
     protected List<MenuItem> menuItems = new ArrayList<>();
-    protected Map<String, MenuItem> optionMap = new HashMap<String, MenuItem>();
+    protected Map<String,MenuItem> optionMap = new HashMap<>();
 
     public List<MenuItem> getMenuItems() {
         return menuItems;
@@ -18,12 +18,12 @@ public class Menu {
 
     public void addMenuItem(MenuItem m) {
         menuItems.add(m);
-        optionMap.put(m.getOptionKey().toLowerCase(), m);
+        optionMap.put(m.getOptionKey(), m);
     }
     public void printMenuItems(List<MenuItem> m) {
         System.out.println("Options:");
-        for (MenuItem menuItem: m) {
-            System.out.println(menuItem.getOptionKey() + " - " + menuItem.getDescription());
+        for (int i=0; i<m.size(); i++) {
+            System.out.println("[" + m.get(i).getOptionKey() + "]" + " - " + m.get(i).getDescription());
         }
     }
 
@@ -34,9 +34,12 @@ public class Menu {
 
     public MenuItem getSelectedItem(List<MenuItem> m) {
         try {
-            String inputMessage = Parser.getInputString();
-            if (optionMap.containsKey(inputMessage.toLowerCase())) {
-                return optionMap.get(inputMessage.toLowerCase());
+            String selection = Parser.getInputString();
+
+            for (int i=0; i<m.size(); i++)
+
+            if (optionMap.containsKey(selection.toLowerCase())) {
+                return optionMap.get(selection.toLowerCase());
             } else {
                 System.out.println("I do not understand.");
                 return this.displayChooseOption(m);
@@ -44,6 +47,8 @@ public class Menu {
         } catch (Exception e) {
             return null;
         }
+
+        return null;
 
     }
 }
