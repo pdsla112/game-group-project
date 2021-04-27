@@ -20,29 +20,29 @@ public class Menu {
         menuItems.add(m);
         optionMap.put(m.getOptionKey(), m);
     }
-    public void printMenuItems(List<MenuItem> m) {
+    public void printMenuItems() {
         System.out.println("Options:");
-        for (int i=0; i<m.size(); i++) {
-            System.out.println("[" + m.get(i).getOptionKey() + "]" + " - " + m.get(i).getDescription());
+        for (int i=0; i<menuItems.size(); i++) {
+            System.out.println("[" + menuItems.get(i).getOptionKey() + "]" + " - " + menuItems.get(i).getDescription());
         }
     }
 
-    public MenuItem displayChooseOption(List<MenuItem> m) {
-        printMenuItems(m);
-        return getSelectedItem(m);
+    public MenuItem displayChooseOption() {
+        printMenuItems();
+        return getSelectedItem();
     }
 
-    public MenuItem getSelectedItem(List<MenuItem> m) {
+    public MenuItem getSelectedItem() {
         try {
             String selection = Parser.getInputString();
 
-            for (int i=0; i<m.size(); i++)
+            for (int i=0; i<menuItems.size(); i++)
 
             if (optionMap.containsKey(selection.toLowerCase())) {
                 return optionMap.get(selection.toLowerCase());
             } else {
                 System.out.println("I do not understand.");
-                return this.displayChooseOption(m);
+                return this.displayChooseOption();
             }
         } catch (Exception e) {
             return null;

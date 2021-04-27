@@ -5,12 +5,12 @@ import java.util.List;
 public class LevelNode {
     String text;
     List<String> actions;
-    String description;
+    String option;
 
     public LevelNode(String description, String text, List<String> actions) {
         this.text = text;
         this.actions = actions;
-        this.description = description;
+        this.option = description;
     }
 
     public String getText() {
@@ -30,11 +30,11 @@ public class LevelNode {
     }
 
 
-    public String getDescription() {
-        return description;
+    public String getOption() {
+        return option;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setOption(String description) {
+        this.option = description;
     }
 }

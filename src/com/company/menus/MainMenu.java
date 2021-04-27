@@ -14,7 +14,7 @@ public class MainMenu extends Menu{
 
         boolean running = true;
         do {
-            MenuItem selectedItem = displayChooseOption(menuItems);
+            MenuItem selectedItem = displayChooseOption();
 
             if (selectedItem.optionKey.equals("start")) {
                 Player player = new Player();

@@ -8,7 +8,25 @@ import java.util.Map;
 public class LevelMap {
     Map<LevelNode,List<LevelNode>> adjacent;
     List<LevelNode> levelNodes;
+    List<LevelNode> completionNodes;
+    List<LevelNode> deathNodes;
     LevelNode currentNode;
+
+    public List<LevelNode> getCompletionNodes() {
+        return completionNodes;
+    }
+
+    public void setCompletionNodes(List<LevelNode> completionNodes) {
+        this.completionNodes = completionNodes;
+    }
+
+    public List<LevelNode> getDeathNodes() {
+        return deathNodes;
+    }
+
+    public void setDeathNodes(List<LevelNode> deathNodes) {
+        this.deathNodes = deathNodes;
+    }
 
     public LevelMap(LevelNode currentNode) {
         this.adjacent = new HashMap<>();
