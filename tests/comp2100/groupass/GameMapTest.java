@@ -7,4 +7,9 @@ import org.junit.rules.Timeout;
 public class GameMapTest {
     @Rule
     public Timeout globalTimeout = Timeout.millis(1000);
+
+    @Test
+    public void testMediumLevel() {
+
+    }
 }
