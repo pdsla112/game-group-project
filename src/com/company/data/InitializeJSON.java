@@ -68,6 +68,11 @@ public class InitializeJSON {
                         " and collect the vaccine."
         );
 
+        Initialization object9 = new Initialization(
+               "You are one of the people who decided to face the danger and" +
+                       " go to the Laboratory for your family and neighbours."
+        );
+
         objectList.add(object1);
         objectList.add(object2);
         objectList.add(object3);
@@ -76,6 +81,7 @@ public class InitializeJSON {
         objectList.add(object6);
         objectList.add(object7);
         objectList.add(object8);
+        objectList.add(object9);
 
         serializeJSON(objectList);
     }
