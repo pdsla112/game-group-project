@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.List;
 
-public class LevelNode {
+public class LevelNode implements MenuItem{
     String text;
     List<String> actions;
     String option;

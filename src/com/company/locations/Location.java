@@ -1,23 +1,25 @@
 package com.company.locations;
 
 import com.company.LevelMap;
-import com.company.LevelNode;
-import com.company.menus.Menu;
-import com.company.menus.MenuItem;
+import com.company.MenuItem;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Location {
+public class Location implements MenuItem {
     private boolean visited;  // True => Place has been visited before. False => Never been visited by the player.
     public String name;
     public String description;
     public LevelMap levelMap;
 
+    public String getText() {
+        return this.name + ": " + this.description;
+    }
 
     public Location(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public LevelMap getLevelMap() {
+        return levelMap;
     }
 
 

@@ -1,12 +1,10 @@
 package com.company;
 
 import com.company.characters.Player;
-import com.company.locations.Forest;
 import com.company.locations.GameMap;
-import com.company.locations.*;
 import com.company.locations.Location;
 import com.company.menus.Menu;
-import com.company.menus.MenuItem;
+import com.company.menus.GenericMenuItem;
 import com.company.parser.Parser;
 
 import java.util.ArrayList;
@@ -20,7 +18,7 @@ public class Game {
 
     public Game(Player p) {
         this.player = p;
-        this.parser = new Parser();
+        this.parser = new Parser(p);
         System.out.println(p.getIntro());
         System.out.println("Due to the zombies roaming the city streets, there are difficulties in the supply of vaccine and some people had to directly go to the laboratory in the Virus Centre and collect the vaccine.");
         System.out.println("What is your name?");
@@ -46,44 +44,19 @@ public class Game {
                     if (player.getLocation() == map.getFinalLocation()) {
                         throw new WinException("win");
                     } else {
-                        Menu locationMenu = new Menu();
                         List<Location> adjacentLocations = map.getAdjacent(player.getLocation());
-                        for (int i=0;i<adjacentLocations.size();i++) {
-                            locationMenu.addMenuItem(new MenuItem(i+"",adjacentLocations.get(i).name));
-                        }
-                        MenuItem selectedLocation = locationMenu.displayChooseOption();
-                        for (int i=0;i<adjacentLocations.size();i++) {
-                            if ((i+"").equals(selectedLocation.getOptionKey())) {
-                                //change location
-                                player.setLocation(adjacentLocations.get(i));
-                                player.getLocation().displayInformation();
-                            }
-                        }
+                        Menu locationMenu = new Menu(adjacentLocations);
+                        locationMenu.printMenuItems();
+                        running = parser.parse(player, parser.getInputString(), locationMenu);
                     }
 
                 } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {
                     throw new DeathException("You died");
                 } else {
-                    List<LevelNode> options = levelMap.getAdjacent();
 
-//                    if (options == null) {
-//                        System.out.println("no options available");
-//                        return;
-//                    }
-                    Menu levelMenu = new Menu();
-
-                    for (int i=0;i<options.size();i++) {
-                        levelMenu.addMenuItem(new MenuItem(i+"",options.get(i).getOption()));
-                    }
-
-                    MenuItem item = levelMenu.displayChooseOption();
-
-                    for (int i=0;i<options.size();i++) {
-                        if ((i+"").equals(item.getOptionKey())) {
-                            LevelNode n = options.get(i);
-                            levelMap.setCurrentNode(n);
-                        }
-                    }
+                    Menu levelMenu = new Menu(levelMap.getAdjacent());
+                    levelMenu.printMenuItems();
+                    running = parser.parse(player, Parser.getInputString(), levelMenu);
 
                 }
 
