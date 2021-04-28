@@ -1,0 +1,79 @@
+[
+  {
+    "location": "hospital",
+    "initialText": "You are now in the hospital. Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.",
+    "psychoData": {
+      "introText": "On the third floor, you found someone walking towards you. He looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips. He realised you coming towards him as well, and he seems to want a conversation with you.",
+      "approachText": "He was holding a scalpel you couldn\u0027t see from the distance. He ran towards you so that you failed to escape and got a cut. You realised that you are not able to run away, so decided to fight back.",
+      "avoidText": "You thought that it is weird to have person in the middle of the hospital hallway, so you ignored him and went up the staircase quickly so he wouldn\u0027t follow you."
+    },
+    "goodCharacterData": {
+      "characterType": "doctor",
+      "introText": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room. The person is laying on the bed, but it seems like they are still awake. You could see the long blonde hair sticking out, and she was tossing and turning under the duvet.",
+      "approachText": "You decided to talk to her, and after a short conversation, you found out that she was a doctor. You showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment. Fortunately, she gladly helps you.",
+      "avoidText": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+    },
+    "itemData": {
+      "itemType": "first-aid kit",
+      "intoText": "You found the first aid kit near the staircase."
+    }
+  },
+  {
+    "location": "cottage",
+    "initialText": "You found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.",
+    "psychoData": {
+      "introText": "Inside the cottage, you see the silhouette of a child laying on the cozy sofa in the small living room. She was dozing off, probably because it was warm inside.",
+      "approachText": "You gently wake the child. Actually, she was pretending to be asleep and had a kitchen knife in her hand, hidden behind her. You didn\u0027t want to hurt the child, but at the same time, you couldn\u0027t die. You fight to defend yourself. ",
+      "avoidText": "You didn\u0027t want to wake her up since your initial plan was to take a break for a while, and as she seemed to be comfortable. You carefully tip-toe past her and continue on with your business."
+    },
+    "goodCharacterData": {
+      "characterType": "hunter",
+      "introText": "After looking around the cottage, you then go into the storage room and there was a muscular man who looked to be in his mid-30’s. He doesn\u0027t seem to have noticed you yet.",
+      "approachText": "You tap him on the shoulder and ask what he is doing. He turns out to be a hunter, and this is his cottage. He sees you pitifully, and gives you one of the games that he had hunted a couple hours ago.",
+      "avoidText": "Seeing the size of the man, you realise there is no way to win him if you got into a fight. Hence, you quietly close the door."
+    },
+    "itemData": {
+      "itemType": "hunting kit",
+      "intoText": "You carefully head into the bathroom. Trying to find something useful, you open the cabinet to find a hunting kit."
+    }
+  },
+  {
+    "location": "road",
+    "initialText": "You continue on your journey to the laboratory, and you end up on a concrete road.",
+    "goodCharacterData": {
+      "characterType": "taxi driver",
+      "introText": "You hear muffling from your right. You turn your head to see that the sound is coming from a woman in a taxi. She looks like a human, so you walk towards the taxi. A middle-aged woman rolls the taxi window down. She scans your appearance up and down. She says you can get a short ride on the way to her children.",
+      "approachText": "However, the road in front of the taxi is blocked with debris. She asks if you can help her remove this debris so that she can drive on the road.",
+      "avoidText": "Thankfully, she gives you a ride. Your health will temporarily not go down."
+    },
+    "zombieData": {
+      "introText": "You hear crackling sound coming from your left. You turn your head and see a bloody scene of zombies chewing on the limbs of freshly-dead humans. You are feeling short of breath and your palms get sweaty.",
+      "approachText": "Some of the zombies notice you and approach you.",
+      "avoidText": "You immediately crouch and quietly leave the scene."
+    }
+  },
+  {
+    "location": "forest",
+    "initialText": "You notice that the more you walk, the more densely packed the trees stand. You are entering a forest.",
+    "psychoData": {
+      "introText": "Walking through the damp, dark soil, you realise that there is an old man between the trees. He hasn\u0027t seen you yet.",
+      "approachText": "Wondering why he was in the middle of this forest, you approach him and try to start a conversation. You didn\u0027t know because he wasn\u0027t looking in your direction, but he had dead, lifeless eyes with a stone in his hand. Even before you realise, he look back at you and throws the stone at your head.",
+      "avoidText": "You quickly pass by, it’s usually better to keep to yourself during this apocalypse."
+    },
+    "goodCharacterData": {
+      "characterType": "animal",
+      "introText": "When you heard a rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound. Standing behind a tree, you peep to see a very plump animal.",
+      "approachText": "Having been hungry for a long time, you decide to hunt.",
+      "avoidText": "You decide to pass by as you are not confident enough to hunt it. Oh well, can’t help that you’re a wimp."
+    },
+    "zombieData": {
+      "introText": "In the middle of the forest, the zombie was finding its next prey with ears, not eyes, perhaps because his eyeballs had rotted. Filthy, black liquid was flowing out of the zombies’ mouths. Your muscles become stiff, locking your limbs still, due to fear.",
+      "approachText": "You accidentally step some crunchy leaves, and the zombie immediately sense you. They hungrily approach you.",
+      "avoidText": " You somehow manage to slowly and silently back-away and escape. What a miracle!"
+    }
+  },
+  {
+    "location": "lab",
+    "initialText": "This journey just never seems to end. You miss the warm embrace of your family and the smell of home. This journey has been unforgiving to you mentally and physically. You get flashbacks of your loved ones who had died before you in your arms. You wonder, “maybe it’s time for me to go too…”. But then, as you walk over a hill, you slowly see a pristine white building over the horizon. It seems to be… it seems to be… Congratulations, you finally reached the laboratory! Thankfully, there are no zombies as there are many soldiers inside, so you are safe now. You walk into the laboratory, and there are researchers who are ready to provide you with vaccines."
+  }
+]
