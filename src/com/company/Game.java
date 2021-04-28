@@ -99,7 +99,7 @@ public class Game {
         hospital.levelMap = new LevelMap(root);
         LevelNode option1 = new LevelNode("approach the man","He looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips. He realised you coming towards him as well, and he seems to want a conversation with you. ",null);
         LevelNode option2 = new LevelNode("Go and talk with him","He was holding a scapel you couldn't see from the distance. He ran towards you so that you failed to escape and got a cut.",null);
-        LevelNode option3 = new LevelNode("ignore him","something happens",null);
+        LevelNode option3 = new LevelNode("ignore him","you can now change your location",null);
         hospital.levelMap.setAdjacent(root,new ArrayList<>(Arrays.asList(option1)));
         hospital.levelMap.setAdjacent(option1,new ArrayList<>(Arrays.asList(option2, option3)));
 

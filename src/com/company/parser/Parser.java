@@ -37,10 +37,13 @@ public class Parser {
                 }
             }
 
-        } catch (Exception e){
-            e.printStackTrace();
+        } catch(NumberFormatException e) {
+            return parseAction(player, userCommand, menu);
         }
 
+        return false;
+    }
+    public boolean parseAction(Player player, String userCommand, Menu menu) throws DeathException {
         return false;
     }
 
