@@ -1,40 +1,63 @@
 package com.company.menus;
 
-import com.company.parser.Parser;
+import com.company.MenuItem;
 
 import java.util.*;
 
-public class Menu {
-    protected List<MenuItem> menuItems = new ArrayList<>();
-    protected Map<String, MenuItem> optionMap = new HashMap<String, MenuItem>();
+public class Menu{
+    protected List<? extends MenuItem> menuItems;
+    protected Map<Integer, MenuItem> keyMap = new HashMap<>();
 
-    public void addMenuItem(MenuItem m) {
-        menuItems.add(m);
-        optionMap.put(m.getOptionKey().toLowerCase(), m);
-    }
-    public void printMenuItems(List<MenuItem> m) {
-        for (MenuItem menuItem: m) {
-            System.out.println(menuItem.getOptionKey() + " - " + menuItem.getDescription());
+
+    public Menu(List<? extends MenuItem> menuItems) {
+        this.menuItems = menuItems;
+        for (int i = 0; i< menuItems.size(); i++) {
+            keyMap.put(i,menuItems.get(i));
         }
     }
 
-    public MenuItem displayChooseOption(List<MenuItem> m) {
-        printMenuItems(m);
-        return getSelectedItem(m);
-    }
 
-    public MenuItem getSelectedItem(List<MenuItem> m) {
-        try {
-            String inputMessage = Parser.getInputString();
-            if (optionMap.containsKey(inputMessage.toLowerCase())) {
-                return optionMap.get(inputMessage.toLowerCase());
-            } else {
-                System.out.println("I do not understand.");
-                return this.displayChooseOption(m);
-            }
-        } catch (Exception e) {
+    public MenuItem getMenuItem(int key) {
+        if (keyMap.containsKey(key)) {
+            return keyMap.get(key);
+        } else {
             return null;
         }
 
     }
+
+
+    public void printMenuItems() {
+        System.out.println("Options:");
+        for (int i = 0; i< menuItems.size(); i++) {
+            System.out.println("[" + i + "]" + " - " + menuItems.get(i).getText());
+        }
+    }
+//
+//    public MenuItem displayChooseOption() {
+//        printMenuItems();
+//        return getSelectedItem();
+//    }
+
+//    public MenuItem getSelectedItem() {
+//        try {
+//            String selection = Parser.getInputString();
+//
+//            for (int i=0; i<menuItems.size(); i++)
+//
+//            if (keyMap.containsKey(selection.toLowerCase())) {
+//                return keyMap.get(selection.toLowerCase());
+//            } else {
+//                if (!Parser.parse(selection)) {
+//                    System.out.println("I do not understand.");
+//                }
+//                return this.displayChooseOption();
+//            }
+//        } catch (Exception e) {
+//            return null;
+//        }
+//
+//        return null;
+//
+//    }
 }

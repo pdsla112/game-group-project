@@ -15,7 +15,7 @@ public class Player extends Character{
     //private boolean deathValue;  // True => Player is dead.  False => Player is alive.
     public Player() {
         //temporary (load from json)
-        setIntro("Intro: there are zombies here.");
+        setIntro("Intro: there are zombies here. You are feeling sick. etc.");
     }
 
     protected static String getProfileFileName(String name) {
@@ -70,6 +70,8 @@ public class Player extends Character{
         //todo
         return false;
     }
+
+
 
 //    public void attack(String opponentName) throws DeathException {
 //

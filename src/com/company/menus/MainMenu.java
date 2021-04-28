@@ -1,22 +1,27 @@
 package com.company.menus;
 
 import com.company.Game;
+import com.company.MenuItem;
 import com.company.characters.Player;
+import com.company.parser.Parser;
 
-public class MainMenu extends Menu{
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class MainMenu {
     public MainMenu() {
         start();
     }
 
     public void start() {
-        addMenuItem(new MenuItem("Start", "Starts a new Game"));
-        addMenuItem(new MenuItem("Exit", null));
-
+        Menu mainMenu = new Menu(new ArrayList<GenericMenuItem>(Arrays.asList(new GenericMenuItem("Start"),new GenericMenuItem("Exit"))));
         boolean running = true;
         do {
-            MenuItem selectedItem = displayChooseOption(menuItems);
+            mainMenu.printMenuItems();
+            String userInput = Parser.getInputString();
 
-            if (selectedItem.optionKey.equals("start")) {
+            if (userInput.equals("0")) {
                 Player player = new Player();
                 new Game(player);
                 running = false;
