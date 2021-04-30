@@ -3,6 +3,7 @@ package com.company.data;
 import com.company.locations.Location;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -201,7 +202,8 @@ public class LocationJSON {
     public static void serializeJSON(ArrayList<LocationData> objectList) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("LocationDB.json")) {
-            gson.toJson(objectList, writer);
+            JsonElement tree = gson.toJsonTree(objectList);
+            gson.toJson(tree, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }

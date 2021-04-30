@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 
 public class InitializeJSON {
     public static void main(String[] args) {
@@ -89,7 +90,8 @@ public class InitializeJSON {
     public static void serializeJSON(ArrayList<Initialization> objectList) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("InitializationDB.json")) {
-            gson.toJson(objectList, writer);
+            JsonElement tree = gson.toJsonTree(objectList);
+            gson.toJson(tree, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
