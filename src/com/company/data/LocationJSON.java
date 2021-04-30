@@ -4,10 +4,16 @@ import com.company.locations.Location;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LocationJSON {
     public static void main(String[] args) {
@@ -207,5 +213,26 @@ public class LocationJSON {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Incomplete method. Needs fixing...
+     * @return
+     */
+    public static List<LocationData> deserializeJSON() {
+        List<LocationData> list = new ArrayList<>();
+        Gson gson = new Gson();
+        JsonReader jsonReader = null;
+        final Type CUS_LIST_TYPE = new TypeToken<List<LocationData>>() {}.getType();
+        try {
+            jsonReader = new JsonReader(new FileReader("LocationDB.json"));
+            List<LocationData> data = gson.fromJson(jsonReader, CUS_LIST_TYPE);
+            for (LocationData location : data) {
+                list.add(location);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }
