@@ -34,6 +34,7 @@ public class Parser {
                 } else if (selected instanceof LevelNode) {
                     player.getLocation().getLevelMap().setCurrentNode((LevelNode) selected);
                     return true;
+
                 }
             }
 
