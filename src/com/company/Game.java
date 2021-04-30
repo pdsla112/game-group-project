@@ -20,7 +20,7 @@ public class Game {
         this.player = p;
         this.parser = new Parser(p);
         System.out.println(p.getIntro());
-        System.out.println("Due to the zombies roaming the city streets, there are difficulties in the supply of vaccine and some people had to directly go to the laboratory in the Virus Centre and collect the vaccine.");
+        System.out.println("You are one of the people who decided to face the danger and go to the Laboratory for your family and neighbours.\n");
         System.out.println("What is your name?");
         player.setName(Parser.getInputString());
         System.out.println(player.getName()); //check name, later delete
@@ -96,20 +96,21 @@ public class Game {
         player.setLocation(hospital);
 
         LevelNode root = new LevelNode(null,"You are now in the hospital. While walking in the hallway, you found the first aid kit near the staircase. \"At third floor, you found someone walking towards you.", null);
-        hospital.levelMap = new LevelMap(root);
+        cottage.levelMap = new LevelMap(root);
         LevelNode option1 = new LevelNode("approach the man","He looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips. He realised you coming towards him as well, and he seems to want a conversation with you. ",null);
         LevelNode option2 = new LevelNode("Go and talk with him","He was holding a scapel you couldn't see from the distance. He ran towards you so that you failed to escape and got a cut.",null);
         LevelNode option3 = new LevelNode("ignore him","you can now change your location",null);
-        hospital.levelMap.setAdjacent(root,new ArrayList<>(Arrays.asList(option1)));
-        hospital.levelMap.setAdjacent(option1,new ArrayList<>(Arrays.asList(option2, option3)));
+        cottage.levelMap.setAdjacent(root,new ArrayList<>(Arrays.asList(option1)));
+        cottage.levelMap.setAdjacent(option1,new ArrayList<>(Arrays.asList(option2, option3)));
 
         //sucessfully completed level
-        hospital.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(option3)));
+        cottage.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(option3)));
 
         //player dies
-        hospital.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(option2)));
+        cottage.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(option2)));
 
         //continue, DO THIS (NAYOON)
+
 
 
 
