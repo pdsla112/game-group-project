@@ -41,6 +41,7 @@ abstract class Character {
 
     public void addItem(Item item, int amount) {
         //todo
+
     }
     public void addItem(Item item) {
         //todo
