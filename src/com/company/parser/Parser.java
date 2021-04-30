@@ -55,6 +55,10 @@ public class  Parser {
                 player.save();
                 return true;
             }
+            else if(selected.equals("gs")){
+                player.getStats();
+                return true;
+            }
 
             }
         return false;
