@@ -1,12 +1,19 @@
 package com.company.data;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 
 public class InitializeJSON {
     public static void main(String[] args) {
@@ -85,6 +92,13 @@ public class InitializeJSON {
         objectList.add(object9);
 
         serializeJSON(objectList);
+
+
+        /**
+         * Example of how to use the deserializeJSON method...
+         */
+        List<Initialization> result = InitializeJSON.deserializeJSON();
+        System.out.println(result.get(0).getText());
     }
 
     public static void serializeJSON(ArrayList<Initialization> objectList) {
@@ -95,5 +109,22 @@ public class InitializeJSON {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static List<Initialization> deserializeJSON() {
+        List<Initialization> list = new ArrayList<>();
+        Gson gson = new Gson();
+        JsonReader jsonReader = null;
+        final Type CUS_LIST_TYPE = new TypeToken<List<Initialization>>() {}.getType();
+        try {
+            jsonReader = new JsonReader(new FileReader("InitializationDB.json"));
+            List<Initialization> data = gson.fromJson(jsonReader, CUS_LIST_TYPE);
+            for (Initialization init : data) {
+                list.add(init);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }
