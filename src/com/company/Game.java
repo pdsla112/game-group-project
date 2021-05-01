@@ -6,6 +6,7 @@ import com.company.locations.Location;
 import com.company.menus.Menu;
 import com.company.menus.GenericMenuItem;
 import com.company.parser.Parser;
+import com.company.LevelNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,7 +52,7 @@ public class Game {
                     }
 
                 } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {
-                    throw new DeathException("You died");
+                    throw new DeathException("You died.");
                 } else {
 
                     Menu levelMenu = new Menu(levelMap.getAdjacent());
@@ -64,9 +65,9 @@ public class Game {
                 //running = parser.parse(player, command);
             }
         } catch (DeathException e) {
-            System.out.println("you died.");
+            System.out.println("You died.");
         } catch (WinException e) {
-            System.out.println("you win.");
+            System.out.println("You win.");
         }
 
 
@@ -75,17 +76,21 @@ public class Game {
     public void setupGameMap() {
         map = new GameMap();
         //setup map
-        Location hospital = new Location("hospital","a dark hospital");
+        Location hospital = new Location("hospital","You are now in the hospital.");
         map.addLocation(hospital);
-        Location cottage = new Location("cottage", "a small cottage");
+        Location cottage = new Location("cottage", "You found a cottage while you were looking for a place to hide, avoiding zombies.");
         map.addLocation(cottage);
-        Location forest = new Location("forest", "a small forest");
+        Location forest = new Location("forest", "You found a forest and went in wondering if you could hunt for food.");
         map.addLocation(forest);
-        Location lab = new Location("lab", "a small lab");
+        Location lab = new Location("lab", "Congratulations, you finally reached the laboratory!");
         map.addLocation(lab);
-        Location road = new Location("road", "a long road");
+        Location road = new Location("road", "You are walking down the street looking for an accessible building.");
         map.addLocation(road);
+        Location home = new Location("home","Initial place");
+        map.addLocation(home);
 
+        map.addEdge(home,cottage,5);
+        map.addEdge(home,forest,9);
         map.addEdge(cottage, hospital, 6);
         map.addEdge(cottage, forest, 4);
         map.addEdge(forest, hospital, 7);
@@ -93,21 +98,24 @@ public class Game {
         map.addEdge(hospital, road, 10);
         map.addEdge(road, lab, 4);
 
-        player.setLocation(hospital);
+        player.setLocation(home);
 
-        LevelNode root = new LevelNode(null,"You are now in the hospital. While walking in the hallway, you found the first aid kit near the staircase. \"At third floor, you found someone walking towards you.", null);
-        cottage.levelMap = new LevelMap(root);
-        LevelNode option1 = new LevelNode("approach the man","He looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips. He realised you coming towards him as well, and he seems to want a conversation with you. ",null);
-        LevelNode option2 = new LevelNode("Go and talk with him","He was holding a scapel you couldn't see from the distance. He ran towards you so that you failed to escape and got a cut.",null);
-        LevelNode option3 = new LevelNode("ignore him","you can now change your location",null);
-        cottage.levelMap.setAdjacent(root,new ArrayList<>(Arrays.asList(option1)));
-        cottage.levelMap.setAdjacent(option1,new ArrayList<>(Arrays.asList(option2, option3)));
+        LevelNode root = new LevelNode(null,"Choose the location to go.", null);//home.isVisited()
+        home.levelMap = new LevelMap(root);
+        LevelNode option1 = new LevelNode("go to cottage","Go to cottage.",null);
+        //new ArrayList<>(Arrays.asList(player.setLocation(cottage),cottage.isVisited())) for actions
+        LevelNode option2 = new LevelNode("go to forest","Go to forest.",null);//forest.isVisited()
+        home.levelMap.setAdjacent(root,new ArrayList<>(Arrays.asList(option1,option2)));
+        System.out.println(cottage.description);
+        LevelNode option3 = new LevelNode("ignore him",cottage.description,null);
+        //home.levelMap.setAdjacent(option1,new ArrayList<>(Arrays.asList(option3)));
+
 
         //sucessfully completed level
-        cottage.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(option3)));
+        home.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(option3)));
 
         //player dies
-        cottage.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(option2)));
+        home.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(option2)));
 
         //continue, DO THIS (NAYOON)
 
