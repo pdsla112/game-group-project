@@ -56,6 +56,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="gson-2.8.6" level="project" />
   </component>
 </module>
