@@ -11,7 +11,7 @@ import com.company.menus.Menu;
 import java.util.List;
 import java.util.Scanner;
 
-public class Parser {
+public class  Parser {
 
     Player player;
     public static String getInputString() {
@@ -45,8 +45,28 @@ public class Parser {
         return false;
     }
     public boolean parseAction(Player player, String userCommand, Menu menu) throws DeathException {
+
+        MenuItem selected = new GenericMenuItem(userCommand);
+        if(selected!= null){
+            if(selected.equals("h")) {
+                menu.printMenuItems();
+                return true;
+            }
+            else if(selected.equals("s")){
+                player.save();
+                return true;
+            }
+            else if(selected.equals("gs")){
+                player.getStats();
+                return true;
+            }
+
+            }
         return false;
+
+        }
+
     }
 
 
-}
+
