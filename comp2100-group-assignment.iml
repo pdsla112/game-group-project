@@ -29,5 +29,24 @@
     </orderEntry>
     <orderEntry type="library" name="gson-2.8.6" level="project" />
     <orderEntry type="library" name="2100_jarfiles" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../labs/lab_4/gson-2.8.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../junit" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../junit" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

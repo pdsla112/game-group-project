@@ -100,27 +100,43 @@ public class Game {
 
         player.setLocation(home);
 
-        LevelNode root = new LevelNode(null,"Choose the location to go.", null);//home.isVisited()
-        home.levelMap = new LevelMap(root);
-        LevelNode option1 = new LevelNode("go to cottage","Go to cottage",null);
-        //new ArrayList<>(Arrays.asList(player.setLocation(cottage),cottage.isVisited())) for actions, error:'void type not allowed here'
-        //print cottage.description
-        LevelNode option2 = new LevelNode("go to forest","Go to forest.",null);//forest.isVisited()
-        home.levelMap.setAdjacent(root,new ArrayList<>(Arrays.asList(option1,option2)));
-        //player.setLocation(cottage); should be one of actions?
-        //cottage.levelMap=new LevelMap(home)? current location vs node aka option
-        LevelNode option3 = new LevelNode("approach","Approach",null);
-        LevelNode option4 = new LevelNode("ignore","Ignore",null);
-        LevelNode option5 = new LevelNode("game end","game end",null);
-        LevelNode option6 = new LevelNode("player dies", "player dies", null);
-        home.levelMap.setAdjacent(option1,new ArrayList<>(Arrays.asList(option3,option4)));
+        LevelNode rootHome = new LevelNode(null,"You are at home using your computer", null);//home.isVisited()
+        home.levelMap = new LevelMap(rootHome);
+        // set home as completion node
+        home.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(rootHome)));
 
+
+        //cottage
+
+        LevelNode cottageRoot = new LevelNode(null,"You are in a cottage", null);
+        cottage.levelMap = new LevelMap(cottageRoot);
+        LevelNode cottageOp3 = new LevelNode("approach","Approach",null);
+        LevelNode cottageOp4 = new LevelNode("ignore","Ignore",null);
+        LevelNode cottageOp5 = new LevelNode("game end","game end",null);
+        LevelNode cottageOp6 = new LevelNode("player dies", "player dies", null);
+        cottage.levelMap.setAdjacent(cottageRoot,new ArrayList<>(Arrays.asList(cottageOp3,cottageOp4)));
 
         //sucessfully completed level
-        home.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(option5)));
-
+        cottage.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(cottageOp5)));
         //player dies
-        home.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(option6)));
+        cottage.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(cottageOp6)));
+
+
+        //forest
+        LevelNode rootForest =  new LevelNode(null,"You are in a forest", null);
+        forest.levelMap = new LevelMap(rootForest);
+
+//        LevelNode option1 = new LevelNode("go to cottage","Go to cottage",null);
+        //new ArrayList<>(Arrays.asList(player.setLocation(cottage),cottage.isVisited())) for actions, error:'void type not allowed here'
+        //print cottage.description
+//        LevelNode option2 = new LevelNode("go to forest","Go to forest.",null);//forest.isVisited()
+//        home.levelMap.setAdjacent(root,new ArrayList<>(Arrays.asList(option1,option2)));
+        //player.setLocation(cottage); should be one of actions?
+        //cottage.levelMap=new LevelMap(home)? current location vs node aka option
+
+
+
+
 
         //continue, DO THIS (NAYOON)
 
