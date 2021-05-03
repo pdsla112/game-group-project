@@ -30,7 +30,7 @@ public class Menu{
     public void printMenuItems() {
         System.out.println("Options:");
         for (int i = 0; i< menuItems.size(); i++) {
-            System.out.println("[" + i + "]" + " - " + menuItems.get(i).getText());
+            System.out.println("[" + i + "]" + " - " + menuItems.get(i).getOptionText());
         }
     }
 //
