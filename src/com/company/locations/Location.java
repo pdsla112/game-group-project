@@ -9,8 +9,8 @@ public class Location implements MenuItem {
     public String description;
     public LevelMap levelMap;
 
-    public String getText() {
-        return this.name + ": " + this.description;
+    public String getOptionText() {
+        return this.name;
     }
 
     public Location(String name, String description) {

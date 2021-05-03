@@ -6,14 +6,14 @@ import java.util.Set;
 import com.company.MenuItem;
 
 public class GenericMenuItem implements MenuItem {
-    protected String text;
+    protected String optionText;
 
     public GenericMenuItem(String text) {
-        this.text = text;
+        this.optionText = text;
     }
 
-    public String getText() {
-        return text;
+    public String getOptionText() {
+        return optionText;
     }
 
 

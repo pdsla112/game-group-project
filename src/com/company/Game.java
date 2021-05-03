@@ -38,7 +38,7 @@ public class Game {
                 LevelMap levelMap = player.getLocation().levelMap;
 
                 //print text
-                System.out.println(levelMap.getCurrentNode().getText());
+                System.out.println(levelMap.getCurrentNode().text);
 
                 //check level completion
                 if (levelMap.completionNodes.contains(levelMap.currentNode)) {
@@ -109,28 +109,26 @@ public class Game {
 
         //cottage
 
-        LevelNode cottageRoot = new LevelNode(null,"Inside a cottage, you saw a glimpse of a child sitting on the cozy sofa in the small living room. She was dozing off, probably because it was warm inside.", null);
+        LevelNode cottageRoot = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
         cottage.levelMap = new LevelMap(cottageRoot);
-        LevelNode cottageOp1 = new LevelNode("approach","Approach",null);
-        LevelNode cottageOp2 = new LevelNode("ignore","Ignore",null);
+        LevelNode cottageOp1 = new LevelNode("approach","You approach the child, and take a closer look.",null);
+        LevelNode cottageOp2 = new LevelNode("ignore","You ignore the child",null);
         cottage.levelMap.setAdjacent(cottageRoot,new ArrayList<>(Arrays.asList(cottageOp1,cottageOp2)));
-        LevelNode cottageOp3 = new LevelNode(null,"You gently shook the child to wake her up.\nActually, she was pretending to be asleep and had a kitchen knife in her hand, hidden behind her.\nYou didn't want to hurt child but at the same time, you couldn't die. Therefore, you had to defend yourself.",null);
-        LevelNode cottageOp4 = new LevelNode(null,"You didn't want to wake her up since your initial plan was to take a break for a while, and as she seemed to be comfortable.\nYou crept towards toilet, went in, and carefully closed the door.",null);
+        LevelNode cottageOp3 = new LevelNode("wake her up","You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don't want to hurt child, but at the same time, you don't want to die.",null);
+        LevelNode cottageOp4 = new LevelNode("leave her alone","You don't want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",null);
         cottage.levelMap.setAdjacent(cottageOp1,new ArrayList<>(Arrays.asList(cottageOp3)));
         cottage.levelMap.setAdjacent(cottageOp2,new ArrayList<>(Arrays.asList(cottageOp4)));
-        LevelNode cottageOp5 = new LevelNode(null, "After you won a fight, you went to look around for what's in the cottage. You went into the toilet as it was right next to the living room.",null);
-        LevelNode cottageOp6 = new LevelNode(null,"Unfortunately, you couldn't win her as she had weapon and you didn't.",null);
+        LevelNode cottageOp5 = new LevelNode("escape", "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",null);
+        LevelNode cottageOp6 = new LevelNode("fight the girl","Unfortunately, you couldn't beat her as she had weapon and you didn't.",null);
         cottage.levelMap.setAdjacent(cottageOp3,new ArrayList<>(Arrays.asList(cottageOp5,cottageOp6)));
-        LevelNode cottageOp7 = new LevelNode(null,"Trying to find for something useful, you opened the right shelf and found a hunting kit.\nCongratulations, you gained a hunting kit!",null);
+        LevelNode cottageOp7 = new LevelNode("search shelf","Trying to find something useful, you open a drawer in a shelf to your right and find a hunting kit.\nCongratulations, a hunting kit has been added to your inventory!\nYou find a storage room",null);
         cottage.levelMap.setAdjacent(cottageOp4,new ArrayList<>(Arrays.asList(cottageOp7)));
         cottage.levelMap.setAdjacent(cottageOp5,new ArrayList<>(Arrays.asList(cottageOp7)));
-        LevelNode cottageOp8 = new LevelNode(null,"Looking around cottage, you then went into the storage room and there was a muscular man who looked mid 30's.\nHe doesn't seem to notice you yet. ",null);
+        LevelNode cottageOp8 = new LevelNode("go into the storage room","You go into the storage room and find a muscular man in his mid 30's.\nHe doesn't seem to have noticed you yet.",null);
         cottage.levelMap.setAdjacent(cottageOp7,new ArrayList<>(Arrays.asList(cottageOp8)));
-        LevelNode cottageOp9 = new LevelNode("approach","Approach",null);
-        LevelNode cottageOp10 = new LevelNode("ignore","Ignore",null);
-        cottage.levelMap.setAdjacent(cottageOp8,new ArrayList<>(Arrays.asList(cottageOp9,cottageOp10)));
-        LevelNode cottageOp11 = new LevelNode(null,"You tapped him on the shoulder and asked what he was doing.\nHe turned out to be a hunter, and stopped by this cottage to find for a useful weapon.\n\nHe told you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it would be great to accompany him, I suggested that we go get a vaccine together, and he said yes.\n\nHunter joined your team.",null);
-        cottage.levelMap.setAdjacent(cottageOp9,new ArrayList<>(Arrays.asList(cottageOp11)));
+        LevelNode cottageOp11 = new LevelNode("approach the man ","You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.",null);
+        LevelNode cottageOp10 = new LevelNode("ignore him","You ignore the man and leave the cottage.",null);
+        cottage.levelMap.setAdjacent(cottageOp8,new ArrayList<>(Arrays.asList(cottageOp10,cottageOp11)));
 
         //sucessfully completed level
         cottage.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(cottageOp10,cottageOp11)));

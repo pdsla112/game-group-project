@@ -13,8 +13,8 @@ public class LevelNode implements MenuItem{
         this.option = description;
     }
 
-    public String getText() {
-        return text;
+    public String getOptionText() {
+        return option;
     }
 
     public void setText(String text) {
