@@ -1,5 +1,7 @@
 package com.company.data;
 
+import java.util.ArrayList;
+
 public class LocationData {
     private String location;
     private String initialText;
@@ -15,5 +17,36 @@ public class LocationData {
         this.goodCharacterData = goodCharacterData;
         this.itemData = itemData;
         this.zombieData = zombieData;
+    }
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    public String getInitialText() {
+        return this.initialText;
+    }
+
+    public PsychoData getPsychoData() {
+        return this.psychoData;
+    }
+
+    public GoodCharacterData getGoodCharacterData() {
+        return this.goodCharacterData;
+    }
+
+    public ItemData getItemData() {
+        return this.itemData;
+    }
+
+    public ZombieData getZombieData() {
+        return this.zombieData;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<LocationData> resultList = LocationJSON.deserializeJSON();
+        LocationData hospital = LocationJSON.getSpecificLocationData(resultList, "hospital");
+        System.out.println(hospital.getInitialText());
+        System.out.println(hospital.getLocation());
     }
 }

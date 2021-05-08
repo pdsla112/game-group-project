@@ -232,4 +232,12 @@ public class LocationJSON {
         }
         return data;
     }
+
+    public static LocationData getSpecificLocationData(ArrayList<LocationData> deserializedList, String locationName) {
+        for (LocationData data : deserializedList) {
+            if (data.getLocation().equals(locationName))
+                return data;
+        }
+        return null;
+    }
 }

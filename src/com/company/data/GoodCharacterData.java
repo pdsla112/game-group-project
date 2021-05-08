@@ -12,4 +12,20 @@ public class GoodCharacterData {
         this.approachText = approachText;
         this.avoidText = avoidText;
     }
+
+    public String getCharacterType() {
+        return this.characterType;
+    }
+
+    public String getIntroText() {
+        return this.introText;
+    }
+
+    public String getApproachText() {
+        return this.approachText;
+    }
+
+    public String getAvoidText() {
+        return this.avoidText;
+    }
 }
