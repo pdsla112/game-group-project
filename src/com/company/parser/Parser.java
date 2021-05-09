@@ -47,7 +47,7 @@ public class  Parser {
     public boolean parseAction(Player player, String userCommand, Menu menu) throws DeathException {
 
         MenuItem selected = new GenericMenuItem(userCommand);
-        if(selected!= null){
+        if(userCommand!= null){
             if(selected.equals("h")) {
                 menu.printMenuItems();
                 return true;
