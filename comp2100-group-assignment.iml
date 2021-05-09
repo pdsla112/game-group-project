@@ -27,9 +27,9 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="gson-2.8.6" level="project" />
-    <orderEntry type="library" name="2100_jarfiles" level="project" />
-    <orderEntry type="module-library">
+    <orderEntry type="library" exported="" name="gson-2.8.6" level="project" />
+    <orderEntry type="library" exported="" name="2100_jarfiles" level="project" />
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../labs/lab_4/gson-2.8.6.jar!/" />
@@ -46,6 +46,15 @@
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/../junit" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Java JAR/gson-2.8.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
   </component>

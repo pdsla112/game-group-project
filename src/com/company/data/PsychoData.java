@@ -10,4 +10,16 @@ public class PsychoData {
         this.approachText = approachText;
         this.avoidText = avoidText;
     }
+
+    public String getIntroText() {
+        return this.introText;
+    }
+
+    public String getApproachText() {
+        return this.approachText;
+    }
+
+    public String getAvoidText() {
+        return this.avoidText;
+    }
 }

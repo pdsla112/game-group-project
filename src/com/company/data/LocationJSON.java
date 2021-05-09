@@ -203,6 +203,9 @@ public class LocationJSON {
         objectList.add(object5);
 
         serializeJSON(objectList);
+
+        ArrayList<LocationData> result = deserializeJSON();
+        System.out.println(result.size());
     }
 
     public static void serializeJSON(ArrayList<LocationData> objectList) {
@@ -215,24 +218,26 @@ public class LocationJSON {
         }
     }
 
-    /**
-     * Incomplete method. Needs fixing...
-     * @return
-     */
-    public static List<LocationData> deserializeJSON() {
-        List<LocationData> list = new ArrayList<>();
+    public static ArrayList<LocationData> deserializeJSON() {
+        ArrayList<LocationData> data = new ArrayList<>();
         Gson gson = new Gson();
         JsonReader jsonReader = null;
-        final Type CUS_LIST_TYPE = new TypeToken<List<LocationData>>() {}.getType();
+        final Type listObjectType = new TypeToken<ArrayList<LocationData>>(){}.getType();
         try {
             jsonReader = new JsonReader(new FileReader("LocationDB.json"));
-            List<LocationData> data = gson.fromJson(jsonReader, CUS_LIST_TYPE);
-            for (LocationData location : data) {
-                list.add(location);
-            }
+            data = gson.fromJson(jsonReader, listObjectType);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return list;
+        return data;
+    }
+
+    public static LocationData getSpecificLocationData(ArrayList<LocationData> deserializedList, String locationName) {
+        for (LocationData data : deserializedList) {
+            if (data.getLocation().equals(locationName))
+                return data;
+        }
+        return null;
     }
 }
