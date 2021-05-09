@@ -18,6 +18,9 @@ public class Player extends Character{
     //protected static LocationRepo locationRepo = new LocationRepo();
     private Location location;
     //private boolean deathValue;  // True => Player is dead.  False => Player is alive.
+
+    private String email;
+
     public Player() {
         //temporary (load from json)
         ArrayList<Initialization> dataList = InitializeJSON.deserializeJSON();
@@ -25,7 +28,6 @@ public class Player extends Character{
         for (Initialization data : dataList) {
             intro += data;
         }
-
         setIntro(intro);//intro
     }
 
@@ -88,6 +90,10 @@ public class Player extends Character{
     public boolean hasItem(Item item) {
         //todo
         return false;
+    }
+
+    public String getEmail() {
+        return this.email;
     }
 
 
