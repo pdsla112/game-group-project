@@ -21,25 +21,22 @@ public class Player extends Character{
 
     private String email;
 
-    public Player() {
+    public Player(int damage, int health, String name, String intro, int cash, Map<Item,Integer> items, String email, Location location) {
         //temporary (load from json)
-        ArrayList<Initialization> dataList = InitializeJSON.deserializeJSON();
-        String intro = "";
-        for (Initialization data : dataList) {
-            intro += data;
-        }
-        setIntro(intro);//intro
+        super(damage, health, name, cash, items);
+        this.location = location;
+        this.email = email;
     }
 
-    protected static String getProfileFileName(String name) {
-        //todo
-        return null;
-    }
-    public static boolean profileExists(String name) {
-        //todo
-        return false;
-
-    }
+//    protected static String getProfileFileName(String name) {
+//        //todo
+//        return null;
+//    }
+//    public static boolean profileExists(String name) {
+//        //todo
+//        return false;
+//
+//    }
 
     public void addItem(int id) {
         if (itemsMap.containsKey(id)) {
@@ -57,17 +54,12 @@ public class Player extends Character{
         this.location = location;
     }
 
-    public static Player load(String fileName) {
-        return null;
-    }
+//    public static Player load(String fileName) {
+//        return null;
+//    }
 
     public void getStats(){
-        //todo
-        //print out stats e.g. attack, hp
-    }
-
-    public void save() {
-        // todo
+        System.out.println("Health: " + this.getHealth() + ". Damage: " + this.getDamage());
     }
 
     public List<Item> searchItem(String itemName, List<Item> itemList) {

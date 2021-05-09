@@ -8,31 +8,16 @@ abstract class Character {
     private int damage;  // Fighting level of the character. Higher => better chance of winning that battle.
     private int health;
     private String name;
-    String intro;
     private String weapon = "hands";
     private int cash;
     private Map<Item,Integer> items;
 
-
-    public Character() {
-        this(100, 100, "name", "", 0, null);
-    }
-
-    public Character(int damage, int health, String name, String intro, int cash, Map<Item,Integer> items) {
+    public Character(int damage, int health, String name, int cash, Map<Item,Integer> items) {
         this.damage = damage;
         this.health = health;
         this.name = name;
-        this.intro = intro;
         this.cash = cash;
         this.items = items;
-    }
-
-    public String getIntro() {
-        return intro;
-    }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
     }
 
     public void displayItems() {

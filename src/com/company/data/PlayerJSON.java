@@ -26,7 +26,7 @@ public class PlayerJSON {
     }
 
     public static ArrayList deserializeJSON() {
-        ArrayList<LocationData> data = new ArrayList<>();
+        ArrayList<Player> data = new ArrayList<>();
         Gson gson = new Gson();
         JsonReader jsonReader = null;
         final Type listObjectType = new TypeToken<ArrayList<Player>>(){}.getType();
@@ -46,5 +46,13 @@ public class PlayerJSON {
                 return data;
         }
         return null;
+    }
+
+    public static void savePlayer(Player player) {
+        ArrayList<Player> deserializedList = deserializeJSON();
+        Player playerToReplace = getSpecificPlayer(deserializedList, player.getEmail());
+        deserializedList.remove(playerToReplace);
+        deserializedList.add(player);
+        serializeJSON(deserializedList);
     }
 }
