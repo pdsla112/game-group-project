@@ -111,8 +111,8 @@ public class Game {
 
         LevelNode cottageRoot = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
         cottage.levelMap = new LevelMap(cottageRoot);
-        LevelNode cottageOp1 = new LevelNode("approach","You approach the child, and take a closer look.",null);
-        LevelNode cottageOp2 = new LevelNode("ignore","You ignore the child",null);
+        LevelNode cottageOp1 = new LevelNode(\"approach\",\"You approach the child, and take a closer look.\",null);\n");
+        LevelNode cottageOp2 = new LevelNode(\"ignore","You ignore the child",null);
         cottage.levelMap.setAdjacent(cottageRoot,new ArrayList<>(Arrays.asList(cottageOp1,cottageOp2)));
         LevelNode cottageOp3 = new LevelNode("wake her up","You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don't want to hurt child, but at the same time, you don't want to die.",null);
         LevelNode cottageOp4 = new LevelNode("leave her alone","You don't want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",null);
@@ -169,6 +169,7 @@ public class Game {
         //depends on approachProb?
 
 
+
         forest.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(forestpsycho)));
         forest.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(forestpsycholose)));
 
@@ -176,14 +177,14 @@ public class Game {
         //hospital
         LevelNode rootHospital = new LevelNode(null,"You are now in the hospital.",null);
         hospital.levelMap = new LevelMap(rootHospital);
-        LevelNode hospitalfirstaid = new LevelNode(null,"While walking in the hallway, you found the first aid kit near the staircase.\nCongratulations, you collected a first aid kit!",null);
+        LevelNode hospitalfirstaid = new LevelNode(null,"While walking in the hallway, you found the first aid kit near the staircase.\nCongratulations, you collected a first aid kit!",new ArrayList<>(Arrays.asList("item 1")); //item 1 = medkit
         hospital.levelMap.setAdjacent(rootHospital,new ArrayList<>(Arrays.asList(hospitalfirstaid)));
         LevelNode hospitalpsycho = new LevelNode(null,"Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.\nAt third floor, you found someone walking towards you.\n\nHe looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips.\nHe realised you coming towards him as well, and he seems to want a conversation with you.",null);
         LevelNode hospitalOp1 = new LevelNode(null,"Go and talk with him.",null);
         LevelNode hospitalOp2 = new LevelNode(null, "Ignore.",null);
         hospital.levelMap.setAdjacent(hospitalfirstaid,new ArrayList<>(Arrays.asList(hospitalpsycho)));
         hospital.levelMap.setAdjacent(hospitalpsycho,new ArrayList<>(Arrays.asList(hospitalOp1,hospitalOp2)));
-        LevelNode hospitalpsychoapproach = new LevelNode(null,"He was holding a scapel you couldn't see from the distance.\nHe ran towards you so that you failed to escape and got a cut.\n\nYou realised that you are not able to run away, so decided to fight back.",null);
+        LevelNode hospitalpsychoapproach = new LevelNode(null,"He was holding a scapel you couldn't see from the distance.\nHe ran towards you so that you failed to escape and got a cut.\n\nYou realised that you are not able to run away, so decided to fight back.",new ArrayList<>(Arrays.asList("psychofight"));
         LevelNode hospitalpsychoignore = new LevelNode(null,"You thought that it is weird to have person in the middle of the hospital hallway, so you ignored him and went up the staircase quickly so he wouldn't follow you.",null);
         hospital.levelMap.setAdjacent(hospitalOp1,new ArrayList<>(Arrays.asList(hospitalpsychoapproach)));
         hospital.levelMap.setAdjacent(hospitalOp2,new ArrayList<>(Arrays.asList(hospitalpsychoignore)));
@@ -196,7 +197,7 @@ public class Game {
         hospital.levelMap.setAdjacent(hospitalpsychoignore,new ArrayList<>(Arrays.asList(hospitaldoc)));
         hospital.levelMap.setAdjacent(hospitalpsychowin,new ArrayList<>(Arrays.asList(hospitaldoc)));
         hospital.levelMap.setAdjacent(hospitaldoc,new ArrayList<>(Arrays.asList(hospitalOp3,hospitalOp4)));
-        LevelNode hospitaldocapproach = new LevelNode(null,"You decided to talk to her, and after a short conversation, you found out that she was a doctor.\nYou showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment.\nFortunately, she gladly helped me.",null);
+        LevelNode hospitaldocapproach = new LevelNode(null,"You decided to talk to her, and after a short conversation, you found out that she was a doctor.\nYou showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment.\nFortunately, she gladly helped me.",new ArrayList<>(Arrays.asList("heal 10"));//change value accoridngly
         LevelNode hospitaldocteam = new LevelNode(null,"You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together.",null);//combine? depends on how healAmount works
         LevelNode hospitaldocignore = new LevelNode(null,"Feeling suspicious, you decided to pass by as if you had seen nothing.",null);
         hospital.levelMap.setAdjacent(hospitalOp3,new ArrayList<>(Arrays.asList(hospitaldocapproach)));
