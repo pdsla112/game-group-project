@@ -8,4 +8,12 @@ public class ItemData {
         this.itemType = itemType;
         this.intoText = introText;
     }
+
+    public String getItemType() {
+        return this.itemType;
+    }
+
+    public String getIntoText() {
+        return this.intoText;
+    }
 }
