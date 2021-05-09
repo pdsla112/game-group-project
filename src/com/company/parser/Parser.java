@@ -39,27 +39,32 @@ public class  Parser {
             }
 
         } catch(NumberFormatException e) {
-            return parseAction(player, userCommand, menu);
+            //return parse2(player, userCommand);
         }
 
         return false;
     }
-    public boolean parseAction(Player player, String userCommand, Menu menu) throws DeathException {
 
-        MenuItem selected = new GenericMenuItem(userCommand);
+    //returns true if game is still running afterwards
+    public boolean parseAction(Player player, String userCommand) throws DeathException {
+
+       //split command
+
+        //e.g. commands
+        // heal 10
+        // item 12              (gives player item with id 12)
+
         if(userCommand!= null){
-            if(selected.equals("h")) {
-                menu.printMenuItems();
-                return true;
+            if(userCommand.equals("heal")) {
+                // heal player by set amount
             }
-            else if(selected.equals("s")){
-                player.save();
-                return true;
+            else if(userCommand.equals("psychofight")){
+                //enter zombie fight
             }
-            else if(selected.equals("gs")){
-                player.getStats();
-                return true;
+            else if(userCommand.equals("zombiefight")){
+
             }
+
 
             }
         return false;
