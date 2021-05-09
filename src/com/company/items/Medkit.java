@@ -1,10 +1,10 @@
 package com.company.items;
 
-public class FirstAidKit {
+public class Medkit {
     private int healValue;   // Amount that the first aid kit heals the player per use.
     private int durability;  // Number of times the first aid kit can be used before it becomes unusable.
 
-    public FirstAidKit(int healValue, int durability) {
+    public Medkit(int healValue, int durability) {
         this.healValue = healValue;
         this.durability = durability;
     }
