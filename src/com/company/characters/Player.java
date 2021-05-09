@@ -5,11 +5,13 @@ import com.company.repository.ItemRepo;
 import com.company.items.Item;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Player extends Character{
 
-    protected static ItemRepo itemRepo = new ItemRepo();
+    private Map<Integer, Integer> itemsMap = new HashMap<>();
     //protected static LocationRepo locationRepo = new LocationRepo();
     private Location location;
     //private boolean deathValue;  // True => Player is dead.  False => Player is alive.
@@ -33,6 +35,14 @@ public class Player extends Character{
         //todo
         return false;
 
+    }
+
+    public void addItem(int id) {
+        if (itemsMap.containsKey(id)) {
+            itemsMap.put(id, itemsMap.get(id)+1);
+        } else {
+            itemsMap.put(id, 1);
+        }
     }
 
     public Location getLocation() {
