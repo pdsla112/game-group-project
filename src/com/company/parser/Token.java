@@ -16,7 +16,7 @@ package com.company.parser;
 
 public class Token {
     
-	public enum Type {UNKNOWN, USE, ADD, SUB, MUL, DIV, LBRA, RBRA};
+	public enum Type {UNKNOWN, USE, ITEM, TALK, HELP, EXIT};
     private String _token = "";
     private Type _type = Type.UNKNOWN;
     

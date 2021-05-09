@@ -1,5 +1,8 @@
 package com.company.parser;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Name: Tokenizer.java
  *
@@ -18,7 +21,7 @@ package com.company.parser;
 
 public class Tokenizer {
 
-    private String _buffer;		//save text
+    private List<String> _buffer;		//save text
     private Token currentToken;	//save token extracted from next()
 
     /**
@@ -27,7 +30,7 @@ public class Tokenizer {
      *  **** please do not modify this part ****
      */
     public Tokenizer(String text) {
-    	_buffer = text;		// save input text (string)
+        _buffer = Arrays.asList(text.trim().split(" "));		// save input text (string)
     	next();		// extracts the first token.
     }
     
@@ -36,49 +39,29 @@ public class Tokenizer {
      *  save the token to {@code currentToken}.
      */
     public void next() {
-        _buffer = _buffer.trim(); // remove whitespace
-        
-         if(_buffer.isEmpty()) {
+
+        if (_buffer.isEmpty()) {
             currentToken = null;	// if there's no string left, set currentToken null and return
             return;
-         }
-
-        char firstChar = _buffer.charAt(0);
-        if(firstChar == '+')
-        	currentToken = new Token("+", Token.Type.ADD);
-        if(firstChar == '-')
-        	currentToken = new Token("-", Token.Type.SUB);
-
-
-        
-        // TODO: Implement multiplication and division tokenising
-        // TODO: Implement left round bracket and right round bracket
-        // TODO: Implement integer literal tokenising
-        // HINT: Character.isDigit() may be useful        
-        // ########## YOUR CODE STARTS HERE ##########
-        if(firstChar == '*')
-            currentToken = new Token("*", Token.Type.MUL);
-        if(firstChar == '/')
-            currentToken = new Token("/", Token.Type.DIV);
-        if(firstChar == '(')
-            currentToken = new Token("(", Token.Type.LBRA);
-        if(firstChar == ')')
-            currentToken = new Token(")", Token.Type.RBRA);
-        if(Character.isDigit(firstChar)) {
-            int end=0;
-            while ((end < _buffer.length()) && Character.isDigit(_buffer.charAt(end))) {
-                end++;
-            }
-            currentToken = new Token(_buffer.substring(0,end), Token.Type.INT);
-
         }
-       
+
+        String firstWord = _buffer.get(0).trim(); // remove whitespace
+
+        if(firstWord.equals("use"))
+        	currentToken = new Token("+", Token.Type.USE);
+        if(firstWord.equals("help"))
+        	currentToken = new Token("-", Token.Type.HELP);
+
+        if(firstWord.equals("talk"))
+            currentToken = new Token("-", Token.Type.TALK);
+
+        if(firstWord.equals("exit") || firstWord.equals("quit"))
+            currentToken = new Token("-", Token.Type.EXIT);
        
         // ########## YOUR CODE ENDS HERE ##########
         
         // Remove the extracted token from buffer
-        int tokenLen = currentToken.token().length();
-        _buffer = _buffer.substring(tokenLen);
+        _buffer.remove(0);
     }
 
     /**
