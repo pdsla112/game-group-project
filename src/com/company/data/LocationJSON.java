@@ -17,6 +17,15 @@ public class LocationJSON {
     public static void main(String[] args) {
         ArrayList<LocationData> objectList = new ArrayList<>();
 
+        LocationData object0 = new LocationData(
+                "home",
+                "Initial Place.",
+                null,
+                null,
+                null,
+                null
+        );
+
         PsychoData psychoData1 = new PsychoData(
                 "On the third floor, you found someone walking towards you. " +
                         "He looks friendly with slightly chubby face, " +
