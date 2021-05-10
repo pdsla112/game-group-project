@@ -1,16 +1,13 @@
 package com.company;
 
 import com.company.characters.Player;
-import com.company.data.Initialization;
-import com.company.data.PlayerJSON;
+import com.company.data.*;
 import com.company.locations.GameMap;
 import com.company.locations.Location;
 import com.company.menus.Menu;
 import com.company.menus.GenericMenuItem;
 import com.company.parser.Parser;
 import com.company.LevelNode;
-import com.company.data.InitializeJSON;
-import com.company.data.LocationJSON;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +29,7 @@ public class Game {
         setupGameMap();
 
         player.getLocation().displayInformation();
+
 
         boolean running = true;
         try {
@@ -93,11 +91,12 @@ public class Game {
     }
     public void setupGameMap() {
         map = new GameMap();
+        ArrayList<LocationData> deserializedList = LocationJSON.deserializeJSON();
         //map = loadfromjson();
         //setup map
         Location hospital = new Location("hospital","You are now in the hospital.");
         map.addLocation(hospital);
-        Location cottage = new Location("cottage", "You found a cottage while you were looking for a place to hide, avoiding zombies.");
+        Location cottage = new Location("cottage", LocationJSON.getSpecificLocationData(deserializedList,"cottage").getInitialText());//"You found a cottage while you were looking for a place to hide, avoiding zombies."
         map.addLocation(cottage);
         Location forest = new Location("forest", "You found a forest and went in wondering if you could hunt for food.");
         map.addLocation(forest);

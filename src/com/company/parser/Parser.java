@@ -31,6 +31,7 @@ public class  Parser {
             if (selected != null) {
                 if (selected instanceof Location) {
                     player.setLocation((Location) selected);
+                    player.getLocation().displayInformation();
                     return true;
                 } else if (selected instanceof LevelNode) {
                     player.getLocation().getLevelMap().setCurrentNode((LevelNode) selected);
