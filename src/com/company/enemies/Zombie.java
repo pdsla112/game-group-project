@@ -1,15 +1,14 @@
 package com.company.enemies;
 
-import com.company.characters.NPC;
 
-public class Zombie extends NPC {
+
+public class Zombie {
     private int attackAmount;
     private boolean deathValue;
     private int approachProb;
     private boolean willApproach;
 
     public Zombie(String id, int attackAmount, boolean deathValue, int approachProb) {
-        super(id);
         this.attackAmount = attackAmount;
         this.deathValue = deathValue;
         this.approachProb = approachProb;

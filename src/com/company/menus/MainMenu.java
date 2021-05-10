@@ -40,8 +40,7 @@ public class MainMenu {
 
                 Player player = new Player(name, email, difficulty);
 
-
-                PlayerJSON.savePlayer(player);
+                //PlayerJSON.savePlayer(player);
 //                PersistDataJSON persistJson = new PersistDataJSON();
 //                Player player = persistJson.load("new-player.json");
 //                new Game(player);
