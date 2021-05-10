@@ -98,7 +98,7 @@ public class Game {
         map.addLocation(hospital);
         Location cottage = new Location("cottage", LocationJSON.getSpecificLocationData(deserializedList,"cottage").getInitialText());//"You found a cottage while you were looking for a place to hide, avoiding zombies."
         map.addLocation(cottage);
-        Location forest = new Location("forest", "You found a forest and went in wondering if you could hunt for food.");
+        Location forest = new Location("forest", LocationJSON.getSpecificLocationData(deserializedList,"forest").getInitialText());//"You found a forest and went in wondering if you could hunt for food."
         map.addLocation(forest);
         Location lab = new Location("lab", "Congratulations, you finally reached the laboratory!");
         map.addLocation(lab);
@@ -127,7 +127,8 @@ public class Game {
 
         //cottage
         //todo cottage.levelMap = loadlevelmapfromjson();
-
+        //cottage.levelMap = loadlevelmapfromjson();
+        //save all these into json
         LevelNode cottageRoot = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
         cottage.levelMap = new LevelMap(cottageRoot);
         LevelNode cottageOp1 = new LevelNode("approach","You approach the child, and take a closer look.",null);

@@ -76,10 +76,10 @@ public class  Parser {
                 // heal player by set amount
             }
             else if(command.equals("psychoFight")){
-                new BattleMenu();
+                new BattleMenu();//update
             }
             else if(command.equals("zombieFight")){
-                new BattleMenu();
+                new BattleMenu();//update
             }
 
 
