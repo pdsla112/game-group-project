@@ -24,7 +24,7 @@ public class Game {
         System.out.println("You are one of the people who decided to face the danger and go to the Laboratory for your family and neighbours.\n");
         System.out.println("What is your name?");
         player.setName(Parser.getInputString());
-        System.out.println(player.getName()); //check name, later delete
+        System.out.println("Hello " + player.getName() + "."); //check name, later delete
 
 
         setupGameMap();
@@ -45,10 +45,26 @@ public class Game {
                     if (player.getLocation() == map.getFinalLocation()) {
                         throw new WinException("win");
                     } else {
+
                         List<Location> adjacentLocations = map.getAdjacent(player.getLocation());
                         Menu locationMenu = new Menu(adjacentLocations);
                         locationMenu.printMenuItems();
                         running = parser.parse(player, parser.getInputString(), locationMenu);
+
+                        boolean endPrompt = false;
+                        while (!endPrompt) {
+                            System.out.println("Would you like to save your progress?(y/n)");
+                            String response = parser.getInputString();
+                            if (response.equals("y") || response.equals("yes")) {
+                                //save game (player data)
+                                //
+                                System.out.println("game saved.");
+                                endPrompt = true;
+                            } else if (response.equals("n") || response.equals("no")) {
+                                System.out.println("game not saved.");;
+                                endPrompt = true;
+                            }
+                        }
                     }
 
                 } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {
@@ -75,6 +91,7 @@ public class Game {
     }
     public void setupGameMap() {
         map = new GameMap();
+        //map = loadfromjson();
         //setup map
         Location hospital = new Location("hospital","You are now in the hospital.");
         map.addLocation(hospital);
@@ -108,6 +125,7 @@ public class Game {
 
 
         //cottage
+        //todo cottage.levelMap = loadlevelmapfromjson();
 
         LevelNode cottageRoot = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
         cottage.levelMap = new LevelMap(cottageRoot);

@@ -97,7 +97,7 @@ public class InitializeJSON {
         /**
          * Example of how to use the deserializeJSON method...
          */
-        List<Initialization> result = InitializeJSON.deserializeJSON();
+        ArrayList<Initialization> result = InitializeJSON.deserializeJSON();
         System.out.println(result.get(0).getText());
     }
 
@@ -111,14 +111,14 @@ public class InitializeJSON {
         }
     }
 
-    public static List<Initialization> deserializeJSON() {
-        List<Initialization> list = new ArrayList<>();
+    public static ArrayList<Initialization> deserializeJSON() {
+        ArrayList<Initialization> list = new ArrayList<>();
         Gson gson = new Gson();
         JsonReader jsonReader = null;
-        final Type CUS_LIST_TYPE = new TypeToken<List<Initialization>>() {}.getType();
+        final Type CUS_LIST_TYPE = new TypeToken<ArrayList<Initialization>>() {}.getType();
         try {
             jsonReader = new JsonReader(new FileReader("InitializationDB.json"));
-            List<Initialization> data = gson.fromJson(jsonReader, CUS_LIST_TYPE);
+            ArrayList<Initialization> data = gson.fromJson(jsonReader, CUS_LIST_TYPE);
             for (Initialization init : data) {
                 list.add(init);
             }

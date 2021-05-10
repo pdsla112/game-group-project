@@ -2,12 +2,11 @@ package com.company.locations;
 
 import com.company.characters.Doctor;
 import com.company.enemies.Psychopath;
-import com.company.items.FirstAidKit;
-import com.company.locations.Location;
+import com.company.items.Medkit;
 
 public class Hospital extends Location {
     private Doctor doctor;
-    private FirstAidKit firstAidKit;
+    private Medkit firstAidKit;
     private Psychopath psychopath;
 
 //    public Hospital(boolean visited, Doctor doctor, FirstAidKit firstAidKit, Psychopath psychopath) {
