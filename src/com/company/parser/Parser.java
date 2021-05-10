@@ -5,6 +5,7 @@ import com.company.LevelNode;
 import com.company.MenuItem;
 import com.company.characters.Player;
 import com.company.locations.Location;
+import com.company.menus.BattleMenu;
 import com.company.menus.GenericMenuItem;
 import com.company.menus.Menu;
 
@@ -46,6 +47,8 @@ public class  Parser {
     }
 
     //returns true if game is still running afterwards
+    //user doesn't choose to do these things
+    //done when player
     public boolean parseAction(Player player, String userCommand) throws DeathException {
 
         String[] userCommandSplit = userCommand.split(" ");
@@ -55,6 +58,11 @@ public class  Parser {
         //e.g. commands
         // heal 10
         // item 12              (gives player item with id 12)
+        // clearRoad
+        // huntAnimal
+        // psychoFight
+        // zombieFight
+        //
 
         if(command!= null){
             if (command.equals("item")) {
@@ -66,11 +74,11 @@ public class  Parser {
                 player.setHealth(Math.max(100,player.getHealth()+healAmount));
                 // heal player by set amount
             }
-            else if(command.equals("psychofight")){
-                //enter zombie fight
+            else if(command.equals("psychoFight")){
+                new BattleMenu();
             }
-            else if(command.equals("zombiefight")){
-
+            else if(command.equals("zombieFight")){
+                new BattleMenu();
             }
 
 
