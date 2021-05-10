@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.characters.Player;
+import com.company.data.Initialization;
 import com.company.data.PlayerJSON;
 import com.company.locations.GameMap;
 import com.company.locations.Location;
@@ -8,6 +9,8 @@ import com.company.menus.Menu;
 import com.company.menus.GenericMenuItem;
 import com.company.parser.Parser;
 import com.company.LevelNode;
+import com.company.data.InitializeJSON;
+import com.company.data.LocationJSON;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,6 +25,7 @@ public class Game {
         this.player = p;
         this.parser = new Parser(p);
         //System.out.println(p.getIntro());
+        //InitializeJSON.serializeJSON(//object1,2,...?).getText();
         System.out.println("You are one of the people who decided to face the danger and go to the Laboratory for your family and neighbours.\n");
 
 

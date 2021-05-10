@@ -203,6 +203,7 @@ public class LocationJSON {
                 null
         );
 
+        objectList.add(object0);
         objectList.add(object1);
         objectList.add(object2);
         objectList.add(object3);
