@@ -12,21 +12,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Player extends Character{
+public class Player {
+
+    private int damage;  // Fighting level of the character. Higher => better chance of winning that battle.
+    private int health;
+    private String name;
+    private int cash;
+    private Map<Item,Integer> items;
 
     private Map<Integer, Integer> itemsMap = new HashMap<>();
     //protected static LocationRepo locationRepo = new LocationRepo();
-    private Location location;
+    private Location location = null;
     //private boolean deathValue;  // True => Player is dead.  False => Player is alive.
 
     private String email;
 
-    public Player(int damage, int health, String name, String intro, int cash, Map<Item,Integer> items, String email, Location location) {
+    public Player(String name, String email, int level) {
         //temporary (load from json)
-        super(damage, health, name, cash, items);
         this.location = location;
         this.email = email;
     }
+
 
 //    protected static String getProfileFileName(String name) {
 //        //todo
@@ -59,7 +65,7 @@ public class Player extends Character{
 //    }
 
     public void getStats(){
-        System.out.println("Health: " + this.getHealth() + ". Damage: " + this.getDamage());
+        System.out.println("Health: " + this.health + ". Damage: " + this.damage);
     }
 
     public List<Item> searchItem(String itemName, List<Item> itemList) {
@@ -82,6 +88,22 @@ public class Player extends Character{
     public boolean hasItem(Item item) {
         //todo
         return false;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     public String getEmail() {

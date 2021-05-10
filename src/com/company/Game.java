@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.characters.Player;
+import com.company.data.PlayerJSON;
 import com.company.locations.GameMap;
 import com.company.locations.Location;
 import com.company.menus.Menu;
@@ -20,11 +21,8 @@ public class Game {
     public Game(Player p) {
         this.player = p;
         this.parser = new Parser(p);
-        System.out.println(p.getIntro());
+        //System.out.println(p.getIntro());
         System.out.println("You are one of the people who decided to face the danger and go to the Laboratory for your family and neighbours.\n");
-        System.out.println("What is your name?");
-        player.setName(Parser.getInputString());
-        System.out.println("Hello " + player.getName() + "."); //check name, later delete
 
 
         setupGameMap();
@@ -57,7 +55,7 @@ public class Game {
                             String response = parser.getInputString();
                             if (response.equals("y") || response.equals("yes")) {
                                 //save game (player data)
-                                //
+                                PlayerJSON.savePlayer(player);
                                 System.out.println("game saved.");
                                 endPrompt = true;
                             } else if (response.equals("n") || response.equals("no")) {
@@ -129,7 +127,7 @@ public class Game {
 
         LevelNode cottageRoot = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
         cottage.levelMap = new LevelMap(cottageRoot);
-        LevelNode cottageOp1 = new LevelNode("approach\",\"You approach the child, and take a closer look.\",null);\n");
+        LevelNode cottageOp1 = new LevelNode("approach","You approach the child, and take a closer look.",null);
         LevelNode cottageOp2 = new LevelNode("ignore","You ignore the child",null);
         cottage.levelMap.setAdjacent(cottageRoot,new ArrayList<>(Arrays.asList(cottageOp1,cottageOp2)));
         LevelNode cottageOp3 = new LevelNode("wake her up","You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don't want to hurt child, but at the same time, you don't want to die.",null);

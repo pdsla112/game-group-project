@@ -7,9 +7,9 @@ public class NPC extends Character{
     private String id;
 
 
-    public NPC(String id) {
-        this.id = id;
-    }
+//    public NPC(String id) {
+//        this.id = id;
+//    }
 
     //load items from json
     public void setItems(File file, int itemLimit, int i) {
