@@ -32,6 +32,28 @@ public class Player {
         this.location = location;
     }
 
+<<<<<<< HEAD
+=======
+
+//    protected static String getProfileFileName(String name) {
+//        //todo
+//        return null;
+//    }
+//    public static boolean profileExists(String name) {
+//        //todo
+//        return false;
+//
+//    }
+
+    public void showItems() {
+        //todo
+    }
+
+    public void showStats() {
+        //todo
+    }
+
+>>>>>>> f71d8ffd1a27d151bd85574511a80ef33d6b298f
     public void addItem(int id) {
         if (itemsMap.containsKey(id)) {
             itemsMap.put(id, itemsMap.get(id)+1);

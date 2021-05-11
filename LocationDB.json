@@ -19,6 +19,10 @@
     }
   },
   {
+    "location": "home",
+    "initialText": "Choose a place to go."
+  },
+  {
     "location": "cottage",
     "initialText": "You found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.",
     "psychoData": {

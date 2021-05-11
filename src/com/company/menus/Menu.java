@@ -7,13 +7,19 @@ import java.util.*;
 public class Menu{
     protected List<? extends MenuItem> menuItems;
     protected Map<Integer, MenuItem> keyMap = new HashMap<>();
+    private int size;
 
 
     public Menu(List<? extends MenuItem> menuItems) {
         this.menuItems = menuItems;
+        this.size = menuItems.size();
         for (int i = 0; i< menuItems.size(); i++) {
             keyMap.put(i,menuItems.get(i));
         }
+    }
+
+    public int getSize() {
+        return size;
     }
 
 
