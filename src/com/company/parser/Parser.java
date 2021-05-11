@@ -158,6 +158,7 @@ public class  Parser {
         // zombieFight
         // how are we going to set player lose/win? will it be added as an action too eg.psychoFight, after lose
         // if hunter join the attacklevel suppposed to increase (for hunting animal in forest), add parser action for this. eg."attacklevelincrease"
+        //are we still having isVisited() for visited locations -> testing? If so, will it be added in parser action? eg. when reach cottage, cottage isVisited()=true?
 
         if(command!= null){
             if (command.equals("item")) {
