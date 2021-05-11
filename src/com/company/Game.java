@@ -150,6 +150,7 @@ public class Game {
         cottage.levelMap.setAdjacent(cottageOp7,new ArrayList<>(Arrays.asList(cottageOp9)));
         cottage.levelMap.setAdjacent(cottageOp8,new ArrayList<>(Arrays.asList(cottageOp9)));
         LevelNode cottageOp10 = new LevelNode("approach the man ","You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",new ArrayList<>(Arrays.asList("heal 10")));
+        //when hunter added are we making the hunting at forest easier aka attacklevel increase? if so, add to parser action
         LevelNode cottageOp11 = new LevelNode("ignore him","You ignore the man and leave the cottage.\nChoose the next location to go.",null);
         cottage.levelMap.setAdjacent(cottageOp9,new ArrayList<>(Arrays.asList(cottageOp10,cottageOp11)));
 
