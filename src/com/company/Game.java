@@ -51,20 +51,6 @@ public class Game {
                         locationMenu.printMenuItems();
                         running = parser.parse(player, parser.getInputString(), locationMenu);
 
-                        boolean endPrompt = false;
-                        while (!endPrompt) {
-                            System.out.println("Would you like to save your progress?(y/n)");
-                            String response = parser.getInputString();
-                            if (response.equals("y") || response.equals("yes")) {
-                                //save game (player data)
-                                PlayerJSON.savePlayer(player);
-                                System.out.println("game saved.");
-                                endPrompt = true;
-                            } else if (response.equals("n") || response.equals("no")) {
-                                System.out.println("game not saved.");;
-                                endPrompt = true;
-                            }
-                        }
                     }
 
                 } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {

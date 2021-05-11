@@ -49,17 +49,20 @@ package com.company.parser;
 
    */
 
-public class Parser2 {
+import java.util.List;
+
+public class TokenParser {
 
     Tokenizer _tokenizer;
 
 
-    public Parser2(Tokenizer tokenizer) {
+    public TokenParser(Tokenizer tokenizer) {
         _tokenizer = tokenizer;
     }
 
     public Sentence parseSentence() {
         Token.Type verbType = _tokenizer.current().type();
+
         Sentence verb = parseVerb();
 
         if (_tokenizer.current() != null) {
@@ -75,30 +78,33 @@ public class Parser2 {
             if (verbType == Token.Type.VERBG4) {
                 return new SentenceG4(verb, parsePreposition(), parseObject());
             }
+            return new IncorrectSentence(verb, parseObject());
         }
-        return new UnknownSentence();
+        return new IncorrectSentence(verb);
     }
 
     public Sentence parseVerb() {
         if (_tokenizer.current() != null) {
+            Token current = _tokenizer.current();
             if (_tokenizer.current().type() == Token.Type.VERBG1) {
                 _tokenizer.next();
-                return new VerbG1(_tokenizer.current().token());
+                return new VerbG1(current.token());
             }
             if (_tokenizer.current().type() == Token.Type.VERBG2) {
                 _tokenizer.next();
-                return new VerbG2(_tokenizer.current().token());
+                return new VerbG2(current.token());
             }
             if (_tokenizer.current().type() == Token.Type.VERBG3) {
                 _tokenizer.next();
-                return new VerbG3(_tokenizer.current().token());
+                return new VerbG3(current.token());
             }
             if (_tokenizer.current().type() == Token.Type.VERBG4) {
                 _tokenizer.next();
-                return new VerbG4(_tokenizer.current().token());
+                return new VerbG4(current.token());
             }
+            return new Unknown(current.token());
         }
-        return new UnknownSentence();
+        return null;
     }
 
     public Sentence parseObject() {
@@ -113,6 +119,9 @@ public class Parser2 {
                 if (nounType == Token.Type.NOUNG1) {
                     return new ObjectG1(determiner, noun);
                 }
+                if (nounType == Token.Type.NOUNG4) {
+                    return new ObjectG4(determiner, noun);
+                }
             }
             if (determinerType == Token.Type.DETERMINERG2) {
                 if (nounType == Token.Type.NOUNG2) {
@@ -121,64 +130,69 @@ public class Parser2 {
                 if (nounType == Token.Type.NOUNG3) {
                     return new ObjectG3(determiner, noun);
                 }
-                if (nounType == Token.Type.NOUNG4) {
-                    return new ObjectG4(determiner, noun);
-                }
             }
+            return new IncorrectSentence(determiner, noun);
         }
-        return new UnknownSentence();
+        return new IncorrectSentence(determiner);
 
     }
 
     public Sentence parseDeterminer() {
         if (_tokenizer.current() != null) {
-            if (_tokenizer.current().type() == Token.Type.DETERMINERG1) {
+            Token current = _tokenizer.current();
+            if (current.type() == Token.Type.DETERMINERG1) {
                 _tokenizer.next();
-                return new DeterminerG1(_tokenizer.current().token());
+                return new DeterminerG1(current.token());
             }
-            if (_tokenizer.current().type() == Token.Type.DETERMINERG2) {
+            if (current.type() == Token.Type.DETERMINERG2) {
                 _tokenizer.next();
-                return new DeterminerG2(_tokenizer.current().token());
+                return new DeterminerG2(current.token());
             }
+            return new Unknown(current.token());
 
         }
-        return new UnknownSentence();
+        return null;
 
     }
 
     public Sentence parseNoun() {
         if (_tokenizer.current() != null) {
-            if (_tokenizer.current().type() == Token.Type.NOUNG1) {
+            Token current = _tokenizer.current();
+            if (current.type() == Token.Type.NOUNG1) {
                 _tokenizer.next();
-                return new NounG1(_tokenizer.current().token());
+                return new NounG1(current.token());
             }
-            if (_tokenizer.current().type() == Token.Type.NOUNG2) {
+            if (current.type() == Token.Type.NOUNG2) {
                 _tokenizer.next();
-                return new NounG2(_tokenizer.current().token());
+                return new NounG2(current.token());
             }
-            if (_tokenizer.current().type() == Token.Type.NOUNG3) {
+            if (current.type() == Token.Type.NOUNG3) {
                 _tokenizer.next();
-                return new NounG3(_tokenizer.current().token());
+                return new NounG3(current.token());
             }
-            if (_tokenizer.current().type() == Token.Type.NOUNG4) {
+            if (current.type() == Token.Type.NOUNG4) {
                 _tokenizer.next();
-                return new NounG4(_tokenizer.current().token());
+                return new NounG4(current.token());
             }
+            return new Unknown(current.token());
         }
-        return new UnknownSentence();
+        return null;
 
     }
 
     public Sentence parsePreposition() {
         if (_tokenizer.current() != null) {
-            if (_tokenizer.current().type() == Token.Type.PREPOSITIONG1) {
+            Token current = _tokenizer.current();
+            if (current.type() == Token.Type.PREPOSITIONG1) {
                 _tokenizer.next();
-                return new PrepositionG1(_tokenizer.current().token());
+                return new PrepositionG1(current.token());
             }
         }
-        return new UnknownSentence();
+        return null;
 
     }
+
+
 
 
 

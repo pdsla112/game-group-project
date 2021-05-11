@@ -14,7 +14,7 @@ public class SentenceG4 extends Sentence{
 
     @Override
     public String show() {
-        return (prepositionG1 == null ? "" : prepositionG1.show() + " ") + verbG4.show() + " " + objectG4.show();
+        return  verbG4.show() + " " + (prepositionG1 == null ? "" : prepositionG1.show() + " ") + objectG4.show();
     }
 
 }
