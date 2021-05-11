@@ -267,9 +267,6 @@ public class Game {
         lab.levelMap = new LevelMap(rootLab);
         // set lab as completion node
         lab.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(rootLab)));
-
-
-        //continue, DO THIS (NAYOON)
     }
 }
 
