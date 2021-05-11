@@ -63,7 +63,7 @@ public class  Parser {
         // huntAnimal
         // psychoFight
         // zombieFight
-        //
+        // how are we going to set player lose/win? will it be added as an action too eg.psychoFight, after lose
 
         if(command!= null){
             if (command.equals("item")) {
