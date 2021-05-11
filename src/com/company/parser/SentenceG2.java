@@ -2,8 +2,8 @@ package com.company.parser;
 
 public class SentenceG2 extends Sentence{
 
-    private Sentence verbG2;
-    private Sentence objectG2;
+    public Sentence verbG2;
+    public Sentence objectG2;
 
     public SentenceG2(Sentence verbG2, Sentence objectG2) {
         this.verbG2 = verbG2;

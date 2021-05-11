@@ -59,7 +59,7 @@ public class Tokenizer {
     private List<String> _buffer;		//save text
     private Token currentToken;	//save token extracted from next()
 
-    public List<String> verbG1 = new ArrayList<>(Arrays.asList("exit","save"));
+    public List<String> verbG1 = new ArrayList<>(Arrays.asList("exit"));
     public List<String> verbG2 = new ArrayList<>(Arrays.asList("examine"));
     public List<String> verbG3 = new ArrayList<>(Arrays.asList("use"));
     public List<String> verbG4 = new ArrayList<>(Arrays.asList("look"));
@@ -125,7 +125,7 @@ public class Tokenizer {
             currentToken = new Token(firstWord, Token.Type.NOUNG1);
 
         if (nounG2.contains(firstWord))
-            currentToken = new Token(firstWord, Token.Type.NOUNG3);
+            currentToken = new Token(firstWord, Token.Type.NOUNG2);
 
         if (nounG3.contains(firstWord))
             currentToken = new Token(firstWord, Token.Type.NOUNG3);

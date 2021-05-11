@@ -2,15 +2,15 @@ package com.company.parser;
 
 public class DeterminerG1 extends Sentence{
 
-    private String determinerG1;
+    public String word;
 
-    public DeterminerG1(String determinerG1) {
-        this.determinerG1 = determinerG1;
+    public DeterminerG1(String word) {
+        this.word = word;
     }
 
     @Override
     public String show() {
-        return determinerG1;
+        return word;
     }
 
 }

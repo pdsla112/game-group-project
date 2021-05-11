@@ -2,8 +2,8 @@ package com.company.parser;
 
 public class IncorrectSentence extends Sentence{
 
-    Sentence s1;
-    Sentence s2;
+    public Sentence s1;
+    public Sentence s2;
 
     public IncorrectSentence(Sentence s1, Sentence s2) {
         this.s1 = s1;

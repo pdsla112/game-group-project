@@ -2,15 +2,15 @@ package com.company.parser;
 
 public class NounG1 extends Sentence{
 
-    private String nounG1;
+    public String word;
 
-    public NounG1(String nounG1) {
-        this.nounG1 = nounG1;
+    public NounG1(String word) {
+        this.word = word;
     }
 
     @Override
     public String show() {
-        return nounG1;
+        return word;
     }
 
 }

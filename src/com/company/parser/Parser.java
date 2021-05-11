@@ -9,6 +9,7 @@ import com.company.locations.Location;
 import com.company.menus.BattleMenu;
 import com.company.menus.Menu;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -67,14 +68,49 @@ public class  Parser {
                 if (sentence instanceof IncorrectSentence) {
                     System.out.println(sentence.show());
                 } else {
-                    System.out.println("You " + sentence.show() + ".");
+                    return handleInput(player, sentence);
+
                 }
             }
 
 
         }
-
         return true;
+    }
+
+    public boolean handleInput(Player p, Sentence sentence) {
+        if (sentence instanceof SentenceG1) {
+            SentenceG1 s = (SentenceG1) sentence;
+            VerbG1 v = (VerbG1) s.verbG1;
+            if (v.word.equals("exit")) {
+                System.out.println("You " + sentence.show() + ".");
+                return false;
+            }
+        }
+        if (sentence instanceof SentenceG2) {
+            SentenceG2 s = (SentenceG2) sentence;
+            VerbG2 v = (VerbG2) s.verbG2;
+
+            if (v.word.equals("examine")) {
+                NounG2 n = (NounG2) ((ObjectG2) s.objectG2).nounG2;
+                if (n.word.equals("items")) {
+                    System.out.println("You " + sentence.show() + ".");
+                    player.showItems();
+                }
+                if (n.word.equals("stats")) {
+                    System.out.println("You " + sentence.show() + ".");
+                    player.showStats();
+                }
+                if (n.word.equals("surroundings")) {
+                    System.out.println("You " + sentence.show() + ".");
+                    System.out.println("You see " + player.getLocation().description.toLowerCase());
+                }
+
+            }
+        }
+        return true;
+
+
     }
 
     public String getHelpText(Player player, Menu menu) {

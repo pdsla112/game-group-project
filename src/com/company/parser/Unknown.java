@@ -2,15 +2,15 @@ package com.company.parser;
 
 public class Unknown extends Sentence{
 
-    private String unknown;
+    private String word;
 
-    public Unknown(String unknown) {
-        this.unknown = unknown;
+    public Unknown(String word) {
+        this.word = word;
     }
 
     @Override
     public String show() {
-        return unknown;
+        return word;
     }
 
 }

@@ -44,6 +44,14 @@ public class Player {
 //
 //    }
 
+    public void showItems() {
+        //todo
+    }
+
+    public void showStats() {
+        //todo
+    }
+
     public void addItem(int id) {
         if (itemsMap.containsKey(id)) {
             itemsMap.put(id, itemsMap.get(id)+1);
