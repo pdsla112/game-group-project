@@ -16,33 +16,21 @@ public class Player {
 
     private int damage;  // Fighting level of the character. Higher => better chance of winning that battle.
     private int health;
+    private int level;
     private String name;
-    private int cash;
-    private Map<Item,Integer> items;
 
     private Map<Integer, Integer> itemsMap = new HashMap<>();
-    //protected static LocationRepo locationRepo = new LocationRepo();
     private Location location = null;
-    //private boolean deathValue;  // True => Player is dead.  False => Player is alive.
 
     private String email;
 
-    public Player(String name, String email, int level) {
-        //temporary (load from json)
-        this.location = location;
+    public Player(String name, String email, int level, Map<Integer, Integer> itemsMap, Location location) {
+        this.name = name;
+        this.level = level;
         this.email = email;
+        this.itemsMap = itemsMap;
+        this.location = location;
     }
-
-
-//    protected static String getProfileFileName(String name) {
-//        //todo
-//        return null;
-//    }
-//    public static boolean profileExists(String name) {
-//        //todo
-//        return false;
-//
-//    }
 
     public void addItem(int id) {
         if (itemsMap.containsKey(id)) {
@@ -59,10 +47,6 @@ public class Player {
     public void setLocation(Location location) {
         this.location = location;
     }
-
-//    public static Player load(String fileName) {
-//        return null;
-//    }
 
     public void getStats(){
         System.out.println("Health: " + this.health + ". Damage: " + this.damage);
@@ -109,12 +93,4 @@ public class Player {
     public String getEmail() {
         return this.email;
     }
-
-
-
-//    public void attack(String opponentName) throws DeathException {
-//
-//    }
-
-
 }
