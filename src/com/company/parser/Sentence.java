@@ -9,9 +9,8 @@ package com.company.parser;
  * Please do not change anything inside this class as well.
  */
 
-public abstract class Exp {
+public abstract class Sentence {
 
 	public abstract String show();
-	public abstract int evaluate();
 
 }
