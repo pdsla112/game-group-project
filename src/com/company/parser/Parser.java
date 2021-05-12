@@ -59,7 +59,7 @@ public class  Parser {
         } catch(NumberFormatException e) {
 
             if (inputString.equals("h") || inputString.equals("help")) {
-                System.out.println(getHelpText(player, menu));
+                System.out.println(getHelpText(menu));
             } else {
                 //return parse2(player, userCommand);
                 Tokenizer tokenizer = new Tokenizer(inputString);
@@ -135,7 +135,7 @@ public class  Parser {
 
     }
 
-    public String getHelpText(Player player, Menu menu) {
+    public String getHelpText(Menu menu) {
         String rtn = "Help:\n--------------------------------------\n";
         rtn += "Menu Items:\n";
         for (int i=0; i<menu.getSize(); i++) {

@@ -27,6 +27,8 @@ public class Game {
 
 
         setupGameMap();
+        //add item
+        player.addItem("medkit");
 
         player.getLocation().displayInformation();
 
@@ -49,7 +51,7 @@ public class Game {
                         List<Location> adjacentLocations = map.getAdjacent(player.getLocation());
                         Menu locationMenu = new Menu(adjacentLocations);
                         locationMenu.printMenuItems();
-                        running = parser.parse(player, parser.getInputString(), locationMenu);
+                        running = parser.parse(parser.getInputString(), locationMenu);
 
                     }
 
@@ -59,7 +61,7 @@ public class Game {
 
                     Menu levelMenu = new Menu(levelMap.getAdjacent());
                     levelMenu.printMenuItems();
-                    running = parser.parse(player, Parser.getInputString(), levelMenu);
+                    running = parser.parse(Parser.getInputString(), levelMenu);
 
                 }
 

@@ -2,6 +2,7 @@ package com.company.characters;
 
 import com.company.data.Initialization;
 import com.company.data.InitializeJSON;
+import com.company.items.Medkit;
 import com.company.locations.Location;
 import com.company.repository.ItemRepo;
 import com.company.items.Item;
@@ -35,7 +36,15 @@ public class Player {
     }
 
     public void useItem(String name) {
+        if (name.equals("medkit")) {
+            Medkit medkit = new Medkit(this);
+            medkit.use();
+        }
 
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     public void lookForItem(String preposition, String noun) {
@@ -53,14 +62,6 @@ public class Player {
 //
 //    }
 
-    public void showItems() {
-        //todo
-    }
-
-    public void showStats() {
-        //todo
-    }
-
     public void addItem(String name) {
         if (itemsMap.containsKey(name)) {
             itemsMap.put(name, itemsMap.get(name)+1);
@@ -77,35 +78,47 @@ public class Player {
         this.location = location;
     }
 
-//    public static Player load(String fileName) {
+    public void showStats(){
+        String text = "Your Stats:\n--------------------------------------\n";
+        text += "\tHealth: " + this.health + "\n";
+        text += "\tDamage: " + this.damage + "\n";
+        text += "--------------------------------------\n";
+        System.out.println(text);
+    }
+
+    public void showItems() {
+        String text = "Your Items:\n--------------------------------------\n";
+        for (String itemName : itemsMap.keySet()) {
+            if (itemsMap.get(itemName) > 0) {
+                text += "\t" + itemName + "\t" + itemsMap.get(itemName) + "\n";
+            }
+        }
+        text += "--------------------------------------\n";
+        System.out.println(text);
+        //todo
+    }
+
+//    public List<Item> searchItem(String itemName, List<Item> itemList) {
+//        //todo
 //        return null;
 //    }
+//
+//    public void pickUpItem(String itemName) {
+//        //todo
+//    }
+//
+//    public void dropItem(String itemName) {
+//        //todo
+//    }
+//
+//    public void inspectItem(String itemName) {
+//        //todo
+//    }
+//
+//    public boolean hasItem(Item item) {
+//        //todo
+//        return false;
 
-    public void getStats(){
-        System.out.println("Health: " + this.health + ". Damage: " + this.damage);
-    }
-
-    public List<Item> searchItem(String itemName, List<Item> itemList) {
-        //todo
-        return null;
-    }
-
-    public void pickUpItem(String itemName) {
-        //todo
-    }
-
-    public void dropItem(String itemName) {
-        //todo
-    }
-
-    public void inspectItem(String itemName) {
-        //todo
-    }
-
-    public boolean hasItem(Item item) {
-        //todo
-        return false;
-    }
 
     public int getDamage() {
         return damage;
