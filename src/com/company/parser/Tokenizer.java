@@ -64,16 +64,28 @@ public class Tokenizer {
     public List<String> verbG3 = new ArrayList<>(Arrays.asList("use"));
     public List<String> verbG4 = new ArrayList<>(Arrays.asList("look"));
 
-    public List<String> prepositionG1 = new ArrayList<>(Arrays.asList("above", "below", "inside"));//get dynamically
-
+    //public List<String> prepositionG1 = new ArrayList<>(Arrays.asList("above", "below", "inside"));//get dynamically
+    public List<String> prepositionG1 = new ArrayList<>();
     public List<String> determinerG1 = new ArrayList<>(Arrays.asList("the"));
     public List<String> determinerG2 = new ArrayList<>(Arrays.asList("your"));
 
     public List<String> nounG1 = new ArrayList<>(Arrays.asList("game"));
     public List<String> nounG2 = new ArrayList<>(Arrays.asList("items", "stats", "surroundings"));
     public List<String> nounG3 = new ArrayList<>(Arrays.asList("medkit")); //get items
-    public List<String> nounG4 = new ArrayList<>(Arrays.asList("table")); //get furniture
+    public List<String> nounG4 = new ArrayList<>();
 
+
+    public void setPrepositionG1(List<String> prepositions) {
+        prepositionG1 = prepositions;
+    }
+
+    public void setNounG3(List<String> nouns) {
+        nounG3 = nouns;
+    }
+
+    public void setNounG4(List<String> nouns) {
+        nounG4 = nouns;
+    }
     /**
      *  Tokenizer class constructor
      *  The constructor extracts the first token and save it to currentToken

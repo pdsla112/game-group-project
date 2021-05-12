@@ -62,9 +62,28 @@ public class  Parser {
             if (inputString.equals("h") || inputString.equals("help")) {
                 System.out.println(getHelpText(menu));
             } else {
-                //return parse2(player, userCommand);
-                Tokenizer tokenizer = new Tokenizer(inputString);
-                TokenParser tokenParser = new TokenParser(tokenizer);
+                //add items to tokenizer
+                ArrayList<String> itemNouns = new ArrayList<>();
+                for (String itemName : player.itemsMap.keySet()) {
+                    if (player.itemsMap.get(itemName) > 0) {
+                        itemNouns.add(itemName);
+                    }
+                }
+
+                //add objects to tokenizer
+                ArrayList<String> prepositions = new ArrayList<>();
+                ArrayList<String> objectNouns = new ArrayList<>();
+                for (LocationObject lo : player.locationObjects) {
+                    prepositions.add(lo.getLocation());
+                    objectNouns.add(lo.getObjectName());
+                }
+                player.tokenizer.setNounG3(itemNouns);
+                player.tokenizer.setNounG4(objectNouns);
+                player.tokenizer.setPrepositionG1(prepositions);
+
+
+                player.tokenizer.setBuffer(inputString);
+                TokenParser tokenParser = new TokenParser(player.tokenizer);
                 Sentence sentence = tokenParser.parseSentence();
                 if (sentence instanceof IncorrectSentence) {
                     System.out.println(sentence.show());
@@ -144,7 +163,7 @@ public class  Parser {
         }
         rtn += "--------------------------------------\n";
         rtn += "Addtional commands available to you:\n";
-        List<Sentence> sentences = generateSentences();
+        List<Sentence> sentences = generateSentences(player);
         for (Sentence s : sentences) {
             rtn += "\t" + s.show() + "\n";
         }
@@ -159,9 +178,9 @@ public class  Parser {
 
     }
 
-    public static List<Sentence> generateSentences() {
+    public static List<Sentence> generateSentences(Player p) {
         List<Sentence> sentences = new ArrayList<>();
-        Tokenizer tokenizer = new Tokenizer();
+        Tokenizer tokenizer = p.tokenizer;
         for (String verb : tokenizer.verbG1) {
             for (String determiner : tokenizer.determinerG1) {
                 for (String noun : tokenizer.nounG1) {

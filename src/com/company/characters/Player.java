@@ -5,6 +5,7 @@ import com.company.data.InitializeJSON;
 import com.company.items.LocationObject;
 import com.company.items.Medkit;
 import com.company.locations.Location;
+import com.company.parser.Tokenizer;
 import com.company.repository.ItemRepo;
 import com.company.items.Item;
 
@@ -20,8 +21,9 @@ public class Player {
     private int health;
     private String name;
     private int level;
-    private Map<String, Integer> itemsMap = new HashMap<>();
-    private List<LocationObject> locationObjects;
+    public Map<String, Integer> itemsMap = new HashMap<>();
+    public List<LocationObject> locationObjects;
+    public Tokenizer tokenizer = new Tokenizer();
 
     //protected static LocationRepo locati
     // onRepo = new LocationRepo();
@@ -30,12 +32,14 @@ public class Player {
 
     private String email;
 
+
     public Player(String name, String email, int level) {
         //temporary (load from json)
         this.name = name;
         this.level = level;
         this.email = email;
     }
+
 
     public void useItem(String name) {
         if (name.equals("medkit")) {
