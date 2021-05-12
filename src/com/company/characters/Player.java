@@ -71,17 +71,6 @@ public class Player {
         return false;
     }
 
-
-//    protected static String getProfileFileName(String name) {
-//        //todo
-//        return null;
-//    }
-//    public static boolean profileExists(String name) {
-//        //todo
-//        return false;
-//
-//    }
-
     public void addItem(String name) {
         if (itemsMap.containsKey(name)) {
             itemsMap.put(name, itemsMap.get(name)+1);
