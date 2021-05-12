@@ -2,6 +2,7 @@ package com.company.characters;
 
 import com.company.data.Initialization;
 import com.company.data.InitializeJSON;
+import com.company.items.LocationObject;
 import com.company.items.Medkit;
 import com.company.locations.Location;
 import com.company.repository.ItemRepo;
@@ -20,6 +21,7 @@ public class Player {
     private String name;
     private int level;
     private Map<String, Integer> itemsMap = new HashMap<>();
+    private List<LocationObject> locationObjects;
 
     //protected static LocationRepo locati
     // onRepo = new LocationRepo();
@@ -47,8 +49,21 @@ public class Player {
         return level;
     }
 
-    public void lookForItem(String preposition, String noun) {
+    public void setLocationObjects(List<LocationObject> locationObjects) {
+        this.locationObjects = locationObjects;
+    }
 
+    //returns true if item is found and added
+    public boolean lookForItem(String preposition, String noun) {
+        for (LocationObject lo : locationObjects) {
+            if (lo.getObjectName().equals(noun)) {
+                if (lo.getLocation().equals(preposition)) {
+                    addItem(lo.getItemName());
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
@@ -78,6 +93,10 @@ public class Player {
         this.location = location;
     }
 
+    public void addLocationObject(LocationObject lo) {
+        this.locationObjects.add(lo);
+    }
+
     public void showStats(){
         String text = "Your Stats:\n--------------------------------------\n";
         text += "\tHealth: " + this.health + "\n";
@@ -96,6 +115,19 @@ public class Player {
         text += "--------------------------------------\n";
         System.out.println(text);
         //todo
+    }
+
+    public void showSurroundings() {
+        if (locationObjects == null || locationObjects.isEmpty()) {
+            System.out.println("There is nothing of interest around you.");
+        } else {
+            String text = "You see:\n--------------------------------------\n";
+            for (LocationObject lo : locationObjects) {
+                text += "\ta " + lo.getObjectName() + "\n";
+            }
+            text += "--------------------------------------\n";
+            System.out.println(text);
+        }
     }
 
 //    public List<Item> searchItem(String itemName, List<Item> itemList) {

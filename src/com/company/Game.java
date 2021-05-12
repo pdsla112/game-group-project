@@ -118,7 +118,7 @@ public class Game {
         //cottage.levelMap = loadlevelmapfromjson();
         //save all these into json
         //are we still having isVisited() -> testing? If so, will it be added in parser action
-        LevelNode rootCottage = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
+        LevelNode rootCottage = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", new ArrayList<>(Arrays.asList("locationObject table under medkit")));
         cottage.levelMap = new LevelMap(rootCottage);
         LevelNode cottageOp1 = new LevelNode("approach","You approach the child, and take a closer look.",null);
         LevelNode cottageOp2 = new LevelNode("ignore","You ignore the child",null);

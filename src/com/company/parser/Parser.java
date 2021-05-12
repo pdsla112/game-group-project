@@ -5,6 +5,7 @@ import com.company.LevelNode;
 import com.company.MenuItem;
 import com.company.characters.Player;
 import com.company.data.PlayerJSON;
+import com.company.items.LocationObject;
 import com.company.locations.Location;
 import com.company.menus.BattleMenu;
 import com.company.menus.Menu;
@@ -51,7 +52,7 @@ public class  Parser {
                     return true;
                 } else if (selected instanceof LevelNode) {
                     player.getLocation().getLevelMap().setCurrentNode((LevelNode) selected);
-                    return true;
+                    return parseActions(player.getLocation().getLevelMap().getCurrentNode().getActions());
 
                 }
             }
@@ -103,7 +104,7 @@ public class  Parser {
                 }
                 if (n.word.equals("surroundings")) {
                     System.out.println("You " + sentence.show() + ".");
-                    System.out.println("You see " + player.getLocation().description.toLowerCase());
+                    player.showSurroundings();
                 }
 
             }
@@ -198,12 +199,22 @@ public class  Parser {
         return sentences;
     }
 
+    public boolean parseActions(List<String> actions) throws DeathException {
+        player.setLocationObjects(new ArrayList<>());
+        for (String action : actions) {
+            if (!parseAction(action)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     //returns true if game is still running afterwards
     //user doesn't choose to do these things
     //done when player
-    public boolean parseAction(Player player, String userCommand) throws DeathException {
+    public boolean parseAction(String action) throws DeathException {
 
-        String[] userCommandSplit = userCommand.split(" ");
+        String[] userCommandSplit = action.split(" ");
        //split command
         String command = userCommandSplit[0];
 
@@ -214,6 +225,7 @@ public class  Parser {
         // huntAnimal
         // psychoFight
         // zombieFight
+        //locationObject table under medkit
         // how are we going to set player lose/win? will it be added as an action too eg.psychoFight, after lose
         // if hunter join the attacklevel suppposed to increase (for hunting animal in forest), add parser action for this. eg."attacklevelincrease"
         //are we still having isVisited() for visited locations -> testing? If so, will it be added in parser action? eg. when reach cottage, cottage isVisited()=true?
@@ -224,6 +236,15 @@ public class  Parser {
                 player.setHealth(Math.max(100,player.getHealth()+healAmount));
                 // heal player by set amount
             }
+            if(command.equals("locationObject")) {
+                String object = userCommandSplit[1];
+                String location = userCommandSplit[2];
+                String item = userCommandSplit[3];
+                LocationObject lo = new LocationObject(object,location,item);
+                player.addLocationObject(lo);
+
+
+            }
             else if(command.equals("psychoFight")){
                 new BattleMenu();//update
             }
@@ -233,7 +254,7 @@ public class  Parser {
 
 
             }
-        return false;
+        return true;
 
         }
 
