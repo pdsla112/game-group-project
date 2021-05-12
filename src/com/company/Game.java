@@ -233,7 +233,8 @@ public class Game {
         hospital.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(hospitalpsycholose)));
 
         //road
-        LevelNode rootRoad = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
+        LevelNode rootRoad = new LevelNode(null,"You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\n" +
+                "You saw the zombie attacking someone, so you stepped back into the bush falteringly.",new ArrayList<>(Arrays.asList("zombieFight")));//prob of zombie appearing?
         road.levelMap = new LevelMap(rootRoad);
         LevelNode roadOp1 = new LevelNode("approach","You approach the child, and take a closer look.",null);
         LevelNode roadOp2 = new LevelNode("ignore","You ignore the child",null);
