@@ -51,8 +51,7 @@ public class MainMenu {
                 // Get the player to type their email.
                 System.out.println("Enter your email:");
                 String email = Parser.getInputString();
-                ArrayList<Player> deserializedList = PlayerJSON.deserializeJSON();
-                Player player = PlayerJSON.getSpecificPlayer(deserializedList, email);
+                Player player = PlayerJSON.getSpecificPlayer(email);
 //                PersistDataJSON persistJson = new PersistDataJSON();
 //                Player player = persistJson.load("player.json");
 //                new Game(player);

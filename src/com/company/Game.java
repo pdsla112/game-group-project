@@ -79,20 +79,19 @@ public class Game {
     }
     public void setupGameMap() {
         map = new GameMap();
-        ArrayList<LocationData> deserializedList = LocationJSON.deserializeJSON();
         //map = loadfromjson();
         //setup map
-        Location hospital = new Location("hospital",LocationJSON.getSpecificLocationData(deserializedList,"hospital").getInitialText());
+        Location hospital = new Location("hospital",LocationJSON.getSpecificLocationData("hospital").getInitialText());
         map.addLocation(hospital);
-        Location cottage = new Location("cottage", LocationJSON.getSpecificLocationData(deserializedList,"cottage").getInitialText());//"You found a cottage while you were looking for a place to hide, avoiding zombies."
+        Location cottage = new Location("cottage", LocationJSON.getSpecificLocationData("cottage").getInitialText());//"You found a cottage while you were looking for a place to hide, avoiding zombies."
         map.addLocation(cottage);
-        Location forest = new Location("forest", LocationJSON.getSpecificLocationData(deserializedList,"forest").getInitialText());//"You found a forest and went in wondering if you could hunt for food."
+        Location forest = new Location("forest", LocationJSON.getSpecificLocationData("forest").getInitialText());//"You found a forest and went in wondering if you could hunt for food."
         map.addLocation(forest);
-        Location lab = new Location("lab", LocationJSON.getSpecificLocationData(deserializedList,"lab").getInitialText());
+        Location lab = new Location("lab", LocationJSON.getSpecificLocationData("lab").getInitialText());
         map.addLocation(lab);
-        Location road = new Location("road", LocationJSON.getSpecificLocationData(deserializedList,"road").getInitialText());
+        Location road = new Location("road", LocationJSON.getSpecificLocationData("road").getInitialText());
         map.addLocation(road);
-        Location home = new Location("home",LocationJSON.getSpecificLocationData(deserializedList,"home").getInitialText());
+        Location home = new Location("home",LocationJSON.getSpecificLocationData("home").getInitialText());
         map.addLocation(home);
 
         map.addEdge(home,cottage,5);

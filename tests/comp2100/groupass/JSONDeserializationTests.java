@@ -12,8 +12,6 @@ import static org.junit.Assert.assertEquals;
 
 public class JSONDeserializationTests {
 
-    ArrayList<LocationData> dList = LocationJSON.deserializeJSON();
-
     @Rule
     public Timeout globalTimeout = Timeout.millis(1000);
 
@@ -27,7 +25,7 @@ public class JSONDeserializationTests {
         inputList.add("lab");
 
         for (String input : inputList) {
-            LocationData actualLocationData = LocationJSON.getSpecificLocationData(dList, input);
+            LocationData actualLocationData = LocationJSON.getSpecificLocationData(input);
             String actualLocation = actualLocationData.getLocation();
             assertEquals("Incorrect location data deserialized from JSON DB...", input, actualLocation);
         }
@@ -43,7 +41,7 @@ public class JSONDeserializationTests {
         inputList.add("pdsla112");
 
         for (String input : inputList) {
-            LocationData actualLocationData = LocationJSON.getSpecificLocationData(dList, input);
+            LocationData actualLocationData = LocationJSON.getSpecificLocationData(input);
             assertEquals("Incorrect location data deserialized from JSON DB...", null, actualLocationData);
         }
     }
