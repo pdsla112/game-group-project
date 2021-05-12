@@ -2,9 +2,9 @@ package com.company.parser;
 
 public class SentenceG4 extends Sentence{
 
-    private Sentence verbG4;
-    private Sentence objectG4;
-    private Sentence prepositionG1;
+    public Sentence verbG4;
+    public Sentence objectG4;
+    public Sentence prepositionG1;
 
     public SentenceG4(Sentence verbG4, Sentence prepositionG1, Sentence objectG4) {
         this.verbG4 = verbG4;
@@ -14,7 +14,7 @@ public class SentenceG4 extends Sentence{
 
     @Override
     public String show() {
-        return (prepositionG1 == null ? "" : prepositionG1.show() + " ") + verbG4.show() + " " + objectG4.show();
+        return  verbG4.show() + " " + (prepositionG1 == null ? "" : prepositionG1.show() + " ") + objectG4.show();
     }
 
 }

@@ -1,23 +1,25 @@
 package com.company.items;
 
+import com.company.characters.Player;
+
 public class Medkit {
     private int healValue;   // Amount that the first aid kit heals the player per use.
-    private int durability;  // Number of times the first aid kit can be used before it becomes unusable.
+    private Player player;
 
-    public Medkit(int healValue, int durability) {
-        this.healValue = healValue;
-        this.durability = durability;
+    public Medkit(Player player) {
+        this.healValue = 20 - player.getLevel();
+        this.player = player;
     }
 
-    public void getUsed() {
-        this.durability--;
+    public void use() {
+        int oldHp = player.getHealth();
+        player.setHealth(Math.max(100,player.getHealth()+healValue));
+        int changeHp = player.getHealth() - oldHp;
+        System.out.println("You have used a medkit. +" + changeHp + " Hp");
     }
 
     public int getHealValue() {
         return this.healValue;
     }
 
-    public int getDurability() {
-        return this.durability;
-    }
 }

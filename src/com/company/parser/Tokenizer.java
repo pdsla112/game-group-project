@@ -2,6 +2,7 @@ package com.company.parser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
  /*
@@ -58,29 +59,50 @@ public class Tokenizer {
     private List<String> _buffer;		//save text
     private Token currentToken;	//save token extracted from next()
 
-    List<String> verbG1 = new ArrayList<>(Arrays.asList("exit","save"));
-    List<String> verbG2 = new ArrayList<>(Arrays.asList("examine"));
-    List<String> verbG3 = new ArrayList<>(Arrays.asList("use"));
-    List<String> verbG4 = new ArrayList<>(Arrays.asList("look"));
+    public List<String> verbG1 = new ArrayList<>(Arrays.asList("exit"));
+    public List<String> verbG2 = new ArrayList<>(Arrays.asList("examine"));
+    public List<String> verbG3 = new ArrayList<>(Arrays.asList("use"));
+    public List<String> verbG4 = new ArrayList<>(Arrays.asList("look"));
 
-    List<String> prepositionG1 = new ArrayList<>(Arrays.asList("above", "below", "inside"));//get dynamically
+    //public List<String> prepositionG1 = new ArrayList<>(Arrays.asList("above", "below", "inside"));//get dynamically
+    public List<String> prepositionG1 = new ArrayList<>();
+    public List<String> determinerG1 = new ArrayList<>(Arrays.asList("the"));
+    public List<String> determinerG2 = new ArrayList<>(Arrays.asList("your"));
 
-    List<String> determinerG1 = new ArrayList<>(Arrays.asList("the"));
-    List<String> determinerG2 = new ArrayList<>(Arrays.asList("your"));
+    public List<String> nounG1 = new ArrayList<>(Arrays.asList("game"));
+    public List<String> nounG2 = new ArrayList<>(Arrays.asList("items", "stats", "surroundings"));
+    public List<String> nounG3 = new ArrayList<>(Arrays.asList("medkit")); //get items
+    public List<String> nounG4 = new ArrayList<>();
 
-    List<String> nounG1 = new ArrayList<>(Arrays.asList("game"));
-    List<String> nounG2 = new ArrayList<>(Arrays.asList("items", "stats", "surroundings"));
-    List<String> nounG3 = new ArrayList<>(Arrays.asList("medkit")); //get items
-    List<String> nounG4 = new ArrayList<>(Arrays.asList("table")); //get furniture
 
+    public void setPrepositionG1(List<String> prepositions) {
+        prepositionG1 = prepositions;
+    }
+
+    public void setNounG3(List<String> nouns) {
+        nounG3 = nouns;
+    }
+
+    public void setNounG4(List<String> nouns) {
+        nounG4 = nouns;
+    }
     /**
      *  Tokenizer class constructor
      *  The constructor extracts the first token and save it to currentToken
      *  **** please do not modify this part ****
      */
     public Tokenizer(String text) {
-        _buffer = Arrays.asList(text.trim().split(" "));		// save input text (string)
+        _buffer = new LinkedList<String>(Arrays.asList(text.trim().split(" ")));		// save input text (string)
     	next();		// extracts the first token.
+    }
+
+    public Tokenizer() {
+        _buffer = new LinkedList<String>();		// save input text (string)
+    }
+
+    public void setBuffer(String text) {
+        _buffer = new LinkedList<String>(Arrays.asList(text.trim().split(" ")));		// save input text (string)
+        next();
     }
     
     /**
@@ -115,7 +137,7 @@ public class Tokenizer {
             currentToken = new Token(firstWord, Token.Type.NOUNG1);
 
         if (nounG2.contains(firstWord))
-            currentToken = new Token(firstWord, Token.Type.NOUNG3);
+            currentToken = new Token(firstWord, Token.Type.NOUNG2);
 
         if (nounG3.contains(firstWord))
             currentToken = new Token(firstWord, Token.Type.NOUNG3);
@@ -128,8 +150,16 @@ public class Tokenizer {
 
         if (determinerG2.contains(firstWord))
             currentToken = new Token(firstWord, Token.Type.DETERMINERG2);
-        
-        
+
+        boolean unknown = (!verbG1.contains(firstWord) && !verbG2.contains(firstWord) && !verbG3.contains(firstWord) && !verbG4.contains(firstWord)
+                && !prepositionG1.contains(firstWord) && !nounG1.contains(firstWord) && !nounG2.contains(firstWord) && !nounG3.contains(firstWord)
+                && !nounG4.contains(firstWord) && !determinerG1.contains(firstWord) && !determinerG2.contains(firstWord));
+
+        if (unknown) {
+            currentToken = new Token(firstWord, Token.Type.UNKNOWN);
+        }
+
+
         // Remove the extracted token from buffer
         _buffer.remove(0);
     }

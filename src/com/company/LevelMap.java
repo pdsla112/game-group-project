@@ -12,6 +12,12 @@ public class LevelMap {
     List<LevelNode> deathNodes;
     LevelNode currentNode;
 
+    public LevelMap(LevelNode currentNode) {
+        this.adjacent = new HashMap<>();
+        this.levelNodes = new ArrayList<>();
+        this.currentNode = currentNode;
+    }
+
     public List<LevelNode> getCompletionNodes() {
         return completionNodes;
     }
@@ -26,12 +32,6 @@ public class LevelMap {
 
     public void setDeathNodes(List<LevelNode> deathNodes) {
         this.deathNodes = deathNodes;
-    }
-
-    public LevelMap(LevelNode currentNode) {
-        this.adjacent = new HashMap<>();
-        this.levelNodes = new ArrayList<>();
-        this.currentNode = currentNode;
     }
 
     public void setAdjacent(Map<LevelNode, List<LevelNode>> adjacent) {

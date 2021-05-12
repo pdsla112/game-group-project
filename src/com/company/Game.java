@@ -27,6 +27,8 @@ public class Game {
 
 
         setupGameMap();
+        //add item
+        player.addItem("medkit");
 
         player.getLocation().displayInformation();
 
@@ -49,22 +51,8 @@ public class Game {
                         List<Location> adjacentLocations = map.getAdjacent(player.getLocation());
                         Menu locationMenu = new Menu(adjacentLocations);
                         locationMenu.printMenuItems();
-                        running = parser.parse(player, parser.getInputString(), locationMenu);
+                        running = parser.parse(parser.getInputString(), locationMenu);
 
-                        boolean endPrompt = false;
-                        while (!endPrompt) {
-                            System.out.println("Would you like to save your progress?(y/n)");
-                            String response = parser.getInputString();
-                            if (response.equals("y") || response.equals("yes")) {
-                                //save game (player data)
-                                PlayerJSON.savePlayer(player);
-                                System.out.println("game saved.");
-                                endPrompt = true;
-                            } else if (response.equals("n") || response.equals("no")) {
-                                System.out.println("game not saved.");;
-                                endPrompt = true;
-                            }
-                        }
                     }
 
                 } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {
@@ -73,7 +61,7 @@ public class Game {
 
                     Menu levelMenu = new Menu(levelMap.getAdjacent());
                     levelMenu.printMenuItems();
-                    running = parser.parse(player, Parser.getInputString(), levelMenu);
+                    running = parser.parse(Parser.getInputString(), levelMenu);
 
                 }
 
@@ -91,20 +79,19 @@ public class Game {
     }
     public void setupGameMap() {
         map = new GameMap();
-        ArrayList<LocationData> deserializedList = LocationJSON.deserializeJSON();
         //map = loadfromjson();
         //setup map
-        Location hospital = new Location("hospital",LocationJSON.getSpecificLocationData(deserializedList,"hospital").getInitialText());
+        Location hospital = new Location("hospital",LocationJSON.getSpecificLocationData("hospital").getInitialText());
         map.addLocation(hospital);
-        Location cottage = new Location("cottage", LocationJSON.getSpecificLocationData(deserializedList,"cottage").getInitialText());//"You found a cottage while you were looking for a place to hide, avoiding zombies."
+        Location cottage = new Location("cottage", LocationJSON.getSpecificLocationData("cottage").getInitialText());//"You found a cottage while you were looking for a place to hide, avoiding zombies."
         map.addLocation(cottage);
-        Location forest = new Location("forest", LocationJSON.getSpecificLocationData(deserializedList,"forest").getInitialText());//"You found a forest and went in wondering if you could hunt for food."
+        Location forest = new Location("forest", LocationJSON.getSpecificLocationData("forest").getInitialText());//"You found a forest and went in wondering if you could hunt for food."
         map.addLocation(forest);
-        Location lab = new Location("lab", LocationJSON.getSpecificLocationData(deserializedList,"lab").getInitialText());
+        Location lab = new Location("lab", LocationJSON.getSpecificLocationData("lab").getInitialText());
         map.addLocation(lab);
-        Location road = new Location("road", LocationJSON.getSpecificLocationData(deserializedList,"road").getInitialText());
+        Location road = new Location("road", LocationJSON.getSpecificLocationData("road").getInitialText());
         map.addLocation(road);
-        Location home = new Location("home",LocationJSON.getSpecificLocationData(deserializedList,"home").getInitialText());
+        Location home = new Location("home",LocationJSON.getSpecificLocationData("home").getInitialText());
         map.addLocation(home);
 
         map.addEdge(home,cottage,5);
@@ -130,7 +117,7 @@ public class Game {
         //cottage.levelMap = loadlevelmapfromjson();
         //save all these into json
         //are we still having isVisited() -> testing? If so, will it be added in parser action
-        LevelNode rootCottage = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
+        LevelNode rootCottage = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", new ArrayList<>(Arrays.asList("locationObject table under medkit")));
         cottage.levelMap = new LevelMap(rootCottage);
         LevelNode cottageOp1 = new LevelNode("approach","You approach the child, and take a closer look.",null);
         LevelNode cottageOp2 = new LevelNode("ignore","You ignore the child",null);

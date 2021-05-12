@@ -1,5 +1,6 @@
 package com.company.data;
 
+import com.company.BloomFilter.BloomFilter;
 import com.company.characters.Player;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -40,7 +41,11 @@ public class PlayerJSON {
         return data;
     }
 
-    public static Player getSpecificPlayer(ArrayList<Player> deserializedList, String email) {
+    public static Player getSpecificPlayer(String email) {
+        boolean contains = BloomFilter.mightContain(email);
+        if (!contains)
+            return null;
+        ArrayList<Player> deserializedList = deserializeJSON();
         for (Player data : deserializedList) {
             if (data.getEmail().equals(email))
                 return data;
@@ -50,9 +55,13 @@ public class PlayerJSON {
 
     public static void savePlayer(Player player) {
         ArrayList<Player> deserializedList = deserializeJSON();
-        Player playerToReplace = getSpecificPlayer(deserializedList, player.getEmail());
-        deserializedList.remove(playerToReplace);
-        deserializedList.add(player);
+        Player playerToReplace = getSpecificPlayer(player.getEmail());
+        if (playerToReplace == null) {
+            deserializedList.add(player);
+        } else if (playerToReplace != null) {
+            deserializedList.remove(playerToReplace);
+            deserializedList.add(player);
+        }
         serializeJSON(deserializedList);
     }
 }

@@ -2,8 +2,8 @@ package com.company.parser;
 
 public class ObjectG4 extends Sentence{
 
-    private Sentence determinerG2;
-    private Sentence nounG4;
+    public Sentence determinerG2;
+    public Sentence nounG4;
 
     public ObjectG4(Sentence determinerG2, Sentence nounG4) {
         this.determinerG2 = determinerG2;

@@ -44,8 +44,7 @@ public class LocationData {
     }
 
     public static void main(String[] args) {
-        ArrayList<LocationData> resultList = LocationJSON.deserializeJSON();
-        LocationData hospital = LocationJSON.getSpecificLocationData(resultList, "hospital");
+        LocationData hospital = LocationJSON.getSpecificLocationData("hospital");
         System.out.println(hospital.getInitialText());
         System.out.println(hospital.getLocation());
     }
