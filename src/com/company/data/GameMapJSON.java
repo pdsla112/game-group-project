@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 
 public class GameMapJSON {
-    public void serializeJSON(GameMap gameMap) {
+    public static void serializeJSON(GameMap gameMap) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("GameMapDB.json")) {
             JsonElement tree = gson.toJsonTree(gameMap);
@@ -24,7 +24,7 @@ public class GameMapJSON {
         }
     }
 
-    public GameMap deserializeJSON() {
+    public static GameMap deserializeJSON() {
         GameMap data = null;
         Gson gson = new Gson();
         JsonReader jsonReader = null;
