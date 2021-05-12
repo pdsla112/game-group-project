@@ -38,4 +38,13 @@ public class LevelJSON {
         }
         return objectList;
     }
+
+    public static Level getSpecificLevel(int wantedLevel) {
+        ArrayList<Level> objectList = deserializeJSON();
+        for (Level level : objectList) {
+            if (level.getLevel() == wantedLevel)
+                return level;
+        }
+        return null;
+    }
 }
