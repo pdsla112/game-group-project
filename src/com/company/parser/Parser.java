@@ -26,7 +26,7 @@ public class  Parser {
         this.player = player;
     }
 
-    public boolean parse(Player player, String inputString, Menu menu) throws DeathException {
+    public boolean parse(String inputString, Menu menu) throws DeathException {
 
         try {
             MenuItem selected = menu.getMenuItem(Integer.parseInt(inputString));
@@ -68,7 +68,7 @@ public class  Parser {
                 if (sentence instanceof IncorrectSentence) {
                     System.out.println(sentence.show());
                 } else {
-                    return handleInput(player, sentence);
+                    return evaluateSentence(sentence);
 
                 }
             }
@@ -78,7 +78,7 @@ public class  Parser {
         return true;
     }
 
-    public boolean handleInput(Player p, Sentence sentence) {
+    public boolean evaluateSentence(Sentence sentence) {
         if (sentence instanceof SentenceG1) {
             SentenceG1 s = (SentenceG1) sentence;
             VerbG1 v = (VerbG1) s.verbG1;
@@ -105,6 +105,28 @@ public class  Parser {
                     System.out.println("You " + sentence.show() + ".");
                     System.out.println("You see " + player.getLocation().description.toLowerCase());
                 }
+
+            }
+        }
+
+        if (sentence instanceof SentenceG3) {
+            SentenceG3 s = (SentenceG3) sentence;
+            VerbG3 v = (VerbG3) s.verbG3;
+
+            if (v.word.equals("use")) {
+                NounG3 n = (NounG3) ((ObjectG3) s.objectG3).nounG3;
+                player.useItem(n.word);
+            }
+        }
+
+        if (sentence instanceof SentenceG4) {
+            SentenceG4 s = (SentenceG4) sentence;
+            VerbG4 v = (VerbG4) s.verbG4;
+
+            if (v.word.equals("look")) {
+                PrepositionG1 p = (PrepositionG1) s.prepositionG1;
+                NounG4 n = (NounG4) ((ObjectG4) s.objectG4).nounG4;
+                player.lookForItem(p.word,n.word);
 
             }
         }
@@ -197,11 +219,7 @@ public class  Parser {
         //are we still having isVisited() for visited locations -> testing? If so, will it be added in parser action? eg. when reach cottage, cottage isVisited()=true?
 
         if(command!= null){
-            if (command.equals("item")) {
-                int id = Integer.parseInt(userCommandSplit[1]);
-                player.addItem(id);
-            }
-            else if(command.equals("heal")) {
+            if(command.equals("heal")) {
                 int healAmount = Integer.parseInt(userCommandSplit[1]);
                 player.setHealth(Math.max(100,player.getHealth()+healAmount));
                 // heal player by set amount

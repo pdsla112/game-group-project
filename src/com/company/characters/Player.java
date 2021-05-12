@@ -17,11 +17,11 @@ public class Player {
     private int damage;  // Fighting level of the character. Higher => better chance of winning that battle.
     private int health;
     private String name;
-    private int cash;
-    private Map<Item,Integer> items;
+    private int level;
+    private Map<String, Integer> itemsMap = new HashMap<>();
 
-    private Map<Integer, Integer> itemsMap = new HashMap<>();
-    //protected static LocationRepo locationRepo = new LocationRepo();
+    //protected static LocationRepo locati
+    // onRepo = new LocationRepo();
     private Location location = null;
     //private boolean deathValue;  // True => Player is dead.  False => Player is alive.
 
@@ -29,8 +29,17 @@ public class Player {
 
     public Player(String name, String email, int level) {
         //temporary (load from json)
-        this.location = location;
+        this.name = name;
+        this.level = level;
         this.email = email;
+    }
+
+    public void useItem(String name) {
+
+    }
+
+    public void lookForItem(String preposition, String noun) {
+
     }
 
 
@@ -52,11 +61,11 @@ public class Player {
         //todo
     }
 
-    public void addItem(int id) {
-        if (itemsMap.containsKey(id)) {
-            itemsMap.put(id, itemsMap.get(id)+1);
+    public void addItem(String name) {
+        if (itemsMap.containsKey(name)) {
+            itemsMap.put(name, itemsMap.get(name)+1);
         } else {
-            itemsMap.put(id, 1);
+            itemsMap.put(name, 1);
         }
     }
 
