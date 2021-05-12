@@ -1,0 +1,98 @@
+[
+  {
+    "damage": 0,
+    "health": 0,
+    "cash": 0,
+    "itemsMap": {},
+    "location": {
+      "visited": false,
+      "name": "cottage",
+      "description": "You found a cottage while you were looking for a place to hide, avoiding zombies.",
+      "levelMap": {
+        "adjacent": {
+          "com.company.LevelNode@2d6d8735": [
+            {
+              "text": "Trying to find something useful, you open a drawer in a shelf to your right and find a hunting kit.\nCongratulations, a hunting kit has been added to your inventory!\nYou find a storage room",
+              "option": "search shelf"
+            }
+          ],
+          "com.company.LevelNode@12bc6874": [
+            {
+              "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+              "option": "go into the storage room"
+            }
+          ],
+          "com.company.LevelNode@769c9116": [
+            {
+              "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+              "option": "leave her alone"
+            }
+          ],
+          "com.company.LevelNode@6aceb1a5": [
+            {
+              "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+              "option": "escape"
+            },
+            {
+              "text": "Unfortunately, you couldn\u0027t beat her as she had weapon and you didn\u0027t.",
+              "option": "fight the girl"
+            }
+          ],
+          "com.company.LevelNode@6956de9": [
+            {
+              "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+              "option": "wake her up"
+            }
+          ],
+          "com.company.LevelNode@18ef96": [
+            {
+              "text": "You approach the child, and take a closer look.",
+              "option": "approach"
+            },
+            {
+              "text": "You ignore the child",
+              "option": "ignore"
+            }
+          ],
+          "com.company.LevelNode@ba4d54": [
+            {
+              "text": "Trying to find something useful, you open a drawer in a shelf to your right and find a hunting kit.\nCongratulations, a hunting kit has been added to your inventory!\nYou find a storage room",
+              "option": "search shelf"
+            }
+          ],
+          "com.company.LevelNode@de0a01f": [
+            {
+              "text": "You ignore the man and leave the cottage.",
+              "option": "ignore him"
+            },
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.",
+              "option": "approach the man "
+            }
+          ]
+        },
+        "levelNodes": [],
+        "completionNodes": [
+          {
+            "text": "You ignore the man and leave the cottage.",
+            "option": "ignore him"
+          },
+          {
+            "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.",
+            "option": "approach the man "
+          }
+        ],
+        "deathNodes": [
+          {
+            "text": "Unfortunately, you couldn\u0027t beat her as she had weapon and you didn\u0027t.",
+            "option": "fight the girl"
+          }
+        ],
+        "currentNode": {
+          "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+        }
+      }
+    },
+    "email": "anson@gmail"
+  }
+]
