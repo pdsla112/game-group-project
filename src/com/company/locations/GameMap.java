@@ -24,7 +24,6 @@ public class GameMap {
     public GameMap() {
         locations = new ArrayList<>();
         edges = new ArrayList<>();
-
     }
 
     public Location getFinalLocation() {
