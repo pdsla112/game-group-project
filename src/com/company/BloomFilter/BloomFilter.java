@@ -5,13 +5,6 @@ import java.util.BitSet;
 public class BloomFilter {
     private static final BitSet bitArr = new BitSet(64);
 
-    public static void main(String[] args) {
-        BitSet bitArray = new BitSet(64);
-        add("pdsla112");
-        System.out.println(mightContain("pdsla112"));
-        System.out.println(resetBits());
-    }
-
     public static void add(String email) {
         if (!mightContain(email)) {
             int hash = getHash(email);
