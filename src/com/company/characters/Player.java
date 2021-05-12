@@ -59,6 +59,7 @@ public class Player {
             if (lo.getObjectName().equals(noun)) {
                 if (lo.getLocation().equals(preposition)) {
                     addItem(lo.getItemName());
+                    System.out.println(lo.getItemName() + " has been added to your inventory.");
                     return true;
                 }
             }

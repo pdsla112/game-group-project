@@ -12,7 +12,10 @@ public class Medkit {
     }
 
     public void use() {
+        int oldHp = player.getHealth();
         player.setHealth(Math.max(100,player.getHealth()+healValue));
+        int changeHp = player.getHealth() - oldHp;
+        System.out.println("You have used a medkit. +" + changeHp + " Hp");
     }
 
     public int getHealValue() {
