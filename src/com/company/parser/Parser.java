@@ -49,40 +49,47 @@ public class  Parser {
                             endPrompt = true;
                         }
                     }
-                    return true;
+                    player.setLocationObjects(new ArrayList<>());
+                    return parseActions(player.getLocation().getLevelMap().getCurrentNode().getActions());
+                    //todo player.setLocationObjects(new ArrayList<>());
                 } else if (selected instanceof LevelNode) {
                     player.getLocation().getLevelMap().setCurrentNode((LevelNode) selected);
+                    // todo does not work for root node
+                    player.setLocationObjects(new ArrayList<>());
                     return parseActions(player.getLocation().getLevelMap().getCurrentNode().getActions());
 
                 }
             }
 
         } catch(NumberFormatException e) {
-
-            if (inputString.equals("h") || inputString.equals("help")) {
-                System.out.println(getHelpText(menu));
-            } else {
-                //add items to tokenizer
-                ArrayList<String> itemNouns = new ArrayList<>();
-                for (String itemName : player.itemsMap.keySet()) {
-                    if (player.itemsMap.get(itemName) > 0) {
-                        itemNouns.add(itemName);
-                    }
+            //add items to tokenizer
+            ArrayList<String> itemNouns = new ArrayList<>();
+            for (String itemName : player.itemsMap.keySet()) {
+                if (player.itemsMap.get(itemName) > 0) {
+                    itemNouns.add(itemName);
                 }
+            }
 
-                //add objects to tokenizer
-                ArrayList<String> prepositions = new ArrayList<>();
-                ArrayList<String> objectNouns = new ArrayList<>();
+            //add objects to tokenizer
+            ArrayList<String> prepositions = new ArrayList<>();
+            ArrayList<String> objectNouns = new ArrayList<>();
+            if (player.locationObjects != null) {
                 for (LocationObject lo : player.locationObjects) {
                     prepositions.add(lo.getLocation());
                     objectNouns.add(lo.getObjectName());
                 }
-                player.tokenizer.setNounG3(itemNouns);
-                player.tokenizer.setNounG4(objectNouns);
-                player.tokenizer.setPrepositionG1(prepositions);
+            }
+
+            player.tokenizer.setNounG3(itemNouns);
+            player.tokenizer.setNounG4(objectNouns);
+            player.tokenizer.setPrepositionG1(prepositions);
 
 
-                player.tokenizer.setBuffer(inputString);
+            player.tokenizer.setBuffer(inputString);
+
+            if (inputString.equals("h") || inputString.equals("help")) {
+                System.out.println(getHelpText(menu));
+            } else {
                 TokenParser tokenParser = new TokenParser(player.tokenizer);
                 Sentence sentence = tokenParser.parseSentence();
                 if (sentence instanceof IncorrectSentence) {
@@ -90,8 +97,10 @@ public class  Parser {
                 } else {
                     return evaluateSentence(sentence);
 
+
                 }
             }
+
 
 
         }
@@ -219,10 +228,11 @@ public class  Parser {
     }
 
     public boolean parseActions(List<String> actions) throws DeathException {
-        player.setLocationObjects(new ArrayList<>());
-        for (String action : actions) {
-            if (!parseAction(action)) {
-                return false;
+        if (actions!= null) {
+            for (String action : actions) {
+                if (!parseAction(action)) {
+                    return false;
+                }
             }
         }
         return true;
