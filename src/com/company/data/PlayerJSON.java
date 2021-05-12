@@ -40,7 +40,8 @@ public class PlayerJSON {
         return data;
     }
 
-    public static Player getSpecificPlayer(ArrayList<Player> deserializedList, String email) {
+    public static Player getSpecificPlayer(String email) {
+        ArrayList<Player> deserializedList = deserializeJSON();
         for (Player data : deserializedList) {
             if (data.getEmail().equals(email))
                 return data;
@@ -50,7 +51,7 @@ public class PlayerJSON {
 
     public static void savePlayer(Player player) {
         ArrayList<Player> deserializedList = deserializeJSON();
-        Player playerToReplace = getSpecificPlayer(deserializedList, player.getEmail());
+        Player playerToReplace = getSpecificPlayer(player.getEmail());
         deserializedList.remove(playerToReplace);
         deserializedList.add(player);
         serializeJSON(deserializedList);

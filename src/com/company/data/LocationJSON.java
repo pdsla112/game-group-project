@@ -241,7 +241,8 @@ public class LocationJSON {
         return data;
     }
 
-    public static LocationData getSpecificLocationData(ArrayList<LocationData> deserializedList, String locationName) {
+    public static LocationData getSpecificLocationData(String locationName) {
+        ArrayList<LocationData> deserializedList = deserializeJSON();
         for (LocationData data : deserializedList) {
             if (data.getLocation().equals(locationName))
                 return data;
