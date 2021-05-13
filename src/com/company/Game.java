@@ -58,7 +58,6 @@ public class Game {
                 } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {
                     throw new DeathException("You died.");
                 } else {
-
                     Menu levelMenu = new Menu(levelMap.getAdjacent());
                     levelMenu.printMenuItems();
                     running = parser.parse(Parser.getInputString(), levelMenu);
@@ -240,6 +239,8 @@ public class Game {
         lab.levelMap = new LevelMap(rootLab);
         // set lab as completion node
         lab.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(rootLab)));
+
+        GameMapJSON.serializeJSON(map);
     }
 }
 

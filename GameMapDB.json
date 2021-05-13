@@ -1,0 +1,1945 @@
+{
+  "locations": [
+    {
+      "visited": false,
+      "name": "hospital",
+      "description": "You are now in the hospital. Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.",
+      "levelMap": {
+        "adjacent": {
+          "com.company.LevelNode@6ec8211c": [
+            {
+              "text": "You decided to talk to her, and after a short conversation, you found out that she was a doctor.\nYou showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment.\nFortunately, she gladly helped me.",
+              "actions": [
+                "heal 10"
+              ]
+            }
+          ],
+          "com.company.LevelNode@782663d3": [
+            {
+              "text": "Won."
+            },
+            {
+              "text": "Lost."
+            }
+          ],
+          "com.company.LevelNode@4fb64261": [
+            {
+              "text": "He was holding a scapel you couldn\u0027t see from the distance.\nHe ran towards you so that you failed to escape and got a cut.\n\nYou realised that you are not able to run away, so decided to fight back.",
+              "actions": [
+                "psychofight"
+              ]
+            }
+          ],
+          "com.company.LevelNode@25bbf683": [
+            {
+              "text": "Talk to her."
+            },
+            {
+              "text": "Ignore."
+            }
+          ],
+          "com.company.LevelNode@18bf3d14": [
+            {
+              "text": "Go and talk with him."
+            },
+            {
+              "text": "Ignore."
+            }
+          ],
+          "com.company.LevelNode@7276c8cd": [
+            {
+              "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+            }
+          ],
+          "com.company.LevelNode@7e0e6aa2": [
+            {
+              "text": "While walking in the hallway, you found the first aid kit near the staircase.\nCongratulations, you collected a first aid kit!",
+              "actions": [
+                "item 1"
+              ]
+            }
+          ],
+          "com.company.LevelNode@365185bd": [
+            {
+              "text": "Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.\nAt third floor, you found someone walking towards you.\n\nHe looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips.\nHe realised you coming towards him as well, and he seems to want a conversation with you."
+            }
+          ],
+          "com.company.LevelNode@544a2ea6": [
+            {
+              "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+            }
+          ],
+          "com.company.LevelNode@1990a65e": [
+            {
+              "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+            }
+          ],
+          "com.company.LevelNode@42607a4f": [
+            {
+              "text": "You thought that it is weird to have person in the middle of the hospital hallway, so you ignored him and went up the staircase quickly so he wouldn\u0027t follow you."
+            }
+          ],
+          "com.company.LevelNode@64485a47": [
+            {
+              "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+            }
+          ]
+        },
+        "levelNodes": [],
+        "completionNodes": [
+          {
+            "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+          },
+          {
+            "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+          }
+        ],
+        "deathNodes": [
+          {
+            "text": "Lost."
+          }
+        ],
+        "currentNode": {
+          "text": "You are now in the hospital."
+        }
+      }
+    },
+    {
+      "visited": false,
+      "name": "cottage",
+      "description": "You found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.",
+      "levelMap": {
+        "adjacent": {
+          "com.company.LevelNode@c81cdd1": [
+            {
+              "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+              "option": "go into the storage room"
+            }
+          ],
+          "com.company.LevelNode@543c6f6d": [
+            {
+              "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+              "option": "escape"
+            }
+          ],
+          "com.company.LevelNode@43738a82": [
+            {
+              "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+              "option": "go into the storage room"
+            }
+          ],
+          "com.company.LevelNode@32eebfca": [
+            {
+              "text": "You approach the child, and take a closer look.",
+              "option": "approach"
+            },
+            {
+              "text": "You ignore the child",
+              "option": "ignore"
+            }
+          ],
+          "com.company.LevelNode@13eb8acf": [
+            {
+              "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+              "option": "fight the girl"
+            }
+          ],
+          "com.company.LevelNode@4e718207": [
+            {
+              "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+              "actions": [
+                "psychoFight"
+              ],
+              "option": "wake her up"
+            },
+            {
+              "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+              "option": "leave her alone"
+            }
+          ],
+          "com.company.LevelNode@51c8530f": [
+            {
+              "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+              "actions": [
+                "item 1"
+              ],
+              "option": "search the shelf"
+            },
+            {
+              "text": "",
+              "option": "close the shelf"
+            }
+          ],
+          "com.company.LevelNode@1fc2b765": [
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "actions": [
+                "heal 10"
+              ],
+              "option": "approach the man "
+            },
+            {
+              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+              "option": "ignore him"
+            }
+          ],
+          "com.company.LevelNode@1d371b2d": [
+            {
+              "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+              "option": "escape"
+            }
+          ],
+          "com.company.LevelNode@7403c468": [
+            {
+              "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+              "actions": [
+                "item 1"
+              ],
+              "option": "search the shelf"
+            },
+            {
+              "text": "",
+              "option": "close the shelf"
+            }
+          ]
+        },
+        "levelNodes": [],
+        "completionNodes": [
+          {
+            "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+            "actions": [
+              "heal 10"
+            ],
+            "option": "approach the man "
+          },
+          {
+            "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+            "option": "ignore him"
+          }
+        ],
+        "deathNodes": [],
+        "currentNode": {
+          "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.",
+          "actions": [
+            "locationObject table under medkit"
+          ]
+        }
+      }
+    },
+    {
+      "visited": false,
+      "name": "forest",
+      "description": "You notice that the more you walk, the more densely packed the trees stand. You are entering a forest.",
+      "levelMap": {
+        "adjacent": {
+          "com.company.LevelNode@2de8284b": [
+            {
+              "text": "Hunt."
+            },
+            {
+              "text": "Ignore."
+            }
+          ],
+          "com.company.LevelNode@22eeefeb": [
+            {
+              "text": "You quickly passed by, knowing that it is abnormal to have a person in the middle of this forest after zombie outbreak."
+            }
+          ],
+          "com.company.LevelNode@396e2f39": [
+            {
+              "text": "Having been hungry, you decided to hunt after confirming that you didn\u0027t have enough food."
+            }
+          ],
+          "com.company.LevelNode@2a70a3d8": [
+            {
+              "text": "Approach."
+            },
+            {
+              "text": "Ignore."
+            }
+          ],
+          "com.company.LevelNode@12c8a2c0": [
+            {
+              "text": "You successfully hunt and get meat."
+            },
+            {
+              "text": "Hunting failed."
+            }
+          ],
+          "com.company.LevelNode@75881071": [
+            {
+              "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+            }
+          ],
+          "com.company.LevelNode@a74868d": [
+            {
+              "text": "You decided to pass by as you were not confident enough to hunt it."
+            }
+          ],
+          "com.company.LevelNode@78ac1102": [
+            {
+              "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+            }
+          ],
+          "com.company.LevelNode@289d1c02": [
+            {
+              "text": "Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn\u0027t know because he wasn\u0027t looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you."
+            }
+          ],
+          "com.company.LevelNode@17d0685f": [
+            {
+              "text": "Win."
+            },
+            {
+              "text": "Lose."
+            }
+          ],
+          "com.company.LevelNode@3891771e": [
+            {
+              "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+            }
+          ]
+        },
+        "levelNodes": [],
+        "completionNodes": [
+          {
+            "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+          }
+        ],
+        "deathNodes": [
+          {
+            "text": "Lose."
+          }
+        ],
+        "currentNode": {
+          "text": "You are in a forest"
+        }
+      }
+    },
+    {
+      "visited": false,
+      "name": "lab",
+      "description": "This journey just never seems to end. You miss the warm embrace of your family and the smell of home. This journey has been unforgiving to you mentally and physically. You get flashbacks of your loved ones who had died before you in your arms. You wonder, “maybe it’s time for me to go too…”. But then, as you walk over a hill, you slowly see a pristine white building over the horizon. It seems to be… it seems to be… Congratulations, you finally reached the laboratory! Thankfully, there are no zombies as there are many soldiers inside, so you are safe now. You walk into the laboratory, and there are researchers who are ready to provide you with vaccines.",
+      "levelMap": {
+        "adjacent": {},
+        "levelNodes": [],
+        "completionNodes": [
+          {
+            "text": "Done."
+          }
+        ],
+        "currentNode": {
+          "text": "Done."
+        }
+      }
+    },
+    {
+      "visited": false,
+      "name": "road",
+      "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
+      "levelMap": {
+        "adjacent": {
+          "com.company.LevelNode@eb21112": [
+            {
+              "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+              "option": "go into the storage room"
+            }
+          ],
+          "com.company.LevelNode@1786f9d5": [
+            {
+              "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+              "actions": [
+                "item 1"
+              ],
+              "option": "search the shelf"
+            },
+            {
+              "text": "",
+              "option": "close the shelf"
+            }
+          ],
+          "com.company.LevelNode@150c158": [
+            {
+              "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+              "actions": [
+                "psychoFight"
+              ],
+              "option": "wake her up"
+            },
+            {
+              "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+              "option": "leave her alone"
+            }
+          ],
+          "com.company.LevelNode@43a0cee9": [
+            {
+              "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+              "option": "go into the storage room"
+            }
+          ],
+          "com.company.LevelNode@2eda0940": [
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "actions": [
+                "heal 10"
+              ],
+              "option": "approach the man "
+            },
+            {
+              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+              "option": "ignore him"
+            }
+          ],
+          "com.company.LevelNode@4524411f": [
+            {
+              "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+              "option": "escape"
+            }
+          ],
+          "com.company.LevelNode@10dba097": [
+            {
+              "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+              "option": "fight the girl"
+            }
+          ],
+          "com.company.LevelNode@2e3fc542": [
+            {
+              "text": "You approach the child, and take a closer look.",
+              "option": "approach"
+            },
+            {
+              "text": "You ignore the child",
+              "option": "ignore"
+            }
+          ],
+          "com.company.LevelNode@401e7803": [
+            {
+              "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+              "option": "escape"
+            }
+          ],
+          "com.company.LevelNode@704d6e83": [
+            {
+              "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+              "actions": [
+                "item 1"
+              ],
+              "option": "search the shelf"
+            },
+            {
+              "text": "",
+              "option": "close the shelf"
+            }
+          ]
+        },
+        "levelNodes": [],
+        "completionNodes": [
+          {
+            "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+            "actions": [
+              "heal 10"
+            ],
+            "option": "approach the man "
+          },
+          {
+            "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+            "option": "ignore him"
+          }
+        ],
+        "deathNodes": [],
+        "currentNode": {
+          "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+        }
+      }
+    },
+    {
+      "visited": false,
+      "name": "home",
+      "description": "Choose a place to go.",
+      "levelMap": {
+        "adjacent": {},
+        "levelNodes": [],
+        "completionNodes": [
+          {
+            "text": "Choose a place to go."
+          }
+        ],
+        "currentNode": {
+          "text": "Choose a place to go."
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": {
+        "visited": false,
+        "name": "home",
+        "description": "Choose a place to go.",
+        "levelMap": {
+          "adjacent": {},
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "Choose a place to go."
+            }
+          ],
+          "currentNode": {
+            "text": "Choose a place to go."
+          }
+        }
+      },
+      "destination": {
+        "visited": false,
+        "name": "cottage",
+        "description": "You found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@c81cdd1": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@543c6f6d": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@43738a82": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@32eebfca": [
+              {
+                "text": "You approach the child, and take a closer look.",
+                "option": "approach"
+              },
+              {
+                "text": "You ignore the child",
+                "option": "ignore"
+              }
+            ],
+            "com.company.LevelNode@13eb8acf": [
+              {
+                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+                "option": "fight the girl"
+              }
+            ],
+            "com.company.LevelNode@4e718207": [
+              {
+                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+                "actions": [
+                  "psychoFight"
+                ],
+                "option": "wake her up"
+              },
+              {
+                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+                "option": "leave her alone"
+              }
+            ],
+            "com.company.LevelNode@51c8530f": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ],
+            "com.company.LevelNode@1fc2b765": [
+              {
+                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "actions": [
+                  "heal 10"
+                ],
+                "option": "approach the man "
+              },
+              {
+                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+                "option": "ignore him"
+              }
+            ],
+            "com.company.LevelNode@1d371b2d": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@7403c468": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "actions": [
+                "heal 10"
+              ],
+              "option": "approach the man "
+            },
+            {
+              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+              "option": "ignore him"
+            }
+          ],
+          "deathNodes": [],
+          "currentNode": {
+            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.",
+            "actions": [
+              "locationObject table under medkit"
+            ]
+          }
+        }
+      },
+      "distance": 5
+    },
+    {
+      "source": {
+        "visited": false,
+        "name": "home",
+        "description": "Choose a place to go.",
+        "levelMap": {
+          "adjacent": {},
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "Choose a place to go."
+            }
+          ],
+          "currentNode": {
+            "text": "Choose a place to go."
+          }
+        }
+      },
+      "destination": {
+        "visited": false,
+        "name": "forest",
+        "description": "You notice that the more you walk, the more densely packed the trees stand. You are entering a forest.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@2de8284b": [
+              {
+                "text": "Hunt."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@22eeefeb": [
+              {
+                "text": "You quickly passed by, knowing that it is abnormal to have a person in the middle of this forest after zombie outbreak."
+              }
+            ],
+            "com.company.LevelNode@396e2f39": [
+              {
+                "text": "Having been hungry, you decided to hunt after confirming that you didn\u0027t have enough food."
+              }
+            ],
+            "com.company.LevelNode@2a70a3d8": [
+              {
+                "text": "Approach."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@12c8a2c0": [
+              {
+                "text": "You successfully hunt and get meat."
+              },
+              {
+                "text": "Hunting failed."
+              }
+            ],
+            "com.company.LevelNode@75881071": [
+              {
+                "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+              }
+            ],
+            "com.company.LevelNode@a74868d": [
+              {
+                "text": "You decided to pass by as you were not confident enough to hunt it."
+              }
+            ],
+            "com.company.LevelNode@78ac1102": [
+              {
+                "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+              }
+            ],
+            "com.company.LevelNode@289d1c02": [
+              {
+                "text": "Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn\u0027t know because he wasn\u0027t looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you."
+              }
+            ],
+            "com.company.LevelNode@17d0685f": [
+              {
+                "text": "Win."
+              },
+              {
+                "text": "Lose."
+              }
+            ],
+            "com.company.LevelNode@3891771e": [
+              {
+                "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+            }
+          ],
+          "deathNodes": [
+            {
+              "text": "Lose."
+            }
+          ],
+          "currentNode": {
+            "text": "You are in a forest"
+          }
+        }
+      },
+      "distance": 9
+    },
+    {
+      "source": {
+        "visited": false,
+        "name": "cottage",
+        "description": "You found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@c81cdd1": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@543c6f6d": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@43738a82": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@32eebfca": [
+              {
+                "text": "You approach the child, and take a closer look.",
+                "option": "approach"
+              },
+              {
+                "text": "You ignore the child",
+                "option": "ignore"
+              }
+            ],
+            "com.company.LevelNode@13eb8acf": [
+              {
+                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+                "option": "fight the girl"
+              }
+            ],
+            "com.company.LevelNode@4e718207": [
+              {
+                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+                "actions": [
+                  "psychoFight"
+                ],
+                "option": "wake her up"
+              },
+              {
+                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+                "option": "leave her alone"
+              }
+            ],
+            "com.company.LevelNode@51c8530f": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ],
+            "com.company.LevelNode@1fc2b765": [
+              {
+                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "actions": [
+                  "heal 10"
+                ],
+                "option": "approach the man "
+              },
+              {
+                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+                "option": "ignore him"
+              }
+            ],
+            "com.company.LevelNode@1d371b2d": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@7403c468": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "actions": [
+                "heal 10"
+              ],
+              "option": "approach the man "
+            },
+            {
+              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+              "option": "ignore him"
+            }
+          ],
+          "deathNodes": [],
+          "currentNode": {
+            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.",
+            "actions": [
+              "locationObject table under medkit"
+            ]
+          }
+        }
+      },
+      "destination": {
+        "visited": false,
+        "name": "hospital",
+        "description": "You are now in the hospital. Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@6ec8211c": [
+              {
+                "text": "You decided to talk to her, and after a short conversation, you found out that she was a doctor.\nYou showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment.\nFortunately, she gladly helped me.",
+                "actions": [
+                  "heal 10"
+                ]
+              }
+            ],
+            "com.company.LevelNode@782663d3": [
+              {
+                "text": "Won."
+              },
+              {
+                "text": "Lost."
+              }
+            ],
+            "com.company.LevelNode@4fb64261": [
+              {
+                "text": "He was holding a scapel you couldn\u0027t see from the distance.\nHe ran towards you so that you failed to escape and got a cut.\n\nYou realised that you are not able to run away, so decided to fight back.",
+                "actions": [
+                  "psychofight"
+                ]
+              }
+            ],
+            "com.company.LevelNode@25bbf683": [
+              {
+                "text": "Talk to her."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@18bf3d14": [
+              {
+                "text": "Go and talk with him."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@7276c8cd": [
+              {
+                "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+              }
+            ],
+            "com.company.LevelNode@7e0e6aa2": [
+              {
+                "text": "While walking in the hallway, you found the first aid kit near the staircase.\nCongratulations, you collected a first aid kit!",
+                "actions": [
+                  "item 1"
+                ]
+              }
+            ],
+            "com.company.LevelNode@365185bd": [
+              {
+                "text": "Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.\nAt third floor, you found someone walking towards you.\n\nHe looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips.\nHe realised you coming towards him as well, and he seems to want a conversation with you."
+              }
+            ],
+            "com.company.LevelNode@544a2ea6": [
+              {
+                "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+              }
+            ],
+            "com.company.LevelNode@1990a65e": [
+              {
+                "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+              }
+            ],
+            "com.company.LevelNode@42607a4f": [
+              {
+                "text": "You thought that it is weird to have person in the middle of the hospital hallway, so you ignored him and went up the staircase quickly so he wouldn\u0027t follow you."
+              }
+            ],
+            "com.company.LevelNode@64485a47": [
+              {
+                "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+            },
+            {
+              "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+            }
+          ],
+          "deathNodes": [
+            {
+              "text": "Lost."
+            }
+          ],
+          "currentNode": {
+            "text": "You are now in the hospital."
+          }
+        }
+      },
+      "distance": 6
+    },
+    {
+      "source": {
+        "visited": false,
+        "name": "cottage",
+        "description": "You found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@c81cdd1": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@543c6f6d": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@43738a82": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@32eebfca": [
+              {
+                "text": "You approach the child, and take a closer look.",
+                "option": "approach"
+              },
+              {
+                "text": "You ignore the child",
+                "option": "ignore"
+              }
+            ],
+            "com.company.LevelNode@13eb8acf": [
+              {
+                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+                "option": "fight the girl"
+              }
+            ],
+            "com.company.LevelNode@4e718207": [
+              {
+                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+                "actions": [
+                  "psychoFight"
+                ],
+                "option": "wake her up"
+              },
+              {
+                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+                "option": "leave her alone"
+              }
+            ],
+            "com.company.LevelNode@51c8530f": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ],
+            "com.company.LevelNode@1fc2b765": [
+              {
+                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "actions": [
+                  "heal 10"
+                ],
+                "option": "approach the man "
+              },
+              {
+                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+                "option": "ignore him"
+              }
+            ],
+            "com.company.LevelNode@1d371b2d": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@7403c468": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "actions": [
+                "heal 10"
+              ],
+              "option": "approach the man "
+            },
+            {
+              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+              "option": "ignore him"
+            }
+          ],
+          "deathNodes": [],
+          "currentNode": {
+            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.",
+            "actions": [
+              "locationObject table under medkit"
+            ]
+          }
+        }
+      },
+      "destination": {
+        "visited": false,
+        "name": "forest",
+        "description": "You notice that the more you walk, the more densely packed the trees stand. You are entering a forest.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@2de8284b": [
+              {
+                "text": "Hunt."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@22eeefeb": [
+              {
+                "text": "You quickly passed by, knowing that it is abnormal to have a person in the middle of this forest after zombie outbreak."
+              }
+            ],
+            "com.company.LevelNode@396e2f39": [
+              {
+                "text": "Having been hungry, you decided to hunt after confirming that you didn\u0027t have enough food."
+              }
+            ],
+            "com.company.LevelNode@2a70a3d8": [
+              {
+                "text": "Approach."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@12c8a2c0": [
+              {
+                "text": "You successfully hunt and get meat."
+              },
+              {
+                "text": "Hunting failed."
+              }
+            ],
+            "com.company.LevelNode@75881071": [
+              {
+                "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+              }
+            ],
+            "com.company.LevelNode@a74868d": [
+              {
+                "text": "You decided to pass by as you were not confident enough to hunt it."
+              }
+            ],
+            "com.company.LevelNode@78ac1102": [
+              {
+                "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+              }
+            ],
+            "com.company.LevelNode@289d1c02": [
+              {
+                "text": "Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn\u0027t know because he wasn\u0027t looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you."
+              }
+            ],
+            "com.company.LevelNode@17d0685f": [
+              {
+                "text": "Win."
+              },
+              {
+                "text": "Lose."
+              }
+            ],
+            "com.company.LevelNode@3891771e": [
+              {
+                "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+            }
+          ],
+          "deathNodes": [
+            {
+              "text": "Lose."
+            }
+          ],
+          "currentNode": {
+            "text": "You are in a forest"
+          }
+        }
+      },
+      "distance": 4
+    },
+    {
+      "source": {
+        "visited": false,
+        "name": "forest",
+        "description": "You notice that the more you walk, the more densely packed the trees stand. You are entering a forest.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@2de8284b": [
+              {
+                "text": "Hunt."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@22eeefeb": [
+              {
+                "text": "You quickly passed by, knowing that it is abnormal to have a person in the middle of this forest after zombie outbreak."
+              }
+            ],
+            "com.company.LevelNode@396e2f39": [
+              {
+                "text": "Having been hungry, you decided to hunt after confirming that you didn\u0027t have enough food."
+              }
+            ],
+            "com.company.LevelNode@2a70a3d8": [
+              {
+                "text": "Approach."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@12c8a2c0": [
+              {
+                "text": "You successfully hunt and get meat."
+              },
+              {
+                "text": "Hunting failed."
+              }
+            ],
+            "com.company.LevelNode@75881071": [
+              {
+                "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+              }
+            ],
+            "com.company.LevelNode@a74868d": [
+              {
+                "text": "You decided to pass by as you were not confident enough to hunt it."
+              }
+            ],
+            "com.company.LevelNode@78ac1102": [
+              {
+                "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+              }
+            ],
+            "com.company.LevelNode@289d1c02": [
+              {
+                "text": "Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn\u0027t know because he wasn\u0027t looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you."
+              }
+            ],
+            "com.company.LevelNode@17d0685f": [
+              {
+                "text": "Win."
+              },
+              {
+                "text": "Lose."
+              }
+            ],
+            "com.company.LevelNode@3891771e": [
+              {
+                "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+            }
+          ],
+          "deathNodes": [
+            {
+              "text": "Lose."
+            }
+          ],
+          "currentNode": {
+            "text": "You are in a forest"
+          }
+        }
+      },
+      "destination": {
+        "visited": false,
+        "name": "hospital",
+        "description": "You are now in the hospital. Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@6ec8211c": [
+              {
+                "text": "You decided to talk to her, and after a short conversation, you found out that she was a doctor.\nYou showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment.\nFortunately, she gladly helped me.",
+                "actions": [
+                  "heal 10"
+                ]
+              }
+            ],
+            "com.company.LevelNode@782663d3": [
+              {
+                "text": "Won."
+              },
+              {
+                "text": "Lost."
+              }
+            ],
+            "com.company.LevelNode@4fb64261": [
+              {
+                "text": "He was holding a scapel you couldn\u0027t see from the distance.\nHe ran towards you so that you failed to escape and got a cut.\n\nYou realised that you are not able to run away, so decided to fight back.",
+                "actions": [
+                  "psychofight"
+                ]
+              }
+            ],
+            "com.company.LevelNode@25bbf683": [
+              {
+                "text": "Talk to her."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@18bf3d14": [
+              {
+                "text": "Go and talk with him."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@7276c8cd": [
+              {
+                "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+              }
+            ],
+            "com.company.LevelNode@7e0e6aa2": [
+              {
+                "text": "While walking in the hallway, you found the first aid kit near the staircase.\nCongratulations, you collected a first aid kit!",
+                "actions": [
+                  "item 1"
+                ]
+              }
+            ],
+            "com.company.LevelNode@365185bd": [
+              {
+                "text": "Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.\nAt third floor, you found someone walking towards you.\n\nHe looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips.\nHe realised you coming towards him as well, and he seems to want a conversation with you."
+              }
+            ],
+            "com.company.LevelNode@544a2ea6": [
+              {
+                "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+              }
+            ],
+            "com.company.LevelNode@1990a65e": [
+              {
+                "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+              }
+            ],
+            "com.company.LevelNode@42607a4f": [
+              {
+                "text": "You thought that it is weird to have person in the middle of the hospital hallway, so you ignored him and went up the staircase quickly so he wouldn\u0027t follow you."
+              }
+            ],
+            "com.company.LevelNode@64485a47": [
+              {
+                "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+            },
+            {
+              "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+            }
+          ],
+          "deathNodes": [
+            {
+              "text": "Lost."
+            }
+          ],
+          "currentNode": {
+            "text": "You are now in the hospital."
+          }
+        }
+      },
+      "distance": 7
+    },
+    {
+      "source": {
+        "visited": false,
+        "name": "forest",
+        "description": "You notice that the more you walk, the more densely packed the trees stand. You are entering a forest.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@2de8284b": [
+              {
+                "text": "Hunt."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@22eeefeb": [
+              {
+                "text": "You quickly passed by, knowing that it is abnormal to have a person in the middle of this forest after zombie outbreak."
+              }
+            ],
+            "com.company.LevelNode@396e2f39": [
+              {
+                "text": "Having been hungry, you decided to hunt after confirming that you didn\u0027t have enough food."
+              }
+            ],
+            "com.company.LevelNode@2a70a3d8": [
+              {
+                "text": "Approach."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@12c8a2c0": [
+              {
+                "text": "You successfully hunt and get meat."
+              },
+              {
+                "text": "Hunting failed."
+              }
+            ],
+            "com.company.LevelNode@75881071": [
+              {
+                "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+              }
+            ],
+            "com.company.LevelNode@a74868d": [
+              {
+                "text": "You decided to pass by as you were not confident enough to hunt it."
+              }
+            ],
+            "com.company.LevelNode@78ac1102": [
+              {
+                "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+              }
+            ],
+            "com.company.LevelNode@289d1c02": [
+              {
+                "text": "Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn\u0027t know because he wasn\u0027t looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you."
+              }
+            ],
+            "com.company.LevelNode@17d0685f": [
+              {
+                "text": "Win."
+              },
+              {
+                "text": "Lose."
+              }
+            ],
+            "com.company.LevelNode@3891771e": [
+              {
+                "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+            }
+          ],
+          "deathNodes": [
+            {
+              "text": "Lose."
+            }
+          ],
+          "currentNode": {
+            "text": "You are in a forest"
+          }
+        }
+      },
+      "destination": {
+        "visited": false,
+        "name": "road",
+        "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@eb21112": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@1786f9d5": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ],
+            "com.company.LevelNode@150c158": [
+              {
+                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+                "actions": [
+                  "psychoFight"
+                ],
+                "option": "wake her up"
+              },
+              {
+                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+                "option": "leave her alone"
+              }
+            ],
+            "com.company.LevelNode@43a0cee9": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@2eda0940": [
+              {
+                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "actions": [
+                  "heal 10"
+                ],
+                "option": "approach the man "
+              },
+              {
+                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+                "option": "ignore him"
+              }
+            ],
+            "com.company.LevelNode@4524411f": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@10dba097": [
+              {
+                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+                "option": "fight the girl"
+              }
+            ],
+            "com.company.LevelNode@2e3fc542": [
+              {
+                "text": "You approach the child, and take a closer look.",
+                "option": "approach"
+              },
+              {
+                "text": "You ignore the child",
+                "option": "ignore"
+              }
+            ],
+            "com.company.LevelNode@401e7803": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@704d6e83": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "actions": [
+                "heal 10"
+              ],
+              "option": "approach the man "
+            },
+            {
+              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+              "option": "ignore him"
+            }
+          ],
+          "deathNodes": [],
+          "currentNode": {
+            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+          }
+        }
+      },
+      "distance": 6
+    },
+    {
+      "source": {
+        "visited": false,
+        "name": "hospital",
+        "description": "You are now in the hospital. Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@6ec8211c": [
+              {
+                "text": "You decided to talk to her, and after a short conversation, you found out that she was a doctor.\nYou showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment.\nFortunately, she gladly helped me.",
+                "actions": [
+                  "heal 10"
+                ]
+              }
+            ],
+            "com.company.LevelNode@782663d3": [
+              {
+                "text": "Won."
+              },
+              {
+                "text": "Lost."
+              }
+            ],
+            "com.company.LevelNode@4fb64261": [
+              {
+                "text": "He was holding a scapel you couldn\u0027t see from the distance.\nHe ran towards you so that you failed to escape and got a cut.\n\nYou realised that you are not able to run away, so decided to fight back.",
+                "actions": [
+                  "psychofight"
+                ]
+              }
+            ],
+            "com.company.LevelNode@25bbf683": [
+              {
+                "text": "Talk to her."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@18bf3d14": [
+              {
+                "text": "Go and talk with him."
+              },
+              {
+                "text": "Ignore."
+              }
+            ],
+            "com.company.LevelNode@7276c8cd": [
+              {
+                "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+              }
+            ],
+            "com.company.LevelNode@7e0e6aa2": [
+              {
+                "text": "While walking in the hallway, you found the first aid kit near the staircase.\nCongratulations, you collected a first aid kit!",
+                "actions": [
+                  "item 1"
+                ]
+              }
+            ],
+            "com.company.LevelNode@365185bd": [
+              {
+                "text": "Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.\nAt third floor, you found someone walking towards you.\n\nHe looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips.\nHe realised you coming towards him as well, and he seems to want a conversation with you."
+              }
+            ],
+            "com.company.LevelNode@544a2ea6": [
+              {
+                "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+              }
+            ],
+            "com.company.LevelNode@1990a65e": [
+              {
+                "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+              }
+            ],
+            "com.company.LevelNode@42607a4f": [
+              {
+                "text": "You thought that it is weird to have person in the middle of the hospital hallway, so you ignored him and went up the staircase quickly so he wouldn\u0027t follow you."
+              }
+            ],
+            "com.company.LevelNode@64485a47": [
+              {
+                "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+            },
+            {
+              "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
+            }
+          ],
+          "deathNodes": [
+            {
+              "text": "Lost."
+            }
+          ],
+          "currentNode": {
+            "text": "You are now in the hospital."
+          }
+        }
+      },
+      "destination": {
+        "visited": false,
+        "name": "road",
+        "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@eb21112": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@1786f9d5": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ],
+            "com.company.LevelNode@150c158": [
+              {
+                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+                "actions": [
+                  "psychoFight"
+                ],
+                "option": "wake her up"
+              },
+              {
+                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+                "option": "leave her alone"
+              }
+            ],
+            "com.company.LevelNode@43a0cee9": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@2eda0940": [
+              {
+                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "actions": [
+                  "heal 10"
+                ],
+                "option": "approach the man "
+              },
+              {
+                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+                "option": "ignore him"
+              }
+            ],
+            "com.company.LevelNode@4524411f": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@10dba097": [
+              {
+                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+                "option": "fight the girl"
+              }
+            ],
+            "com.company.LevelNode@2e3fc542": [
+              {
+                "text": "You approach the child, and take a closer look.",
+                "option": "approach"
+              },
+              {
+                "text": "You ignore the child",
+                "option": "ignore"
+              }
+            ],
+            "com.company.LevelNode@401e7803": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@704d6e83": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "actions": [
+                "heal 10"
+              ],
+              "option": "approach the man "
+            },
+            {
+              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+              "option": "ignore him"
+            }
+          ],
+          "deathNodes": [],
+          "currentNode": {
+            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+          }
+        }
+      },
+      "distance": 10
+    },
+    {
+      "source": {
+        "visited": false,
+        "name": "road",
+        "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
+        "levelMap": {
+          "adjacent": {
+            "com.company.LevelNode@eb21112": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@1786f9d5": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ],
+            "com.company.LevelNode@150c158": [
+              {
+                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+                "actions": [
+                  "psychoFight"
+                ],
+                "option": "wake her up"
+              },
+              {
+                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
+                "option": "leave her alone"
+              }
+            ],
+            "com.company.LevelNode@43a0cee9": [
+              {
+                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
+                "option": "go into the storage room"
+              }
+            ],
+            "com.company.LevelNode@2eda0940": [
+              {
+                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "actions": [
+                  "heal 10"
+                ],
+                "option": "approach the man "
+              },
+              {
+                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+                "option": "ignore him"
+              }
+            ],
+            "com.company.LevelNode@4524411f": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@10dba097": [
+              {
+                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+                "option": "fight the girl"
+              }
+            ],
+            "com.company.LevelNode@2e3fc542": [
+              {
+                "text": "You approach the child, and take a closer look.",
+                "option": "approach"
+              },
+              {
+                "text": "You ignore the child",
+                "option": "ignore"
+              }
+            ],
+            "com.company.LevelNode@401e7803": [
+              {
+                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
+                "option": "escape"
+              }
+            ],
+            "com.company.LevelNode@704d6e83": [
+              {
+                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+                "actions": [
+                  "item 1"
+                ],
+                "option": "search the shelf"
+              },
+              {
+                "text": "",
+                "option": "close the shelf"
+              }
+            ]
+          },
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "actions": [
+                "heal 10"
+              ],
+              "option": "approach the man "
+            },
+            {
+              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
+              "option": "ignore him"
+            }
+          ],
+          "deathNodes": [],
+          "currentNode": {
+            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+          }
+        }
+      },
+      "destination": {
+        "visited": false,
+        "name": "lab",
+        "description": "This journey just never seems to end. You miss the warm embrace of your family and the smell of home. This journey has been unforgiving to you mentally and physically. You get flashbacks of your loved ones who had died before you in your arms. You wonder, “maybe it’s time for me to go too…”. But then, as you walk over a hill, you slowly see a pristine white building over the horizon. It seems to be… it seems to be… Congratulations, you finally reached the laboratory! Thankfully, there are no zombies as there are many soldiers inside, so you are safe now. You walk into the laboratory, and there are researchers who are ready to provide you with vaccines.",
+        "levelMap": {
+          "adjacent": {},
+          "levelNodes": [],
+          "completionNodes": [
+            {
+              "text": "Done."
+            }
+          ],
+          "currentNode": {
+            "text": "Done."
+          }
+        }
+      },
+      "distance": 4
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LevelNode implements MenuItem{
@@ -22,7 +23,9 @@ public class LevelNode implements MenuItem{
     }
 
     public List<String> getActions() {
-        return actions;
+        List<String> temp = actions;
+        actions = new ArrayList<>();
+        return temp;
     }
 
     public void setActions(List<String> actions) {
