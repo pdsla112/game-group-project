@@ -226,7 +226,7 @@ public class Game {
         LevelNode roadOp1 = new LevelNode("approach taxidriver","As you kept walking, you found a taxi that seemed to have person inside. You knocked on the door to have a conversation with middle-aged woman inside. She rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation. She said she could drive you to the place where you had to go. ",null);
         LevelNode roadOp2 = new LevelNode("remove the debris","However, the road was blocked so she needed your help to clean beforehand. With her, you managed to organise blocked road and safely go to the next destination. ",null);
         road.levelMap.setAdjacent(rootRoad,new ArrayList<>(Arrays.asList(roadOp1)));
-        road.levelMap.setAdjacent(rootOp1,new ArrayList<>(Arrays.asList(roadOp2)));
+        road.levelMap.setAdjacent(roadOp1,new ArrayList<>(Arrays.asList(roadOp2)));
         LevelNode roadOp3 = new LevelNode(null,"Thanks to her, you could go to the next destination safely and quickly.",new ArrayList<>(Arrays.asList("heal 10")));//distance?
         road.levelMap.setAdjacent(roadOp2,new ArrayList<>(Arrays.asList(roadOp3)));
 
