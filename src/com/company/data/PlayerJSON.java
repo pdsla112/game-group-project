@@ -53,12 +53,15 @@ public class PlayerJSON {
         return null;
     }
 
+    // Debug!
     public static void savePlayer(Player player) {
+        System.out.println(player.getEmail());
         ArrayList<Player> deserializedList = deserializeJSON();
+        System.out.println(deserializedList.size());
         Player playerToReplace = getSpecificPlayer(player.getEmail());
-        if (playerToReplace == null) {
+        if (playerToReplace.equals(null)) {
             deserializedList.add(player);
-        } else if (playerToReplace != null) {
+        } else if (!playerToReplace.equals(null)) {
             deserializedList.remove(playerToReplace);
             deserializedList.add(player);
         }
