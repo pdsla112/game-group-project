@@ -58,7 +58,6 @@ public class Game {
                 } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {
                     throw new DeathException("You died.");
                 } else {
-
                     Menu levelMenu = new Menu(levelMap.getAdjacent());
                     levelMenu.printMenuItems();
                     running = parser.parse(Parser.getInputString(), levelMenu);
@@ -220,32 +219,18 @@ public class Game {
         hospital.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(hospitalpsycholose)));
 
         //road
-        LevelNode rootRoad = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", null);
+        LevelNode rootRoad = new LevelNode(null,"You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\n" +
+                "You saw the zombie attacking someone, so you stepped back into the bush falteringly.",new ArrayList<>(Arrays.asList("zombieFight")));//prob of zombie appearing?
         road.levelMap = new LevelMap(rootRoad);
-        LevelNode roadOp1 = new LevelNode("approach","You approach the child, and take a closer look.",null);
-        LevelNode roadOp2 = new LevelNode("ignore","You ignore the child",null);
-        road.levelMap.setAdjacent(rootRoad,new ArrayList<>(Arrays.asList(roadOp1,roadOp2)));
-        LevelNode roadOp3 = new LevelNode("wake her up","You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don't want to hurt child, but at the same time, you don't want to die.",new ArrayList<>(Arrays.asList("psychoFight")));
-        LevelNode roadOp4 = new LevelNode("leave her alone","You don't want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",null);
-        road.levelMap.setAdjacent(roadOp1,new ArrayList<>(Arrays.asList(roadOp3,roadOp4)));
-        LevelNode roadOp5 = new LevelNode("escape", "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",null);
-        LevelNode roadOp6 = new LevelNode("fight the girl","Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",null);//TODO
-        road.levelMap.setAdjacent(roadOp2,new ArrayList<>(Arrays.asList(roadOp5)));
-        road.levelMap.setAdjacent(roadOp4,new ArrayList<>(Arrays.asList(roadOp5)));
-        road.levelMap.setAdjacent(roadOp3,new ArrayList<>(Arrays.asList(roadOp6)));
-        LevelNode roadOp7 = new LevelNode("search the shelf","Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",new ArrayList<>(Arrays.asList("item 1")));
-        LevelNode roadOp8 = new LevelNode("close the shelf","",null);
-        road.levelMap.setAdjacent(roadOp5,new ArrayList<>(Arrays.asList(roadOp7,roadOp8)));
-        road.levelMap.setAdjacent(roadOp6,new ArrayList<>(Arrays.asList(roadOp7,roadOp8)));
-        LevelNode roadOp9 = new LevelNode("go into the storage room","You go into the storage room and find a muscular man in his mid 30's.\nHe doesn't seem to have noticed you yet.",null);
-        road.levelMap.setAdjacent(roadOp7,new ArrayList<>(Arrays.asList(roadOp9)));
-        road.levelMap.setAdjacent(roadOp8,new ArrayList<>(Arrays.asList(roadOp9)));
-        LevelNode roadOp10 = new LevelNode("approach the man ","You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",new ArrayList<>(Arrays.asList("heal 10")));
-        LevelNode roadOp11 = new LevelNode("ignore him","You ignore the man and leave the cottage.\nChoose the next location to go.",null);
-        road.levelMap.setAdjacent(roadOp9,new ArrayList<>(Arrays.asList(roadOp10,roadOp11)));
+        LevelNode roadOp1 = new LevelNode("approach taxidriver","As you kept walking, you found a taxi that seemed to have person inside. You knocked on the door to have a conversation with middle-aged woman inside. She rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation. She said she could drive you to the place where you had to go. ",null);
+        LevelNode roadOp2 = new LevelNode("remove the debris","However, the road was blocked so she needed your help to clean beforehand. With her, you managed to organise blocked road and safely go to the next destination. ",null);
+        road.levelMap.setAdjacent(rootRoad,new ArrayList<>(Arrays.asList(roadOp1)));
+        road.levelMap.setAdjacent(rootOp1,new ArrayList<>(Arrays.asList(roadOp2)));
+        LevelNode roadOp3 = new LevelNode(null,"Thanks to her, you could go to the next destination safely and quickly.",new ArrayList<>(Arrays.asList("heal 10")));//distance?
+        road.levelMap.setAdjacent(roadOp2,new ArrayList<>(Arrays.asList(roadOp3)));
 
         //sucessfully completed level
-        road.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(roadOp10,roadOp11)));
+        road.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(roadOp3)));
         //player dies
         road.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList()));//TODO
 
