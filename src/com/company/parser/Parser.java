@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class  Parser {
+public class Parser {
 
     Player player;
     public static String getInputString() {

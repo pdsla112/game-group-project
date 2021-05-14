@@ -166,6 +166,10 @@ public class Player {
         return this.email;
     }
 
+    public boolean isAlive(){
+        return health > 0;
+    }
+
 
 
 //    public void attack(String opponentName) throws DeathException {
