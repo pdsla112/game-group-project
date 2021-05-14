@@ -1,7 +1,9 @@
 package com.company.characters;
 
+import com.company.DeathException;
 import com.company.data.Initialization;
 import com.company.data.InitializeJSON;
+import com.company.enemies.Enemy;
 import com.company.items.LocationObject;
 import com.company.items.Medkit;
 import com.company.locations.Location;
@@ -31,7 +33,7 @@ public class Player {
         //temporary (load from json)
         this.name = name;
         this.level = level;
-        this.damage = 100 - 10*level;
+        this.damage = 30 - 2*level;
         this.health = 100;
         this.locationName = locationName;
         this.tokenizer = new Tokenizer();
@@ -94,10 +96,22 @@ public class Player {
 
     public void addItem(String name) {
         if (itemsMap.containsKey(name)) {
-            itemsMap.put(name, itemsMap.get(name)+1);
+            itemsMap.put(name, itemsMap.get(name) + 1);
         } else {
             itemsMap.put(name, 1);
         }
+    }
+
+    public void attack(Enemy e, int dmg, int selfDmg) throws DeathException {
+        e.setHp(e.getHp() - dmg);
+        health -= selfDmg;
+        if (health <= 0) {
+            throw new DeathException("player died.");
+        }
+        if (e.getHp() <= 0) {
+            e.setAlive(false);
+        }
+
     }
 
     public String getLocationName() {

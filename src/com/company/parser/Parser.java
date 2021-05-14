@@ -6,6 +6,9 @@ import com.company.LevelNode;
 import com.company.MenuItem;
 import com.company.characters.Player;
 import com.company.data.PlayerJSON;
+import com.company.enemies.Enemy;
+import com.company.enemies.Psychopath;
+import com.company.enemies.Zombie;
 import com.company.items.LocationObject;
 import com.company.locations.Location;
 import com.company.menus.BattleMenu;
@@ -27,6 +30,8 @@ public class  Parser {
     public Parser(Player player) {
         this.player = player;
     }
+
+
 
     public boolean parse(String inputString, Menu menu) throws DeathException {
 
@@ -67,47 +72,49 @@ public class  Parser {
             }
 
         } catch(NumberFormatException e) {
-            //add items to tokenizer
-            ArrayList<String> itemNouns = new ArrayList<>();
-            for (String itemName : player.itemsMap.keySet()) {
-                if (player.itemsMap.get(itemName) > 0) {
-                    itemNouns.add(itemName);
-                }
+            return parseSentenceInput(inputString, menu);
+        }
+        return true;
+    }
+
+    public boolean parseSentenceInput(String inputString, Menu menu) {
+        //add items to tokenizer
+        ArrayList<String> itemNouns = new ArrayList<>();
+        for (String itemName : player.itemsMap.keySet()) {
+            if (player.itemsMap.get(itemName) > 0) {
+                itemNouns.add(itemName);
             }
+        }
 
-            //add objects to tokenizer
-            ArrayList<String> prepositions = new ArrayList<>();
-            ArrayList<String> objectNouns = new ArrayList<>();
-            if (player.locationObjects != null) {
-                for (LocationObject lo : player.locationObjects) {
-                    prepositions.add(lo.getLocation());
-                    objectNouns.add(lo.getObjectName());
-                }
+        //add objects to tokenizer
+        ArrayList<String> prepositions = new ArrayList<>();
+        ArrayList<String> objectNouns = new ArrayList<>();
+        if (player.locationObjects != null) {
+            for (LocationObject lo : player.locationObjects) {
+                prepositions.add(lo.getLocation());
+                objectNouns.add(lo.getObjectName());
             }
+        }
 
-            player.tokenizer.setNounG3(itemNouns);
-            player.tokenizer.setNounG4(objectNouns);
-            player.tokenizer.setPrepositionG1(prepositions);
+        player.tokenizer.setNounG3(itemNouns);
+        player.tokenizer.setNounG4(objectNouns);
+        player.tokenizer.setPrepositionG1(prepositions);
 
 
-            player.tokenizer.setBuffer(inputString);
+        player.tokenizer.setBuffer(inputString);
 
-            if (inputString.equals("h") || inputString.equals("help")) {
-                System.out.println(getHelpText(menu));
+        if (inputString.equals("h") || inputString.equals("help")) {
+            System.out.println(getHelpText(menu));
+        } else {
+            TokenParser tokenParser = new TokenParser(player.tokenizer);
+            Sentence sentence = tokenParser.parseSentence();
+            if (sentence instanceof IncorrectSentence) {
+                System.out.println(sentence.show());
             } else {
-                TokenParser tokenParser = new TokenParser(player.tokenizer);
-                Sentence sentence = tokenParser.parseSentence();
-                if (sentence instanceof IncorrectSentence) {
-                    System.out.println(sentence.show());
-                } else {
-                    return evaluateSentence(sentence);
+                return evaluateSentence(sentence);
 
 
-                }
             }
-
-
-
         }
         return true;
     }
@@ -243,6 +250,27 @@ public class  Parser {
         return true;
     }
 
+    public boolean battleParse(String inputString, Menu menu, Enemy enemy) throws DeathException {
+        try {
+            int selected = Integer.parseInt(inputString);
+
+            if (selected == 0) {
+                System.out.println("You choose to attack head on.");
+                player.attack(enemy, player.getDamage(), player.getLevel()+2);
+            } else if (selected == 1) {
+                player.attack(enemy, player.getDamage()-6, 0);
+            } else {
+                System.out.println("You choose to use a sneak attack.");
+                battleParse(Parser.getInputString(), menu, enemy);
+            }
+
+        } catch(NumberFormatException e) {
+            return parseSentenceInput(inputString, menu);
+
+        }
+        return true;
+    }
+
     //returns true if game is still running afterwards
     //user doesn't choose to do these things
     //done when player
@@ -280,10 +308,10 @@ public class  Parser {
 
             }
             if(command.equals("psychoFight")){
-                new BattleMenu();//update
+                new BattleMenu(player, new Psychopath());//update
             }
             if(command.equals("zombieFight")){
-                new BattleMenu();//update
+                new BattleMenu(player, new Zombie());//update
             }
             if (command.equals("location")) {
                 String newLocation = userCommandSplit[1];
