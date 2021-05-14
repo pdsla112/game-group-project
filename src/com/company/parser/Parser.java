@@ -279,11 +279,15 @@ public class  Parser {
 
 
             }
-            else if(command.equals("psychoFight")){
+            if(command.equals("psychoFight")){
                 new BattleMenu();//update
             }
-            else if(command.equals("zombieFight")){
+            if(command.equals("zombieFight")){
                 new BattleMenu();//update
+            }
+            if (command.equals("location")) {
+                String newLocation = userCommandSplit[1];
+                player.setLocationName(newLocation);
             }
 
 
