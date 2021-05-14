@@ -1,10 +1,14 @@
 package com.company.parser;
 
 import com.company.DeathException;
+import com.company.Game;
 import com.company.LevelNode;
 import com.company.MenuItem;
 import com.company.characters.Player;
 import com.company.data.PlayerJSON;
+import com.company.enemies.Enemy;
+import com.company.enemies.Psychopath;
+import com.company.enemies.Zombie;
 import com.company.items.LocationObject;
 import com.company.locations.Location;
 import com.company.menus.BattleMenu;
@@ -13,6 +17,7 @@ import com.company.menus.Menu;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Parser {
@@ -27,14 +32,17 @@ public class Parser {
         this.player = player;
     }
 
+
+
     public boolean parse(String inputString, Menu menu) throws DeathException {
 
         try {
             MenuItem selected = menu.getMenuItem(Integer.parseInt(inputString));
             if (selected != null) {
                 if (selected instanceof Location) {
-                    player.setLocation((Location) selected);
-                    player.getLocation().displayInformation();
+                    player.setLocationName(((Location) selected).name);
+                    Location playerLocation = Game.map.getLocationFromName(player.getLocationName());
+                    playerLocation.displayInformation();
                     boolean endPrompt = false;
                     while (!endPrompt) {
                         System.out.println("Would you like to save your progress?(y/n)");
@@ -43,66 +51,71 @@ public class Parser {
                             //save game (player data)
                             PlayerJSON.savePlayer(player);
                             System.out.println("game saved.");
+                            System.out.println();
                             endPrompt = true;
                         } else if (response.equals("n") || response.equals("no")) {
                             System.out.println("game not saved.");;
+                            System.out.println();
                             endPrompt = true;
                         }
                     }
                     player.setLocationObjects(new ArrayList<>());
-                    return parseActions(player.getLocation().getLevelMap().getCurrentNode().getActions());
+                    return parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
                     //todo player.setLocationObjects(new ArrayList<>());
                 } else if (selected instanceof LevelNode) {
-                    player.getLocation().getLevelMap().setCurrentNode((LevelNode) selected);
+                    Location playerLocation = Game.map.getLocationFromName(player.getLocationName());
+                    playerLocation.getLevelMap().setCurrentNode((LevelNode) selected);
                     // todo does not work for root node
                     player.setLocationObjects(new ArrayList<>());
-                    return parseActions(player.getLocation().getLevelMap().getCurrentNode().getActions());
+                    return parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
 
                 }
             }
 
         } catch(NumberFormatException e) {
-            //add items to tokenizer
-            ArrayList<String> itemNouns = new ArrayList<>();
-            for (String itemName : player.itemsMap.keySet()) {
-                if (player.itemsMap.get(itemName) > 0) {
-                    itemNouns.add(itemName);
-                }
+            return parseSentenceInput(inputString, menu);
+        }
+        return true;
+    }
+
+    public boolean parseSentenceInput(String inputString, Menu menu) {
+        //add items to tokenizer
+        ArrayList<String> itemNouns = new ArrayList<>();
+        for (String itemName : player.itemsMap.keySet()) {
+            if (player.itemsMap.get(itemName) > 0) {
+                itemNouns.add(itemName);
             }
+        }
 
-            //add objects to tokenizer
-            ArrayList<String> prepositions = new ArrayList<>();
-            ArrayList<String> objectNouns = new ArrayList<>();
-            if (player.locationObjects != null) {
-                for (LocationObject lo : player.locationObjects) {
-                    prepositions.add(lo.getLocation());
-                    objectNouns.add(lo.getObjectName());
-                }
+        //add objects to tokenizer
+        ArrayList<String> prepositions = new ArrayList<>();
+        ArrayList<String> objectNouns = new ArrayList<>();
+        if (player.locationObjects != null) {
+            for (LocationObject lo : player.locationObjects) {
+                prepositions.add(lo.getLocation());
+                objectNouns.add(lo.getObjectName());
             }
+        }
 
-            player.tokenizer.setNounG3(itemNouns);
-            player.tokenizer.setNounG4(objectNouns);
-            player.tokenizer.setPrepositionG1(prepositions);
+        player.tokenizer.setNounG3(itemNouns);
+        player.tokenizer.setNounG4(objectNouns);
+        player.tokenizer.setPrepositionG1(prepositions);
 
 
-            player.tokenizer.setBuffer(inputString);
+        player.tokenizer.setBuffer(inputString);
 
-            if (inputString.equals("h") || inputString.equals("help")) {
-                System.out.println(getHelpText(menu));
+        if (inputString.equals("h") || inputString.equals("help")) {
+            System.out.println(getHelpText(menu));
+        } else {
+            TokenParser tokenParser = new TokenParser(player.tokenizer);
+            Sentence sentence = tokenParser.parseSentence();
+            if (sentence instanceof IncorrectSentence) {
+                System.out.println(sentence.show());
             } else {
-                TokenParser tokenParser = new TokenParser(player.tokenizer);
-                Sentence sentence = tokenParser.parseSentence();
-                if (sentence instanceof IncorrectSentence) {
-                    System.out.println(sentence.show());
-                } else {
-                    return evaluateSentence(sentence);
+                return evaluateSentence(sentence);
 
 
-                }
             }
-
-
-
         }
         return true;
     }
@@ -238,6 +251,27 @@ public class Parser {
         return true;
     }
 
+    public boolean battleParse(String inputString, Menu menu, Enemy enemy) throws DeathException {
+        try {
+            int selected = Integer.parseInt(inputString);
+
+            if (selected == 0) {
+                System.out.println("You choose to attack head on.");
+                player.attack(enemy, player.getDamage(), player.getLevel()+2);
+            } else if (selected == 1) {
+                player.attack(enemy, player.getDamage()-6, 0);
+            } else {
+                System.out.println("You choose to use a sneak attack.");
+                battleParse(Parser.getInputString(), menu, enemy);
+            }
+
+        } catch(NumberFormatException e) {
+            return parseSentenceInput(inputString, menu);
+
+        }
+        return true;
+    }
+
     //returns true if game is still running afterwards
     //user doesn't choose to do these things
     //done when player
@@ -274,11 +308,15 @@ public class Parser {
 
 
             }
-            else if(command.equals("psychoFight")){
-                new BattleMenu();//update
+            if(command.equals("psychoFight")){
+                new BattleMenu(player, new Psychopath());//update
             }
-            else if(command.equals("zombieFight")){
-                new BattleMenu();//update
+            if(command.equals("zombieFight")){
+                new BattleMenu(player, new Zombie());//update
+            }
+            if (command.equals("location")) {
+                String newLocation = userCommandSplit[1];
+                player.setLocationName(newLocation);
             }
 
 

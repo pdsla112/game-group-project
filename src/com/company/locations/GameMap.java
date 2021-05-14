@@ -3,6 +3,8 @@ package com.company.locations;
 import com.company.locations.Location;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GameMap {
 
@@ -17,16 +19,23 @@ public class GameMap {
         }
     }
 
-    ArrayList<Location> locations;
+    Map<String, Location> locations;
+
     ArrayList<Edge> edges;
     Location finalLocation = null;
     Location currentLocation = null;
 
     public GameMap() {
-        locations = new ArrayList<>();
+        locations = new HashMap<>();
         edges = new ArrayList<>();
     }
 
+    public Location getLocationFromName(String name) {
+        if (locations.containsKey(name)) {
+            return locations.get(name);
+        }
+        return null;
+    }
     public Location getFinalLocation() {
         return finalLocation;
     }
@@ -44,7 +53,7 @@ public class GameMap {
     }
 
     public void addLocation(Location loc) {
-        locations.add(loc);
+        locations.put(loc.name, loc);
     }
 
     public void addEdge(Location from, Location to, int distance) {

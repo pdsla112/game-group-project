@@ -1,7 +1,9 @@
 package com.company.characters;
 
+import com.company.DeathException;
 import com.company.data.Initialization;
 import com.company.data.InitializeJSON;
+import com.company.enemies.Enemy;
 import com.company.items.LocationObject;
 import com.company.items.Medkit;
 import com.company.locations.Location;
@@ -21,32 +23,48 @@ public class Player {
     private int health;
     private String name;
     private int level;
-    public Map<String, Integer> itemsMap = new HashMap<>();
+    public Map<String, Integer> itemsMap;
     public List<LocationObject> locationObjects;
-    public Tokenizer tokenizer = new Tokenizer();
+    public Tokenizer tokenizer;
+    private String locationName;
 
-    //protected static LocationRepo locati
-    // onRepo = new LocationRepo();
-    private Location location = null;
-    //private boolean deathValue;  // True => Player is dead.  False => Player is alive.
-
-    private String email;
-
-
-    public Player(String name, String email, int level) {
+    // new player
+    public Player(String name, int level, String locationName) {
         //temporary (load from json)
         this.name = name;
         this.level = level;
-        this.email = email;
+        this.damage = 30 - 2*level;
+        this.health = 100;
+        this.locationName = locationName;
+        this.tokenizer = new Tokenizer();
+        this.itemsMap = new HashMap<>();
     }
 
+
+
+    //load player
+    public Player(int damage, int health, String name, int level, Map<String, Integer> itemsMap, String locationName) {
+        this.damage = damage;
+        this.health = health;
+        this.name = name;
+        this.level = level;
+        this.itemsMap = itemsMap;
+        this.locationObjects = new ArrayList<>();
+        this.tokenizer = new Tokenizer();
+        this.locationName = locationName;
+    }
 
     public void useItem(String name) {
         if (name.equals("medkit")) {
             Medkit medkit = new Medkit(this);
             medkit.use();
+            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
         }
 
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getLevel() {
@@ -62,8 +80,13 @@ public class Player {
         for (LocationObject lo : locationObjects) {
             if (lo.getObjectName().equals(noun)) {
                 if (lo.getLocation().equals(preposition)) {
+                    locationObjects.remove(lo);
                     addItem(lo.getItemName());
+                    System.out.println("--------------------------------------");
+                    System.out.println("You found a " + lo.getItemName() + " " + preposition + " the " + noun + ".");
                     System.out.println(lo.getItemName() + " has been added to your inventory.");
+                    System.out.println("--------------------------------------");
+                    System.out.println();
                     return true;
                 }
             }
@@ -73,18 +96,30 @@ public class Player {
 
     public void addItem(String name) {
         if (itemsMap.containsKey(name)) {
-            itemsMap.put(name, itemsMap.get(name)+1);
+            itemsMap.put(name, itemsMap.get(name) + 1);
         } else {
             itemsMap.put(name, 1);
         }
     }
 
-    public Location getLocation() {
-        return location;
+    public void attack(Enemy e, int dmg, int selfDmg) throws DeathException {
+        e.setHp(e.getHp() - dmg);
+        health -= selfDmg;
+        if (health <= 0) {
+            throw new DeathException("player died.");
+        }
+        if (e.getHp() <= 0) {
+            e.setAlive(false);
+        }
+
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
     }
 
     public void addLocationObject(LocationObject lo) {
@@ -92,7 +127,7 @@ public class Player {
     }
 
     public void showStats(){
-        String text = "Your Stats:\n--------------------------------------\n";
+        String text = "--------------------------------------\nYour Stats:\n";
         text += "\tHealth: " + this.health + "\n";
         text += "\tDamage: " + this.damage + "\n";
         text += "--------------------------------------\n";
@@ -100,7 +135,7 @@ public class Player {
     }
 
     public void showItems() {
-        String text = "Your Items:\n--------------------------------------\n";
+        String text = "--------------------------------------\nYour Items:\n";
         for (String itemName : itemsMap.keySet()) {
             if (itemsMap.get(itemName) > 0) {
                 text += "\t" + itemName + "\t" + itemsMap.get(itemName) + "\n";
@@ -114,8 +149,9 @@ public class Player {
     public void showSurroundings() {
         if (locationObjects == null || locationObjects.isEmpty()) {
             System.out.println("There is nothing of interest around you.");
+            System.out.println();
         } else {
-            String text = "You see:\n--------------------------------------\n";
+            String text = "--------------------------------------\nYou see:\n";
             for (LocationObject lo : locationObjects) {
                 text += "\ta " + lo.getObjectName() + "\n";
             }
@@ -160,14 +196,6 @@ public class Player {
 
     public void setHealth(int health) {
         this.health = health;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public boolean isAlive(){
-        return health > 0;
     }
 
 
