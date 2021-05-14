@@ -93,6 +93,8 @@ public class Game {
         Location home = new Location("home",LocationJSON.getSpecificLocationData("home").getInitialText());
         map.addLocation(home);
 
+
+
         map.addEdge(home,cottage,5);
         map.addEdge(home,forest,9);
         map.addEdge(cottage, hospital, 6);
@@ -103,6 +105,7 @@ public class Game {
         map.addEdge(road, lab, 4);
 
         player.setLocation(home);
+
 
         LevelNode rootHome = new LevelNode(null,"Choose a place to go.", null);//home.isVisited()
         home.levelMap = new LevelMap(rootHome);

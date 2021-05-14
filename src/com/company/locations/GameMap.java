@@ -20,6 +20,7 @@ public class GameMap {
     ArrayList<Location> locations;
     ArrayList<Edge> edges;
     Location finalLocation = null;
+    Location currentLocation = null;
 
     public GameMap() {
         locations = new ArrayList<>();
@@ -28,6 +29,14 @@ public class GameMap {
 
     public Location getFinalLocation() {
         return finalLocation;
+    }
+
+    public Location getCurrentLocation(){
+        return currentLocation;
+    }
+
+    public void setCurrentlocation(Location currentLocation){
+        this.currentLocation = currentLocation;
     }
 
     public void setFinalLocation(Location finalLocation) {
