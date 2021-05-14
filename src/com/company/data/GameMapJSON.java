@@ -45,9 +45,13 @@ public class GameMapJSON {
     }
 
     public static GameMap temporaryLoadGamemap() {
-        GameMap map = new GameMap();
+//        if (true) {
+//            return deserializeJSON();
+//        }
+
         //map = loadfromjson();
         //setup map
+        GameMap map = new GameMap();
         Location hospital = new Location("hospital",LocationJSON.getSpecificLocationData("hospital").getInitialText());
         map.addLocation(hospital);
         Location cottage = new Location("cottage", LocationJSON.getSpecificLocationData("cottage").getInitialText());//"You found a cottage while you were looking for a place to hide, avoiding zombies."
@@ -110,7 +114,6 @@ public class GameMapJSON {
         //sucessfully completed level
         cottage.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(cottageOp10,cottageOp11)));
         //player dies
-        cottage.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList()));//TODO
 
 
         //forest
@@ -148,7 +151,7 @@ public class GameMapJSON {
 
 
         forest.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(forestpsycho)));
-        forest.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(forestpsycholose)));
+//        forest.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(forestpsycholose)));
 
 
         //hospital
@@ -182,7 +185,7 @@ public class GameMapJSON {
         hospital.levelMap.setAdjacent(hospitalOp4,new ArrayList<>(Arrays.asList(hospitaldocignore)));
 
         hospital.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(hospitaldocteam,hospitaldocignore)));
-        hospital.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(hospitalpsycholose)));
+//        hospital.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(hospitalpsycholose)));
 
         //road
         LevelNode rootRoad = new LevelNode(null,"You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\n" +
@@ -198,7 +201,7 @@ public class GameMapJSON {
         //sucessfully completed level
         road.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(roadOp3)));
         //player dies
-        road.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList()));//TODO
+//        road.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList()));//TODO
 
         //lab
         LevelNode rootLab = new LevelNode(null,"Done.", null);//lab.isVisited()

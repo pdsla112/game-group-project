@@ -45,8 +45,6 @@ public class Game {
                         running = parser.parse(parser.getInputString(), locationMenu);
                     }
 
-                } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {
-                    throw new DeathException("You died.");
                 } else {
                     Menu levelMenu = new Menu(levelMap.getAdjacent());
                     levelMenu.printMenuItems();

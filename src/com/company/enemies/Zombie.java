@@ -21,6 +21,35 @@ public class Zombie extends Enemy {
         this.willApproach = calculateApproach(approachProb);
     }
 
+    //easy
+    //player 100 hp
+    //zombie 35 hp
+    //zombie to player: 10 - 15 dmg
+    //player to zombie: 30 - 40 dmg
+
+    //medium
+    //player 100 hp
+    //zombie 37 hp
+    //zombie to player: 15 - 25 dmg
+    //player to zombie: 25 - 30 dmg
+
+    //hard
+    //player 100 hp
+    //zombie 40 hp
+    //zombie to player: 30 - 35 dmg
+    //player to zombie: 30 - 35 dmg
+
+    //expert
+    //player 100 hp
+    //zombie 50 hp
+    //zombie to player: 35 - 40 dmg
+    //player to zombie: 30 - 35 dmg
+
+    //psychopath easier
+
+
+    //zombie hp = 35 + 2*lvl
+
     public Zombie() {
         Random r = new Random();
         isAlive = true;

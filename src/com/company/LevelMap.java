@@ -9,7 +9,6 @@ public class LevelMap {
     Map<String,List<String>> adjacentMap;
     Map<String, LevelNode> levelNodesMap;
     List<LevelNode> completionNodes;
-    List<LevelNode> deathNodes;
     LevelNode currentNode;
 
     public LevelMap(LevelNode currentNode) {
@@ -25,14 +24,6 @@ public class LevelMap {
 
     public void setCompletionNodes(List<LevelNode> completionNodes) {
         this.completionNodes = completionNodes;
-    }
-
-    public List<LevelNode> getDeathNodes() {
-        return deathNodes;
-    }
-
-    public void setDeathNodes(List<LevelNode> deathNodes) {
-        this.deathNodes = deathNodes;
     }
 
     public void addLevelNodes(List<LevelNode> levelNodes) {
