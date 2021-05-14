@@ -1,6 +1,7 @@
 package com.company.parser;
 
 import com.company.DeathException;
+import com.company.Game;
 import com.company.LevelNode;
 import com.company.MenuItem;
 import com.company.characters.Player;
@@ -33,8 +34,9 @@ public class  Parser {
             MenuItem selected = menu.getMenuItem(Integer.parseInt(inputString));
             if (selected != null) {
                 if (selected instanceof Location) {
-                    player.setLocation((Location) selected);
-                    player.getLocation().displayInformation();
+                    player.setLocationName(((Location) selected).name);
+                    Location playerLocation = Game.map.getLocationFromName(player.getLocationName());
+                    playerLocation.displayInformation();
                     boolean endPrompt = false;
                     while (!endPrompt) {
                         System.out.println("Would you like to save your progress?(y/n)");
@@ -43,20 +45,23 @@ public class  Parser {
                             //save game (player data)
                             PlayerJSON.savePlayer(player);
                             System.out.println("game saved.");
+                            System.out.println();
                             endPrompt = true;
                         } else if (response.equals("n") || response.equals("no")) {
                             System.out.println("game not saved.");;
+                            System.out.println();
                             endPrompt = true;
                         }
                     }
                     player.setLocationObjects(new ArrayList<>());
-                    return parseActions(player.getLocation().getLevelMap().getCurrentNode().getActions());
+                    return parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
                     //todo player.setLocationObjects(new ArrayList<>());
                 } else if (selected instanceof LevelNode) {
-                    player.getLocation().getLevelMap().setCurrentNode((LevelNode) selected);
+                    Location playerLocation = Game.map.getLocationFromName(player.getLocationName());
+                    playerLocation.getLevelMap().setCurrentNode((LevelNode) selected);
                     // todo does not work for root node
                     player.setLocationObjects(new ArrayList<>());
-                    return parseActions(player.getLocation().getLevelMap().getCurrentNode().getActions());
+                    return parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
 
                 }
             }

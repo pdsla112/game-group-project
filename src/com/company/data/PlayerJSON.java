@@ -41,24 +41,38 @@ public class PlayerJSON {
         return data;
     }
 
-    public static Player getSpecificPlayer(String email) {
-        boolean contains = BloomFilter.mightContain(email);
+
+    public static Player getSpecificPlayer(String name) {
+        boolean contains = BloomFilter.mightContain(name);
         if (!contains)
             return null;
         ArrayList<Player> deserializedList = deserializeJSON();
         for (Player data : deserializedList) {
-            if (data.getEmail().equals(email))
+            if (data.getName().equals(name))
                 return data;
         }
         return null;
     }
 
+    //returns new playuer if player is created (unique name)
+    //return null if name already exists
+    // make sure name is one word (no spaces)
+    public static Player createNewPlayer(String name, int difficulty) {
+        return new Player(name, difficulty, "home");
+        //return null;
+    }
+
+    //remove player from json
+    public static void removePlayer(String name) {
+
+    }
+
     // Debug!
     public static void savePlayer(Player player) {
-        System.out.println(player.getEmail());
+        System.out.println(player.getName());
         ArrayList<Player> deserializedList = deserializeJSON();
         System.out.println(deserializedList.size());
-        Player playerToReplace = getSpecificPlayer(player.getEmail());
+        Player playerToReplace = getSpecificPlayer(player.getName());
         if (playerToReplace.equals(null)) {
             deserializedList.add(player);
         } else if (!playerToReplace.equals(null)) {
@@ -67,4 +81,6 @@ public class PlayerJSON {
         }
         serializeJSON(deserializedList);
     }
+
+
 }
