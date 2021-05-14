@@ -77,7 +77,7 @@ public class MainMenu {
                         endPrompt = true;
                         running = false;
                     } else {
-                        System.out.println("There was an error loading your profile.");
+                        System.out.println("There was an error loading your profile.\n");
                     }
 //                PersistDataJSON persistJson = new PersistDataJSON();
 //                Player player = persistJson.load("player.json");
