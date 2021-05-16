@@ -21,7 +21,7 @@ public class LevelJSON {
         ArrayList<Level> levelList = new ArrayList<>();
 
         Level easy = new Level(
-                1,
+                0,
                 100,
                 60,
                 20,
@@ -34,7 +34,7 @@ public class LevelJSON {
         );
 
         Level normal = new Level(
-                2,
+                1,
                 100,
                 60,
                 40,
@@ -47,7 +47,7 @@ public class LevelJSON {
         );
 
         Level hard = new Level(
-                3,
+                2,
                 80,
                 50,
                 70,
@@ -60,7 +60,7 @@ public class LevelJSON {
         );
 
         Level expert = new Level(
-                4,
+                3,
                 60,
                 50,
                 100,

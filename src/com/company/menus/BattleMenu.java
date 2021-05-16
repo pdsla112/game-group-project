@@ -2,6 +2,7 @@ package com.company.menus;
 
 import com.company.DeathException;
 import com.company.characters.Player;
+import com.company.data.Level;
 import com.company.enemies.Enemy;
 import com.company.enemies.Psychopath;
 import com.company.enemies.Zombie;
@@ -13,6 +14,7 @@ import java.util.Arrays;
 public class BattleMenu {
     Player player;
     Enemy enemy;
+    Level level;
 
     public BattleMenu(Player player, Enemy enemy) throws DeathException {
         this.player = player;
