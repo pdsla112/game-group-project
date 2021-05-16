@@ -49,8 +49,6 @@ package com.company.parser;
 
    */
 
-import java.util.List;
-
 public class TokenParser {
 
     Tokenizer _tokenizer;
@@ -67,18 +65,37 @@ public class TokenParser {
 
         if (_tokenizer.current() != null) {
             if (verbType == Token.Type.VERBG1) {
-                return new SentenceG1(verb, parseObject());
+                Sentence object = parseObjectG1();
+                if (object instanceof IncorrectSentence) {
+                    return object;
+                }
+                return new SentenceG1(verb, object);
             }
             if (verbType == Token.Type.VERBG2) {
-                return new SentenceG2(verb, parseObject());
+                Sentence object = parseObjectG2();
+                if (object instanceof IncorrectSentence) {
+                    return object;
+                }
+                return new SentenceG2(verb, object);
             }
             if (verbType == Token.Type.VERBG3) {
-                return new SentenceG3(verb, parseObject());
+                Sentence object = parseObjectG3();
+                if (object instanceof IncorrectSentence) {
+                    return object;
+                }
+                return new SentenceG3(verb, object);
             }
             if (verbType == Token.Type.VERBG4) {
-                return new SentenceG4(verb, parsePreposition(), parseObject());
+                Sentence preposition = parsePrepositionG1();
+                if (preposition instanceof IncorrectSentence) {
+                    return preposition;
+                }
+                Sentence object = parseObjectG4();
+                if (object instanceof IncorrectSentence) {
+                    return object;
+                }
+                return new SentenceG4(verb, preposition, object);
             }
-            return new IncorrectSentence(verb, parseObject());
         }
         return new IncorrectSentence(verb);
     }
@@ -107,43 +124,89 @@ public class TokenParser {
         return null;
     }
 
-    public Sentence parseObject() {
-        Token.Type determinerType = _tokenizer.current().type();
-        Sentence determiner = parseDeterminer();
+    public Sentence parseObjectG1() {
+        Sentence determiner = parseDeterminerG1();
 
         if (_tokenizer.current() != null) {
-            Token.Type nounType = _tokenizer.current().type();
-            Sentence noun = parseNoun();
-
-            if (determinerType == Token.Type.DETERMINERG1) {
-                if (nounType == Token.Type.NOUNG1) {
-                    return new ObjectG1(determiner, noun);
-                }
-                if (nounType == Token.Type.NOUNG4) {
-                    return new ObjectG4(determiner, noun);
-                }
+            if (determiner instanceof Unknown) {
+                return new IncorrectSentence(determiner);
             }
-            if (determinerType == Token.Type.DETERMINERG2) {
-                if (nounType == Token.Type.NOUNG2) {
-                    return new ObjectG2(determiner, noun);
-                }
-                if (nounType == Token.Type.NOUNG3) {
-                    return new ObjectG3(determiner, noun);
-                }
+            Sentence noun = parseNounG1();
+            if (noun instanceof Unknown) {
+                return noun;
             }
-            return new IncorrectSentence(determiner, noun);
+            return new ObjectG1(determiner, noun);
         }
         return new IncorrectSentence(determiner);
 
     }
 
-    public Sentence parseDeterminer() {
+    public Sentence parseObjectG2() {
+        Sentence determiner = parseDeterminerG2();
+
+        if (_tokenizer.current() != null) {
+            if (determiner instanceof Unknown) {
+                return new IncorrectSentence(determiner);
+            }
+            Sentence noun = parseNounG2();
+            if (noun instanceof Unknown) {
+                return noun;
+            }
+            return new ObjectG2(determiner, noun);
+        }
+        return new IncorrectSentence(determiner);
+
+    }
+    public Sentence parseObjectG3() {
+
+        Sentence determiner = parseDeterminerG2();
+
+        if (_tokenizer.current() != null) {
+            if (determiner instanceof Unknown) {
+                return new IncorrectSentence(determiner);
+            }
+            Sentence noun = parseNounG3();
+            if (noun instanceof Unknown) {
+                return noun;
+            }
+            return new ObjectG3(determiner, noun);
+        }
+        return new IncorrectSentence(determiner);
+
+    }
+    public Sentence parseObjectG4() {
+        Sentence determiner = parseDeterminerG1();
+
+        if (_tokenizer.current() != null) {
+            if (determiner instanceof Unknown) {
+                return new IncorrectSentence(determiner);
+            }
+            Sentence noun = parseNounG4();
+            if (noun instanceof Unknown) {
+                return noun;
+            }
+            return new ObjectG4(determiner, noun);
+        }
+        return new IncorrectSentence(determiner);
+
+    }
+
+    public Sentence parseDeterminerG1() {
         if (_tokenizer.current() != null) {
             Token current = _tokenizer.current();
             if (current.type() == Token.Type.DETERMINERG1) {
                 _tokenizer.next();
                 return new DeterminerG1(current.token());
             }
+            return new Unknown(current.token());
+
+        }
+        return new IncorrectSentence(new Unknown("Expecting determiner (G1)."));
+
+    }
+    public Sentence parseDeterminerG2() {
+        if (_tokenizer.current() != null) {
+            Token current = _tokenizer.current();
             if (current.type() == Token.Type.DETERMINERG2) {
                 _tokenizer.next();
                 return new DeterminerG2(current.token());
@@ -151,36 +214,63 @@ public class TokenParser {
             return new Unknown(current.token());
 
         }
-        return null;
+        return new IncorrectSentence(new Unknown("Expecting determiner (G2)."));
 
     }
 
-    public Sentence parseNoun() {
+    public Sentence parseNounG1() {
         if (_tokenizer.current() != null) {
             Token current = _tokenizer.current();
             if (current.type() == Token.Type.NOUNG1) {
                 _tokenizer.next();
                 return new NounG1(current.token());
             }
+            return new Unknown(current.token());
+        }
+        return new IncorrectSentence(new Unknown("Expecting noun (G1)."));
+
+    }
+    public Sentence parseNounG2() {
+        if (_tokenizer.current() != null) {
+            Token current = _tokenizer.current();
             if (current.type() == Token.Type.NOUNG2) {
                 _tokenizer.next();
                 return new NounG2(current.token());
             }
+            return new Unknown(current.token());
+        }
+        return new IncorrectSentence(new Unknown("Expecting noun (G2)."));
+
+    }
+
+    public Sentence parseNounG3() {
+        if (_tokenizer.current() != null) {
+            Token current = _tokenizer.current();
             if (current.type() == Token.Type.NOUNG3) {
                 _tokenizer.next();
                 return new NounG3(current.token());
             }
+            return new Unknown(current.token());
+        }
+        return new IncorrectSentence(new Unknown("Expecting noun (G3)."));
+
+    }
+
+    public Sentence parseNounG4() {
+        if (_tokenizer.current() != null) {
+            Token current = _tokenizer.current();
             if (current.type() == Token.Type.NOUNG4) {
                 _tokenizer.next();
                 return new NounG4(current.token());
             }
             return new Unknown(current.token());
         }
-        return null;
+        return new IncorrectSentence(new Unknown("Expecting noun (G4)."));
 
     }
 
-    public Sentence parsePreposition() {
+
+    public Sentence parsePrepositionG1() {
         if (_tokenizer.current() != null) {
             Token current = _tokenizer.current();
             if (current.type() == Token.Type.PREPOSITIONG1) {
@@ -188,7 +278,7 @@ public class TokenParser {
                 return new PrepositionG1(current.token());
             }
         }
-        return null;
+        return new IncorrectSentence(new Unknown("Expecting preposition (G1)."));
 
     }
 

@@ -45,20 +45,35 @@ public class PlayerJSON {
         return data;
     }
 
-    public static Player getSpecificPlayer(String email) {
-        boolean contains = BloomFilter.mightContain(email);
+
+    public static Player getSpecificPlayer(String name) {
+        boolean contains = BloomFilter.mightContain(name);
         if (!contains)
             return null;
         ArrayList<Player> deserializedList = deserializeJSON();
         for (Player data : deserializedList) {
-            if (data.getEmail().equals(email))
+            if (data.getName().equals(name))
                 return data;
         }
         return null;
     }
 
+    //returns new playuer if player is created (unique name)
+    //return null if name already exists
+    // make sure name is one word (no spaces)
+    public static Player createNewPlayer(String name, int difficulty) {
+        return new Player(name, difficulty, "home");
+        //return null;
+    }
+
+    //remove player from json
+    public static void removePlayer(String name) {
+
+    }
+
     // Debug!
     public static void savePlayer(Player player) {
+//<<<<<<< HEAD
         System.out.println(player.getEmail());
         ArrayList<Player> deserializedList = new ArrayList<>();
         if (deserializeJSON() == null) {
@@ -69,6 +84,13 @@ public class PlayerJSON {
         deserializedList = deserializeJSON();
         Player playerToReplace = getSpecificPlayer(player.getEmail());
         if (playerToReplace == null) {
+//=======
+        System.out.println(player.getName());
+        ArrayList<Player> deserializedList = deserializeJSON();
+        System.out.println(deserializedList.size());
+        Player playerToReplace = getSpecificPlayer(player.getName());
+        if (playerToReplace.equals(null)) {
+//>>>>>>> 817465e7ed64df80314e71eb576d73cd452e74e8
             deserializedList.add(player);
         } else if (!playerToReplace.equals(null)) {
             deserializedList.remove(playerToReplace);

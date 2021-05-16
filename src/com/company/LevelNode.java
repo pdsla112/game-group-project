@@ -2,16 +2,19 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class LevelNode implements MenuItem{
+    String id;
     String text;
     List<String> actions;
     String option;
 
-    public LevelNode(String description, String text, List<String> actions) {
+    public LevelNode(String option, String text, List<String> actions) {
         this.text = text;
         this.actions = actions;
-        this.option = description;
+        this.option = option;
+        this.id = UUID.randomUUID().toString();
     }
 
     public String getOptionText() {

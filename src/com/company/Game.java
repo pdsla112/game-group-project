@@ -4,6 +4,7 @@ import com.company.characters.Player;
 import com.company.data.*;
 import com.company.locations.GameMap;
 import com.company.locations.Location;
+import com.company.menus.MainMenu;
 import com.company.menus.Menu;
 import com.company.menus.GenericMenuItem;
 import com.company.parser.Parser;
@@ -14,49 +15,36 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Game {
-    Player player = null;
+    Player player;
     public Parser parser;
-    private GameMap map;
+    public static GameMap map = GameMapJSON.temporaryLoadGamemap();
 
     public Game(Player p) {
         this.player = p;
         this.parser = new Parser(p);
-        //System.out.println(p.getIntro());
-        //InitializeJSON.serializeJSON(//object1,2,...?).getText();
-        System.out.println("You are one of the people who decided to face the danger and go to the Laboratory for your family and neighbours.\n");
-
-
-        setupGameMap();
-        //add item
-        player.addItem("medkit");
-
-        player.getLocation().displayInformation();
-
+        //load gamemap
+        //display information
 
         boolean running = true;
         try {
             while (running) {
+                Location playerLocation =  map.getLocationFromName(player.getLocationName());
                 //System.out.println("What do you want to do?");
-                LevelMap levelMap = player.getLocation().levelMap;
-
+                LevelMap levelMap = playerLocation.levelMap;
                 //print text
-                System.out.println(levelMap.getCurrentNode().text);
+                System.out.println(levelMap.getCurrentNode().text+"\n");
 
                 //check level completion
                 if (levelMap.completionNodes.contains(levelMap.currentNode)) {
-                    if (player.getLocation() == map.getFinalLocation()) {
+                    if (playerLocation == map.getFinalLocation()) {
                         throw new WinException("win");
                     } else {
-
-                        List<Location> adjacentLocations = map.getAdjacent(player.getLocation());
+                        List<Location> adjacentLocations = map.getAdjacent(playerLocation);
                         Menu locationMenu = new Menu(adjacentLocations);
                         locationMenu.printMenuItems();
                         running = parser.parse(parser.getInputString(), locationMenu);
-
                     }
 
-                } else if (levelMap.deathNodes.contains(levelMap.currentNode)) {
-                    throw new DeathException("You died.");
                 } else {
                     Menu levelMenu = new Menu(levelMap.getAdjacent());
                     levelMenu.printMenuItems();
@@ -71,45 +59,25 @@ public class Game {
             System.out.println("You died.");
         } catch (WinException e) {
             System.out.println("You win.");
+            boolean endPrompt = false;
+            while (!endPrompt) {
+                System.out.println("Would you like to play again?");
+                String response = Parser.getInputString();
+                if (response.equals("y") || response.equals("yes")) {
+                    PlayerJSON.removePlayer(player.getName());
+                    new MainMenu();
+                } else if (response.equals("n") || response.equals("no")) {
+                    PlayerJSON.removePlayer(player.getName());
+                    System.out.println("Game exited.");;
+                }
+            }
+            System.out.println("Play again?");
         }
 
-
-
     }
-    public void setupGameMap() {
-        map = new GameMap();
-        //map = loadfromjson();
-        //setup map
-        Location hospital = new Location("hospital",LocationJSON.getSpecificLocationData("hospital").getInitialText());
-        map.addLocation(hospital);
-        Location cottage = new Location("cottage", LocationJSON.getSpecificLocationData("cottage").getInitialText());//"You found a cottage while you were looking for a place to hide, avoiding zombies."
-        map.addLocation(cottage);
-        Location forest = new Location("forest", LocationJSON.getSpecificLocationData("forest").getInitialText());//"You found a forest and went in wondering if you could hunt for food."
-        map.addLocation(forest);
-        Location lab = new Location("lab", LocationJSON.getSpecificLocationData("lab").getInitialText());
-        map.addLocation(lab);
-        Location road = new Location("road", LocationJSON.getSpecificLocationData("road").getInitialText());
-        map.addLocation(road);
-        Location home = new Location("home",LocationJSON.getSpecificLocationData("home").getInitialText());
-        map.addLocation(home);
 
-        map.addEdge(home,cottage,5);
-        map.addEdge(home,forest,9);
-        map.addEdge(cottage, hospital, 6);
-        map.addEdge(cottage, forest, 4);
-        map.addEdge(forest, hospital, 7);
-        map.addEdge(forest, road, 6);
-        map.addEdge(hospital, road, 10);
-        map.addEdge(road, lab, 4);
 
-        player.setLocation(home);
-
-        LevelNode rootHome = new LevelNode(null,"Choose a place to go.", null);//home.isVisited()
-        home.levelMap = new LevelMap(rootHome);
-
-        // set home as completion node
-        home.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(rootHome)));
-
+<<<<<<< HEAD
 
         //cottage
         //todo cottage.levelMap = loadlevelmapfromjson();
@@ -241,6 +209,13 @@ public class Game {
         lab.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(rootLab)));
 
         GameMapJSON.serializeJSON(map);
+//=======
+    public static void printIntro() {
+        System.out.println("--------------------------------------");
+        System.out.println("Intro:");
+        System.out.println("You are one of the people who decided to face the danger and go to the Laboratory for your family and neighbours.\n");
+        System.out.println("--------------------------------------");
+//>>>>>>> 817465e7ed64df80314e71eb576d73cd452e74e8
     }
 }
 

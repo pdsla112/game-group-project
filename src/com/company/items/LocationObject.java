@@ -15,7 +15,6 @@ public class LocationObject {
         return objectName;
     }
 
-
     public String getItemName() {
         return itemName;
     }
