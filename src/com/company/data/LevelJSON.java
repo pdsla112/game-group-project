@@ -30,7 +30,9 @@ public class LevelJSON {
                 Animal.BISON,
                 new HuntingKit(100, 100),
                 new Medkit(50),
-                2
+                2,
+                60,
+                60
         );
 
         Level normal = new Level(
@@ -43,7 +45,9 @@ public class LevelJSON {
                 Animal.DEER,
                 new HuntingKit(100, 80),
                 new Medkit(50),
-                5
+                5,
+                70,
+                70
         );
 
         Level hard = new Level(
@@ -56,7 +60,9 @@ public class LevelJSON {
                 Animal.TROUT,
                 new HuntingKit(80, 60),
                 new Medkit(30),
-                10
+                10,
+                100,
+                100
         );
 
         Level expert = new Level(
@@ -69,7 +75,9 @@ public class LevelJSON {
                 Animal.RABBIT,
                 new HuntingKit(50, 50),
                 new Medkit(20),
-                10
+                10,
+                100,
+                100
         );
 
         levelList.add(easy);

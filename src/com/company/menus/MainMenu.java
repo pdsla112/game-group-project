@@ -2,6 +2,8 @@ package com.company.menus;
 
 import com.company.Game;
 import com.company.characters.Player;
+import com.company.data.Level;
+import com.company.data.LevelJSON;
 import com.company.data.PlayerJSON;
 import com.company.parser.Parser;
 
@@ -9,14 +11,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainMenu {
+    Level level;
+
     public MainMenu() {
         start();
     }
 
     public void start() {
-
-
-        Menu mainMenu = new Menu(new ArrayList<GenericMenuItem>(Arrays.asList(new GenericMenuItem("Start New Game"), new GenericMenuItem("Load Existing Game"), new GenericMenuItem("Exit"))));
+        Menu mainMenu = new Menu(
+                new ArrayList<GenericMenuItem>(Arrays.asList(new GenericMenuItem("Start New Game"), new GenericMenuItem("Load Existing Game"), new GenericMenuItem("Exit"))));
         boolean running = true;
         do {
             boolean endPrompt = false;
@@ -30,16 +33,13 @@ public class MainMenu {
                     String name = Parser.getInputString();
                     System.out.println("Hello " + name + ".");
 
-                    //System.out.println("What is your email (for saving)?");
-                    //String email = Parser.getInputString();
-
                     boolean endDifficultyPrompt = false;
                     int difficulty = 0;
 
                     while (!endDifficultyPrompt) {
                         System.out.println("Choose your difficulty");
                         Menu difficultyMenu = new Menu(
-                                new ArrayList<>(Arrays.asList(new GenericMenuItem("Easy"),
+                                        new ArrayList<>(Arrays.asList(new GenericMenuItem("Easy"),
                                         new GenericMenuItem("Medium"), new GenericMenuItem("Hard"),
                                         new GenericMenuItem("Expert"))));
                         difficultyMenu.printMenuItems();
@@ -47,13 +47,13 @@ public class MainMenu {
                             difficulty = Integer.parseInt(Parser.getInputString());
                             if (difficulty >= 0 && difficulty <= 3) {
                                 endDifficultyPrompt = true;
+                                level = LevelJSON.getSpecificLevel(difficulty);
                             } else {
                                 System.out.println("Please enter a valid number.\n");
                             }
                         } catch (NumberFormatException e) {
                             System.out.println("Please enter a valid number.\n");
                         }
-
                     }
 
                     Player player = PlayerJSON.createNewPlayer(name, difficulty);
@@ -68,7 +68,6 @@ public class MainMenu {
 
 
                 } else if (userInput.equals("1")) {
-                    // Get the player to type their email.
                     System.out.println("Enter your username:");
                     String username = Parser.getInputString();
                     Player player = PlayerJSON.getSpecificPlayer(username);
@@ -79,9 +78,6 @@ public class MainMenu {
                     } else {
                         System.out.println("There was an error loading your profile.\n");
                     }
-//                PersistDataJSON persistJson = new PersistDataJSON();
-//                Player player = persistJson.load("player.json");
-//                new Game(player);
                 } else if (userInput.equals("2")) {
                     endPrompt = true;
                     running = false;
@@ -89,7 +85,6 @@ public class MainMenu {
                     System.out.println("Please select a valid option.");
                     System.out.println();
                 }
-
             }
 
         } while (running);

@@ -18,10 +18,12 @@ public class Game {
     Player player;
     public Parser parser;
     public static GameMap map = GameMapJSON.deserializeJSON();
+    Level level;
 
     public Game(Player p) {
         this.player = p;
         this.parser = new Parser(p);
+        this.level = LevelJSON.getSpecificLevel(p.getLevel());
         //load gamemap
         //display information
 

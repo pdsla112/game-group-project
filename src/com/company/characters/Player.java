@@ -3,6 +3,8 @@ package com.company.characters;
 import com.company.DeathException;
 import com.company.data.Initialization;
 import com.company.data.InitializeJSON;
+import com.company.data.Level;
+import com.company.data.LevelJSON;
 import com.company.enemies.Enemy;
 import com.company.items.LocationObject;
 import com.company.items.Medkit;
@@ -31,10 +33,11 @@ public class Player {
     // new player
     public Player(String name, int level, String locationName) {
         //temporary (load from json)
+        Level playerLevel = LevelJSON.getSpecificLevel(level);
         this.name = name;
         this.level = level;
-        this.damage = 30 - 2*level;
-        this.health = 100;
+        this.damage = playerLevel.getDamage();
+        this.health = playerLevel.getHealth();
         this.locationName = locationName;
         this.tokenizer = new Tokenizer();
         this.itemsMap = new HashMap<>();

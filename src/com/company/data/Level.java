@@ -17,8 +17,10 @@ public class Level {
     private HuntingKit huntingKit;
     private Medkit medKit;
     private int energyConsumption;     // How much energy is consumed per distance travelled.
+    private int zombieHealth;
+    private int psychoHealth;
 
-    public Level(int level, int health, int damage, int zombieApproachProb, int zombieAttack, int psychopathAttack, Animal animal, HuntingKit huntingKit, Medkit medKit, int energyConsumption) {
+    public Level(int level, int health, int damage, int zombieApproachProb, int zombieAttack, int psychopathAttack, Animal animal, HuntingKit huntingKit, Medkit medKit, int energyConsumption, int zombieHealth, int psychoHealth) {
         this.level = level;
         this.health = health;
         this.damage = damage;
@@ -29,6 +31,8 @@ public class Level {
         this.huntingKit = huntingKit;
         this.medKit = medKit;
         this.energyConsumption = energyConsumption;
+        this.zombieHealth = zombieHealth;
+        this.psychoHealth = psychoHealth;
     }
 
     public int getLevel() { return this.level; }
@@ -65,5 +69,13 @@ public class Level {
 
     public int getEnergyConsumption() {
         return this.energyConsumption;
+    }
+
+    public int getZombieHealth() {
+        return this.zombieHealth;
+    }
+
+    public int getPsychoHealth() {
+        return this.psychoHealth;
     }
 }

@@ -12,8 +12,9 @@ public class Psychopath extends Enemy {
     private boolean deathValue;  // True => Psychopath is dead. False => Psychopath is alive.
     private boolean isApproached;
 
-    public Psychopath(String id, int attackAmount, boolean deathValue, boolean isApproached) {
+    public Psychopath(int attackAmount, int hp, boolean deathValue, boolean isApproached) {
         this.attackAmount = attackAmount;
+        this.hp = hp;
         this.deathValue = deathValue;
         this.isApproached = isApproached;
     }

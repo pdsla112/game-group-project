@@ -3,6 +3,7 @@ package com.company.menus;
 import com.company.DeathException;
 import com.company.characters.Player;
 import com.company.data.Level;
+import com.company.data.LevelJSON;
 import com.company.enemies.Enemy;
 import com.company.enemies.Psychopath;
 import com.company.enemies.Zombie;
@@ -19,6 +20,9 @@ public class BattleMenu {
     public BattleMenu(Player player, Enemy enemy) throws DeathException {
         this.player = player;
         this.enemy = enemy;
+        int playerLevel = player.getLevel();
+        Level level = LevelJSON.getSpecificLevel(playerLevel);
+        this.level = level;
         enemyFight();
 
     }
@@ -26,7 +30,12 @@ public class BattleMenu {
     public void enemyFight() throws DeathException {
         String enemyName = (enemy instanceof Zombie ? "Zombie" : "Psychopath");
         Parser parser = new Parser(player);
-        int enemyHpInitial = enemy.getHp();
+        int enemyHpInitial = 0;
+        if (enemy instanceof Zombie) {
+            enemyHpInitial = level.getZombieHealth();
+        } else if (enemy instanceof Psychopath) {
+            enemyHpInitial = level.getPsychoHealth();
+        }
         System.out.println("A " + enemyName + " (" + enemyHpInitial + "hp) appears in front of you.");
 
         while (enemy.isAlive()) {

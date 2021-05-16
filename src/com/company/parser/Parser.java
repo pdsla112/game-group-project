@@ -5,6 +5,8 @@ import com.company.Game;
 import com.company.LevelNode;
 import com.company.MenuItem;
 import com.company.characters.Player;
+import com.company.data.Level;
+import com.company.data.LevelJSON;
 import com.company.data.PlayerJSON;
 import com.company.enemies.Enemy;
 import com.company.enemies.Psychopath;
@@ -22,6 +24,7 @@ import java.util.Scanner;
 
 public class  Parser {
 
+    Level level;
     Player player;
     public static String getInputString() {
         Scanner in = new Scanner(System.in);
@@ -30,9 +33,8 @@ public class  Parser {
 
     public Parser(Player player) {
         this.player = player;
+        this.level = LevelJSON.getSpecificLevel(player.getLevel());
     }
-
-
 
     public boolean parse(String inputString, Menu menu) throws DeathException {
 
@@ -309,10 +311,12 @@ public class  Parser {
 
             }
             if(command.equals("psychoFight")){
-                new BattleMenu(player, new Psychopath());//update
+                Psychopath psychopath = new Psychopath(level.getPsychopathAttack(), level.getPsychoHealth(), false, true);
+                new BattleMenu(player, psychopath);
             }
             if(command.equals("zombieFight")){
-                new BattleMenu(player, new Zombie());//update
+                Zombie zombie = new Zombie(level.getZombieAttack(), level.getZombieHealth(), false, level.getZombieApproachProb());
+                new BattleMenu(player, zombie);
             }
             if (command.equals("location")) {
                 String newLocation = userCommandSplit[1];

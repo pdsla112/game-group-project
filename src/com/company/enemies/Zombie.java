@@ -14,8 +14,9 @@ public class Zombie extends Enemy {
     private boolean willApproach;
     private int hp;
 
-    public Zombie(String id, int attackAmount, boolean deathValue, int approachProb) {
+    public Zombie(int attackAmount, int hp, boolean deathValue, int approachProb) {
         this.attackAmount = attackAmount;
+        this.hp = hp;
         this.deathValue = deathValue;
         this.approachProb = approachProb;
         this.willApproach = calculateApproach(approachProb);
