@@ -58,7 +58,7 @@ public class MainMenu {
 
                     Player player = PlayerJSON.createNewPlayer(name, difficulty);
                     if (player != null) {
-                        Game.printIntro();
+//                        Game.printIntro();   // This is getting in the way
                         new Game(player);
                         endPrompt = true;
                         running = false;

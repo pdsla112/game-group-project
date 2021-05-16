@@ -55,11 +55,11 @@ public class Player {
     }
 
     public void useItem(String name) {
-        if (name.equals("medkit")) {
-            Medkit medkit = new Medkit(this);
-            medkit.use();
-            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
-        }
+//        if (name.equals("medkit")) {
+//            Medkit medkit = new Medkit(this);
+//            medkit.use();
+//            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
+//        }
 
     }
 

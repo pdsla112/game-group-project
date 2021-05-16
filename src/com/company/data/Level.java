@@ -13,21 +13,21 @@ public class Level {
     private int zombieApproachProb;
     private int zombieAttack;
     private int psychopathAttack;
-    private ArrayList<Animal> animals;
-    private ArrayList<HuntingKit> huntingKits;
-    private ArrayList<Medkit> medKits;
+    private Animal animal;
+    private HuntingKit huntingKit;
+    private Medkit medKit;
     private int energyConsumption;     // How much energy is consumed per distance travelled.
 
-    public Level(int level, int health, int damage, int zombieApproachProb, int zombieAttack, int psychopathAttack, ArrayList<Animal> animals, ArrayList<HuntingKit> huntingKits, ArrayList<Medkit> medKits, int energyConsumption) {
+    public Level(int level, int health, int damage, int zombieApproachProb, int zombieAttack, int psychopathAttack, Animal animal, HuntingKit huntingKit, Medkit medKit, int energyConsumption) {
         this.level = level;
         this.health = health;
         this.damage = damage;
         this.zombieApproachProb = zombieApproachProb;
         this.zombieAttack = zombieAttack;
         this.psychopathAttack = psychopathAttack;
-        this.animals = animals;
-        this.huntingKits = huntingKits;
-        this.medKits = medKits;
+        this.animal = animal;
+        this.huntingKit = huntingKit;
+        this.medKit = medKit;
         this.energyConsumption = energyConsumption;
     }
 
@@ -51,16 +51,16 @@ public class Level {
         return this.psychopathAttack;
     }
 
-    public ArrayList<Animal> getAnimals() {
-        return this.animals;
+    public Animal getAnimals() {
+        return this.animal;
     }
 
-    public ArrayList<HuntingKit> getHuntingKits() {
-        return this.huntingKits;
+    public HuntingKit getHuntingKits() {
+        return this.huntingKit;
     }
 
-    public ArrayList<Medkit> getMedKits() {
-        return this.medKits;
+    public Medkit getMedKits() {
+        return this.medKit;
     }
 
     public int getEnergyConsumption() {
