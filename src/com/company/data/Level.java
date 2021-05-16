@@ -7,7 +7,7 @@ import com.company.items.Medkit;
 import java.util.ArrayList;
 
 public class Level {
-    private String level;
+    private int level;
     private int health;
     private int damage;
     private int zombieApproachProb;
@@ -18,7 +18,7 @@ public class Level {
     private ArrayList<Medkit> medKits;
     private int energyConsumption;     // How much energy is consumed per distance travelled.
 
-    public Level(String level, int health, int damage, int zombieApproachProb, int zombieAttack, int psychopathAttack, ArrayList<Animal> animals, ArrayList<HuntingKit> huntingKits, ArrayList<Medkit> medKits, int energyConsumption) {
+    public Level(int level, int health, int damage, int zombieApproachProb, int zombieAttack, int psychopathAttack, ArrayList<Animal> animals, ArrayList<HuntingKit> huntingKits, ArrayList<Medkit> medKits, int energyConsumption) {
         this.level = level;
         this.health = health;
         this.damage = damage;
@@ -31,7 +31,7 @@ public class Level {
         this.energyConsumption = energyConsumption;
     }
 
-    public String getLevel() { return this.level; }
+    public int getLevel() { return this.level; }
 
     public int getHealth() {
         return this.health;
