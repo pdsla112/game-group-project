@@ -87,8 +87,13 @@ public class PlayerJSON {
     // Debug!
     public static void savePlayer(Player player) {
         removePlayer(player.getName());
-        ArrayList<Player> playerList = deserializeJSON();
-        playerList.add(player);
+        ArrayList<Player> playerList = new ArrayList<>();
+        if (deserializeJSON() == null) {
+            playerList.add(player);
+        } else {
+            playerList = deserializeJSON();
+            playerList.add(player);
+        }
         serializeJSON(playerList);
     }
 }

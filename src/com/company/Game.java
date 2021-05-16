@@ -17,7 +17,7 @@ import java.util.List;
 public class Game {
     Player player;
     public Parser parser;
-    public static GameMap map = GameMapJSON.temporaryLoadGamemap();
+    public static GameMap map = GameMapJSON.deserializeJSON();
 
     public Game(Player p) {
         this.player = p;
