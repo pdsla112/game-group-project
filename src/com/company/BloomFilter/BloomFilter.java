@@ -13,12 +13,12 @@ public class BloomFilter {
     /**
      * If it shows in the bloom filter that an email hasn't been saved yet in the database,
      * it will convert the boolean value (0/1) at that hash index to true.
-     * @param email
+     * @param username
      * @author Dong Seok La (u6943702)
      */
-    public static void add(String email) {
-        if (!mightContain(email)) {
-            int hash = getHash(email);
+    public static void add(String username) {
+        if (!mightContain(username)) {
+            int hash = getHash(username);
             bitArr.set(hash, true);
         }
     }
@@ -27,12 +27,12 @@ public class BloomFilter {
      * Checks the boolean value in the bloom filter at that hash index for the inputted email.
      * If false, it is impossible that the email is already saved in the database.
      * If true, that email may or may not have already been saved in the database.
-     * @param email
+     * @param username
      * @return boolean
      * @author Dong Seok La (u6943702)
      */
-    public static boolean mightContain(String email) {
-        int hash = getHash(email);
+    public static boolean mightContain(String username) {
+        int hash = getHash(username);
         if (bitArr.get(hash))
             return true;
         else
@@ -42,12 +42,12 @@ public class BloomFilter {
     /**
      * Returns the integer hash of the email string.
      * The hash has an upper bound of 63 and a lower bound of 0.
-     * @param email
+     * @param username
      * @return integer hash value
      * @author Dong Seok La (u6943702)
      */
-    public static int getHash(String email) {
-        int hash = email.hashCode() % 64;
+    public static int getHash(String username) {
+        int hash = username.hashCode() % 64;
         if (hash < 0)
             return -1 * hash;
         return hash;

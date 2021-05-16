@@ -58,12 +58,11 @@ public class PlayerJSON {
         return null;
     }
 
-    //returns new playuer if player is created (unique name)
+    //returns new player if player is created (unique name)
     //return null if name already exists
     // make sure name is one word (no spaces)
     public static Player createNewPlayer(String name, int difficulty) {
-        return new Player(name, difficulty, "home");
-        //return null;
+
     }
 
     //remove player from json
