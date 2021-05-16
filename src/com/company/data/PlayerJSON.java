@@ -22,7 +22,6 @@ public class PlayerJSON {
     public static void serializeJSON(ArrayList<Player> objectList) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("PlayerDB.json")) {
-//            JsonElement tree = gson.toJsonTree(objectList);
             gson.toJson(objectList, writer);
         } catch (IOException e) {
             e.printStackTrace();
@@ -37,8 +36,6 @@ public class PlayerJSON {
         try {
             jsonReader = new JsonReader(new FileReader("PlayerDB.json"));
             data = gson.fromJson(jsonReader, listObjectType);
-//            System.out.println("here: " + gson.fromJson(jsonReader, listObjectType));
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -89,29 +86,9 @@ public class PlayerJSON {
 
     // Debug!
     public static void savePlayer(Player player) {
-//<<<<<<< HEAD
-        System.out.println(player.getEmail());
-        ArrayList<Player> deserializedList = new ArrayList<>();
-        if (deserializeJSON() == null) {
-            deserializedList.add(player);
-            serializeJSON(deserializedList);
-            return;
-        }
-        deserializedList = deserializeJSON();
-        Player playerToReplace = getSpecificPlayer(player.getEmail());
-        if (playerToReplace == null) {
-//=======
-        System.out.println(player.getName());
-        ArrayList<Player> deserializedList = deserializeJSON();
-        System.out.println(deserializedList.size());
-        Player playerToReplace = getSpecificPlayer(player.getName());
-        if (playerToReplace.equals(null)) {
-//>>>>>>> 817465e7ed64df80314e71eb576d73cd452e74e8
-            deserializedList.add(player);
-        } else if (!playerToReplace.equals(null)) {
-            deserializedList.remove(playerToReplace);
-            deserializedList.add(player);
-        }
-        serializeJSON(deserializedList);
+        removePlayer(player.getName());
+        ArrayList<Player> playerList = deserializeJSON();
+        playerList.add(player);
+        serializeJSON(playerList);
     }
 }
