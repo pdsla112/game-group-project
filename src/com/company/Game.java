@@ -76,9 +76,6 @@ public class Game {
 
     }
 
-
-<<<<<<< HEAD
-
         //cottage
         //todo cottage.levelMap = loadlevelmapfromjson();
         //cottage.levelMap = loadlevelmapfromjson();
@@ -209,13 +206,11 @@ public class Game {
         lab.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(rootLab)));
 
         GameMapJSON.serializeJSON(map);
-//=======
     public static void printIntro() {
         System.out.println("--------------------------------------");
         System.out.println("Intro:");
         System.out.println("You are one of the people who decided to face the danger and go to the Laboratory for your family and neighbours.\n");
         System.out.println("--------------------------------------");
-//>>>>>>> 817465e7ed64df80314e71eb576d73cd452e74e8
     }
 }
 
