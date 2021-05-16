@@ -16,17 +16,20 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class PlayerJSON {
+    public static void main(String[] args) {
+        deserializeJSON();
+    }
     public static void serializeJSON(ArrayList<Player> objectList) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("PlayerDB.json")) {
-            JsonElement tree = gson.toJsonTree(objectList);
-            gson.toJson(tree, writer);
+//            JsonElement tree = gson.toJsonTree(objectList);
+            gson.toJson(objectList, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static ArrayList deserializeJSON() {
+    public static ArrayList<Player> deserializeJSON() {
         ArrayList<Player> data = new ArrayList<>();
         Gson gson = new Gson();
         JsonReader jsonReader = null;
@@ -34,6 +37,7 @@ public class PlayerJSON {
         try {
             jsonReader = new JsonReader(new FileReader("PlayerDB.json"));
             data = gson.fromJson(jsonReader, listObjectType);
+//            System.out.println("here: " + gson.fromJson(jsonReader, listObjectType));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -56,10 +60,15 @@ public class PlayerJSON {
     // Debug!
     public static void savePlayer(Player player) {
         System.out.println(player.getEmail());
-        ArrayList<Player> deserializedList = deserializeJSON();
-        System.out.println(deserializedList.size());
+        ArrayList<Player> deserializedList = new ArrayList<>();
+        if (deserializeJSON() == null) {
+            deserializedList.add(player);
+            serializeJSON(deserializedList);
+            return;
+        }
+        deserializedList = deserializeJSON();
         Player playerToReplace = getSpecificPlayer(player.getEmail());
-        if (playerToReplace.equals(null)) {
+        if (playerToReplace == null) {
             deserializedList.add(player);
         } else if (!playerToReplace.equals(null)) {
             deserializedList.remove(playerToReplace);

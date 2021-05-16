@@ -339,116 +339,36 @@
       "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
       "levelMap": {
         "adjacent": {
-          "com.company.LevelNode@eb21112": [
-            {
-              "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-              "option": "go into the storage room"
-            }
-          ],
-          "com.company.LevelNode@1786f9d5": [
-            {
-              "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
-              "actions": [
-                "item 1"
-              ],
-              "option": "search the shelf"
-            },
-            {
-              "text": "",
-              "option": "close the shelf"
-            }
-          ],
           "com.company.LevelNode@150c158": [
             {
-              "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
-              "actions": [
-                "psychoFight"
-              ],
-              "option": "wake her up"
-            },
-            {
-              "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
-              "option": "leave her alone"
-            }
-          ],
-          "com.company.LevelNode@43a0cee9": [
-            {
-              "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-              "option": "go into the storage room"
-            }
-          ],
-          "com.company.LevelNode@2eda0940": [
-            {
-              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "text": "Thanks to her, you could go to the next destination safely and quickly.",
               "actions": [
                 "heal 10"
-              ],
-              "option": "approach the man "
-            },
-            {
-              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-              "option": "ignore him"
-            }
-          ],
-          "com.company.LevelNode@4524411f": [
-            {
-              "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-              "option": "escape"
-            }
-          ],
-          "com.company.LevelNode@10dba097": [
-            {
-              "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
-              "option": "fight the girl"
+              ]
             }
           ],
           "com.company.LevelNode@2e3fc542": [
             {
-              "text": "You approach the child, and take a closer look.",
-              "option": "approach"
-            },
-            {
-              "text": "You ignore the child",
-              "option": "ignore"
-            }
-          ],
-          "com.company.LevelNode@401e7803": [
-            {
-              "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-              "option": "escape"
-            }
-          ],
-          "com.company.LevelNode@704d6e83": [
-            {
-              "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
-              "actions": [
-                "item 1"
-              ],
-              "option": "search the shelf"
-            },
-            {
-              "text": "",
-              "option": "close the shelf"
+              "text": "As you kept walking, you found a taxi that seemed to have person inside. You knocked on the door to have a conversation with middle-aged woman inside. She rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation. She said she could drive you to the place where you had to go. ",
+              "option": "approach taxidriver"
             }
           ]
         },
         "levelNodes": [],
         "completionNodes": [
           {
-            "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+            "text": "Thanks to her, you could go to the next destination safely and quickly.",
             "actions": [
               "heal 10"
-            ],
-            "option": "approach the man "
-          },
-          {
-            "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-            "option": "ignore him"
+            ]
           }
         ],
         "deathNodes": [],
         "currentNode": {
-          "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+          "text": "You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\nYou saw the zombie attacking someone, so you stepped back into the bush falteringly.",
+          "actions": [
+            "zombieFight"
+          ]
         }
       }
     },
@@ -1461,116 +1381,36 @@
         "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
         "levelMap": {
           "adjacent": {
-            "com.company.LevelNode@eb21112": [
-              {
-                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-                "option": "go into the storage room"
-              }
-            ],
-            "com.company.LevelNode@1786f9d5": [
-              {
-                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
-                "actions": [
-                  "item 1"
-                ],
-                "option": "search the shelf"
-              },
-              {
-                "text": "",
-                "option": "close the shelf"
-              }
-            ],
             "com.company.LevelNode@150c158": [
               {
-                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
-                "actions": [
-                  "psychoFight"
-                ],
-                "option": "wake her up"
-              },
-              {
-                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
-                "option": "leave her alone"
-              }
-            ],
-            "com.company.LevelNode@43a0cee9": [
-              {
-                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-                "option": "go into the storage room"
-              }
-            ],
-            "com.company.LevelNode@2eda0940": [
-              {
-                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "text": "Thanks to her, you could go to the next destination safely and quickly.",
                 "actions": [
                   "heal 10"
-                ],
-                "option": "approach the man "
-              },
-              {
-                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-                "option": "ignore him"
-              }
-            ],
-            "com.company.LevelNode@4524411f": [
-              {
-                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-                "option": "escape"
-              }
-            ],
-            "com.company.LevelNode@10dba097": [
-              {
-                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
-                "option": "fight the girl"
+                ]
               }
             ],
             "com.company.LevelNode@2e3fc542": [
               {
-                "text": "You approach the child, and take a closer look.",
-                "option": "approach"
-              },
-              {
-                "text": "You ignore the child",
-                "option": "ignore"
-              }
-            ],
-            "com.company.LevelNode@401e7803": [
-              {
-                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-                "option": "escape"
-              }
-            ],
-            "com.company.LevelNode@704d6e83": [
-              {
-                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
-                "actions": [
-                  "item 1"
-                ],
-                "option": "search the shelf"
-              },
-              {
-                "text": "",
-                "option": "close the shelf"
+                "text": "As you kept walking, you found a taxi that seemed to have person inside. You knocked on the door to have a conversation with middle-aged woman inside. She rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation. She said she could drive you to the place where you had to go. ",
+                "option": "approach taxidriver"
               }
             ]
           },
           "levelNodes": [],
           "completionNodes": [
             {
-              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "text": "Thanks to her, you could go to the next destination safely and quickly.",
               "actions": [
                 "heal 10"
-              ],
-              "option": "approach the man "
-            },
-            {
-              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-              "option": "ignore him"
+              ]
             }
           ],
           "deathNodes": [],
           "currentNode": {
-            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+            "text": "You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\nYou saw the zombie attacking someone, so you stepped back into the bush falteringly.",
+            "actions": [
+              "zombieFight"
+            ]
           }
         }
       },
@@ -1687,116 +1527,36 @@
         "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
         "levelMap": {
           "adjacent": {
-            "com.company.LevelNode@eb21112": [
-              {
-                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-                "option": "go into the storage room"
-              }
-            ],
-            "com.company.LevelNode@1786f9d5": [
-              {
-                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
-                "actions": [
-                  "item 1"
-                ],
-                "option": "search the shelf"
-              },
-              {
-                "text": "",
-                "option": "close the shelf"
-              }
-            ],
             "com.company.LevelNode@150c158": [
               {
-                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
-                "actions": [
-                  "psychoFight"
-                ],
-                "option": "wake her up"
-              },
-              {
-                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
-                "option": "leave her alone"
-              }
-            ],
-            "com.company.LevelNode@43a0cee9": [
-              {
-                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-                "option": "go into the storage room"
-              }
-            ],
-            "com.company.LevelNode@2eda0940": [
-              {
-                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "text": "Thanks to her, you could go to the next destination safely and quickly.",
                 "actions": [
                   "heal 10"
-                ],
-                "option": "approach the man "
-              },
-              {
-                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-                "option": "ignore him"
-              }
-            ],
-            "com.company.LevelNode@4524411f": [
-              {
-                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-                "option": "escape"
-              }
-            ],
-            "com.company.LevelNode@10dba097": [
-              {
-                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
-                "option": "fight the girl"
+                ]
               }
             ],
             "com.company.LevelNode@2e3fc542": [
               {
-                "text": "You approach the child, and take a closer look.",
-                "option": "approach"
-              },
-              {
-                "text": "You ignore the child",
-                "option": "ignore"
-              }
-            ],
-            "com.company.LevelNode@401e7803": [
-              {
-                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-                "option": "escape"
-              }
-            ],
-            "com.company.LevelNode@704d6e83": [
-              {
-                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
-                "actions": [
-                  "item 1"
-                ],
-                "option": "search the shelf"
-              },
-              {
-                "text": "",
-                "option": "close the shelf"
+                "text": "As you kept walking, you found a taxi that seemed to have person inside. You knocked on the door to have a conversation with middle-aged woman inside. She rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation. She said she could drive you to the place where you had to go. ",
+                "option": "approach taxidriver"
               }
             ]
           },
           "levelNodes": [],
           "completionNodes": [
             {
-              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "text": "Thanks to her, you could go to the next destination safely and quickly.",
               "actions": [
                 "heal 10"
-              ],
-              "option": "approach the man "
-            },
-            {
-              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-              "option": "ignore him"
+              ]
             }
           ],
           "deathNodes": [],
           "currentNode": {
-            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+            "text": "You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\nYou saw the zombie attacking someone, so you stepped back into the bush falteringly.",
+            "actions": [
+              "zombieFight"
+            ]
           }
         }
       },
@@ -1809,116 +1569,36 @@
         "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
         "levelMap": {
           "adjacent": {
-            "com.company.LevelNode@eb21112": [
-              {
-                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-                "option": "go into the storage room"
-              }
-            ],
-            "com.company.LevelNode@1786f9d5": [
-              {
-                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
-                "actions": [
-                  "item 1"
-                ],
-                "option": "search the shelf"
-              },
-              {
-                "text": "",
-                "option": "close the shelf"
-              }
-            ],
             "com.company.LevelNode@150c158": [
               {
-                "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
-                "actions": [
-                  "psychoFight"
-                ],
-                "option": "wake her up"
-              },
-              {
-                "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
-                "option": "leave her alone"
-              }
-            ],
-            "com.company.LevelNode@43a0cee9": [
-              {
-                "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-                "option": "go into the storage room"
-              }
-            ],
-            "com.company.LevelNode@2eda0940": [
-              {
-                "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+                "text": "Thanks to her, you could go to the next destination safely and quickly.",
                 "actions": [
                   "heal 10"
-                ],
-                "option": "approach the man "
-              },
-              {
-                "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-                "option": "ignore him"
-              }
-            ],
-            "com.company.LevelNode@4524411f": [
-              {
-                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-                "option": "escape"
-              }
-            ],
-            "com.company.LevelNode@10dba097": [
-              {
-                "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
-                "option": "fight the girl"
+                ]
               }
             ],
             "com.company.LevelNode@2e3fc542": [
               {
-                "text": "You approach the child, and take a closer look.",
-                "option": "approach"
-              },
-              {
-                "text": "You ignore the child",
-                "option": "ignore"
-              }
-            ],
-            "com.company.LevelNode@401e7803": [
-              {
-                "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-                "option": "escape"
-              }
-            ],
-            "com.company.LevelNode@704d6e83": [
-              {
-                "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
-                "actions": [
-                  "item 1"
-                ],
-                "option": "search the shelf"
-              },
-              {
-                "text": "",
-                "option": "close the shelf"
+                "text": "As you kept walking, you found a taxi that seemed to have person inside. You knocked on the door to have a conversation with middle-aged woman inside. She rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation. She said she could drive you to the place where you had to go. ",
+                "option": "approach taxidriver"
               }
             ]
           },
           "levelNodes": [],
           "completionNodes": [
             {
-              "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+              "text": "Thanks to her, you could go to the next destination safely and quickly.",
               "actions": [
                 "heal 10"
-              ],
-              "option": "approach the man "
-            },
-            {
-              "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-              "option": "ignore him"
+              ]
             }
           ],
           "deathNodes": [],
           "currentNode": {
-            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside."
+            "text": "You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\nYou saw the zombie attacking someone, so you stepped back into the bush falteringly.",
+            "actions": [
+              "zombieFight"
+            ]
           }
         }
       },
