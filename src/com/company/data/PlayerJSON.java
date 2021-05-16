@@ -61,13 +61,30 @@ public class PlayerJSON {
     //returns new player if player is created (unique name)
     //return null if name already exists
     // make sure name is one word (no spaces)
-    public static Player createNewPlayer(String name, int difficulty) {
-
+    public static Player createNewPlayer(String name, int level) {
+        if (!BloomFilter.mightContain(name)) {
+            return new Player(name, level, "home");
+        }
+        if (getSpecificPlayer(name) == null) {
+            return new Player(name, level, "home");
+        }
+        return null;
     }
 
     //remove player from json
     public static void removePlayer(String name) {
-
+        if (!BloomFilter.mightContain(name))
+            return;
+        else {
+            Player player = getSpecificPlayer(name);
+            if (player == null)
+                return;
+            else {
+                ArrayList<Player> playerList = deserializeJSON();
+                playerList.remove(player);
+                serializeJSON(playerList);
+            }
+        }
     }
 
     // Debug!
