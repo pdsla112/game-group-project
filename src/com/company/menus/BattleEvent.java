@@ -12,12 +12,12 @@ import com.company.parser.Parser;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class BattleMenu {
+public class BattleEvent {
     Player player;
     Enemy enemy;
     Level level;
 
-    public BattleMenu(Player player, Enemy enemy) throws DeathException {
+    public BattleEvent(Player player, Enemy enemy) throws DeathException {
         this.player = player;
         this.enemy = enemy;
         int playerLevel = player.getLevel();

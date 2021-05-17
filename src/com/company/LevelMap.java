@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.data.Level;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,22 +10,23 @@ import java.util.Map;
 public class LevelMap {
     Map<String,List<String>> adjacentMap;
     Map<String, LevelNode> levelNodesMap;
-    List<LevelNode> completionNodes;
+    List<String> completionNodes;
     LevelNode currentNode;
 
     public LevelMap(LevelNode currentNode) {
         this.adjacentMap = new HashMap<>();
         this.levelNodesMap = new HashMap<>();
+        this.completionNodes = new ArrayList<>();
         this.currentNode = currentNode;
         this.levelNodesMap.put(currentNode.id, currentNode);
     }
 
-    public List<LevelNode> getCompletionNodes() {
-        return completionNodes;
-    }
 
     public void setCompletionNodes(List<LevelNode> completionNodes) {
-        this.completionNodes = completionNodes;
+        for (LevelNode cNode : completionNodes) {
+            this.completionNodes.add(cNode.id);
+        }
+
     }
 
     public void addLevelNodes(List<LevelNode> levelNodes) {

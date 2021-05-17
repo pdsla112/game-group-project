@@ -37,7 +37,7 @@ public class Game {
                 System.out.println(levelMap.getCurrentNode().text+"\n");
 
                 //check level completion
-                if (levelMap.completionNodes.contains(levelMap.currentNode)) {
+                if (levelMap.completionNodes.contains(levelMap.currentNode.id)) {
                     if (playerLocation == map.getFinalLocation()) {
                         throw new WinException("win");
                     } else {

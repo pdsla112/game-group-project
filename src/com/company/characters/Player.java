@@ -111,9 +111,6 @@ public class Player {
         if (health <= 0) {
             throw new DeathException("player died.");
         }
-        if (e.getHp() <= 0) {
-            e.setAlive(false);
-        }
 
     }
 

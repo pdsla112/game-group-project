@@ -7,7 +7,6 @@ import com.company.characters.Player;
 import java.util.Random;
 
 public class Zombie extends Enemy {
-    private boolean isAlive;
     private int attackAmount;
     private boolean deathValue;
     private int approachProb;
@@ -53,7 +52,6 @@ public class Zombie extends Enemy {
 
     public Zombie() {
         Random r = new Random();
-        isAlive = true;
         hp = 35 + r.nextInt(10);
     }
 
@@ -76,17 +74,12 @@ public class Zombie extends Enemy {
 
     @Override
     public boolean isAlive() {
-        return isAlive;
+        return hp >= 0;
     }
 
     @Override
     public int getHp() {
         return hp;
-    }
-
-    @Override
-    public void setAlive(boolean a) {
-        isAlive = a;
     }
 
     @Override

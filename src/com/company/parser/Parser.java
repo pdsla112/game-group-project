@@ -13,13 +13,11 @@ import com.company.enemies.Psychopath;
 import com.company.enemies.Zombie;
 import com.company.items.LocationObject;
 import com.company.locations.Location;
-import com.company.menus.BattleMenu;
+import com.company.menus.BattleEvent;
 import com.company.menus.Menu;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class  Parser {
@@ -312,11 +310,11 @@ public class  Parser {
             }
             if(command.equals("psychoFight")){
                 Psychopath psychopath = new Psychopath(level.getPsychopathAttack(), level.getPsychoHealth(), false, true);
-                new BattleMenu(player, psychopath);
+                new BattleEvent(player, psychopath);
             }
             if(command.equals("zombieFight")){
                 Zombie zombie = new Zombie(level.getZombieAttack(), level.getZombieHealth(), false, level.getZombieApproachProb());
-                new BattleMenu(player, zombie);
+                new BattleEvent(player, zombie);
             }
             if (command.equals("location")) {
                 String newLocation = userCommandSplit[1];

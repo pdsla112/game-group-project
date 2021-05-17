@@ -6,7 +6,6 @@ import com.company.characters.Player;
 import java.util.Random;
 
 public class Psychopath extends Enemy {
-    private boolean isAlive;
     private int hp;
     private int attackAmount;    // Amount that the psychopath deducts from the player's health.
     private boolean deathValue;  // True => Psychopath is dead. False => Psychopath is alive.
@@ -21,7 +20,6 @@ public class Psychopath extends Enemy {
 
     public Psychopath() {
         Random r = new Random();
-        isAlive = true;
         int hp = 47 + r.nextInt(7);
     }
 
@@ -48,13 +46,9 @@ public class Psychopath extends Enemy {
 
     @Override
     public boolean isAlive() {
-        return isAlive;
+        return hp >=0;
     }
 
-    @Override
-    public void setAlive(boolean a) {
-        isAlive = a;
-    }
 
     @Override
     public void setHp(int hp) {
