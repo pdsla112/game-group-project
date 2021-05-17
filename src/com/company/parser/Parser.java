@@ -252,27 +252,6 @@ public class  Parser {
         return true;
     }
 
-    public boolean battleParse(String inputString, Menu menu, Enemy enemy) throws DeathException {
-        try {
-            int selected = Integer.parseInt(inputString);
-
-            if (selected == 0) {
-                System.out.println("You choose to attack head on.");
-                player.attack(enemy, player.getDamage(), player.getLevel()+2);
-            } else if (selected == 1) {
-                player.attack(enemy, player.getDamage()-6, 0);
-            } else {
-                System.out.println("You choose to use a sneak attack.");
-                battleParse(Parser.getInputString(), menu, enemy);
-            }
-
-        } catch(NumberFormatException e) {
-            return parseSentenceInput(inputString, menu);
-
-        }
-        return true;
-    }
-
     //returns true if game is still running afterwards
     //user doesn't choose to do these things
     //done when player
@@ -311,11 +290,14 @@ public class  Parser {
             }
             if(command.equals("psychoFight")){
                 Psychopath psychopath = new Psychopath(level.getPsychopathAttack(), level.getPsychoHealth(), false, true);
-                new BattleEvent(player, psychopath);
+                BattleEvent be = new BattleEvent(player, psychopath);
+                return(be.enemyFight());
+
             }
             if(command.equals("zombieFight")){
                 Zombie zombie = new Zombie(level.getZombieAttack(), level.getZombieHealth(), false, level.getZombieApproachProb());
-                new BattleEvent(player, zombie);
+                BattleEvent be = new BattleEvent(player, zombie);
+                return(be.enemyFight());
             }
             if (command.equals("location")) {
                 String newLocation = userCommandSplit[1];

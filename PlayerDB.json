@@ -167,5 +167,245 @@
       "nounG4": []
     },
     "locationName": "cottage"
+  },
+  {
+    "damage": 60,
+    "health": 100,
+    "name": "an",
+    "level": 0,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
+  },
+  {
+    "damage": 60,
+    "health": 100,
+    "name": "anson",
+    "level": 0,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
+  },
+  {
+    "damage": 60,
+    "health": 100,
+    "name": "anson",
+    "level": 0,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
+  },
+  {
+    "damage": 60,
+    "health": 100,
+    "name": "anson",
+    "level": 0,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
+  },
+  {
+    "damage": 60,
+    "health": 100,
+    "name": "anson",
+    "level": 0,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
+  },
+  {
+    "damage": 60,
+    "health": 100,
+    "name": "anson",
+    "level": 0,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
   }
 ]

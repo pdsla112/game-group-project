@@ -20,9 +20,9 @@ public class Medkit extends Item {
      * add to player's health (max 100)
      */
     @Override
-    public void use() {
+    public void use(Player player) {
         int oldHp = player.getHealth();
-        player.setHealth(Math.max(100,player.getHealth()+healValue));
+        player.setHealth(Math.min(100,player.getHealth()+healValue));
         int changeHp = player.getHealth() - oldHp;
         System.out.println("You have used a medkit. +" + changeHp + " Hp");
     }
