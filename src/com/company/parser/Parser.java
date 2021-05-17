@@ -27,7 +27,7 @@ public class  Parser {
     Player player;
     public static String getInputString() {
         Scanner in = new Scanner(System.in);
-        return in.nextLine().toLowerCase();
+        return in.nextLine();
     }
 
     public Parser(Player player) {
