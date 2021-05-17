@@ -1,6 +1,6 @@
 package com.company.enemies;
 
-import com.company.DeathException;
+import com.company.exceptions.DeathException;
 import com.company.characters.Player;
 
 public abstract class Enemy {

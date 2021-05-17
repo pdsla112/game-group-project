@@ -1,10 +1,10 @@
-package com.company.parser;
+package com.company.parser.elements;
 
-public class VerbG4 extends Sentence{
+public class NounG4 extends Sentence {
 
     public String word;
 
-    public VerbG4(String word) {
+    public NounG4(String word) {
         this.word = word;
     }
 

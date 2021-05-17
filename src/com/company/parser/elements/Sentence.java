@@ -1,4 +1,4 @@
-package com.company.parser;
+package com.company.parser.elements;
 
 /**
  * Abstract class Exp to represent expressions

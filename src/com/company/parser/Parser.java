@@ -1,9 +1,9 @@
 package com.company.parser;
 
-import com.company.DeathException;
+import com.company.exceptions.DeathException;
 import com.company.Game;
 import com.company.LevelNode;
-import com.company.MenuItem;
+import com.company.menus.MenuItem;
 import com.company.characters.Player;
 import com.company.data.Level;
 import com.company.data.LevelJSON;
@@ -15,6 +15,7 @@ import com.company.items.LocationObject;
 import com.company.locations.Location;
 import com.company.menus.BattleEvent;
 import com.company.menus.Menu;
+import com.company.parser.elements.*;
 
 import java.util.ArrayList;
 import java.util.List;

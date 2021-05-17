@@ -1,6 +1,6 @@
 package com.company.menus;
 
-import com.company.DeathException;
+import com.company.exceptions.DeathException;
 import com.company.characters.Player;
 import com.company.data.Level;
 import com.company.data.LevelJSON;

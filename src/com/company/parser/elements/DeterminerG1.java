@@ -1,10 +1,10 @@
-package com.company.parser;
+package com.company.parser.elements;
 
-public class NounG2 extends Sentence{
+public class DeterminerG1 extends Sentence {
 
     public String word;
 
-    public NounG2(String word) {
+    public DeterminerG1(String word) {
         this.word = word;
     }
 

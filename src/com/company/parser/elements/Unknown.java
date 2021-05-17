@@ -1,6 +1,8 @@
-package com.company.parser;
+package com.company.parser.elements;
 
-public class Unknown extends Sentence{
+import com.company.parser.elements.Sentence;
+
+public class Unknown extends Sentence {
 
     private String word;
 

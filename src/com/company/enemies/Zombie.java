@@ -1,7 +1,7 @@
 package com.company.enemies;
 
 
-import com.company.DeathException;
+import com.company.exceptions.DeathException;
 import com.company.characters.Player;
 
 import java.util.Random;
@@ -87,6 +87,11 @@ public class Zombie extends Enemy {
         this.hp = hp;
     }
 
+    /**
+     * attacks player
+     * @param p
+     * @throws DeathException
+     */
     @Override
     public void attack(Player p) throws DeathException {
         String text = "";

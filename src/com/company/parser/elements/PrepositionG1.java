@@ -1,10 +1,10 @@
-package com.company.parser;
+package com.company.parser.elements;
 
-public class NounG4 extends Sentence{
+public class PrepositionG1 extends Sentence {
 
     public String word;
 
-    public NounG4(String word) {
+    public PrepositionG1(String word) {
         this.word = word;
     }
 

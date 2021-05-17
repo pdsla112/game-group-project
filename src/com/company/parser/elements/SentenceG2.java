@@ -1,4 +1,4 @@
-package com.company.parser;
+package com.company.parser.elements;
 
 public class SentenceG2 extends Sentence{
 

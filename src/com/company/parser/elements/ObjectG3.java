@@ -1,6 +1,6 @@
-package com.company.parser;
+package com.company.parser.elements;
 
-public class ObjectG3 extends Sentence{
+public class ObjectG3 extends Sentence {
 
     public Sentence determinerG2;
     public Sentence nounG3;

@@ -1,10 +1,12 @@
 package com.company;
 
+import com.company.menus.MenuItem;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class LevelNode implements MenuItem{
+public class LevelNode implements MenuItem {
     String id;
     String text;
     List<String> actions;

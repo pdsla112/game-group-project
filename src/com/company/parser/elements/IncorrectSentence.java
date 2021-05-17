@@ -1,6 +1,6 @@
-package com.company.parser;
+package com.company.parser.elements;
 
-public class IncorrectSentence extends Sentence{
+public class IncorrectSentence extends Sentence {
 
     public Sentence s1;
 

@@ -1,6 +1,8 @@
-package com.company.parser;
+package com.company.parser.elements;
 
-public class VerbG2 extends Sentence{
+import com.company.parser.elements.Sentence;
+
+public class VerbG2 extends Sentence {
 
     public String word;
 

@@ -17,9 +17,12 @@ public class MainMenu {
         start();
     }
 
+    /**
+     * displays main menu options and handles user selection
+     */
     public void start() {
         Menu mainMenu = new Menu(
-                new ArrayList<GenericMenuItem>(Arrays.asList(new GenericMenuItem("Start New Game"), new GenericMenuItem("Load Existing Game"), new GenericMenuItem("Exit"))));
+                new ArrayList<>(Arrays.asList(new GenericMenuItem("Start New Game"), new GenericMenuItem("Load Existing Game"), new GenericMenuItem("Exit"))));
         boolean running = true;
         do {
             boolean endPrompt = false;
@@ -37,7 +40,7 @@ public class MainMenu {
                     int difficulty = 0;
 
                     while (!endDifficultyPrompt) {
-                        System.out.println("Choose your difficulty");
+                        System.out.println("Choose your difficulty:");
                         Menu difficultyMenu = new Menu(
                                         new ArrayList<>(Arrays.asList(new GenericMenuItem("Easy"),
                                         new GenericMenuItem("Medium"), new GenericMenuItem("Hard"),
@@ -55,30 +58,32 @@ public class MainMenu {
                             System.out.println("Please enter a valid number.\n");
                         }
                     }
-
+                    // attempt to create new player
                     Player player = PlayerJSON.createNewPlayer(name, difficulty);
                     if (player != null) {
-//                        Game.printIntro();   // This is getting in the way
+//                        Game.printIntro();   // todo remove later on
                         new Game(player);
                         endPrompt = true;
                         running = false;
                     } else {
-                        System.out.println("Username already exists.");
+                        System.out.println("Username already exists. Please try again.");
                     }
 
 
                 } else if (userInput.equals("1")) {
                     System.out.println("Enter your username:");
                     String username = Parser.getInputString();
+                    //load player
                     Player player = PlayerJSON.getSpecificPlayer(username);
                     if (player != null) {
                         new Game(player);
                         endPrompt = true;
                         running = false;
                     } else {
-                        System.out.println("There was an error loading your profile.\n");
+                        System.out.println("Username does not exist. Please try again\n");
                     }
                 } else if (userInput.equals("2")) {
+                    System.out.println("Game exited.");
                     endPrompt = true;
                     running = false;
                 } else {

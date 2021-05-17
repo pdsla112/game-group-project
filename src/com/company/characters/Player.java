@@ -1,17 +1,11 @@
 package com.company.characters;
 
-import com.company.DeathException;
-import com.company.data.Initialization;
-import com.company.data.InitializeJSON;
+import com.company.exceptions.DeathException;
 import com.company.data.Level;
 import com.company.data.LevelJSON;
 import com.company.enemies.Enemy;
 import com.company.items.LocationObject;
-import com.company.items.Medkit;
-import com.company.locations.Location;
 import com.company.parser.Tokenizer;
-import com.company.repository.ItemRepo;
-import com.company.items.Item;
 
 
 import java.util.ArrayList;

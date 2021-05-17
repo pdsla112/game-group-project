@@ -1,23 +1,14 @@
 package com.company.parser;
 
+import com.company.parser.elements.*;
 
-/*
-   sentence = verb [preposition] object
-   verb = "get" | "use" | "look" | "examine" | "exit" | "save" | "talk"
-   preposition = "for" | "to"
-   object = ["the"] [adjective] noun
-   adjective = "your"
-   noun = "items" | "game" | "help" | "stats" | "you"
+/**
+ * for parsing tokens
+ */
+public class TokenParser {
 
-   synonyms:
-   verb:
-   exit - quit, leave
-   look - glance
-   examine - check, inspect, get
-   use -
-   save -
-   talk - speak
-
+    /*
+    Production Rules:
    sentence = verbG1 objectG1 | verbG2 objectG2 | verbG3 objectG3 | verbG4 prepositionG1 objectG4
    verbG1 = "exit" | "save"
    verbG2 = "examine"
@@ -32,11 +23,10 @@ package com.company.parser;
    determinerG2 = "your"
    nounG1 = "game"
    nounG2 = "items" | "stats" | "surroundings"
-   nounG3 = item name e.g. medkit
+   nounG3 = medkit (get items from player)
    nounG4 = furniture
 
-
-   e.g.
+   e.g. commands:
    exit the game
    save the game
    examine your surroundings
@@ -46,18 +36,18 @@ package com.company.parser;
    use your medkit
    look below the table
 
-
    */
 
-public class TokenParser {
-
     Tokenizer _tokenizer;
-
 
     public TokenParser(Tokenizer tokenizer) {
         _tokenizer = tokenizer;
     }
 
+    /**
+     * parse sentence using production rules above
+     * @return
+     */
     public Sentence parseSentence() {
         Token.Type verbType = _tokenizer.current().type();
 
@@ -100,6 +90,10 @@ public class TokenParser {
         return new IncorrectSentence(verb);
     }
 
+    /**
+     * parse verb
+     * @return
+     */
     public Sentence parseVerb() {
         if (_tokenizer.current() != null) {
             Token current = _tokenizer.current();
@@ -124,6 +118,10 @@ public class TokenParser {
         return null;
     }
 
+    /**
+     * parse objectG1
+     * @return
+     */
     public Sentence parseObjectG1() {
         Sentence determiner = parseDeterminerG1();
 
@@ -141,6 +139,10 @@ public class TokenParser {
 
     }
 
+    /**
+     * parse objectG2
+     * @return
+     */
     public Sentence parseObjectG2() {
         Sentence determiner = parseDeterminerG2();
 
@@ -157,6 +159,11 @@ public class TokenParser {
         return new IncorrectSentence(determiner);
 
     }
+
+    /**
+     * parse ObjectG3
+     * @return
+     */
     public Sentence parseObjectG3() {
 
         Sentence determiner = parseDeterminerG2();
@@ -174,6 +181,11 @@ public class TokenParser {
         return new IncorrectSentence(determiner);
 
     }
+
+    /**
+     * parse ObjectG4
+     * @return
+     */
     public Sentence parseObjectG4() {
         Sentence determiner = parseDeterminerG1();
 
