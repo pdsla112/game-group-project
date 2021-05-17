@@ -16,7 +16,6 @@ public class EnemiesinEachLocationTest {
     public void setUp(){
         Player p = new Player("name",1,"home");
         Location location = Game.map.getLocationFromName(p.getLocationName());
-        Coordinate coordinate = new Coordinate(1, 1, 0);
         String title = "At the edge of a forest";
         String description = "The are many big trees and some tick busses, " +
                 "looks difficult to go through.";
