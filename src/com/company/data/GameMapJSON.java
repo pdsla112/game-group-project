@@ -88,38 +88,38 @@ public class GameMapJSON {
         //forest
         LevelNode rootForest =  new LevelNode(null,"You are in a forest", null);
         forest.levelMap = new LevelMap(rootForest);
-        LevelNode forestpsycho = new LevelNode(null,"Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn't seen your side yet.", null);
-        forest.levelMap.setAdjacent(rootForest,new ArrayList<>(Arrays.asList(forestpsycho)));
-        LevelNode forestOp1 = new LevelNode(null,"Approach.",null);
-        LevelNode forestOp2 = new LevelNode(null,"Ignore.",null);
-        forest.levelMap.setAdjacent(forestpsycho,new ArrayList<>(Arrays.asList(forestOp1,forestOp2)));
-        LevelNode forestpsychoapproach = new LevelNode(null,"Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn't know because he wasn't looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you.",null);
-        LevelNode forestpsychoignore = new LevelNode(null,"You quickly passed by, knowing that it is abnormal to have a person in the middle of this forest after zombie outbreak.",null);
-        forest.levelMap.setAdjacent(forestOp1,new ArrayList<>(Arrays.asList(forestpsychoapproach)));
-        forest.levelMap.setAdjacent(forestOp2,new ArrayList<>(Arrays.asList(forestpsychoignore)));
-        LevelNode forestpsychowin = new LevelNode(null,"Win.",null);
-        LevelNode forestpsycholose = new LevelNode(null,"Lose.",null);//edit accordingly
-        forest.levelMap.setAdjacent(forestpsychoapproach,new ArrayList<>(Arrays.asList(forestpsychowin,forestpsycholose)));
-        LevelNode forestanimal = new LevelNode(null,"When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer).",null); //how to generate different for different animals?
-        forest.levelMap.setAdjacent(forestpsychowin,new ArrayList<>(Arrays.asList(forestanimal)));
-        forest.levelMap.setAdjacent(forestpsychoignore,new ArrayList<>(Arrays.asList(forestanimal)));
-        LevelNode forestOp3 = new LevelNode(null,"Hunt.",null);
-        LevelNode forestOp4 = new LevelNode(null,"Ignore.",null);
-        forest.levelMap.setAdjacent(forestanimal,new ArrayList<>(Arrays.asList(forestOp3,forestOp4)));
-        LevelNode forestanimalhunt = new LevelNode(null,"Having been hungry, you decided to hunt after confirming that you didn't have enough food.",null);
-        LevelNode forestanimalignore = new LevelNode(null,"You decided to pass by as you were not confident enough to hunt it.",null);
-        forest.levelMap.setAdjacent(forestOp3,new ArrayList<>(Arrays.asList(forestanimalhunt)));
-        forest.levelMap.setAdjacent(forestOp4,new ArrayList<>(Arrays.asList(forestanimalignore)));
-        LevelNode forestanimalhuntwin = new LevelNode(null,"You successfully hunt and get meat.",null);
-        LevelNode forestanimalhuntlose = new LevelNode(null,"Hunting failed.",null);
+        LevelNode forestOp1 = new LevelNode(null,"Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn't seen your side yet.", null);
+        forest.levelMap.setAdjacent(rootForest,new ArrayList<>(Arrays.asList(forestOp1)));
+        LevelNode forestOp2 = new LevelNode(null,"Approach.",null);
+        LevelNode forestOp3 = new LevelNode(null,"Ignore.",null);
+        forest.levelMap.setAdjacent(forestOp1,new ArrayList<>(Arrays.asList(forestOp2,forestOp3)));
+        LevelNode forestOp4 = new LevelNode(null,"Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn't know because he wasn't looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you.",null);
+        LevelNode forestOp5 = new LevelNode(null,"You quickly passed by, knowing that it is abnormal to have a person in the middle of this forest after zombie outbreak.",null);
+        forest.levelMap.setAdjacent(forestOp2,new ArrayList<>(Arrays.asList(forestOp4)));
+        forest.levelMap.setAdjacent(forestOp3,new ArrayList<>(Arrays.asList(forestOp5)));
+        LevelNode forestOp6 = new LevelNode(null,"Win.",null);
+        LevelNode forestOp7 = new LevelNode(null,"Lose.",null);//edit accordingly
+        forest.levelMap.setAdjacent(forestOp4,new ArrayList<>(Arrays.asList(forestOp6,forestOp7)));
+        LevelNode forestOp8 = new LevelNode(null,"When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer).",null); //how to generate different for different animals?
+        forest.levelMap.setAdjacent(forestOp6,new ArrayList<>(Arrays.asList(forestOp8)));
+        forest.levelMap.setAdjacent(forestOp5,new ArrayList<>(Arrays.asList(forestOp8)));
+        LevelNode forestOp9 = new LevelNode(null,"Hunt.",null);
+        LevelNode forestOp10 = new LevelNode(null,"Ignore.",null);
+        forest.levelMap.setAdjacent(forestOp8,new ArrayList<>(Arrays.asList(forestOp9,forestOp10)));
+        LevelNode forestOp11 = new LevelNode(null,"Having been hungry, you decided to hunt after confirming that you didn't have enough food.",null);
+        LevelNode forestOp12 = new LevelNode(null,"You decided to pass by as you were not confident enough to hunt it.",null);
+        forest.levelMap.setAdjacent(forestOp9,new ArrayList<>(Arrays.asList(forestOp11)));
+        forest.levelMap.setAdjacent(forestOp10,new ArrayList<>(Arrays.asList(forestOp12)));
+        LevelNode forestOp13 = new LevelNode(null,"You successfully hunt and get meat.",new ArrayList<>(Arrays.asList("health 10")));
+        LevelNode forestOp14 = new LevelNode(null,"Hunting failed.",null);
         //what if hunting fails? what happens: no food gained
-        forest.levelMap.setAdjacent(forestanimalhunt,new ArrayList<>(Arrays.asList(forestanimalhuntwin,forestanimalhuntlose)));
-        LevelNode forestzombie = new LevelNode(null,"In the middle of the forest, the zombie was finding for the next prey with ears, not eyes perhaps because his eyeballs had rotted.\nFrom zombie's mouth, a liquid suitable to express as filth rather than saliva was falling slowly.\nYour muscles became stiff and bones and joints hardened as if your limbs were binded due to fear.\nOnce you make a big enough sound, the zombie will find you.",null);
+        forest.levelMap.setAdjacent(forestOp11,new ArrayList<>(Arrays.asList(forestOp13,forestOp14)));
+        //LevelNode forestzombie = new LevelNode(null,"In the middle of the forest, the zombie was finding for the next prey with ears, not eyes perhaps because his eyeballs had rotted.\nFrom zombie's mouth, a liquid suitable to express as filth rather than saliva was falling slowly.\nYour muscles became stiff and bones and joints hardened as if your limbs were binded due to fear.\nOnce you make a big enough sound, the zombie will find you.",null);
         //depends on approachProb?
 
 
 
-        forest.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(forestpsycho)));
+        forest.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(forestOp14,forestOp13,forestOp12)));
 //        forest.levelMap.setDeathNodes(new ArrayList<>(Arrays.asList(forestpsycholose)));
 
 

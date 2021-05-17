@@ -21,7 +21,7 @@ public class GameTest {
 
     /*cottage have
     * */
-    @Test
+    /*@Test
     public void cangotoCottage(){
         Location currentlocation;
         GameMap gameMap = new GameMap();
@@ -84,5 +84,5 @@ public class GameTest {
     private Game successfullygoto(String location, Game currentstate){
         Assert.assertEquals(location, currentstate.player.getLocation());
         return currentstate;
-    }
+    }*/
 }
