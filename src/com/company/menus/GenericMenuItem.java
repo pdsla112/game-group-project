@@ -1,10 +1,9 @@
 package com.company.menus;
 
 
-import java.util.HashSet;
-import java.util.Set;
-import com.company.MenuItem;
-
+/**
+ * generic menu item without extra features
+ */
 public class GenericMenuItem implements MenuItem {
     protected String optionText;
 

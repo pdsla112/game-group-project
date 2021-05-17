@@ -16,17 +16,19 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class PlayerJSON {
+    public static void main(String[] args) {
+        deserializeJSON();
+    }
     public static void serializeJSON(ArrayList<Player> objectList) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("PlayerDB.json")) {
-            JsonElement tree = gson.toJsonTree(objectList);
-            gson.toJson(tree, writer);
+            gson.toJson(objectList, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static ArrayList deserializeJSON() {
+    public static ArrayList<Player> deserializeJSON() {
         ArrayList<Player> data = new ArrayList<>();
         Gson gson = new Gson();
         JsonReader jsonReader = null;
@@ -34,7 +36,6 @@ public class PlayerJSON {
         try {
             jsonReader = new JsonReader(new FileReader("PlayerDB.json"));
             data = gson.fromJson(jsonReader, listObjectType);
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -54,33 +55,45 @@ public class PlayerJSON {
         return null;
     }
 
-    //returns new playuer if player is created (unique name)
+    //returns new player if player is created (unique name)
     //return null if name already exists
     // make sure name is one word (no spaces)
-    public static Player createNewPlayer(String name, int difficulty) {
-        return new Player(name, difficulty, "home");
-        //return null;
+    public static Player createNewPlayer(String name, int level) {
+        if (!BloomFilter.mightContain(name)) {
+            return new Player(name, level, "home");
+        }
+        if (getSpecificPlayer(name) == null) {
+            return new Player(name, level, "home");
+        }
+        return null;
     }
 
     //remove player from json
     public static void removePlayer(String name) {
-
+        if (!BloomFilter.mightContain(name))
+            return;
+        else {
+            Player player = getSpecificPlayer(name);
+            if (player == null)
+                return;
+            else {
+                ArrayList<Player> playerList = deserializeJSON();
+                playerList.remove(player);
+                serializeJSON(playerList);
+            }
+        }
     }
 
     // Debug!
     public static void savePlayer(Player player) {
-        System.out.println(player.getName());
-        ArrayList<Player> deserializedList = deserializeJSON();
-        System.out.println(deserializedList.size());
-        Player playerToReplace = getSpecificPlayer(player.getName());
-        if (playerToReplace.equals(null)) {
-            deserializedList.add(player);
-        } else if (!playerToReplace.equals(null)) {
-            deserializedList.remove(playerToReplace);
-            deserializedList.add(player);
+        removePlayer(player.getName());
+        ArrayList<Player> playerList = new ArrayList<>();
+        if (deserializeJSON() == null) {
+            playerList.add(player);
+        } else {
+            playerList = deserializeJSON();
+            playerList.add(player);
         }
-        serializeJSON(deserializedList);
+        serializeJSON(playerList);
     }
-
-
 }

@@ -1,27 +1,29 @@
 package com.company.parser;
 
-import com.company.DeathException;
+import com.company.exceptions.DeathException;
 import com.company.Game;
 import com.company.LevelNode;
-import com.company.MenuItem;
+import com.company.menus.MenuItem;
 import com.company.characters.Player;
+import com.company.data.Level;
+import com.company.data.LevelJSON;
 import com.company.data.PlayerJSON;
 import com.company.enemies.Enemy;
 import com.company.enemies.Psychopath;
 import com.company.enemies.Zombie;
 import com.company.items.LocationObject;
 import com.company.locations.Location;
-import com.company.menus.BattleMenu;
+import com.company.menus.BattleEvent;
 import com.company.menus.Menu;
+import com.company.parser.elements.*;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Parser {
 
+    Level level;
     Player player;
     public static String getInputString() {
         Scanner in = new Scanner(System.in);
@@ -30,9 +32,8 @@ public class Parser {
 
     public Parser(Player player) {
         this.player = player;
+        this.level = LevelJSON.getSpecificLevel(player.getLevel());
     }
-
-
 
     public boolean parse(String inputString, Menu menu) throws DeathException {
 
@@ -309,10 +310,12 @@ public class Parser {
 
             }
             if(command.equals("psychoFight")){
-                new BattleMenu(player, new Psychopath());//update
+                Psychopath psychopath = new Psychopath(level.getPsychopathAttack(), level.getPsychoHealth(), false, true);
+                new BattleEvent(player, psychopath);
             }
             if(command.equals("zombieFight")){
-                new BattleMenu(player, new Zombie());//update
+                Zombie zombie = new Zombie(level.getZombieAttack(), level.getZombieHealth(), false, level.getZombieApproachProb());
+                new BattleEvent(player, zombie);
             }
             if (command.equals("location")) {
                 String newLocation = userCommandSplit[1];

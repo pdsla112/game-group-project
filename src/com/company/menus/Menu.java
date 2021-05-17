@@ -1,9 +1,10 @@
 package com.company.menus;
 
-import com.company.MenuItem;
-
 import java.util.*;
 
+/**
+ * menus can display a list of options
+ */
 public class Menu{
     protected List<? extends MenuItem> menuItems;
     protected Map<Integer, MenuItem> keyMap = new HashMap<>();
@@ -18,11 +19,20 @@ public class Menu{
         }
     }
 
+    /**
+     * gets number of elements in the menu
+     * @return number of options
+     */
     public int getSize() {
         return size;
     }
 
 
+    /**
+     * gets menu item from key
+     * @param key
+     * @return menu item
+     */
     public MenuItem getMenuItem(int key) {
         if (keyMap.containsKey(key)) {
             return keyMap.get(key);
@@ -32,38 +42,13 @@ public class Menu{
 
     }
 
-
+    /**
+     * prints the menu items with their associated indexes
+     */
     public void printMenuItems() {
         System.out.println("Options:");
         for (int i = 0; i< menuItems.size(); i++) {
             System.out.println("[" + i + "]" + " - " + menuItems.get(i).getOptionText());
         }
     }
-//
-//    public MenuItem displayChooseOption() {
-//        printMenuItems();
-//        return getSelectedItem();
-//    }
-
-//    public MenuItem getSelectedItem() {
-//        try {
-//            String selection = Parser.getInputString();
-//
-//            for (int i=0; i<menuItems.size(); i++)
-//
-//            if (keyMap.containsKey(selection.toLowerCase())) {
-//                return keyMap.get(selection.toLowerCase());
-//            } else {
-//                if (!Parser.parse(selection)) {
-//                    System.out.println("I do not understand.");
-//                }
-//                return this.displayChooseOption();
-//            }
-//        } catch (Exception e) {
-//            return null;
-//        }
-//
-//        return null;
-//
-//    }
 }

@@ -1,0 +1,78 @@
+[
+  {
+    "level": 0,
+    "health": 100,
+    "damage": 60,
+    "zombieApproachProb": 20,
+    "zombieAttack": 10,
+    "psychopathAttack": 20,
+    "animal": "BISON",
+    "huntingKit": {
+      "durability": 100,
+      "quality": 100
+    },
+    "medKit": {
+      "healValue": 50
+    },
+    "energyConsumption": 2,
+    "zombieHealth": 60,
+    "psychoHealth": 60
+  },
+  {
+    "level": 1,
+    "health": 100,
+    "damage": 60,
+    "zombieApproachProb": 40,
+    "zombieAttack": 20,
+    "psychopathAttack": 20,
+    "animal": "DEER",
+    "huntingKit": {
+      "durability": 100,
+      "quality": 80
+    },
+    "medKit": {
+      "healValue": 50
+    },
+    "energyConsumption": 5,
+    "zombieHealth": 70,
+    "psychoHealth": 70
+  },
+  {
+    "level": 2,
+    "health": 80,
+    "damage": 50,
+    "zombieApproachProb": 70,
+    "zombieAttack": 30,
+    "psychopathAttack": 30,
+    "animal": "TROUT",
+    "huntingKit": {
+      "durability": 80,
+      "quality": 60
+    },
+    "medKit": {
+      "healValue": 30
+    },
+    "energyConsumption": 10,
+    "zombieHealth": 100,
+    "psychoHealth": 100
+  },
+  {
+    "level": 3,
+    "health": 60,
+    "damage": 50,
+    "zombieApproachProb": 100,
+    "zombieAttack": 30,
+    "psychopathAttack": 30,
+    "animal": "RABBIT",
+    "huntingKit": {
+      "durability": 50,
+      "quality": 50
+    },
+    "medKit": {
+      "healValue": 20
+    },
+    "energyConsumption": 10,
+    "zombieHealth": 100,
+    "psychoHealth": 100
+  }
+]

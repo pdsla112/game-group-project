@@ -1,26 +1,25 @@
 package com.company.enemies;
 
-import com.company.DeathException;
+import com.company.exceptions.DeathException;
 import com.company.characters.Player;
 
 import java.util.Random;
 
 public class Psychopath extends Enemy {
-    private boolean isAlive;
     private int hp;
     private int attackAmount;    // Amount that the psychopath deducts from the player's health.
     private boolean deathValue;  // True => Psychopath is dead. False => Psychopath is alive.
     private boolean isApproached;
 
-    public Psychopath(String id, int attackAmount, boolean deathValue, boolean isApproached) {
+    public Psychopath(int attackAmount, int hp, boolean deathValue, boolean isApproached) {
         this.attackAmount = attackAmount;
+        this.hp = hp;
         this.deathValue = deathValue;
         this.isApproached = isApproached;
     }
 
     public Psychopath() {
         Random r = new Random();
-        isAlive = true;
         int hp = 47 + r.nextInt(7);
     }
 
@@ -47,13 +46,9 @@ public class Psychopath extends Enemy {
 
     @Override
     public boolean isAlive() {
-        return isAlive;
+        return hp >=0;
     }
 
-    @Override
-    public void setAlive(boolean a) {
-        isAlive = a;
-    }
 
     @Override
     public void setHp(int hp) {
@@ -65,6 +60,11 @@ public class Psychopath extends Enemy {
         return hp;
     }
 
+    /**
+     * attacks player
+     * @param p
+     * @throws DeathException
+     */
     @Override
     public void attack(Player p) throws DeathException {
         String text = "";

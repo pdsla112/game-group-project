@@ -4,30 +4,31 @@ import com.company.locations.Location;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GameMap {
 
-    public class Edge {
-        Location source;
-        Location destination;
-        int distance;
-        public Edge(Location from, Location to, int distance) {
-            this.source = from;
-            this.destination = to;
-            this.distance = distance;
-        }
-    }
+//    public class Edge {
+//        Location source;
+//        Location destination;
+//        int distance;
+//        public Edge(Location from, Location to, int distance) {
+//            this.source = from;
+//            this.destination = to;
+//            this.distance = distance;
+//        }
+//    }
 
     Map<String, Location> locations;
 
-    ArrayList<Edge> edges;
+    Map<String, List<String>> edges;
     Location finalLocation = null;
     Location currentLocation = null;
 
     public GameMap() {
         locations = new HashMap<>();
-        edges = new ArrayList<>();
+        edges = new HashMap<>();
     }
 
     public Location getLocationFromName(String name) {
@@ -57,27 +58,31 @@ public class GameMap {
     }
 
     public void addEdge(Location from, Location to, int distance) {
-        edges.add(new Edge(from, to, distance));
+        if (!edges.containsKey(from.name)) {
+            edges.put(from.name, new ArrayList<>());
+        }
+        List<String> updateEdges = edges.get(from.name);
+        updateEdges.add(to.name);
+        edges.put(from.name, updateEdges);
     }
 
-    public ArrayList<Location> getAdjacent(Location location) {
-        ArrayList<Location> adjacent = new ArrayList<>();
-        for (Edge e : edges) {
-            if (e.source == location) {
-                adjacent.add(e.destination);
-            }
+    public List<Location> getAdjacent(Location location) {
+        List<String> adjacent = edges.get(location.name);
+        List<Location> adjacentLocations = new ArrayList<>();
+        for (String name : adjacent) {
+            adjacentLocations.add(locations.get(name));
         }
-        return adjacent;
+        return adjacentLocations;
     }
 
-    public int getDistance(Location from, Location to) {
-        for (Edge e : edges) {
-            if (e.source == from && e.destination == to) {
-                return e.distance;
-            }
-        }
-        return -1;
-    }
+//    public int getDistance(Location from, Location to) {
+//        for (Edge e : edges) {
+//            if (e.source == from && e.destination == to) {
+//                return e.distance;
+//            }
+//        }
+//        return -1;
+//    }
 
 
 }

@@ -2,61 +2,73 @@ package com.company;
 
 import com.company.characters.Player;
 import com.company.data.*;
+import com.company.exceptions.DeathException;
+import com.company.exceptions.WinException;
 import com.company.locations.GameMap;
 import com.company.locations.Location;
 import com.company.menus.MainMenu;
 import com.company.menus.Menu;
-import com.company.menus.GenericMenuItem;
-import com.company.parser.Parser;
-import com.company.LevelNode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.company.parser.Parser;
 import java.util.List;
 
 public class Game {
     Player player;
     public Parser parser;
-    public static GameMap map = GameMapJSON.temporaryLoadGamemap();
+    public static GameMap map = GameMapJSON.deserializeJSON();
+    Level level;
 
     public Game(Player p) {
         this.player = p;
         this.parser = new Parser(p);
-        //load gamemap
-        //display information
+        this.level = LevelJSON.getSpecificLevel(p.getLevel());
 
+        runGame();
+    }
+
+    /**
+     * main loop of the game which gets and processes user input and updates player's location and level node
+     */
+    public void runGame() {
         boolean running = true;
         try {
             while (running) {
                 Location playerLocation =  map.getLocationFromName(player.getLocationName());
-                //System.out.println("What do you want to do?");
                 LevelMap levelMap = playerLocation.levelMap;
-                //print text
                 System.out.println(levelMap.getCurrentNode().text+"\n");
 
-                //check level completion
-                if (levelMap.completionNodes.contains(levelMap.currentNode)) {
+                // check level completion
+                if (levelMap.completionNodes.contains(levelMap.currentNode.id)) {
                     if (playerLocation == map.getFinalLocation()) {
                         throw new WinException("win");
                     } else {
+                        // create menu with adjacent levels
                         List<Location> adjacentLocations = map.getAdjacent(playerLocation);
                         Menu locationMenu = new Menu(adjacentLocations);
                         locationMenu.printMenuItems();
                         running = parser.parse(parser.getInputString(), locationMenu);
                     }
-
                 } else {
                     Menu levelMenu = new Menu(levelMap.getAdjacent());
+                    // print options
                     levelMenu.printMenuItems();
                     running = parser.parse(Parser.getInputString(), levelMenu);
 
                 }
-
-                //String command = Parser.getInputString();
-                //running = parser.parse(player, command);
             }
         } catch (DeathException e) {
             System.out.println("You died.");
+            boolean endPrompt = false;
+            while (!endPrompt) {
+                System.out.println("Would you like to load from last save?");
+                String response = Parser.getInputString();
+                if (response.equals("y") || response.equals("yes")) {
+                    player = PlayerJSON.getSpecificPlayer(player.getName());
+                    new Game(player);
+                } else if (response.equals("n") || response.equals("no")) {
+                    System.out.println("Game exited.");;
+                }
+            }
         } catch (WinException e) {
             System.out.println("You win.");
             boolean endPrompt = false;
@@ -64,6 +76,7 @@ public class Game {
                 System.out.println("Would you like to play again?");
                 String response = Parser.getInputString();
                 if (response.equals("y") || response.equals("yes")) {
+                    // remove player save file
                     PlayerJSON.removePlayer(player.getName());
                     new MainMenu();
                 } else if (response.equals("n") || response.equals("no")) {
@@ -71,18 +84,10 @@ public class Game {
                     System.out.println("Game exited.");;
                 }
             }
-            System.out.println("Play again?");
         }
-
     }
 
 
-    public static void printIntro() {
-        System.out.println("--------------------------------------");
-        System.out.println("Intro:");
-        System.out.println("You are one of the people who decided to face the danger and go to the Laboratory for your family and neighbours.\n");
-        System.out.println("--------------------------------------");
-    }
 }
 
 

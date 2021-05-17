@@ -1,21 +1,21 @@
 package com.company.enemies;
 
 
-import com.company.DeathException;
+import com.company.exceptions.DeathException;
 import com.company.characters.Player;
 
 import java.util.Random;
 
 public class Zombie extends Enemy {
-    private boolean isAlive;
     private int attackAmount;
     private boolean deathValue;
     private int approachProb;
     private boolean willApproach;
     private int hp;
 
-    public Zombie(String id, int attackAmount, boolean deathValue, int approachProb) {
+    public Zombie(int attackAmount, int hp, boolean deathValue, int approachProb) {
         this.attackAmount = attackAmount;
+        this.hp = hp;
         this.deathValue = deathValue;
         this.approachProb = approachProb;
         this.willApproach = calculateApproach(approachProb);
@@ -52,7 +52,6 @@ public class Zombie extends Enemy {
 
     public Zombie() {
         Random r = new Random();
-        isAlive = true;
         hp = 35 + r.nextInt(10);
     }
 
@@ -75,7 +74,7 @@ public class Zombie extends Enemy {
 
     @Override
     public boolean isAlive() {
-        return isAlive;
+        return hp >= 0;
     }
 
     @Override
@@ -84,15 +83,15 @@ public class Zombie extends Enemy {
     }
 
     @Override
-    public void setAlive(boolean a) {
-        isAlive = a;
-    }
-
-    @Override
     public void setHp(int hp) {
         this.hp = hp;
     }
 
+    /**
+     * attacks player
+     * @param p
+     * @throws DeathException
+     */
     @Override
     public void attack(Player p) throws DeathException {
         String text = "";

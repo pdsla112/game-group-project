@@ -1,15 +1,11 @@
 package com.company.characters;
 
-import com.company.DeathException;
-import com.company.data.Initialization;
-import com.company.data.InitializeJSON;
+import com.company.exceptions.DeathException;
+import com.company.data.Level;
+import com.company.data.LevelJSON;
 import com.company.enemies.Enemy;
 import com.company.items.LocationObject;
-import com.company.items.Medkit;
-import com.company.locations.Location;
 import com.company.parser.Tokenizer;
-import com.company.repository.ItemRepo;
-import com.company.items.Item;
 
 
 import java.util.ArrayList;
@@ -31,10 +27,11 @@ public class Player {
     // new player
     public Player(String name, int level, String locationName) {
         //temporary (load from json)
+        Level playerLevel = LevelJSON.getSpecificLevel(level);
         this.name = name;
         this.level = level;
-        this.damage = 30 - 2*level;
-        this.health = 100;
+        this.damage = playerLevel.getDamage();
+        this.health = playerLevel.getHealth();
         this.locationName = locationName;
         this.tokenizer = new Tokenizer();
         this.itemsMap = new HashMap<>();
@@ -55,11 +52,11 @@ public class Player {
     }
 
     public void useItem(String name) {
-        if (name.equals("medkit")) {
-            Medkit medkit = new Medkit(this);
-            medkit.use();
-            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
-        }
+//        if (name.equals("medkit")) {
+//            Medkit medkit = new Medkit(this);
+//            medkit.use();
+//            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
+//        }
 
     }
 
@@ -107,9 +104,6 @@ public class Player {
         health -= selfDmg;
         if (health <= 0) {
             throw new DeathException("player died.");
-        }
-        if (e.getHp() <= 0) {
-            e.setAlive(false);
         }
 
     }
