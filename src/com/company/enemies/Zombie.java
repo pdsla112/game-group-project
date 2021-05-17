@@ -7,14 +7,18 @@ import com.company.characters.Player;
 import java.util.Random;
 
 public class Zombie extends Enemy {
-    private int attackAmount;
+    private int attack1;
+    private int attack2;
+    private int attack3;
     private boolean deathValue;
     private int approachProb;
     private boolean willApproach;
     private int hp;
 
-    public Zombie(int attackAmount, int hp, boolean deathValue, int approachProb) {
-        this.attackAmount = attackAmount;
+    public Zombie(int attack1, int attack2, int attack3, int hp, boolean deathValue, int approachProb) {
+        this.attack1 = attack1;
+        this.attack2 = attack2;
+        this.attack3 = attack3;
         this.hp = hp;
         this.deathValue = deathValue;
         this.approachProb = approachProb;
@@ -64,10 +68,6 @@ public class Zombie extends Enemy {
             return false;
     }
 
-    public int getAttackAmount() {
-        return this.attackAmount;
-    }
-
     public boolean isDead() {
         return this.deathValue;
     }
@@ -102,15 +102,15 @@ public class Zombie extends Enemy {
         switch (attack) {
             case 0:
                 text += "Zombie bites your hand.";
-                dmg = 10 + bonus;
+                dmg = attack1 + bonus;
                 break;
             case 1:
                 text += "Zombie smacks your arm.";
-                dmg = 15 + bonus;
+                dmg = attack2 + bonus;
                 break;
             case 2:
                 text += "Zombie tackles you and you fall down.";
-                dmg = 20 + bonus;
+                dmg = attack3 + bonus;
                 break;
 
         }
