@@ -5,6 +5,8 @@ import com.company.data.Level;
 import com.company.data.LevelJSON;
 import com.company.enemies.Enemy;
 import com.company.items.LocationObject;
+import com.company.items.Medkit;
+import com.company.menus.Attack;
 import com.company.parser.Tokenizer;
 
 
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 public class Player {
 
@@ -52,11 +55,11 @@ public class Player {
     }
 
     public void useItem(String name) {
-//        if (name.equals("medkit")) {
-//            Medkit medkit = new Medkit(this);
-//            medkit.use();
-//            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
-//        }
+        if (name.equals("medkit")) {
+            Medkit medkit = new Medkit(20);
+            medkit.use(this);
+            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
+        }
 
     }
 
@@ -99,12 +102,13 @@ public class Player {
         }
     }
 
-    public void attack(Enemy e, int dmg, int selfDmg) throws DeathException {
-        e.setHp(e.getHp() - dmg);
-        health -= selfDmg;
+    public void attack(Enemy e, Attack attack) throws DeathException {
+        e.setHp(e.getHp() - attack.getAttackDamage());
+        health -= attack.getSelfDamage();
         if (health <= 0) {
             throw new DeathException("player died.");
         }
+        System.out.println("You choose to use a " + attack.getAttackName().toLowerCase()+".");
 
     }
 

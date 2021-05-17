@@ -11,23 +11,26 @@ import com.company.parser.Parser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class BattleEvent {
     Player player;
     Enemy enemy;
     Level level;
 
-    public BattleEvent(Player player, Enemy enemy) throws DeathException {
+    public BattleEvent(Player player, Enemy enemy) {
         this.player = player;
         this.enemy = enemy;
         int playerLevel = player.getLevel();
         Level level = LevelJSON.getSpecificLevel(playerLevel);
         this.level = level;
-        enemyFight();
-
     }
 
-    public void enemyFight() throws DeathException {
+    /**
+     * enter a fight with an enemy where player and enemy take turns attacking each other
+     * @throws DeathException
+     */
+    public boolean enemyFight() throws DeathException {
         String enemyName = (enemy instanceof Zombie ? "Zombie" : "Psychopath");
         Parser parser = new Parser(player);
         int enemyHpInitial = 0;
@@ -40,23 +43,39 @@ public class BattleEvent {
 
         while (enemy.isAlive()) {
             System.out.println("What would you like to do?");
-            Menu attackMenu = new Menu(
-                new ArrayList<>(Arrays.asList(
-                    new GenericMenuItem("Head on attack (" + player.getDamage() +"dmg/-" + (player.getLevel()+2) + "hp)"),
-                    new GenericMenuItem("Sneak attack (" + (player.getDamage()-6) + "dmg)"))));
-
+            List<Attack> playerAttacks = new ArrayList<>();
+            // head on attack: do base damage but lose 10% of health
+            playerAttacks.add(new Attack("Head on attack", player.getDamage(), (int) Math.round(player.getHealth()*0.1)));
+            // sneak attack: do 70% of damage but lose 0 health
+            playerAttacks.add(new Attack("Sneak attack", (int) Math.round(player.getDamage()*0.7), 0));
+            Menu attackMenu = new Menu(playerAttacks);
             attackMenu.printMenuItems();
-            parser.battleParse(parser.getInputString(), attackMenu, enemy);
 
+            boolean attackChosen = false;
+
+            while (!attackChosen) {
+                String inputString = Parser.getInputString();
+                try {
+                    Attack selected = (Attack) attackMenu.getMenuItem(Integer.parseInt(inputString));
+                    attackChosen = true;
+                    player.attack(enemy, selected);
+                } catch(NumberFormatException e) {
+                    if (!parser.parseSentenceInput(inputString, attackMenu)) {
+                        System.out.println("Game exited");
+                        return false;
+                    }
+                }
+            }
             if (!enemy.isAlive()) {
-                System.out.println("Congratulations. You have slain the " + (enemy instanceof Zombie ? "Zombie" : "Psychopath") + ".");
+                System.out.println("Congratulations. You have slain the " + enemyName + ".");
             } else {
-                System.out.println(enemyName + " hp: " + enemy.getHp() + "(-" + (enemyHpInitial - enemy.getHp()) + ")\n");
+                System.out.println(enemyName + " " + enemy.getHp() + "hp(-" + (enemyHpInitial - enemy.getHp()) + "hp)\n");
                 enemy.attack(player);
-                System.out.println(player.getName() + " hp: " + player.getHealth() + "\n");
+                System.out.println(player.getName() + ": " + player.getHealth() + "hp\n");
             }
 
         }
+        return true;
     }
 
 }
