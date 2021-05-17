@@ -488,5 +488,45 @@
       "nounG4": []
     },
     "locationName": "hospital"
+  },
+  {
+    "damage": 60,
+    "health": 100,
+    "name": "phillip",
+    "level": 1,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
   }
 ]
