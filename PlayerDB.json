@@ -1,378 +1,9 @@
 [
   {
-    "damage": 26,
-    "health": 100,
-    "name": "phillip",
+    "damage": 50,
+    "health": 80,
+    "name": "Phillip",
     "level": 2,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [
-        "medkit"
-      ],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 26,
-    "health": 100,
-    "name": "phillip",
-    "level": 2,
-    "itemsMap": {},
-    "locationObjects": [],
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [
-        "medkit"
-      ],
-      "nounG4": []
-    },
-    "locationName": "hospital"
-  },
-  {
-    "damage": 30,
-    "health": 100,
-    "name": "harry",
-    "level": 0,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [
-        "medkit"
-      ],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 60,
-    "health": 100,
-    "name": "ans",
-    "level": 0,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [
-        "medkit"
-      ],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 60,
-    "health": 100,
-    "name": "an",
-    "level": 0,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 60,
-    "health": 100,
-    "name": "anson",
-    "level": 0,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 60,
-    "health": 100,
-    "name": "anson",
-    "level": 0,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 60,
-    "health": 100,
-    "name": "anson",
-    "level": 0,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 60,
-    "health": 100,
-    "name": "anson",
-    "level": 0,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 60,
-    "health": 100,
-    "name": "anson",
-    "level": 0,
     "itemsMap": {},
     "tokenizer": {
       "_buffer": [],
@@ -411,7 +42,47 @@
   {
     "damage": 50,
     "health": 80,
-    "name": "ron",
+    "name": "Phillip",
+    "level": 2,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
+  },
+  {
+    "damage": 50,
+    "health": 80,
+    "name": "Ron",
     "level": 2,
     "itemsMap": {},
     "tokenizer": {
@@ -451,7 +122,7 @@
   {
     "damage": 50,
     "health": 100,
-    "name": "ron",
+    "name": "Ron",
     "level": 2,
     "itemsMap": {},
     "locationObjects": [],
@@ -488,45 +159,5 @@
       "nounG4": []
     },
     "locationName": "hospital"
-  },
-  {
-    "damage": 60,
-    "health": 100,
-    "name": "phillip",
-    "level": 1,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
   }
 ]
