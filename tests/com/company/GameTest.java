@@ -76,7 +76,7 @@ public class GameTest {
     public void canonlycollectHuntingKitatCottage(){
         ResultOutput result;
         result = map.moveUserto("cottage");
-        result = successfullygoto()
+        result = successfullygoto(null,result);
     } //other items too
 
 
