@@ -51,11 +51,9 @@ public class PlayerJSON {
         ArrayList<Player> deserializedList = deserializeJSON();
         for (Player data : deserializedList) {
             if (data.getName().equals(name)) {
-                System.out.println("It's working");
                 return data;
             }
         }
-        System.out.println("It's not working");
         return null;
     }
 
@@ -77,7 +75,6 @@ public class PlayerJSON {
     public static void removePlayer(String name) {
         BloomFilter bloomFilter = BloomFilterJSON.loadBloomFilter();
         if (!bloomFilter.mightContain(name)) {
-            System.out.println("Didn't contain player in bloom filter!");
             return;
         } else {
             Player player = getSpecificPlayer(name);
@@ -89,8 +86,6 @@ public class PlayerJSON {
     // Debug!
     public static void savePlayer(Player player) {
         removePlayer(player.getName());
-        ArrayList<Player> something = deserializeJSON();
-        System.out.println("Has the original player been deleted?: " + getSpecificPlayer(player.getName()));
         ArrayList<Player> playerList = new ArrayList<>();
         if (deserializeJSON() != null) {
             playerList = deserializeJSON();
