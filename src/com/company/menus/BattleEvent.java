@@ -45,9 +45,9 @@ public class BattleEvent {
             System.out.println("What would you like to do?");
             List<Attack> playerAttacks = new ArrayList<>();
             // head on attack: do base damage but lose 10% of health
-            playerAttacks.add(new Attack("Head on attack", player.getDamage(), (int) Math.round(player.getHealth()*0.1)));
+            playerAttacks.add(new Attack("Head on attack", level.getDamage1(), (int) Math.round(player.getHealth()*0.1)));
             // sneak attack: do 70% of damage but lose 0 health
-            playerAttacks.add(new Attack("Sneak attack", (int) Math.round(player.getDamage()*0.7), 0));
+            playerAttacks.add(new Attack("Sneak attack", level.getDamage2(), 0));
             Menu attackMenu = new Menu(playerAttacks);
             attackMenu.printMenuItems();
 

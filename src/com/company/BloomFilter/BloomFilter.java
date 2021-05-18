@@ -55,7 +55,6 @@ public class BloomFilter {
         int hash = username.hashCode() % 64;
         if (hash < 0)
             return -1 * hash;
-        System.out.println("Hash: " + hash);
         return hash;
     }
 
