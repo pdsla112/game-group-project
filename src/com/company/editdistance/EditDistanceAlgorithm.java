@@ -1,6 +1,6 @@
-package com.company.editcost;
+package com.company.editdistance;
 
-public class EditCostAlgorithm {
+public class EditDistanceAlgorithm {
     public static int[][] store;
 
     public static int minDistance(String seq1, String seq2){
