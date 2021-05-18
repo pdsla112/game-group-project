@@ -18,7 +18,9 @@ import java.util.Map;
 
 public class Player {
 
-    private int damage;  // Fighting level of the character. Higher => better chance of winning that battle.
+    private int damage1;  // Fighting level of the character. Higher => better chance of winning that battle.
+    private int damage2;
+    private int damage3;
     private int health;
     private String name;
     private int level;
@@ -33,14 +35,14 @@ public class Player {
         Level playerLevel = LevelJSON.getSpecificLevel(level);
         this.name = name;
         this.level = level;
-        this.damage = playerLevel.getDamage();
+        this.damage1 = playerLevel.getDamage1();
+        this.damage2 = playerLevel.getDamage2();
+        this.damage3 = playerLevel.getDamage3();
         this.health = playerLevel.getHealth();
         this.locationName = locationName;
         this.tokenizer = new Tokenizer();
         this.itemsMap = new HashMap<>();
     }
-
-
 
     //load player
     public Player(int damage, int health, String name, int level, Map<String, Integer> itemsMap, String locationName) {

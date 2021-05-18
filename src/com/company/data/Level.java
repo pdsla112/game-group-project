@@ -4,12 +4,12 @@ import com.company.enemies.Animal;
 import com.company.items.HuntingKit;
 import com.company.items.Medkit;
 
-import java.util.ArrayList;
-
 public class Level {
     private int level;
     private int health;
-    private int damage;
+    private int damage1;
+    private int damage2;
+    private int damage3;
     private int zombieApproachProb;
     private int zombieAttack;
     private int psychopathAttack;
@@ -20,10 +20,27 @@ public class Level {
     private int zombieHealth;
     private int psychoHealth;
 
-    public Level(int level, int health, int damage, int zombieApproachProb, int zombieAttack, int psychopathAttack, Animal animal, HuntingKit huntingKit, Medkit medKit, int energyConsumption, int zombieHealth, int psychoHealth) {
+    public Level(
+            int level,
+            int health,
+            int damage1,
+            int damage2,
+            int damage3,
+            int zombieApproachProb,
+            int zombieAttack,
+            int psychopathAttack,
+            Animal animal,
+            HuntingKit huntingKit,
+            Medkit medKit,
+            int energyConsumption,
+            int zombieHealth,
+            int psychoHealth
+    ) {
         this.level = level;
         this.health = health;
-        this.damage = damage;
+        this.damage1 = damage1;
+        this.damage2 = damage2;
+        this.damage3 = damage3;
         this.zombieApproachProb = zombieApproachProb;
         this.zombieAttack = zombieAttack;
         this.psychopathAttack = psychopathAttack;
@@ -41,8 +58,16 @@ public class Level {
         return this.health;
     }
 
-    public int getDamage() {
-        return this.damage;
+    public int getDamage1() {
+        return this.damage1;
+    }
+
+    public int getDamage2() {
+        return this.damage2;
+    }
+
+    public int getDamage3() {
+        return this.damage3;
     }
 
     public int getZombieApproachProb() { return this.zombieApproachProb; }
