@@ -142,7 +142,7 @@ public class Parser {
                 }
                 if (n.word.equals("stats")) {
                     System.out.println("You " + sentence.show() + ".");
-                    player.showStats();
+//                    player.showStats();
                 }
                 if (n.word.equals("surroundings")) {
                     System.out.println("You " + sentence.show() + ".");
@@ -289,13 +289,13 @@ public class Parser {
 
             }
             if(command.equals("psychoFight")){
-                Psychopath psychopath = new Psychopath(level.getPsychopathAttack(), 2, level.getPsychoHealth(), false, true);
+                Psychopath psychopath = new Psychopath(level.getPsychopathAttack1(), level.getPsychopathAttack2(), level.getPsychoHealth(), false, true);
                 BattleEvent be = new BattleEvent(player, psychopath);
                 return(be.enemyFight());
 
             }
             if(command.equals("zombieFight")){
-                Zombie zombie = new Zombie(level.getZombieAttack(), 3, 2, level.getZombieHealth(), false, level.getZombieApproachProb());
+                Zombie zombie = new Zombie(level.getZombieAttack1(), level.getZombieAttack2(), level.getZombieAttack3(), level.getZombieHealth(), false, level.getZombieApproachProb());
                 BattleEvent be = new BattleEvent(player, zombie);
                 return(be.enemyFight());
             }

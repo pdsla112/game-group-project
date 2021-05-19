@@ -1,10 +1,10 @@
 package com.company.data;
 
 import com.company.BloomFilter.BloomFilter;
+import com.company.BloomFilter.BloomFilterJSON;
 import com.company.characters.Player;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
@@ -44,13 +44,15 @@ public class PlayerJSON {
 
 
     public static Player getSpecificPlayer(String name) {
-        boolean contains = BloomFilter.mightContain(name);
+        BloomFilter bloomFilter = BloomFilterJSON.loadBloomFilter();
+        boolean contains = bloomFilter.mightContain(name);
         if (!contains)
             return null;
         ArrayList<Player> deserializedList = deserializeJSON();
         for (Player data : deserializedList) {
-            if (data.getName().equals(name))
+            if (data.getName().equals(name)) {
                 return data;
+            }
         }
         return null;
     }
@@ -59,7 +61,8 @@ public class PlayerJSON {
     //return null if name already exists
     // make sure name is one word (no spaces)
     public static Player createNewPlayer(String name, int level) {
-        if (!BloomFilter.mightContain(name)) {
+        BloomFilter bloomFilter = BloomFilterJSON.loadBloomFilter();
+        if (!bloomFilter.mightContain(name)) {
             return new Player(name, level, "home");
         }
         if (getSpecificPlayer(name) == null) {
@@ -70,17 +73,13 @@ public class PlayerJSON {
 
     //remove player from json
     public static void removePlayer(String name) {
-        if (!BloomFilter.mightContain(name))
+        BloomFilter bloomFilter = BloomFilterJSON.loadBloomFilter();
+        if (!bloomFilter.mightContain(name)) {
             return;
-        else {
+        } else {
             Player player = getSpecificPlayer(name);
-            if (player == null)
-                return;
-            else {
-                ArrayList<Player> playerList = deserializeJSON();
-                playerList.remove(player);
-                serializeJSON(playerList);
-            }
+            ArrayList<Player> playerList = remove(player.getName());
+            serializeJSON(playerList);
         }
     }
 
@@ -88,12 +87,24 @@ public class PlayerJSON {
     public static void savePlayer(Player player) {
         removePlayer(player.getName());
         ArrayList<Player> playerList = new ArrayList<>();
-        if (deserializeJSON() == null) {
-            playerList.add(player);
-        } else {
+        if (deserializeJSON() != null) {
             playerList = deserializeJSON();
-            playerList.add(player);
         }
+        playerList.add(player);
+        BloomFilter bloomFilter = BloomFilterJSON.loadBloomFilter();
+        bloomFilter.add(player.getName());
+        BloomFilterJSON.saveBloomFilter(bloomFilter);
         serializeJSON(playerList);
+    }
+
+    public static ArrayList<Player> remove(String name) {
+        ArrayList<Player> playerList = deserializeJSON();
+        for (Player player : playerList) {
+            if (player.getName().equals(name)) {
+                playerList.remove(player);
+                break;
+            }
+        }
+        return playerList;
     }
 }

@@ -1,129 +1,10 @@
 [
   {
-    "damage": 50,
-    "health": 80,
-    "name": "Phillip",
-    "level": 2,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 50,
-    "health": 80,
-    "name": "Phillip",
-    "level": 2,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 50,
-    "health": 80,
-    "name": "Ron",
-    "level": 2,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage": 50,
-    "health": 100,
-    "name": "Ron",
-    "level": 2,
+    "damage1": 0,
+    "damage2": 0,
+    "health": 60,
+    "name": "Hermione",
+    "level": 3,
     "itemsMap": {},
     "locationObjects": [],
     "tokenizer": {
@@ -159,5 +40,88 @@
       "nounG4": []
     },
     "locationName": "hospital"
+  },
+  {
+    "damage1": 0,
+    "damage2": 0,
+    "health": 100,
+    "name": "Phillip",
+    "level": 2,
+    "itemsMap": {},
+    "locationObjects": [],
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "lab"
+  },
+  {
+    "damage1": 0,
+    "damage2": 0,
+    "health": 80,
+    "name": "Voldemort",
+    "level": 2,
+    "itemsMap": {},
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "cottage"
   }
 ]
