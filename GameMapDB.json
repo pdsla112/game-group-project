@@ -169,7 +169,7 @@
     "cottage": {
       "visited": false,
       "name": "cottage",
-      "description": "You found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.",
+      "description": "\nYou found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.\n",
       "levelMap": {
         "adjacentMap": {
           "542261cd-160f-495c-8a80-c1391c3914d9": [
@@ -257,15 +257,15 @@
           },
           "075772fa-8fda-413a-97ab-bbd5715bae90": {
             "id": "075772fa-8fda-413a-97ab-bbd5715bae90",
-            "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
+            "text": "\nTrying to find something useful, you open a drawer in a shelf to your right.",
+            "actions": [
+              "psychoFight"
+            ],
             "option": "fight the girl"
           },
           "a0eb0216-979b-457d-8624-b47e7008369f": {
             "id": "a0eb0216-979b-457d-8624-b47e7008369f",
-            "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
-            "actions": [
-              "psychoFight"
-            ],
+            "text": "\nYou gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
             "option": "wake her up"
           },
           "d517fd47-fa17-4673-bd76-cb8c40f8ced0": {
@@ -278,9 +278,6 @@
           "164eb970-84f8-4050-9adb-0b6abd689331": {
             "id": "164eb970-84f8-4050-9adb-0b6abd689331",
             "text": "You approach the child, and take a closer look.",
-            "actions": [
-              "zombieFight"
-            ],
             "option": "approach"
           }
         },
@@ -448,13 +445,13 @@
     "home": {
       "visited": false,
       "name": "home",
-      "description": "Choose a place to go.",
+      "description": "",
       "levelMap": {
         "adjacentMap": {},
         "levelNodesMap": {
           "d825ceb3-32f2-4133-9487-996016b098d4": {
             "id": "d825ceb3-32f2-4133-9487-996016b098d4",
-            "text": "You are at home, wondering where you should go."
+            "text": "You are at home, wondering where you should go.\nChoose a place to go."
           }
         },
         "completionNodes": [

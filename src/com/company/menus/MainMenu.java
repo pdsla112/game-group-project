@@ -2,6 +2,7 @@ package com.company.menus;
 
 import com.company.Game;
 import com.company.characters.Player;
+import com.company.data.InitializeJSON;
 import com.company.data.Level;
 import com.company.data.LevelJSON;
 import com.company.data.PlayerJSON;
@@ -31,10 +32,9 @@ public class MainMenu {
                 mainMenu.printMenuItems();
                 String userInput = Parser.getInputString();
                 if (userInput.equals("0")) {
-
                     System.out.println("Enter your username:");
                     String name = Parser.getInputString();
-                    System.out.println("Hello " + name + ".");
+                    System.out.println("Hello " + name + ".\n");
 
                     boolean endDifficultyPrompt = false;
                     int difficulty = 0;

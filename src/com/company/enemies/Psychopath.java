@@ -44,7 +44,7 @@ public class Psychopath extends Enemy {
 
     @Override
     public boolean isAlive() {
-        return hp >=0;
+        return hp >0;
     }
 
 
