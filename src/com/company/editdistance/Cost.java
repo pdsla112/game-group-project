@@ -1,4 +1,4 @@
-package com.company.editcost;
+package com.company.editdistance;
 
 public enum Cost {
     INSERT (1),

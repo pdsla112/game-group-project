@@ -1,5 +1,6 @@
 package com.company.BloomFilter;
 
+
 import java.util.BitSet;
 
 /**
@@ -8,7 +9,11 @@ import java.util.BitSet;
  * @author Dong Seok La (u6943702)
  */
 public class BloomFilter {
-    private static final BitSet bitArr = new BitSet(64);
+    private BitSet bitArr;
+
+    public BloomFilter(BitSet bitArr) {
+        this.bitArr = bitArr;
+    }
 
     /**
      * If it shows in the bloom filter that an email hasn't been saved yet in the database,
@@ -16,7 +21,7 @@ public class BloomFilter {
      * @param username
      * @author Dong Seok La (u6943702)
      */
-    public static void add(String username) {
+    public void add(String username) {
         if (!mightContain(username)) {
             int hash = getHash(username);
             bitArr.set(hash, true);
@@ -31,7 +36,7 @@ public class BloomFilter {
      * @return boolean
      * @author Dong Seok La (u6943702)
      */
-    public static boolean mightContain(String username) {
+    public boolean mightContain(String username) {
         int hash = getHash(username);
         if (bitArr.get(hash))
             return true;
@@ -46,7 +51,7 @@ public class BloomFilter {
      * @return integer hash value
      * @author Dong Seok La (u6943702)
      */
-    public static int getHash(String username) {
+    public int getHash(String username) {
         int hash = username.hashCode() % 64;
         if (hash < 0)
             return -1 * hash;
@@ -58,7 +63,7 @@ public class BloomFilter {
      * @return BitSet
      * @author Dong Seok La (u6943702)
      */
-    public static BitSet getBitArr() {
+    public BitSet getBitArr() {
         return bitArr;
     }
 
@@ -69,7 +74,7 @@ public class BloomFilter {
      * @return the "resetted" BitSet
      * @author Dong Seok La (u6943702)
      */
-    public static BitSet resetBits() {
+    public BitSet resetBits() {
         bitArr.set(0, 63, false);
         return bitArr;
     }
