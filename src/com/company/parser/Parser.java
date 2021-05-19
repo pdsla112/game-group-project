@@ -59,14 +59,12 @@ public class Parser {
                         }
                     }
                     player.setLocationObjects(new ArrayList<>());
-                    return parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
                     //todo player.setLocationObjects(new ArrayList<>());
                 } else if (selected instanceof LevelNode) {
                     Location playerLocation = Game.map.getLocationFromName(player.getLocationName());
                     playerLocation.getLevelMap().setCurrentNode((LevelNode) selected);
                     // todo does not work for root node
                     player.setLocationObjects(new ArrayList<>());
-                    return parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
 
                 }
             }
