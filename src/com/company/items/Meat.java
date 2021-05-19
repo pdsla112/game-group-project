@@ -2,13 +2,12 @@ package com.company.items;
 
 import com.company.characters.Player;
 
-public class Medkit extends Item {
-    private int healValue;   // Amount that the first aid kit heals the player per use.
+public class Meat extends Item {
+    private int healValue;   // Amount that the meat heals the player
     private Player player;
 
-    public Medkit(int healValue) {
+    public Meat(int healValue) {
 //        this.healValue = 20 - player.getLevel();
-//        this.player = player;
         this.healValue = healValue;
     }
 
@@ -24,6 +23,6 @@ public class Medkit extends Item {
         int oldHp = player.getHealth();
         player.setHealth(Math.min(100,player.getHealth()+healValue));
         int changeHp = player.getHealth() - oldHp;
-        System.out.println("You have used a medkit. " + changeHp + " Hp");
+        System.out.println("You have consumed the meat. +" + changeHp + " Hp");
     }
 }

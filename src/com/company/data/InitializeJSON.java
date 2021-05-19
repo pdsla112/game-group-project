@@ -21,7 +21,7 @@ public class InitializeJSON {
         Initialization object1 = new Initialization(
                 "At the end of 2021, COVID-19 vaccines" +
                         " were being supplied smoothly and borders" +
-                        " were loosened one by one, showing signs of recovery."
+                        " were loosened one by one, showing signs of recovery.\n"
         );
 
         Initialization object2 = new Initialization(
@@ -29,7 +29,7 @@ public class InitializeJSON {
                         " since a shocking article from New York Times" +
                         " was published in early 2022. The article stated" +
                         " that some of the Covid-19 patients started to" +
-                        " show strange symptoms throughout states"
+                        " show strange symptoms throughout states.\n"
         );
 
         Initialization object3 = new Initialization(
@@ -37,7 +37,7 @@ public class InitializeJSON {
                         " but other countries as well. The researchers" +
                         " from laboratories across the world announced " +
                         "that the SARS-CoV-2 has been mutated, " +
-                        "causing new symptoms."
+                        "causing new symptoms.\n"
         );
 
         Initialization object4 = new Initialization(
@@ -45,7 +45,7 @@ public class InitializeJSON {
                         " Covid patients drastically increased and more research" +
                         " were done. People infected with this new type of virus" +
                         " -people started to call it Covid-Z - suffered three" +
-                        " consecutive fevers that came randomly."
+                        " consecutive fevers that came randomly.\n"
         );
 
         Initialization object5 = new Initialization(

@@ -11,7 +11,7 @@ public class GenerateAnimal {
         return null;
     }
 
-    private Animal generateAnimal(int level) {
+    public Animal generateAnimal(int level) {
         if (level == 0)
             return Animal.BISON;
         else if (level == 1)

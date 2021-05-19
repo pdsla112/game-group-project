@@ -9,6 +9,7 @@ import com.company.locations.Location;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
@@ -23,9 +24,15 @@ public class EnemiesinEachLocationTest {
         Location location = Game.map.getLocationFromName(player.getLocationName());
     }
     @Test
-    public void enemiesinForestTest() {
-        player.setLocationName("forest");
-        //Enemy forestEnemy =
+    public void testAnimalsBasedOnLevel() {
+        GenerateAnimal generateAnimal = new GenerateAnimal();
+        assertEquals(generateAnimal.generateAnimal(0),Animal.BISON);
+        assertEquals(generateAnimal.generateAnimal(1),Animal.DEER);
+
+        // plaeyer -> new Parser(player)
+        // heal
+        // player.getHealht  + 20
+
     }
 
 }

@@ -1,5 +1,6 @@
 package com.company.parser;
 
+import com.company.enemies.*;
 import com.company.exceptions.DeathException;
 import com.company.Game;
 import com.company.LevelNode;
@@ -8,9 +9,6 @@ import com.company.characters.Player;
 import com.company.data.Level;
 import com.company.data.LevelJSON;
 import com.company.data.PlayerJSON;
-import com.company.enemies.Enemy;
-import com.company.enemies.Psychopath;
-import com.company.enemies.Zombie;
 import com.company.items.LocationObject;
 import com.company.locations.Location;
 import com.company.menus.BattleEvent;
@@ -279,14 +277,13 @@ public class Parser {
                 player.setHealth(Math.max(100,player.getHealth()+healAmount));
                 // heal player by set amount
             }
+
             if(command.equals("locationObject")) {
                 String object = userCommandSplit[1];
                 String location = userCommandSplit[2];
                 String item = userCommandSplit[3];
                 LocationObject lo = new LocationObject(object,location,item);
                 player.addLocationObject(lo);
-
-
             }
             if(command.equals("psychoFight")){
                 Psychopath psychopath = new Psychopath(level.getPsychopathAttack1(), level.getPsychopathAttack2(), level.getPsychoHealth(), false, true);
@@ -302,6 +299,11 @@ public class Parser {
             if (command.equals("location")) {
                 String newLocation = userCommandSplit[1];
                 player.setLocationName(newLocation);
+            }
+            if(command.equals("hunt")){
+                new GenerateAnimal();
+                //TODO
+                //BattleEvent for hunt? or create separate menu class?
             }
 
 

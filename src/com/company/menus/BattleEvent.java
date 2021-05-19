@@ -1,5 +1,6 @@
 package com.company.menus;
 
+import com.company.enemies.Animal;
 import com.company.exceptions.DeathException;
 import com.company.characters.Player;
 import com.company.data.Level;
@@ -16,11 +17,13 @@ import java.util.List;
 public class BattleEvent {
     Player player;
     Enemy enemy;
+    //Animal animal;
     Level level;
 
     public BattleEvent(Player player, Enemy enemy) {
         this.player = player;
         this.enemy = enemy;
+        //this.animal = animal;
         int playerLevel = player.getLevel();
         Level level = LevelJSON.getSpecificLevel(playerLevel);
         this.level = level;
@@ -67,7 +70,7 @@ public class BattleEvent {
                 }
             }
             if (!enemy.isAlive()) {
-                System.out.println("Congratulations. You have slain the " + enemyName + ".");
+                System.out.println("\nCongratulations. You have slain the " + enemyName + ".");
             } else {
                 System.out.println(enemyName + " " + enemy.getHp() + "hp(-" + (enemyHpInitial - enemy.getHp()) + "hp)\n");
                 enemy.attack(player);

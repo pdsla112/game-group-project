@@ -4,6 +4,7 @@ import com.company.exceptions.DeathException;
 import com.company.data.Level;
 import com.company.data.LevelJSON;
 import com.company.enemies.Enemy;
+import com.company.items.HuntingKit;
 import com.company.items.LocationObject;
 import com.company.items.Medkit;
 import com.company.menus.Attack;
@@ -61,6 +62,11 @@ public class Player {
             Medkit medkit = new Medkit(20);
             medkit.use(this);
             itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
+        }
+        if (name.equals("huntingkit")){
+            HuntingKit huntingkit = new HuntingKit(1,10-level);
+            huntingkit.use(this);
+            itemsMap.put(name,Math.max((itemsMap.get(name)-1), 0));
         }
 
     }
