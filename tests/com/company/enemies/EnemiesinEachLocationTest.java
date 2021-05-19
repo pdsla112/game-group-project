@@ -29,9 +29,6 @@ public class EnemiesinEachLocationTest {
         assertEquals(generateAnimal.generateAnimal(0),Animal.BISON);
         assertEquals(generateAnimal.generateAnimal(1),Animal.DEER);
 
-        // plaeyer -> new Parser(player)
-        // heal
-        // player.getHealht  + 20
 
     }
 
