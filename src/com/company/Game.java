@@ -37,6 +37,8 @@ public class Game {
                 LevelMap levelMap = playerLocation.levelMap;
                 System.out.println(levelMap.getCurrentNode().text+"\n");
 
+                parser.parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
+
                 // check level completion
                 if (levelMap.completionNodes.contains(levelMap.currentNode.id)) {
                     if (playerLocation == map.getFinalLocation()) {

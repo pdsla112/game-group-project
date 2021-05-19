@@ -43,7 +43,7 @@ public class GameMapJSON {
         map.addEdge(hospital, road, 10);
         map.addEdge(road, lab, 4);
 
-        LevelNode rootHome = new LevelNode(null,"You are at home, wondering where you should go.", null);//home.isVisited()
+        LevelNode rootHome = new LevelNode(null,"You wake up and find that no one is home. 'Where is everyone?' you ask yourself. You head out the door.", null);//home.isVisited()
         home.levelMap = new LevelMap(rootHome);
 
         // set home as completion node
@@ -55,33 +55,61 @@ public class GameMapJSON {
         //cottage.levelMap = loadlevelmapfromjson();
         //save all these into json
         //are we still having isVisited() -> testing? If so, will it be added in parser action
-        LevelNode rootCottage = new LevelNode(null,"You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.", new ArrayList<>(Arrays.asList("locationObject table under medkit")));
+        LevelNode rootCottage = new LevelNode(null,"You head inside the cottage and see a few rooms down the hallway.", new ArrayList<>(Arrays.asList("locationObject table under medkit")));
         cottage.levelMap = new LevelMap(rootCottage);
-        LevelNode cottageOp1 = new LevelNode("approach","You approach the child, and take a closer look.",new ArrayList<>(Arrays.asList("zombieFight")));
-        LevelNode cottageOp2 = new LevelNode("ignore","You ignore the child",null);
-        cottage.levelMap.setAdjacent(rootCottage,new ArrayList<>(Arrays.asList(cottageOp1,cottageOp2)));
-        LevelNode cottageOp3 = new LevelNode("wake her up","You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don't want to hurt child, but at the same time, you don't want to die.",new ArrayList<>(Arrays.asList("psychoFight")));
-        LevelNode cottageOp4 = new LevelNode("leave her alone","You don't want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",null);
-        cottage.levelMap.setAdjacent(cottageOp1,new ArrayList<>(Arrays.asList(cottageOp3,cottageOp4)));
-        LevelNode cottageOp5 = new LevelNode("escape", "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",null);
-        LevelNode cottageOp6 = new LevelNode("fight the girl","Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",null);//TODO
+
+        LevelNode cottageOp5 = new LevelNode("head to the bedroom","You enter the bedroom and take a look around. There is a tiny drawer next to a large bed. There appears to be a trapdoor in the floor.",new ArrayList<>(Arrays.asList("locationObject bed under medkit", "locationObject drawer inside medkit")));
+        LevelNode cottageOp6 = new LevelNode("explore the living room","You enter the living room and catch a glimpse of a young girl dozing off on the sofa in the small living room.\n You see a something under the table in front of her.",new ArrayList<>(Arrays.asList("locationObject bed under medkit", "locationObject drawer inside medkit")));
+
+        cottage.levelMap.setAdjacent(rootCottage,new ArrayList<>(Arrays.asList(cottageOp5,cottageOp6)));
+
+        //living room
+        LevelNode cottageOp4 = new LevelNode("sneak past her","You don't want to wake her up since she looks so comfortable lying there. \nYou sneak towards bathroom and carefully close the door. There is a cabinet above the sink.",new ArrayList<>(Arrays.asList("locationObject cabinet inside medkit")));
+        LevelNode cottageOp3 = new LevelNode("wake her up","You approach the child and take a closer look. She appears to be younger than 10 years old.\nYou gently shake the child to wake her up.\nTo your horror, she suddenly awakens and pulls out a concealed knife from behind her and tries to stab you.",new ArrayList<>(Arrays.asList("psychoFight")));
+        LevelNode cottageOp2 = new LevelNode("leave the room","You exit the room and go back to the hallway. There is a rooms you haven't explored yet.", null);
+
+        cottage.levelMap.setAdjacent(cottageOp6,new ArrayList<>(Arrays.asList(cottageOp3,cottageOp4, cottageOp2)));
         cottage.levelMap.setAdjacent(cottageOp2,new ArrayList<>(Arrays.asList(cottageOp5)));
         cottage.levelMap.setAdjacent(cottageOp4,new ArrayList<>(Arrays.asList(cottageOp5)));
-        cottage.levelMap.setAdjacent(cottageOp3,new ArrayList<>(Arrays.asList(cottageOp6)));
-        LevelNode cottageOp7 = new LevelNode("search the shelf","Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",new ArrayList<>(Arrays.asList("item 1")));
-        LevelNode cottageOp8 = new LevelNode("close the shelf","",null);
+
+
+
+        LevelNode cottageOp7 = new LevelNode("open the trap door","You open the trap door and go down into the basement.\nUnfortunately there is something waiting for you at the bottom.",  Arrays.asList("zombieFight"));
+        LevelNode cottageOp8 = new LevelNode("leave the room","You are about to turn around to leave when you hear a loud noise outside. \nSomething is coming after you. You decide to open the trapdoor and go down into the basement.\nThe room is pitch black, so you turn on the lights.\nUnfortunately there is something waiting for you at the bottom.", Arrays.asList("zombieFight"));
+
         cottage.levelMap.setAdjacent(cottageOp5,new ArrayList<>(Arrays.asList(cottageOp7,cottageOp8)));
-        cottage.levelMap.setAdjacent(cottageOp6,new ArrayList<>(Arrays.asList(cottageOp7,cottageOp8)));
-        LevelNode cottageOp9 = new LevelNode("go into the storage room","You go into the storage room and find a muscular man in his mid 30's.\nHe doesn't seem to have noticed you yet.",null);
+
+        LevelNode cottageOp9 = new LevelNode("open the closet","You hear a feint noise coming closet and decide to open it.\nTo your suprise, there is a frightened man huddled inside.\n'I thought I was dead. Thank you so much for saving me.' he tells you.\nThe man gives you a medkit as a reward", Arrays.asList("item medkit"));
+
         cottage.levelMap.setAdjacent(cottageOp7,new ArrayList<>(Arrays.asList(cottageOp9)));
         cottage.levelMap.setAdjacent(cottageOp8,new ArrayList<>(Arrays.asList(cottageOp9)));
-        LevelNode cottageOp10 = new LevelNode("approach the man ","You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",new ArrayList<>(Arrays.asList("heal 10")));
-        //when hunter added are we making the hunting at forest easier aka attacklevel increase? if so, add to parser action
-        LevelNode cottageOp11 = new LevelNode("ignore him","You ignore the man and leave the cottage.\nChoose the next location to go.",null);
-        cottage.levelMap.setAdjacent(cottageOp9,new ArrayList<>(Arrays.asList(cottageOp10,cottageOp11)));
+
+        LevelNode cottageOp11 = new LevelNode("leave the cottage","You decide to leave the cottage and head somewhere else.",null);
+
+        cottage.levelMap.setAdjacent(cottageOp9,new ArrayList<>(Arrays.asList(cottageOp11)));
+
+        cottage.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(cottageOp11)));
+
+//        cottage.levelMap.setAdjacent(cottageOp1,new ArrayList<>(Arrays.asList(cottageOp3,cottageOp4)));
+//        //LevelNode cottageOp5 = new LevelNode("go to the bathroom", "You get out of the room and look around to see what else you can find in the cottage. \nYou go into the bathroom.",null);
+//        //LevelNode cottageOp6 = new LevelNode("fight the girl","Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",null);//TODO
+//        //cottage.levelMap.setAdjacent(cottageOp2,new ArrayList<>(Arrays.asList(cottageOp5)));
+//        //cottage.levelMap.setAdjacent(cottageOp4,new ArrayList<>(Arrays.asList(cottageOp5)));
+//        cottage.levelMap.setAdjacent(cottageOp3,new ArrayList<>(Arrays.asList(cottageOp6)));
+//        LevelNode cottageOp7 = new LevelNode("search the shelf","Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",new ArrayList<>(Arrays.asList("item 1")));
+//        LevelNode cottageOp8 = new LevelNode("close the shelf","",null);
+//        cottage.levelMap.setAdjacent(cottageOp5,new ArrayList<>(Arrays.asList(cottageOp7,cottageOp8)));
+//        cottage.levelMap.setAdjacent(cottageOp6,new ArrayList<>(Arrays.asList(cottageOp7,cottageOp8)));
+//        LevelNode cottageOp9 = new LevelNode("go into the storage room","You go into the storage room and find a muscular man in his mid 30's.\nHe doesn't seem to have noticed you yet.",null);
+//        cottage.levelMap.setAdjacent(cottageOp7,new ArrayList<>(Arrays.asList(cottageOp9)));
+//        cottage.levelMap.setAdjacent(cottageOp8,new ArrayList<>(Arrays.asList(cottageOp9)));
+//        LevelNode cottageOp10 = new LevelNode("approach the man ","You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",new ArrayList<>(Arrays.asList("heal 10")));
+//        //when hunter added are we making the hunting at forest easier aka attacklevel increase? if so, add to parser action
+//        LevelNode cottageOp11 = new LevelNode("ignore him","You ignore the man and leave the cottage.\nChoose the next location to go.",null);
+//        cottage.levelMap.setAdjacent(cottageOp9,new ArrayList<>(Arrays.asList(cottageOp10,cottageOp11)));
 
         //sucessfully completed level
-        cottage.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(cottageOp10,cottageOp11)));
+
         //player dies
 
 

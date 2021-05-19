@@ -1,164 +1,162 @@
 {
   "locations": {
     "forest": {
-      "visited": false,
       "name": "forest",
       "description": "You notice that the more you walk, the more densely packed the trees stand. You are entering a forest.",
       "levelMap": {
         "adjacentMap": {
-          "c6c704fa-c5cc-48fd-b5c5-8464346587a5": [
-            "06c5018d-7605-4245-9ca5-556b001f2ffa"
+          "4dd28c47-dc3e-4ae6-869a-738adb03df8b": [
+            "61dfc40c-e644-456c-8fb8-529c3b901e11"
           ],
-          "4bd8c8b3-be04-4c8b-ba54-8c2416dffb4b": [
-            "f032f242-6119-4a8b-a5e2-108f4588cdc5"
+          "4a278c5f-ed04-4c36-95a5-0adf9b0eeef2": [
+            "32bf3512-d515-488f-a17e-1dc9a460b2fa",
+            "28fb5d55-df68-4c4e-b1f6-be0c3a41d362"
           ],
-          "e4f97a89-3679-4595-ab8d-23a5ac145065": [
-            "5199da48-0694-41ad-9cde-62f7f5c5133b"
+          "1e7e8d1a-98e1-421e-b074-c1255543d244": [
+            "6d266d8b-9c2a-40be-b9d3-405e3a9f5385"
           ],
-          "06c5018d-7605-4245-9ca5-556b001f2ffa": [
-            "e4f97a89-3679-4595-ab8d-23a5ac145065",
-            "f43443f8-5d29-416a-ae25-9bcedd82ac5f"
+          "7f40a96b-3f39-46a0-af34-c8eea31d27a0": [
+            "23d1636e-a4ee-47c7-95ac-5f84830b3d90",
+            "ffaf29a2-df06-4474-a566-d604adfe6f58"
           ],
-          "3649cef6-287e-43e8-bb20-ee373cc9831a": [
-            "1edb1026-157b-4775-a3ca-20a7ea143391"
+          "a0777907-cf3f-42bc-a814-658ad383ed18": [
+            "4a278c5f-ed04-4c36-95a5-0adf9b0eeef2"
           ],
-          "40a076b9-353d-4c1d-9fa1-f9ef989b3056": [
-            "93517c4f-0b41-4d20-ad05-b0e1ace4004c"
+          "32bf3512-d515-488f-a17e-1dc9a460b2fa": [
+            "7f40a96b-3f39-46a0-af34-c8eea31d27a0"
           ],
-          "5199da48-0694-41ad-9cde-62f7f5c5133b": [
-            "655d3656-1de1-47a2-b0c5-afc911f67538",
-            "3649cef6-287e-43e8-bb20-ee373cc9831a"
+          "28fb5d55-df68-4c4e-b1f6-be0c3a41d362": [
+            "94f9fdfb-42e9-438e-b13b-c4ef6fec57e8"
           ],
-          "18dbfdd4-3871-444f-bbe6-c197f1248e39": [
-            "51935f86-5bb3-491d-a4aa-d9da8a925f3c",
-            "889fdf8d-1f9c-4546-96e3-c1648ebb597a"
+          "6d266d8b-9c2a-40be-b9d3-405e3a9f5385": [
+            "4dd28c47-dc3e-4ae6-869a-738adb03df8b",
+            "16e639c0-8c95-49dc-bb7d-c94e4ab1659c"
           ],
-          "655d3656-1de1-47a2-b0c5-afc911f67538": [
-            "18dbfdd4-3871-444f-bbe6-c197f1248e39"
+          "16e639c0-8c95-49dc-bb7d-c94e4ab1659c": [
+            "06def0c8-a13e-4c6a-91d9-b7f2ddcc57f0"
           ],
-          "93517c4f-0b41-4d20-ad05-b0e1ace4004c": [
-            "c6c704fa-c5cc-48fd-b5c5-8464346587a5",
-            "4bd8c8b3-be04-4c8b-ba54-8c2416dffb4b"
+          "06def0c8-a13e-4c6a-91d9-b7f2ddcc57f0": [
+            "4a278c5f-ed04-4c36-95a5-0adf9b0eeef2"
           ],
-          "f032f242-6119-4a8b-a5e2-108f4588cdc5": [
-            "5199da48-0694-41ad-9cde-62f7f5c5133b"
+          "61dfc40c-e644-456c-8fb8-529c3b901e11": [
+            "a0777907-cf3f-42bc-a814-658ad383ed18",
+            "7dbe65b8-66a0-47c0-a435-2733f97b0d7c"
           ]
         },
         "levelNodesMap": {
-          "c6c704fa-c5cc-48fd-b5c5-8464346587a5": {
-            "id": "c6c704fa-c5cc-48fd-b5c5-8464346587a5",
+          "4dd28c47-dc3e-4ae6-869a-738adb03df8b": {
+            "id": "4dd28c47-dc3e-4ae6-869a-738adb03df8b",
             "text": "Approach."
           },
-          "e4f97a89-3679-4595-ab8d-23a5ac145065": {
-            "id": "e4f97a89-3679-4595-ab8d-23a5ac145065",
-            "text": "Win."
-          },
-          "40a076b9-353d-4c1d-9fa1-f9ef989b3056": {
-            "id": "40a076b9-353d-4c1d-9fa1-f9ef989b3056",
+          "1e7e8d1a-98e1-421e-b074-c1255543d244": {
+            "id": "1e7e8d1a-98e1-421e-b074-c1255543d244",
             "text": "You are in a forest"
           },
-          "889fdf8d-1f9c-4546-96e3-c1648ebb597a": {
-            "id": "889fdf8d-1f9c-4546-96e3-c1648ebb597a",
-            "text": "Hunting failed."
+          "a0777907-cf3f-42bc-a814-658ad383ed18": {
+            "id": "a0777907-cf3f-42bc-a814-658ad383ed18",
+            "text": "Win."
           },
-          "5199da48-0694-41ad-9cde-62f7f5c5133b": {
-            "id": "5199da48-0694-41ad-9cde-62f7f5c5133b",
-            "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
-          },
-          "18dbfdd4-3871-444f-bbe6-c197f1248e39": {
-            "id": "18dbfdd4-3871-444f-bbe6-c197f1248e39",
-            "text": "Having been hungry, you decided to hunt after confirming that you didn\u0027t have enough food."
-          },
-          "93517c4f-0b41-4d20-ad05-b0e1ace4004c": {
-            "id": "93517c4f-0b41-4d20-ad05-b0e1ace4004c",
-            "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
-          },
-          "1edb1026-157b-4775-a3ca-20a7ea143391": {
-            "id": "1edb1026-157b-4775-a3ca-20a7ea143391",
-            "text": "You decided to pass by as you were not confident enough to hunt it."
-          },
-          "4bd8c8b3-be04-4c8b-ba54-8c2416dffb4b": {
-            "id": "4bd8c8b3-be04-4c8b-ba54-8c2416dffb4b",
-            "text": "Ignore."
-          },
-          "06c5018d-7605-4245-9ca5-556b001f2ffa": {
-            "id": "06c5018d-7605-4245-9ca5-556b001f2ffa",
-            "text": "Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn\u0027t know because he wasn\u0027t looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you."
-          },
-          "3649cef6-287e-43e8-bb20-ee373cc9831a": {
-            "id": "3649cef6-287e-43e8-bb20-ee373cc9831a",
-            "text": "Ignore."
-          },
-          "655d3656-1de1-47a2-b0c5-afc911f67538": {
-            "id": "655d3656-1de1-47a2-b0c5-afc911f67538",
-            "text": "Hunt."
-          },
-          "f43443f8-5d29-416a-ae25-9bcedd82ac5f": {
-            "id": "f43443f8-5d29-416a-ae25-9bcedd82ac5f",
+          "7dbe65b8-66a0-47c0-a435-2733f97b0d7c": {
+            "id": "7dbe65b8-66a0-47c0-a435-2733f97b0d7c",
             "text": "Lose."
           },
-          "f032f242-6119-4a8b-a5e2-108f4588cdc5": {
-            "id": "f032f242-6119-4a8b-a5e2-108f4588cdc5",
+          "16e639c0-8c95-49dc-bb7d-c94e4ab1659c": {
+            "id": "16e639c0-8c95-49dc-bb7d-c94e4ab1659c",
+            "text": "Ignore."
+          },
+          "23d1636e-a4ee-47c7-95ac-5f84830b3d90": {
+            "id": "23d1636e-a4ee-47c7-95ac-5f84830b3d90",
+            "text": "You successfully hunt and get meat."
+          },
+          "4a278c5f-ed04-4c36-95a5-0adf9b0eeef2": {
+            "id": "4a278c5f-ed04-4c36-95a5-0adf9b0eeef2",
+            "text": "When you heard the rustling sound between the trees, you were stiffened nervously, but soon realised it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed that the animal was a (deer)."
+          },
+          "7f40a96b-3f39-46a0-af34-c8eea31d27a0": {
+            "id": "7f40a96b-3f39-46a0-af34-c8eea31d27a0",
+            "text": "Having been hungry, you decided to hunt after confirming that you didn\u0027t have enough food."
+          },
+          "ffaf29a2-df06-4474-a566-d604adfe6f58": {
+            "id": "ffaf29a2-df06-4474-a566-d604adfe6f58",
+            "text": "Hunting failed."
+          },
+          "94f9fdfb-42e9-438e-b13b-c4ef6fec57e8": {
+            "id": "94f9fdfb-42e9-438e-b13b-c4ef6fec57e8",
+            "text": "You decided to pass by as you were not confident enough to hunt it."
+          },
+          "32bf3512-d515-488f-a17e-1dc9a460b2fa": {
+            "id": "32bf3512-d515-488f-a17e-1dc9a460b2fa",
+            "text": "Hunt."
+          },
+          "28fb5d55-df68-4c4e-b1f6-be0c3a41d362": {
+            "id": "28fb5d55-df68-4c4e-b1f6-be0c3a41d362",
+            "text": "Ignore."
+          },
+          "6d266d8b-9c2a-40be-b9d3-405e3a9f5385": {
+            "id": "6d266d8b-9c2a-40be-b9d3-405e3a9f5385",
+            "text": "Walking through the damp, dark road, you realised that there was the old man between the trees.\nHe hasn\u0027t seen your side yet."
+          },
+          "06def0c8-a13e-4c6a-91d9-b7f2ddcc57f0": {
+            "id": "06def0c8-a13e-4c6a-91d9-b7f2ddcc57f0",
             "text": "You quickly passed by, knowing that it is abnormal to have a person in the middle of this forest after zombie outbreak."
           },
-          "51935f86-5bb3-491d-a4aa-d9da8a925f3c": {
-            "id": "51935f86-5bb3-491d-a4aa-d9da8a925f3c",
-            "text": "You successfully hunt and get meat."
+          "61dfc40c-e644-456c-8fb8-529c3b901e11": {
+            "id": "61dfc40c-e644-456c-8fb8-529c3b901e11",
+            "text": "Wondering why he was in the middle of this forest, you approached him with curiosity and tried to talk to him.\nYou didn\u0027t know because he wasn\u0027t looking in your direction, but he had dead, lifeless looking eyes with stones in his hands.\nEven before you realise, he looked back at you and started to throw stones towards you."
           }
         },
         "completionNodes": [
-          "93517c4f-0b41-4d20-ad05-b0e1ace4004c"
+          "6d266d8b-9c2a-40be-b9d3-405e3a9f5385"
         ],
         "currentNode": {
-          "id": "40a076b9-353d-4c1d-9fa1-f9ef989b3056",
+          "id": "1e7e8d1a-98e1-421e-b074-c1255543d244",
           "text": "You are in a forest"
         }
       }
     },
     "road": {
-      "visited": false,
       "name": "road",
       "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
       "levelMap": {
         "adjacentMap": {
-          "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9": [
-            "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53"
+          "22539eba-1dd8-48d3-b151-b4da9a1181b2": [
+            "d6002162-a717-4783-b920-d5e7d72cb9bb"
           ],
-          "64ff7483-c554-4602-b7e4-bce66c4b0f04": [
-            "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9"
+          "d6002162-a717-4783-b920-d5e7d72cb9bb": [
+            "925770f3-8355-4244-bf26-88c44d8a4f12"
           ]
         },
         "levelNodesMap": {
-          "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9": {
-            "id": "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9",
-            "text": "However, the road was blocked so she needed your help to clean beforehand. With her, you managed to organise blocked road and safely go to the next destination. ",
-            "option": "remove the debris"
-          },
-          "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53": {
-            "id": "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53",
-            "text": "Thanks to her, you could go to the next destination safely and quickly.",
-            "actions": [
-              "heal 10"
-            ]
-          },
-          "64ff7483-c554-4602-b7e4-bce66c4b0f04": {
-            "id": "64ff7483-c554-4602-b7e4-bce66c4b0f04",
+          "22539eba-1dd8-48d3-b151-b4da9a1181b2": {
+            "id": "22539eba-1dd8-48d3-b151-b4da9a1181b2",
             "text": "You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\nYou saw the zombie attacking someone, so you stepped back into the bush falteringly.",
             "actions": [
               "zombieFight"
             ]
           },
-          "18bff59e-a180-4933-a83c-61173ce4871e": {
-            "id": "18bff59e-a180-4933-a83c-61173ce4871e",
+          "d6002162-a717-4783-b920-d5e7d72cb9bb": {
+            "id": "d6002162-a717-4783-b920-d5e7d72cb9bb",
+            "text": "However, the road was blocked so she needed your help to clean beforehand. With her, you managed to organise blocked road and safely go to the next destination. ",
+            "option": "remove the debris"
+          },
+          "cf3ffa77-2b67-4938-aab0-b9475613f940": {
+            "id": "cf3ffa77-2b67-4938-aab0-b9475613f940",
             "text": "As you kept walking, you found a taxi that seemed to have person inside. You knocked on the door to have a conversation with middle-aged woman inside. She rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation. She said she could drive you to the place where you had to go. ",
             "option": "approach taxidriver"
+          },
+          "925770f3-8355-4244-bf26-88c44d8a4f12": {
+            "id": "925770f3-8355-4244-bf26-88c44d8a4f12",
+            "text": "Thanks to her, you could go to the next destination safely and quickly.",
+            "actions": [
+              "heal 10"
+            ]
           }
         },
         "completionNodes": [
-          "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53"
+          "925770f3-8355-4244-bf26-88c44d8a4f12"
         ],
         "currentNode": {
-          "id": "64ff7483-c554-4602-b7e4-bce66c4b0f04",
+          "id": "22539eba-1dd8-48d3-b151-b4da9a1181b2",
           "text": "You heard the crackling sound coming from chewing pieces of meat and bones. You are feeling short of breath and barely swallowing saliva.\nPanic-stricken for a moment, you unconsciously dropped onto the floor and your palms touched the rough ground full of dust, but could not even realise it.\nYou saw the zombie attacking someone, so you stepped back into the bush falteringly.",
           "actions": [
             "zombieFight"
@@ -167,130 +165,122 @@
       }
     },
     "cottage": {
-      "visited": false,
       "name": "cottage",
       "description": "You found a country-style cottage. Maybe you can steal some food? After all, you are very hungry and wanted to stock up more food and supplies.",
       "levelMap": {
         "adjacentMap": {
-          "542261cd-160f-495c-8a80-c1391c3914d9": [
-            "33513b9f-cd89-4edc-8045-7e9f649c08e1"
+          "885d0d4c-128c-4813-af91-7dc6f59c9bfd": [
+            "1808f1e6-0af6-4068-ba6b-cc97aadf2c9b"
           ],
-          "7a7832cb-788d-44f0-9785-b092fc2ba086": [
-            "851c4ba7-9e12-4bb2-9b3f-a4540fac09a8"
+          "1808f1e6-0af6-4068-ba6b-cc97aadf2c9b": [
+            "177d255d-ce33-4c47-a94d-007c1962dff1",
+            "37aefd66-0f03-47f8-8e69-3d138b3cda26"
           ],
-          "33513b9f-cd89-4edc-8045-7e9f649c08e1": [
-            "12c9ea57-c09f-4e89-ae0b-c8a59d76dad6",
-            "2995cc3d-db1c-4584-90b7-968dfe4b6ac0"
+          "8f835941-96fd-4e37-9acd-b16806d73219": [
+            "1808f1e6-0af6-4068-ba6b-cc97aadf2c9b",
+            "494871ed-0872-462a-ac9d-af49a190b7e1"
           ],
-          "851c4ba7-9e12-4bb2-9b3f-a4540fac09a8": [
-            "542261cd-160f-495c-8a80-c1391c3914d9",
-            "a5e4589c-e2f2-4514-977d-69c502482d01"
+          "b120696c-69cf-4cad-a807-90f0b3c3553d": [
+            "d7ce81dc-8632-436c-b7bf-bfdd04fac2e7"
           ],
-          "249f04fe-06fa-4c31-b390-e58cec89e62d": [
-            "851c4ba7-9e12-4bb2-9b3f-a4540fac09a8"
+          "37aefd66-0f03-47f8-8e69-3d138b3cda26": [
+            "b120696c-69cf-4cad-a807-90f0b3c3553d"
           ],
-          "a5e4589c-e2f2-4514-977d-69c502482d01": [
-            "33513b9f-cd89-4edc-8045-7e9f649c08e1"
+          "be8440d8-5596-41af-af9d-c585dfc8f304": [
+            "1808f1e6-0af6-4068-ba6b-cc97aadf2c9b"
           ],
-          "075772fa-8fda-413a-97ab-bbd5715bae90": [
-            "542261cd-160f-495c-8a80-c1391c3914d9",
-            "a5e4589c-e2f2-4514-977d-69c502482d01"
+          "177d255d-ce33-4c47-a94d-007c1962dff1": [
+            "b120696c-69cf-4cad-a807-90f0b3c3553d"
           ],
-          "a0eb0216-979b-457d-8624-b47e7008369f": [
-            "075772fa-8fda-413a-97ab-bbd5715bae90"
-          ],
-          "d517fd47-fa17-4673-bd76-cb8c40f8ced0": [
-            "164eb970-84f8-4050-9adb-0b6abd689331",
-            "249f04fe-06fa-4c31-b390-e58cec89e62d"
-          ],
-          "164eb970-84f8-4050-9adb-0b6abd689331": [
-            "a0eb0216-979b-457d-8624-b47e7008369f",
-            "7a7832cb-788d-44f0-9785-b092fc2ba086"
+          "494871ed-0872-462a-ac9d-af49a190b7e1": [
+            "a027691f-035a-4965-ac67-a1427711af69",
+            "be8440d8-5596-41af-af9d-c585dfc8f304",
+            "885d0d4c-128c-4813-af91-7dc6f59c9bfd"
           ]
         },
         "levelNodesMap": {
-          "2995cc3d-db1c-4584-90b7-968dfe4b6ac0": {
-            "id": "2995cc3d-db1c-4584-90b7-968dfe4b6ac0",
-            "text": "You ignore the man and leave the cottage.\nChoose the next location to go.",
-            "option": "ignore him"
+          "885d0d4c-128c-4813-af91-7dc6f59c9bfd": {
+            "id": "885d0d4c-128c-4813-af91-7dc6f59c9bfd",
+            "text": "You exit the room and go back to the hallway. There is a rooms you haven\u0027t explored yet.",
+            "option": "leave the room"
           },
-          "542261cd-160f-495c-8a80-c1391c3914d9": {
-            "id": "542261cd-160f-495c-8a80-c1391c3914d9",
-            "text": "Congratulations, you found a hunting kit. Now, hunting kit has been added to your inventory!\nYou find a storage room",
+          "1808f1e6-0af6-4068-ba6b-cc97aadf2c9b": {
+            "id": "1808f1e6-0af6-4068-ba6b-cc97aadf2c9b",
+            "text": "You enter the bedroom and take a look around. There is a tiny drawer next to a large bed. There appears to be a trapdoor in the floor.",
             "actions": [
-              "item 1"
+              "locationObject bed under medkit",
+              "locationObject drawer inside medkit"
             ],
-            "option": "search the shelf"
+            "option": "head to the bedroom"
           },
-          "7a7832cb-788d-44f0-9785-b092fc2ba086": {
-            "id": "7a7832cb-788d-44f0-9785-b092fc2ba086",
-            "text": "You don\u0027t want to wake her up since she seems to be comfortable lying there, you follow your initial plan and take a break for a while.\nYou creep towards toilet, go in, and carefully close the door.",
-            "option": "leave her alone"
-          },
-          "33513b9f-cd89-4edc-8045-7e9f649c08e1": {
-            "id": "33513b9f-cd89-4edc-8045-7e9f649c08e1",
-            "text": "You go into the storage room and find a muscular man in his mid 30\u0027s.\nHe doesn\u0027t seem to have noticed you yet.",
-            "option": "go into the storage room"
-          },
-          "12c9ea57-c09f-4e89-ae0b-c8a59d76dad6": {
-            "id": "12c9ea57-c09f-4e89-ae0b-c8a59d76dad6",
-            "text": "You tap him on the shoulder and ask what he is doing.\nIt turns out that he is a hunter, and had stopped by this cottage to search for useful tools and weapons.\n\nHe tells you that he found AR-15 style 12 gauge with muzzle flash and 2 mags with 10 round capacity in the room.\nThinking it will be great to accompany him, you suggest working together to find a vaccine.\n\nHunter joined your team.\nChoose the next location to go.",
+          "8f835941-96fd-4e37-9acd-b16806d73219": {
+            "id": "8f835941-96fd-4e37-9acd-b16806d73219",
+            "text": "You head inside the cottage and see a few rooms down the hallway.",
             "actions": [
-              "heal 10"
+              "locationObject table under medkit"
+            ]
+          },
+          "d7ce81dc-8632-436c-b7bf-bfdd04fac2e7": {
+            "id": "d7ce81dc-8632-436c-b7bf-bfdd04fac2e7",
+            "text": "You decide to leave the cottage and head somewhere else.",
+            "option": "leave the cottage"
+          },
+          "b120696c-69cf-4cad-a807-90f0b3c3553d": {
+            "id": "b120696c-69cf-4cad-a807-90f0b3c3553d",
+            "text": "You hear a feint noise coming closet and decide to open it.\nTo your suprise, there is a frightened man huddled inside.\n\u0027I thought I was dead. Thank you so much for saving me.\u0027 he tells you.\nThe man gives you a medkit as a reward",
+            "actions": [
+              "item medkit"
             ],
-            "option": "approach the man "
+            "option": "open the closet"
           },
-          "851c4ba7-9e12-4bb2-9b3f-a4540fac09a8": {
-            "id": "851c4ba7-9e12-4bb2-9b3f-a4540fac09a8",
-            "text": "You manage to get out of the room and slam the door. You go to look around to see what else you can find in the cottage. You go into the toilet which is right next to the living room.",
-            "option": "escape"
+          "37aefd66-0f03-47f8-8e69-3d138b3cda26": {
+            "id": "37aefd66-0f03-47f8-8e69-3d138b3cda26",
+            "text": "You are about to turn around to leave when you hear a loud noise outside. \nSomething is coming after you. You decide to open the trapdoor and go down into the basement.\nThe room is pitch black, so you turn on the lights.\nUnfortunately there is something waiting for you at the bottom.",
+            "actions": [
+              "zombieFight"
+            ],
+            "option": "leave the room"
           },
-          "249f04fe-06fa-4c31-b390-e58cec89e62d": {
-            "id": "249f04fe-06fa-4c31-b390-e58cec89e62d",
-            "text": "You ignore the child",
-            "option": "ignore"
-          },
-          "a5e4589c-e2f2-4514-977d-69c502482d01": {
-            "id": "a5e4589c-e2f2-4514-977d-69c502482d01",
-            "text": "",
-            "option": "close the shelf"
-          },
-          "075772fa-8fda-413a-97ab-bbd5715bae90": {
-            "id": "075772fa-8fda-413a-97ab-bbd5715bae90",
-            "text": "Win/Lose. If lose, deathexception. If win, go to next step. Here default win\nTrying to find something useful, you open a drawer in a shelf to your right.",
-            "option": "fight the girl"
-          },
-          "a0eb0216-979b-457d-8624-b47e7008369f": {
-            "id": "a0eb0216-979b-457d-8624-b47e7008369f",
-            "text": "You gently shake the child to wake her up.\nTo your horror, she was actually pretending to be asleep and was hiding a kitchen knife in her hand behind her.\nYou don\u0027t want to hurt child, but at the same time, you don\u0027t want to die.",
+          "a027691f-035a-4965-ac67-a1427711af69": {
+            "id": "a027691f-035a-4965-ac67-a1427711af69",
+            "text": "You approach the child and take a closer look. She appears to be younger than 10 years old.\nYou gently shake the child to wake her up.\nTo your horror, she suddenly awakens and pulls out a concealed knife from behind her and tries to stab you.",
             "actions": [
               "psychoFight"
             ],
             "option": "wake her up"
           },
-          "d517fd47-fa17-4673-bd76-cb8c40f8ced0": {
-            "id": "d517fd47-fa17-4673-bd76-cb8c40f8ced0",
-            "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.",
+          "be8440d8-5596-41af-af9d-c585dfc8f304": {
+            "id": "be8440d8-5596-41af-af9d-c585dfc8f304",
+            "text": "You don\u0027t want to wake her up since she looks so comfortable lying there. \nYou sneak towards bathroom and carefully close the door. There is a cabinet above the sink.",
             "actions": [
-              "locationObject table under medkit"
-            ]
+              "locationObject cabinet inside medkit"
+            ],
+            "option": "sneak past her"
           },
-          "164eb970-84f8-4050-9adb-0b6abd689331": {
-            "id": "164eb970-84f8-4050-9adb-0b6abd689331",
-            "text": "You approach the child, and take a closer look.",
+          "177d255d-ce33-4c47-a94d-007c1962dff1": {
+            "id": "177d255d-ce33-4c47-a94d-007c1962dff1",
+            "text": "You open the trap door and go down into the basement.\nUnfortunately there is something waiting for you at the bottom.",
             "actions": [
               "zombieFight"
             ],
-            "option": "approach"
+            "option": "open the trap door"
+          },
+          "494871ed-0872-462a-ac9d-af49a190b7e1": {
+            "id": "494871ed-0872-462a-ac9d-af49a190b7e1",
+            "text": "You enter the living room and catch a glimpse of a young girl dozing off on the sofa in the small living room.\n You see a something under the table in front of her.",
+            "actions": [
+              "locationObject bed under medkit",
+              "locationObject drawer inside medkit"
+            ],
+            "option": "explore the living room"
           }
         },
         "completionNodes": [
-          "12c9ea57-c09f-4e89-ae0b-c8a59d76dad6",
-          "2995cc3d-db1c-4584-90b7-968dfe4b6ac0"
+          "d7ce81dc-8632-436c-b7bf-bfdd04fac2e7"
         ],
         "currentNode": {
-          "id": "d517fd47-fa17-4673-bd76-cb8c40f8ced0",
-          "text": "You go inside the cottage and catch a glimpse of a child sitting on the cozy sofa in the small living room. She is dozing off, probably because it is warm inside.",
+          "id": "8f835941-96fd-4e37-9acd-b16806d73219",
+          "text": "You head inside the cottage and see a few rooms down the hallway.",
           "actions": [
             "locationObject table under medkit"
           ]
@@ -298,171 +288,168 @@
       }
     },
     "hospital": {
-      "visited": false,
       "name": "hospital",
       "description": "You are now in the hospital. Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.",
       "levelMap": {
         "adjacentMap": {
-          "7e81bb5e-184d-4031-ba61-e74077e506e3": [
-            "59cf0ba0-dba3-4f12-9202-485a06e1def5"
+          "4cee82c3-c5d4-48c0-b929-4038b079d704": [
+            "f7a6d033-c303-4efb-ac2b-f85464765cde"
           ],
-          "797daa0f-cfdc-42d8-a6ee-fafc541bb38a": [
-            "93b7a8dd-84fe-4c3a-a4ed-15804dacf90c",
-            "7e2c1df5-a77b-4015-a1aa-902a9f05742b"
+          "41f80132-583e-4960-8982-8369a5153171": [
+            "276b114f-e9ff-464b-9753-bc636b7594cb"
           ],
-          "37fa9065-8a82-4d0c-a6b6-0b2a1c1df6ff": [
-            "a9c955bf-91cd-45f8-ac7f-87e27cb8737d"
+          "276b114f-e9ff-464b-9753-bc636b7594cb": [
+            "29b2ef51-a52c-49a4-b311-655d7f61a116",
+            "f1594de5-414e-47e8-aea4-69769221eb7f"
           ],
-          "9cf6a34a-582d-4851-9687-069d397b8e8e": [
-            "0ab6e97d-6e11-42e3-b42d-34d98314a2b1",
-            "982b5716-cf8e-4598-ad11-cbbccc941a6f"
+          "e04e28b6-c556-4682-bb91-f9048f397356": [
+            "a617776b-c25d-439e-9b87-b96a135d78ff"
           ],
-          "536af534-b7b8-44d2-8649-c372207c38f7": [
-            "797daa0f-cfdc-42d8-a6ee-fafc541bb38a"
+          "6eca8898-55cd-435f-826d-23bae5a8f869": [
+            "276b114f-e9ff-464b-9753-bc636b7594cb"
           ],
-          "982b5716-cf8e-4598-ad11-cbbccc941a6f": [
-            "5273890b-6adb-4381-b060-79e57d9fe376"
+          "a617776b-c25d-439e-9b87-b96a135d78ff": [
+            "4cee82c3-c5d4-48c0-b929-4038b079d704",
+            "1c021155-8e73-4d4e-8ab1-8497f169f34d"
           ],
-          "93b7a8dd-84fe-4c3a-a4ed-15804dacf90c": [
-            "9cf6a34a-582d-4851-9687-069d397b8e8e"
+          "32c35ed8-fbe1-4e72-b12c-b1ca9e996c27": [
+            "bc7b27d0-4f83-45aa-843d-724b23871eb8"
           ],
-          "59cf0ba0-dba3-4f12-9202-485a06e1def5": [
-            "536af534-b7b8-44d2-8649-c372207c38f7",
-            "37fa9065-8a82-4d0c-a6b6-0b2a1c1df6ff"
+          "d876ade1-7f61-469d-9a88-3b636a7f95c1": [
+            "e04e28b6-c556-4682-bb91-f9048f397356"
           ],
-          "3e87b117-e308-430d-99dd-e48c3d8d3615": [
-            "7e81bb5e-184d-4031-ba61-e74077e506e3"
+          "f7a6d033-c303-4efb-ac2b-f85464765cde": [
+            "41f80132-583e-4960-8982-8369a5153171",
+            "a72a4f25-9405-42d7-8494-fff31b3b8dfb"
           ],
-          "a9c955bf-91cd-45f8-ac7f-87e27cb8737d": [
-            "9cf6a34a-582d-4851-9687-069d397b8e8e"
+          "29b2ef51-a52c-49a4-b311-655d7f61a116": [
+            "32c35ed8-fbe1-4e72-b12c-b1ca9e996c27"
           ],
-          "0ab6e97d-6e11-42e3-b42d-34d98314a2b1": [
-            "ba0acd85-f874-4a6c-a498-fbf37d849673"
+          "f1594de5-414e-47e8-aea4-69769221eb7f": [
+            "162ca4c2-1bfb-421d-b815-9c0954434f1e"
           ],
-          "ba0acd85-f874-4a6c-a498-fbf37d849673": [
-            "eb70dd67-2718-47c2-8e6e-086ab8e5d0ad"
+          "1c021155-8e73-4d4e-8ab1-8497f169f34d": [
+            "6eca8898-55cd-435f-826d-23bae5a8f869"
           ]
         },
         "levelNodesMap": {
-          "7e81bb5e-184d-4031-ba61-e74077e506e3": {
-            "id": "7e81bb5e-184d-4031-ba61-e74077e506e3",
+          "4cee82c3-c5d4-48c0-b929-4038b079d704": {
+            "id": "4cee82c3-c5d4-48c0-b929-4038b079d704",
+            "text": "Go and talk with him."
+          },
+          "276b114f-e9ff-464b-9753-bc636b7594cb": {
+            "id": "276b114f-e9ff-464b-9753-bc636b7594cb",
+            "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
+          },
+          "e04e28b6-c556-4682-bb91-f9048f397356": {
+            "id": "e04e28b6-c556-4682-bb91-f9048f397356",
             "text": "While walking in the hallway, you found the first aid kit near the staircase.\nCongratulations, you collected a first aid kit!",
             "actions": [
               "item 1"
             ]
           },
-          "797daa0f-cfdc-42d8-a6ee-fafc541bb38a": {
-            "id": "797daa0f-cfdc-42d8-a6ee-fafc541bb38a",
+          "6eca8898-55cd-435f-826d-23bae5a8f869": {
+            "id": "6eca8898-55cd-435f-826d-23bae5a8f869",
+            "text": "You thought that it is weird to have person in the middle of the hospital hallway, so you ignored him and went up the staircase quickly so he wouldn\u0027t follow you."
+          },
+          "32c35ed8-fbe1-4e72-b12c-b1ca9e996c27": {
+            "id": "32c35ed8-fbe1-4e72-b12c-b1ca9e996c27",
+            "text": "You decided to talk to her, and after a short conversation, you found out that she was a doctor.\nYou showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment.\nFortunately, she gladly helped me.",
+            "actions": [
+              "heal 10"
+            ]
+          },
+          "bc7b27d0-4f83-45aa-843d-724b23871eb8": {
+            "id": "bc7b27d0-4f83-45aa-843d-724b23871eb8",
+            "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+          },
+          "f7a6d033-c303-4efb-ac2b-f85464765cde": {
+            "id": "f7a6d033-c303-4efb-ac2b-f85464765cde",
             "text": "He was holding a scapel you couldn\u0027t see from the distance.\nHe ran towards you so that you failed to escape and got a cut.\n\nYou realised that you are not able to run away, so decided to fight back.",
             "actions": [
               "psychofight"
             ]
           },
-          "37fa9065-8a82-4d0c-a6b6-0b2a1c1df6ff": {
-            "id": "37fa9065-8a82-4d0c-a6b6-0b2a1c1df6ff",
-            "text": "Ignore."
-          },
-          "9cf6a34a-582d-4851-9687-069d397b8e8e": {
-            "id": "9cf6a34a-582d-4851-9687-069d397b8e8e",
-            "text": "You walked further upstairs and while you walk around fifth floor, you found someone resting in the bed between the curtains in the hospital room.\n\nThe person is lying on the bed, but still awake.\nYou could see the long blonde sticking out, and she was tossing and turning under the duvet."
-          },
-          "536af534-b7b8-44d2-8649-c372207c38f7": {
-            "id": "536af534-b7b8-44d2-8649-c372207c38f7",
-            "text": "Go and talk with him."
-          },
-          "93b7a8dd-84fe-4c3a-a4ed-15804dacf90c": {
-            "id": "93b7a8dd-84fe-4c3a-a4ed-15804dacf90c",
-            "text": "Won."
-          },
-          "59cf0ba0-dba3-4f12-9202-485a06e1def5": {
-            "id": "59cf0ba0-dba3-4f12-9202-485a06e1def5",
-            "text": "Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.\nAt third floor, you found someone walking towards you.\n\nHe looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips.\nHe realised you coming towards him as well, and he seems to want a conversation with you."
-          },
-          "3e87b117-e308-430d-99dd-e48c3d8d3615": {
-            "id": "3e87b117-e308-430d-99dd-e48c3d8d3615",
-            "text": "You are now in the hospital."
-          },
-          "a9c955bf-91cd-45f8-ac7f-87e27cb8737d": {
-            "id": "a9c955bf-91cd-45f8-ac7f-87e27cb8737d",
-            "text": "You thought that it is weird to have person in the middle of the hospital hallway, so you ignored him and went up the staircase quickly so he wouldn\u0027t follow you."
-          },
-          "0ab6e97d-6e11-42e3-b42d-34d98314a2b1": {
-            "id": "0ab6e97d-6e11-42e3-b42d-34d98314a2b1",
+          "29b2ef51-a52c-49a4-b311-655d7f61a116": {
+            "id": "29b2ef51-a52c-49a4-b311-655d7f61a116",
             "text": "Talk to her."
           },
-          "5273890b-6adb-4381-b060-79e57d9fe376": {
-            "id": "5273890b-6adb-4381-b060-79e57d9fe376",
+          "162ca4c2-1bfb-421d-b815-9c0954434f1e": {
+            "id": "162ca4c2-1bfb-421d-b815-9c0954434f1e",
             "text": "Feeling suspicious, you decided to pass by as if you had seen nothing."
           },
-          "982b5716-cf8e-4598-ad11-cbbccc941a6f": {
-            "id": "982b5716-cf8e-4598-ad11-cbbccc941a6f",
-            "text": "Ignore."
-          },
-          "7e2c1df5-a77b-4015-a1aa-902a9f05742b": {
-            "id": "7e2c1df5-a77b-4015-a1aa-902a9f05742b",
+          "a72a4f25-9405-42d7-8494-fff31b3b8dfb": {
+            "id": "a72a4f25-9405-42d7-8494-fff31b3b8dfb",
             "text": "Lost."
           },
-          "eb70dd67-2718-47c2-8e6e-086ab8e5d0ad": {
-            "id": "eb70dd67-2718-47c2-8e6e-086ab8e5d0ad",
-            "text": "You thanked her then explained that you were on the way to get a vaccine, and suggested her to accompany me.\nShe accepted without hesitation, and we went out of the hospital together."
+          "41f80132-583e-4960-8982-8369a5153171": {
+            "id": "41f80132-583e-4960-8982-8369a5153171",
+            "text": "Won."
           },
-          "ba0acd85-f874-4a6c-a498-fbf37d849673": {
-            "id": "ba0acd85-f874-4a6c-a498-fbf37d849673",
-            "text": "You decided to talk to her, and after a short conversation, you found out that she was a doctor.\nYou showed her the wounds you had on the way to hospital, asking if she could give you some kind of treatment.\nFortunately, she gladly helped me.",
-            "actions": [
-              "heal 10"
-            ]
+          "a617776b-c25d-439e-9b87-b96a135d78ff": {
+            "id": "a617776b-c25d-439e-9b87-b96a135d78ff",
+            "text": "Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.\nAt third floor, you found someone walking towards you.\n\nHe looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips.\nHe realised you coming towards him as well, and he seems to want a conversation with you."
+          },
+          "d876ade1-7f61-469d-9a88-3b636a7f95c1": {
+            "id": "d876ade1-7f61-469d-9a88-3b636a7f95c1",
+            "text": "You are now in the hospital."
+          },
+          "f1594de5-414e-47e8-aea4-69769221eb7f": {
+            "id": "f1594de5-414e-47e8-aea4-69769221eb7f",
+            "text": "Ignore."
+          },
+          "1c021155-8e73-4d4e-8ab1-8497f169f34d": {
+            "id": "1c021155-8e73-4d4e-8ab1-8497f169f34d",
+            "text": "Ignore."
           }
         },
         "completionNodes": [
-          "eb70dd67-2718-47c2-8e6e-086ab8e5d0ad",
-          "5273890b-6adb-4381-b060-79e57d9fe376"
+          "bc7b27d0-4f83-45aa-843d-724b23871eb8",
+          "162ca4c2-1bfb-421d-b815-9c0954434f1e"
         ],
         "currentNode": {
-          "id": "3e87b117-e308-430d-99dd-e48c3d8d3615",
+          "id": "d876ade1-7f61-469d-9a88-3b636a7f95c1",
           "text": "You are now in the hospital."
         }
       }
     },
     "lab": {
-      "visited": false,
       "name": "lab",
       "description": "This journey just never seems to end. You miss the warm embrace of your family and the smell of home. This journey has been unforgiving to you mentally and physically. You get flashbacks of your loved ones who had died before you in your arms. You wonder, “maybe it’s time for me to go too…”. But then, as you walk over a hill, you slowly see a pristine white building over the horizon. It seems to be… it seems to be… Congratulations, you finally reached the laboratory! Thankfully, there are no zombies as there are many soldiers inside, so you are safe now. You walk into the laboratory, and there are researchers who are ready to provide you with vaccines.",
       "levelMap": {
         "adjacentMap": {},
         "levelNodesMap": {
-          "90e0b23c-dc4b-4888-b9ad-e592ae7a9854": {
-            "id": "90e0b23c-dc4b-4888-b9ad-e592ae7a9854",
+          "9c235a73-5e2d-4bbe-82e3-04cf6e11545e": {
+            "id": "9c235a73-5e2d-4bbe-82e3-04cf6e11545e",
             "text": "Done."
           }
         },
         "completionNodes": [
-          "90e0b23c-dc4b-4888-b9ad-e592ae7a9854"
+          "9c235a73-5e2d-4bbe-82e3-04cf6e11545e"
         ],
         "currentNode": {
-          "id": "90e0b23c-dc4b-4888-b9ad-e592ae7a9854",
+          "id": "9c235a73-5e2d-4bbe-82e3-04cf6e11545e",
           "text": "Done."
         }
       }
     },
     "home": {
-      "visited": false,
       "name": "home",
       "description": "Choose a place to go.",
       "levelMap": {
         "adjacentMap": {},
         "levelNodesMap": {
-          "d825ceb3-32f2-4133-9487-996016b098d4": {
-            "id": "d825ceb3-32f2-4133-9487-996016b098d4",
-            "text": "You are at home, wondering where you should go."
+          "6a5c4383-4dab-46b2-abc8-ee32ce838d2b": {
+            "id": "6a5c4383-4dab-46b2-abc8-ee32ce838d2b",
+            "text": "You wake up and find that no one is home. \u0027Where is everyone?\u0027 you ask yourself. You head out the door."
           }
         },
         "completionNodes": [
-          "d825ceb3-32f2-4133-9487-996016b098d4"
+          "6a5c4383-4dab-46b2-abc8-ee32ce838d2b"
         ],
         "currentNode": {
-          "id": "d825ceb3-32f2-4133-9487-996016b098d4",
-          "text": "You are at home, wondering where you should go."
+          "id": "6a5c4383-4dab-46b2-abc8-ee32ce838d2b",
+          "text": "You wake up and find that no one is home. \u0027Where is everyone?\u0027 you ask yourself. You head out the door."
         }
       }
     }
