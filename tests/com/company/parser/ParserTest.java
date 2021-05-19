@@ -9,7 +9,6 @@ import com.company.locations.Location;
 import com.company.menus.Menu;
 import com.company.menus.MenuItem;
 import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class ParserTest {
         Parser parser = new Parser(player);
         try {
             parser.parseAction("heal 10");
-            assertNotEquals(player.getHealth(),initalHealth+10);
+            assertEquals(player.getHealth(),initalHealth+10);
         } catch(Exception e){
             fail();
         }

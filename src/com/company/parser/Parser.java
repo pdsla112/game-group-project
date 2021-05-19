@@ -303,6 +303,9 @@ public class Parser {
                 //TODO
                 //BattleEvent for hunt? or create separate menu class?
             }
+            if(command.equals("drive")){
+                player.setLocationName("lab");
+            }
 
 
             }

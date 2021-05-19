@@ -137,25 +137,27 @@
       "description": "You continue on your journey to the laboratory, and you end up on a concrete road.",
       "levelMap": {
         "adjacentMap": {
-          "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9": [
-            "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53"
+          "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53": [
+            "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9"
           ],
           "64ff7483-c554-4602-b7e4-bce66c4b0f04": [
-            "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9"
+            "18bff59e-a180-4933-a83c-61173ce4871e"
+          ],
+          "18bff59e-a180-4933-a83c-61173ce4871e": [
+            "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53"
           ]
         },
         "levelNodesMap": {
           "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9": {
             "id": "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9",
-            "text": "However, the road was blocked so she needed your help to clean beforehand. With her, you managed to organise blocked road and safely go to the next destination. ",
-            "option": "remove the debris"
+            "text": "\nWith her, you managed to organise blocked road and safely go to the next destination.\nChoose the next location to go.",
+            "actions": ["drive"],
+            "option": "Remove the debris"
           },
           "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53": {
             "id": "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53",
-            "text": "Thanks to her, you could go to the next destination safely and quickly.",
-            "actions": [
-              "heal 10"
-            ]
+            "text": "\nAs you kept walking, you found a taxi that seemed to have person inside.\nYou knocked on the door to have a conversation with middle-aged woman inside.\nShe rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation.\n\nShe said she could drive you to the place where you had to go.\nHowever, the road was blocked so she needed your help to clean beforehand.",
+            "option": "Approach taxidriver"
           },
           "64ff7483-c554-4602-b7e4-bce66c4b0f04": {
             "id": "64ff7483-c554-4602-b7e4-bce66c4b0f04",
@@ -163,12 +165,13 @@
           },
           "18bff59e-a180-4933-a83c-61173ce4871e": {
             "id": "18bff59e-a180-4933-a83c-61173ce4871e",
-            "text": "As you kept walking, you found a taxi that seemed to have person inside. You knocked on the door to have a conversation with middle-aged woman inside. She rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation. She said she could drive you to the place where you had to go. ",
-            "option": "approach taxidriver"
+            "text": "\nZombie noticed you, and you need to fight back in order to survive.",
+            "actions": ["zombieFight"],
+            "option": "Fight Zombie"
           }
         },
         "completionNodes": [
-          "c6cf5cb1-6fb0-406a-a2b7-3408c95cda53"
+          "e8a79e9d-eff5-4a8e-b617-7d5bd2dbdfb9"
         ],
         "currentNode": {
           "id": "64ff7483-c554-4602-b7e4-bce66c4b0f04",
@@ -435,7 +438,7 @@
     "lab": {
       "visited": false,
       "name": "lab",
-      "description": "This journey just never seems to end. You miss the warm embrace of your family and the smell of home. This journey has been unforgiving to you mentally and physically. You get flashbacks of your loved ones who had died before you in your arms. You wonder, “maybe it’s time for me to go too…”. But then, as you walk over a hill, you slowly see a pristine white building over the horizon. It seems to be… it seems to be… Congratulations, you finally reached the laboratory! Thankfully, there are no zombies as there are many soldiers inside, so you are safe now. You walk into the laboratory, and there are researchers who are ready to provide you with vaccines.",
+      "description": "This journey just never seems to end.\nYou miss the warm embrace of your family and the smell of home.\nThis journey has been unforgiving to you mentally and physically.\nYou get flashbacks of your loved ones who had died before you in your arms.\nYou wonder, “maybe it’s time for me to go too…”. But then, as you walk over a hill, you slowly see a pristine white building over the horizon.\nIt seems to be… it seems to be…\n\nCongratulations, you finally reached the laboratory!\nThankfully, there are no zombies as there are many soldiers inside, so you are safe now.\nYou walk into the laboratory, and there are researchers who are ready to provide you with vaccines.\n",
       "levelMap": {
         "adjacentMap": {},
         "levelNodesMap": {
