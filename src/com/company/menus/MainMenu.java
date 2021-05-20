@@ -72,7 +72,7 @@ public class MainMenu {
                             endPrompt = true;
                             running = false;
                         } else {
-                            System.out.println("Username already exists. Please try again.");
+                            System.out.println("Username already exists. Please try again.\n");
                         }
 
 
@@ -98,7 +98,7 @@ public class MainMenu {
                         running = false;
                         break;
                     default:
-                        System.out.println("Please select a valid option.");
+                        System.out.println("Please select a valid option.\n");
                         System.out.println();
                         break;
                 }

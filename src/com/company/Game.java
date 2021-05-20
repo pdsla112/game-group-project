@@ -33,9 +33,11 @@ public class Game {
      */
     public void runGame() {
         boolean running = true;
+        Location playerLocation =  map.getLocationFromName(player.getLocationName());
+        playerLocation.displayInformation();
         try {
             while (running) {
-                Location playerLocation =  map.getLocationFromName(player.getLocationName());
+                playerLocation =  map.getLocationFromName(player.getLocationName());
                 LevelMap levelMap = playerLocation.levelMap;
                 System.out.println(levelMap.getCurrentNode().text+"\n");
 
