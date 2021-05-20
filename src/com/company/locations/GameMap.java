@@ -31,6 +31,14 @@ public class GameMap {
         edges = new HashMap<>();
     }
 
+    /**
+     * return location names
+     * @return
+     */
+    public List<String> getLocationNames() {
+        return new ArrayList<>(locations.keySet());
+    }
+
     public Location getLocationFromName(String name) {
         if (locations.containsKey(name)) {
             return locations.get(name);

@@ -276,6 +276,11 @@ public class Parser {
                 player.setHealth(Math.max(100,player.getHealth()+healAmount));
                 // heal player by set amount
             }
+            if (command.equals("item")) {
+                String itemName = userCommandSplit[1];
+                System.out.println(itemName + " has been added to your inventory.\n");
+                player.addItem(itemName);
+            }
 
             if(command.equals("locationObject")) {
                 String object = userCommandSplit[1];

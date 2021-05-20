@@ -33,16 +33,18 @@ public class Game {
      */
     public void runGame() {
         boolean running = true;
+        Location playerLocation =  map.getLocationFromName(player.getLocationName());
+        playerLocation.displayInformation();
         try {
             while (running) {
-                Location playerLocation =  map.getLocationFromName(player.getLocationName());
+                playerLocation =  map.getLocationFromName(player.getLocationName());
                 LevelMap levelMap = playerLocation.levelMap;
                 System.out.println(levelMap.getCurrentNode().text+"\n");
 
                 parser.parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
 
                 // check level completion
-                if (levelMap.completionNodes.contains(levelMap.currentNode.id)) {
+                if (levelMap.isCompletionNode(levelMap.currentNode.id)) {
                     if (playerLocation.name.equals(map.getFinalLocation().name)) {
                         throw new WinException("win");
                     } else {
@@ -68,6 +70,9 @@ public class Game {
                 String response = Parser.getInputString();
                 if (response.equals("y") || response.equals("yes")) {
                     player = PlayerJSON.getSpecificPlayer(player.getName());
+                    if (player == null) {
+                        new Game(PlayerJSON.createNewPlayer(player.getName(), player.getLevel()));
+                    }
                     new Game(player);
                 } else if (response.equals("n") || response.equals("no")) {
                     System.out.println("Game exited.");;

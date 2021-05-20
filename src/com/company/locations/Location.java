@@ -28,6 +28,8 @@ public class Location implements MenuItem {
         System.out.println("--------------------------------------");
         System.out.println("Current location: " + name);
         System.out.println(description);
+        System.out.println("--------------------------------------");
+        System.out.println();
     }
 
 }
