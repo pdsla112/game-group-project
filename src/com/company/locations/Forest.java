@@ -33,9 +33,4 @@ public class Forest extends Location {
         return this.zombies;
     }
 
-//    @Override
-//    public void runStory(Player player, GameMap map, String filename) {
-//        //load story
-//
-//    }
 }

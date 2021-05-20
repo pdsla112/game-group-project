@@ -20,12 +20,6 @@ public class Psychopath extends Enemy {
         this.isApproached = isApproached;
     }
 
-    public Psychopath() {
-        Random r = new Random();
-        int hp = 47 + r.nextInt(7);
-    }
-
-
     public void getApproached() {
         this.isApproached = true;
     }

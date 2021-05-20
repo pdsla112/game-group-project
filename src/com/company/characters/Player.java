@@ -22,7 +22,6 @@ public class Player {
 
     private int damage1;  // Fighting level of the character. Higher => better chance of winning that battle.
     private int damage2;
-//    private int damage3;
     private int health;
     private String name;
     private int level;
@@ -31,32 +30,17 @@ public class Player {
     public Tokenizer tokenizer;
     private String locationName;
 
-    // new player
     public Player(String name, int level, String locationName) {
-        //temporary (load from json)
         Level playerLevel = LevelJSON.getSpecificLevel(level);
         this.name = name;
         this.level = level;
         this.damage1 = playerLevel.getDamage1();
         this.damage2 = playerLevel.getDamage2();
-//        this.damage3 = playerLevel.getDamage3();
         this.health = playerLevel.getHealth();
         this.locationName = locationName;
         this.tokenizer = new Tokenizer();
         this.itemsMap = new HashMap<>();
     }
-
-    //load player
-//    public Player(int damage, int health, String name, int level, Map<String, Integer> itemsMap, String locationName) {
-//        this.damage = damage;
-//        this.health = health;
-//        this.name = name;
-//        this.level = level;
-//        this.itemsMap = itemsMap;
-//        this.locationObjects = new ArrayList<>();
-//        this.tokenizer = new Tokenizer();
-//        this.locationName = locationName;
-//    }
 
     public void useItem(String name) {
         if (name.equals("medkit")) {
@@ -139,14 +123,6 @@ public class Player {
         this.locationObjects.add(lo);
     }
 
-//    public void showStats(){
-//        String text = "--------------------------------------\nYour Stats:\n";
-//        text += "\tHealth: " + this.health + "\n";
-//        text += "\tDamage: " + this.damage + "\n";
-//        text += "--------------------------------------\n";
-//        System.out.println(text);
-//    }
-
     public void showItems() {
         String text = "--------------------------------------\nYour Items:\n";
         for (String itemName : itemsMap.keySet()) {
@@ -173,41 +149,14 @@ public class Player {
         }
     }
 
-//    public List<Item> searchItem(String itemName, List<Item> itemList) {
-//        //todo
-//        return null;
-//    }
-//
-//    public void pickUpItem(String itemName) {
-//        //todo
-//    }
-//
-//    public void dropItem(String itemName) {
-//        //todo
-//    }
-//
-//    public void inspectItem(String itemName) {
-//        //todo
-//    }
-//
-//    public boolean hasItem(Item item) {
-//        //todo
-//        return false;
-
 
     public int getDamage1() {
         return damage1;
     }
+
     public int getDamage2() {
         return damage2;
     }
-//    public int getDamage3() {
-//        return damage3;
-//    }
-
-//    public void setDamage(int damage) {
-//        this.damage = damage;
-//    }
 
     public int getHealth() {
         return health;
@@ -216,12 +165,5 @@ public class Player {
     public void setHealth(int health) {
         this.health = health;
     }
-
-
-
-//    public void attack(String opponentName) throws DeathException {
-//
-//    }
-
 
 }

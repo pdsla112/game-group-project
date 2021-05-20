@@ -9,17 +9,6 @@ import java.util.Map;
 
 public class GameMap {
 
-//    public class Edge {
-//        Location source;
-//        Location destination;
-//        int distance;
-//        public Edge(Location from, Location to, int distance) {
-//            this.source = from;
-//            this.destination = to;
-//            this.distance = distance;
-//        }
-//    }
-
     Map<String, Location> locations;
 
     Map<String, List<String>> edges;
@@ -49,13 +38,13 @@ public class GameMap {
         return finalLocation;
     }
 
-    public Location getCurrentLocation(){
-        return currentLocation;
-    }
-
-    public void setCurrentlocation(Location currentLocation){
-        this.currentLocation = currentLocation;
-    }
+//    public Location getCurrentLocation(){
+//        return currentLocation;
+//    }
+//
+//    public void setCurrentlocation(Location currentLocation){
+//        this.currentLocation = currentLocation;
+//    }
 
     public void setFinalLocation(Location finalLocation) {
         this.finalLocation = finalLocation;
@@ -82,15 +71,5 @@ public class GameMap {
         }
         return adjacentLocations;
     }
-
-//    public int getDistance(Location from, Location to) {
-//        for (Edge e : edges) {
-//            if (e.source == from && e.destination == to) {
-//                return e.distance;
-//            }
-//        }
-//        return -1;
-//    }
-
 
 }

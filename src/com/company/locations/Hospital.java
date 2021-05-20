@@ -19,6 +19,7 @@ public class Hospital extends Location {
 //    public Hospital(boolean visited) {
 //        super(visited);
 //    }
+
     public Hospital (String name, String description) {
         super(name, description);
     }

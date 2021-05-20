@@ -2,16 +2,17 @@ package com.company.enemies;
 import com.company.characters.Player;
 
 public class GenerateAnimal {
-
-    Player player;
     public Animal generateAnimal(int level) {
-        if (level == 0)
-            return Animal.BISON;
-        else if (level == 1)
-            return Animal.DEER;
-        else if (level == 2)
-            return Animal.TROUT;
-        else
-            return Animal.RABBIT;
+        switch (level) {
+            case 0:
+                return Animal.BISON;
+            case 1:
+                return Animal.DEER;
+            case 2:
+                return Animal.TROUT;
+            case 3:
+                return Animal.RABBIT;
+        }
+        return Animal.BISON;
     }
 }
