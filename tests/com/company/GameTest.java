@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.characters.Player;
 import com.company.locations.*;
+import com.company.parser.Parser;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,12 +13,16 @@ import static org.junit.Assert.*;
 public class GameTest {
     @Rule
     public Timeout globalTimeout = Timeout.millis(1000);
-    //private Player player;
 
-    //@Test
-    //public void setupGameMap() {
-    //    Game game = new Game();
-    //}
+    @Test
+    public void inputTestCase1() {
+        Player player = new Player("a",1,"home");
+        Game game = new Game(player);
+        Parser parser = new Parser(player);
+        String input = Parser.getInputString();
+
+
+    }
 
     /*cottage have
     * */
