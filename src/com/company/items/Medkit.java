@@ -4,7 +4,6 @@ import com.company.characters.Player;
 
 public class Medkit extends Item {
     private int healValue;   // Amount that the first aid kit heals the player per use.
-    private Player player;
 
     public Medkit(int healValue) {
 //        this.healValue = 20 - player.getLevel();
