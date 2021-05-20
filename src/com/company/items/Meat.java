@@ -4,7 +4,6 @@ import com.company.characters.Player;
 
 public class Meat extends Item {
     private int hpAdd;   // Amount that the meat heals the player
-    private Player player;
 
     public Meat(int hpAdd) {
         this.hpAdd = hpAdd;
