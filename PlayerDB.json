@@ -123,5 +123,51 @@
       "nounG4": []
     },
     "locationName": "cottage"
+  },
+  {
+    "damage1": 50,
+    "damage2": 30,
+    "health": 27,
+    "name": "Sirius",
+    "level": 2,
+    "itemsMap": {
+      "medkit": 0
+    },
+    "locationObjects": [],
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [
+        "medkit"
+      ],
+      "nounG4": []
+    },
+    "locationName": "hospital"
   }
 ]
