@@ -29,6 +29,7 @@ public class GameMapJSON {
         map.addLocation(forest);
         Location lab = new Location("lab", LocationJSON.getSpecificLocationData("lab").getInitialText());
         map.addLocation(lab);
+        map.setFinalLocation(lab);
         Location road = new Location("road", LocationJSON.getSpecificLocationData("road").getInitialText());
         map.addLocation(road);
         Location home = new Location("home",LocationJSON.getSpecificLocationData("home").getInitialText());
@@ -42,6 +43,7 @@ public class GameMapJSON {
         map.addEdge(forest, road, 6);
         map.addEdge(hospital, road, 10);
         map.addEdge(road, lab, 4);
+
 
         LevelNode rootHome = new LevelNode(null,"You are at home, wondering where you should go.\nChoose a place to go.", null);//home.isVisited()
         home.levelMap = new LevelMap(rootHome);
@@ -64,16 +66,17 @@ public class GameMapJSON {
         cottage.levelMap.setAdjacent(rootCottage,new ArrayList<>(Arrays.asList(cottageOp5,cottageOp6)));
 
         //living room
-        LevelNode cottageOp4 = new LevelNode("sneak past her","You don't want to wake her up since she looks so comfortable lying there. \nYou sneak towards bathroom and carefully close the door. There is a cabinet above the sink.",new ArrayList<>(Arrays.asList("locationObject cabinet inside medkit")));
-        LevelNode cottageOp3 = new LevelNode("wake her up","You approach the child and take a closer look. She appears to be younger than 10 years old.\nYou gently shake the child to wake her up.\nTo your horror, she suddenly awakens and pulls out a concealed knife from behind her and tries to stab you.",new ArrayList<>(Arrays.asList("psychoFight")));
-        LevelNode cottageOp2 = new LevelNode("leave the room","You exit the room and go back to the hallway. There is a rooms you haven't explored yet.", null);
+        LevelNode cottageOp4 = new LevelNode("sneak past her","\nYou don't want to wake her up since she looks so comfortable lying there. \nYou sneak towards bathroom and carefully close the door. There is a cabinet above the sink.",new ArrayList<>(Arrays.asList("locationObject cabinet inside medkit")));
+        LevelNode cottageOp3 = new LevelNode("wake her up","\nYou approach the child and take a closer look. She appears to be younger than 10 years old.\nYou gently shake the child to wake her up.\nTo your horror, she suddenly awakens and pulls out a concealed knife from behind her and tries to stab you.",new ArrayList<>(Arrays.asList("psychoFight")));
+        LevelNode cottageOp2 = new LevelNode("leave the room","\nYou exit the room and go back to the hallway. There is a rooms you haven't explored yet.", null);
 
         cottage.levelMap.setAdjacent(cottageOp6,new ArrayList<>(Arrays.asList(cottageOp3,cottageOp4, cottageOp2)));
         cottage.levelMap.setAdjacent(cottageOp2,new ArrayList<>(Arrays.asList(cottageOp5)));
         cottage.levelMap.setAdjacent(cottageOp4,new ArrayList<>(Arrays.asList(cottageOp5)));
+        cottage.levelMap.setAdjacent(cottageOp3,new ArrayList<>(Arrays.asList(cottageOp5)));
 
         LevelNode cottageOp7 = new LevelNode("open the trap door","\nYou open the trap door and go down into the basement.\nUnfortunately there is something waiting for you at the bottom.",  Arrays.asList("zombieFight"));
-        LevelNode cottageOp8 = new LevelNode("leave the room","You are about to turn around to leave when you hear a loud noise outside. \nSomething is coming after you. You decide to open the trapdoor and go down into the basement.\nThe room is pitch black, so you turn on the lights.\nUnfortunately there is something waiting for you at the bottom.", Arrays.asList("zombieFight"));
+        LevelNode cottageOp8 = new LevelNode("leave the room","\nYou are about to turn around to leave when you hear a loud noise outside. \nSomething is coming after you. You decide to open the trapdoor and go down into the basement.\nThe room is pitch black, so you turn on the lights.\nUnfortunately there is something waiting for you at the bottom.", Arrays.asList("zombieFight"));
 
         cottage.levelMap.setAdjacent(cottageOp5,new ArrayList<>(Arrays.asList(cottageOp7,cottageOp8)));
 
