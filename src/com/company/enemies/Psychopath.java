@@ -69,7 +69,7 @@ public class Psychopath extends Enemy {
         Random r = new Random();
         int attack = r.nextInt(2);
         int dmg = 0;
-        int bonus = r.nextInt(p.getLevel());
+        int bonus = r.nextInt(p.getLevel()+1);
         switch (attack) {
             case 0:
                 text += "Psychopath cuts your arm.";
