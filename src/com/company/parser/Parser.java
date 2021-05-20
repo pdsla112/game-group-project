@@ -107,7 +107,7 @@ public class Parser {
         } else {
             TokenParser tokenParser = new TokenParser(player.tokenizer);
             Sentence sentence = tokenParser.parseSentence();
-            if (sentence instanceof IncorrectSentence) {
+            if (sentence instanceof IncorrectSentence || sentence instanceof Unknown) {
                 System.out.println(sentence.show());
             } else {
                 return evaluateSentence(sentence);
@@ -239,6 +239,7 @@ public class Parser {
     }
 
     public boolean parseActions(List<String> actions) throws DeathException {
+        player.locationObjects = new ArrayList<>();
         if (actions!= null) {
             for (String action : actions) {
                 if (!parseAction(action)) {
