@@ -63,7 +63,7 @@ public class GameMapJSON {
         LevelNode cottageOp5 = new LevelNode("head to the bedroom","\nYou enter the bedroom and take a look around. There is a tiny drawer next to a large bed. There appears to be a trapdoor in the floor.\nType h to see more options available.",new ArrayList<>(Arrays.asList("locationObject bed under medkit", "locationObject drawer inside medkit")));
         LevelNode cottageOp6 = new LevelNode("explore the living room","\nYou enter the living room and catch a glimpse of a young girl dozing off on the sofa in the small living room.\nYou see a something under the table in front of her.",new ArrayList<>(Arrays.asList("locationObject bed under medkit", "locationObject drawer inside medkit")));
 
-        cottage.levelMap.setAdjacent(rootCottage,new ArrayList<>(Arrays.asList(cottageOp5,cottageOp6)));
+        cottage.levelMap.setAdjacent(rootCottage,new ArrayList<>(Arrays.asList(cottageOp6,cottageOp5)));
 
         //living room
         LevelNode cottageOp4 = new LevelNode("sneak past her","\nYou don't want to wake her up since she looks so comfortable lying there. \nYou sneak towards bathroom and carefully close the door. There is a cabinet above the sink.",new ArrayList<>(Arrays.asList("locationObject cabinet inside medkit")));

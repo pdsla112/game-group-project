@@ -19,6 +19,11 @@ public class MainMenu {
      * displays main menu options and handles user selection
      */
     public void start() {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+        System.out.println("┌───────── •✧✧• ─────────┐\n" +
+                " -Pandemic Survival Game- \n" +
+                "└───────── •✧✧• ─────────┘");
         Menu mainMenu = new Menu(
                 new ArrayList<>(Arrays.asList(new GenericMenuItem("Start New Game"), new GenericMenuItem("Load Existing Game"), new GenericMenuItem("Exit"))));
         boolean running = true;

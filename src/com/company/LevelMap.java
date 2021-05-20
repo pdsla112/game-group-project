@@ -36,6 +36,21 @@ public class LevelMap {
     }
 
     /**
+     * checks if a node is a completion node
+     * @param id
+     * @return
+     */
+    public boolean isCompletionNode(String id) {
+        return completionNodes.contains(id);
+    }
+
+    public List<String> getAdjacentID(String id) {
+        return adjacentMap.get(id);
+    }
+
+
+
+    /**
      * add a level node to the graph
      * @param levelNodes
      */
