@@ -17,22 +17,6 @@ abstract class NPC {
         this.id = id;
     }
 
-    public void displayItems() {
-        //todo
-    }
-
-    public void addItem(Item item, int amount) {
-        //todo
-
-    }
-    public void addItem(Item item) {
-        //todo
-    }
-
-    public void removeItem(Item item, int amount) {
-        //todo
-    }
-
     public Map<Item, Integer> getItems() {
         return items;
     }
