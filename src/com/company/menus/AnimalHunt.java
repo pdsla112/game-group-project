@@ -55,6 +55,7 @@ public class AnimalHunt {
             }
             if (!animal.isAlive()) {
                 System.out.println("\nCongratulations. You hunt the " + animal + ".");
+                player.addItem("meat");
             } else {
                 System.out.println(animal + " " + animalHpInitial + "hp(-" + (animalHpInitial - animal.getHuntingDifficulty()) + "hp)\n");
             }
