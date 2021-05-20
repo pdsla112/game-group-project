@@ -72,7 +72,6 @@ public class MainMenu {
                         // attempt to create new player
                         Player player = PlayerJSON.createNewPlayer(name, difficulty);
                         if (player != null) {
-//                        Game.printIntro();   // todo remove later on
                             new Game(player);
                             endPrompt = true;
                             running = false;
