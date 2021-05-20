@@ -1,5 +1,6 @@
 package com.company.characters;
 
+import com.company.enemies.Animal;
 import com.company.exceptions.DeathException;
 import com.company.data.Level;
 import com.company.data.LevelJSON;
@@ -118,6 +119,12 @@ public class Player {
         }
         System.out.println("You choose to use a " + attack.getAttackName().toLowerCase()+".");
 
+    }
+
+    public void hunt(Animal a, Attack attack){
+        a.setHuntingDifficulty(a.getHuntingDifficulty()-attack.getAttackDamage());
+        health -= attack.getSelfDamage();
+        System.out.println("You choose " + attack.getAttackName().toLowerCase()+".");
     }
 
     public String getLocationName() {

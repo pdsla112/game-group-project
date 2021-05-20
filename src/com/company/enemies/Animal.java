@@ -4,9 +4,9 @@ public enum Animal {
 
     DEER(40), RABBIT(70), TROUT(50), BISON(20);
 
-    private int huntingDifficulty; //replace to animalHp?
+    private int huntingDifficulty; //for animalHp
 
-    Animal(final int huntingDifficulty) {
+    Animal(int huntingDifficulty) {
         this.huntingDifficulty = huntingDifficulty;
     }
 
@@ -14,7 +14,11 @@ public enum Animal {
         return this.huntingDifficulty;
     }
 
-    //public boolean isAlive() {
-    //    return animalHp >0;
-    //}
+    public void setHuntingDifficulty(int huntingDifficulty){this.huntingDifficulty=huntingDifficulty;}
+
+    public boolean isAlive() {
+        return huntingDifficulty > 0;
+    }
+
+    //assume animal doesn't attack player
 }

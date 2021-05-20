@@ -4,6 +4,7 @@ import com.company.enemies.*;
 import com.company.exceptions.DeathException;
 import com.company.Game;
 import com.company.LevelNode;
+import com.company.menus.AnimalHunt;
 import com.company.menus.MenuItem;
 import com.company.characters.Player;
 import com.company.data.Level;
@@ -299,12 +300,12 @@ public class Parser {
                 player.setLocationName(newLocation);
             }
             if(command.equals("hunt")){
-                new GenerateAnimal();
-                //TODO
-                //BattleEvent for hunt? or create separate menu class?
+                Animal animal = new GenerateAnimal().generateAnimal(player.getLevel());
+                AnimalHunt animalhunt = new AnimalHunt(player,animal);
+                return(animalhunt.Animalhunt());
             }
             if(command.equals("drive")){
-                player.setLocationName("lab");
+                player.setHealth(Math.max(100,player.getHealth()+5));
             }
 
 

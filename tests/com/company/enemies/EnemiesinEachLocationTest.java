@@ -24,6 +24,7 @@ public class EnemiesinEachLocationTest {
     }
     @Test
     public void testPsychoinLoc(){
+        Player player = new Player("a",1,"home");
         /*Player player = new Player("a",1,"home");
         PsychoData
         try{

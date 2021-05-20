@@ -17,13 +17,11 @@ import java.util.List;
 public class BattleEvent {
     Player player;
     Enemy enemy;
-    //Animal animal;
     Level level;
 
     public BattleEvent(Player player, Enemy enemy) {
         this.player = player;
         this.enemy = enemy;
-        //this.animal = animal;
         int playerLevel = player.getLevel();
         Level level = LevelJSON.getSpecificLevel(playerLevel);
         this.level = level;
