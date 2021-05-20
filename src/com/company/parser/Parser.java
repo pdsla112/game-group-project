@@ -1,16 +1,15 @@
 package com.company.parser;
 
+import com.company.enemies.*;
 import com.company.exceptions.DeathException;
 import com.company.Game;
 import com.company.LevelNode;
+import com.company.menus.AnimalHunt;
 import com.company.menus.MenuItem;
 import com.company.characters.Player;
 import com.company.data.Level;
 import com.company.data.LevelJSON;
 import com.company.data.PlayerJSON;
-import com.company.enemies.Enemy;
-import com.company.enemies.Psychopath;
-import com.company.enemies.Zombie;
 import com.company.items.LocationObject;
 import com.company.locations.Location;
 import com.company.menus.BattleEvent;
@@ -21,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class  Parser {
+public class Parser {
 
     Level level;
     Player player;
@@ -108,7 +107,7 @@ public class  Parser {
         } else {
             TokenParser tokenParser = new TokenParser(player.tokenizer);
             Sentence sentence = tokenParser.parseSentence();
-            if (sentence instanceof IncorrectSentence) {
+            if (sentence instanceof IncorrectSentence || sentence instanceof Unknown) {
                 System.out.println(sentence.show());
             } else {
                 return evaluateSentence(sentence);
@@ -240,6 +239,7 @@ public class  Parser {
     }
 
     public boolean parseActions(List<String> actions) throws DeathException {
+        player.locationObjects = new ArrayList<>();
         if (actions!= null) {
             for (String action : actions) {
                 if (!parseAction(action)) {
@@ -277,14 +277,18 @@ public class  Parser {
                 player.setHealth(Math.max(100,player.getHealth()+healAmount));
                 // heal player by set amount
             }
+            if (command.equals("item")) {
+                String itemName = userCommandSplit[1];
+                System.out.println(itemName + " has been added to your inventory.\n");
+                player.addItem(itemName);
+            }
+
             if(command.equals("locationObject")) {
                 String object = userCommandSplit[1];
                 String location = userCommandSplit[2];
                 String item = userCommandSplit[3];
                 LocationObject lo = new LocationObject(object,location,item);
                 player.addLocationObject(lo);
-
-
             }
             if(command.equals("psychoFight")){
                 Psychopath psychopath = new Psychopath(level.getPsychopathAttack1(), level.getPsychopathAttack2(), level.getPsychoHealth(), false, true);
@@ -300,6 +304,14 @@ public class  Parser {
             if (command.equals("location")) {
                 String newLocation = userCommandSplit[1];
                 player.setLocationName(newLocation);
+            }
+            if(command.equals("hunt")){
+                Animal animal = new GenerateAnimal().generateAnimal(player.getLevel());
+                AnimalHunt animalhunt = new AnimalHunt(player,animal);
+                return(animalhunt.Animalhunt());
+            }
+            if(command.equals("drive")){
+                player.setHealth(Math.max(100,player.getHealth()+5));
             }
 
 

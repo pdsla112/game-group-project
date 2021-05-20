@@ -10,6 +10,8 @@ import com.company.menus.MainMenu;
 import com.company.menus.Menu;
 
 import com.company.parser.Parser;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
@@ -31,17 +33,19 @@ public class Game {
      */
     public void runGame() {
         boolean running = true;
+        Location playerLocation =  map.getLocationFromName(player.getLocationName());
+        playerLocation.displayInformation();
         try {
             while (running) {
-                Location playerLocation =  map.getLocationFromName(player.getLocationName());
+                playerLocation =  map.getLocationFromName(player.getLocationName());
                 LevelMap levelMap = playerLocation.levelMap;
                 System.out.println(levelMap.getCurrentNode().text+"\n");
 
                 parser.parseActions(playerLocation.getLevelMap().getCurrentNode().getActions());
 
                 // check level completion
-                if (levelMap.completionNodes.contains(levelMap.currentNode.id)) {
-                    if (playerLocation == map.getFinalLocation()) {
+                if (levelMap.isCompletionNode(levelMap.currentNode.id)) {
+                    if (playerLocation.name.equals(map.getFinalLocation().name)) {
                         throw new WinException("win");
                     } else {
                         // create menu with adjacent levels
@@ -66,6 +70,9 @@ public class Game {
                 String response = Parser.getInputString();
                 if (response.equals("y") || response.equals("yes")) {
                     player = PlayerJSON.getSpecificPlayer(player.getName());
+                    if (player == null) {
+                        new Game(PlayerJSON.createNewPlayer(player.getName(), player.getLevel()));
+                    }
                     new Game(player);
                 } else if (response.equals("n") || response.equals("no")) {
                     System.out.println("Game exited.");;
@@ -75,15 +82,18 @@ public class Game {
             System.out.println("You win.");
             boolean endPrompt = false;
             while (!endPrompt) {
-                System.out.println("Would you like to play again?");
+                System.out.println("Would you like to play again? yes(y)/no(n)");
                 String response = Parser.getInputString();
                 if (response.equals("y") || response.equals("yes")) {
                     // remove player save file
                     PlayerJSON.removePlayer(player.getName());
                     new MainMenu();
                 } else if (response.equals("n") || response.equals("no")) {
-                    PlayerJSON.removePlayer(player.getName());
-                    System.out.println("Game exited.");;
+                    if(PlayerJSON.hasPlayer()){
+                        PlayerJSON.removePlayer(player.getName());
+                    }
+                    System.out.println("Game exited.");
+                    endPrompt = true;
                 }
             }
         }

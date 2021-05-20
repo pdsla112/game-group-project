@@ -2,6 +2,7 @@ package com.company.data;
 
 import com.company.enemies.Animal;
 import com.company.items.HuntingKit;
+import com.company.items.Meat;
 import com.company.items.Medkit;
 
 public class Level {
@@ -19,6 +20,7 @@ public class Level {
     private Animal animal;
     private HuntingKit huntingKit;
     private Medkit medKit;
+    private Meat meat;
     private int energyConsumption;     // How much energy is consumed per distance travelled.
     private int zombieHealth;
     private int psychoHealth;
@@ -37,6 +39,7 @@ public class Level {
             Animal animal,
             HuntingKit huntingKit,
             Medkit medKit,
+            Meat meat,
             int energyConsumption,
             int zombieHealth,
             int psychoHealth
@@ -55,6 +58,7 @@ public class Level {
         this.animal = animal;
         this.huntingKit = huntingKit;
         this.medKit = medKit;
+        this.meat = meat;
         this.energyConsumption = energyConsumption;
         this.zombieHealth = zombieHealth;
         this.psychoHealth = psychoHealth;
@@ -107,6 +111,8 @@ public class Level {
     public HuntingKit getHuntingKits() {
         return this.huntingKit;
     }
+
+    public Meat getMeat(){return this.meat;}
 
     public Medkit getMedKits() {
         return this.medKit;

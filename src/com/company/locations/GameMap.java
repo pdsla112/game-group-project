@@ -24,10 +24,19 @@ public class GameMap {
 
     Map<String, List<String>> edges;
     Location finalLocation = null;
+    Location currentLocation = null;
 
     public GameMap() {
         locations = new HashMap<>();
         edges = new HashMap<>();
+    }
+
+    /**
+     * return location names
+     * @return
+     */
+    public List<String> getLocationNames() {
+        return new ArrayList<>(locations.keySet());
     }
 
     public Location getLocationFromName(String name) {
@@ -38,6 +47,14 @@ public class GameMap {
     }
     public Location getFinalLocation() {
         return finalLocation;
+    }
+
+    public Location getCurrentLocation(){
+        return currentLocation;
+    }
+
+    public void setCurrentlocation(Location currentLocation){
+        this.currentLocation = currentLocation;
     }
 
     public void setFinalLocation(Location finalLocation) {

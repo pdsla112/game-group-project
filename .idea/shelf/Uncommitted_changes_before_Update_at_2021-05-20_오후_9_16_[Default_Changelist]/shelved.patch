@@ -1,0 +1,18 @@
+Index: src/com/company/items/Meat.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company.items;\r\n\r\nimport com.company.characters.Player;\r\n\r\npublic class Meat extends Item {\r\n    private int hpAdd;   // Amount that the meat heals the player\r\n    private Player player;\r\n\r\n    public Meat(int hpAdd) {\r\n        this.hpAdd = hpAdd;\r\n    }\r\n\r\n    public int gethpAddValue() {\r\n        return this.hpAdd;\r\n    }\r\n\r\n    /**\r\n     * add to player's health (max 100)\r\n     */\r\n    @Override\r\n    public void use(Player player) {\r\n        int oldHp = player.getHealth();\r\n        player.setHealth(Math.min(100,player.getHealth()+hpAdd));\r\n        int changeHp = player.getHealth() - oldHp;\r\n        System.out.println(\"You have consumed the meat. +\" + changeHp + \" Hp\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/company/items/Meat.java b/src/com/company/items/Meat.java
+--- a/src/com/company/items/Meat.java	(revision bb920a5a7ac21c7dc3e9c1968cd4b6a795106445)
++++ b/src/com/company/items/Meat.java	(date 1621509387674)
+@@ -4,7 +4,6 @@
+ 
+ public class Meat extends Item {
+     private int hpAdd;   // Amount that the meat heals the player
+-    private Player player;
+ 
+     public Meat(int hpAdd) {
+         this.hpAdd = hpAdd;

@@ -1,5 +1,6 @@
 package com.company.menus;
 
+import com.company.enemies.Animal;
 import com.company.exceptions.DeathException;
 import com.company.characters.Player;
 import com.company.data.Level;
@@ -67,7 +68,7 @@ public class BattleEvent {
                 }
             }
             if (!enemy.isAlive()) {
-                System.out.println("Congratulations. You have slain the " + enemyName + ".");
+                System.out.println("\nCongratulations. You have slain the " + enemyName + ".");
             } else {
                 System.out.println(enemyName + " " + enemy.getHp() + "hp(-" + (enemyHpInitial - enemy.getHp()) + "hp)\n");
                 enemy.attack(player);

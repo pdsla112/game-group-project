@@ -57,9 +57,6 @@ public class PlayerJSON {
         return null;
     }
 
-    //returns new player if player is created (unique name)
-    //return null if name already exists
-    // make sure name is one word (no spaces)
     public static Player createNewPlayer(String name, int level) {
         BloomFilter bloomFilter = BloomFilterJSON.loadBloomFilter();
         if (!bloomFilter.mightContain(name)) {
@@ -95,6 +92,11 @@ public class PlayerJSON {
         bloomFilter.add(player.getName());
         BloomFilterJSON.saveBloomFilter(bloomFilter);
         serializeJSON(playerList);
+    }
+
+    public static boolean hasPlayer(){
+        ArrayList<Player> playerList = deserializeJSON();
+        return !playerList.isEmpty();
     }
 
     public static ArrayList<Player> remove(String name) {

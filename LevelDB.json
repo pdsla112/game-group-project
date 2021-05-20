@@ -18,6 +18,9 @@
     "medKit": {
       "healValue": 50
     },
+    "meat": {
+      "hpAdd": 20
+    },
     "energyConsumption": 2,
     "zombieHealth": 60,
     "psychoHealth": 60
@@ -40,6 +43,9 @@
     },
     "medKit": {
       "healValue": 50
+    },
+    "meat": {
+      "hpAdd": 15
     },
     "energyConsumption": 5,
     "zombieHealth": 70,
@@ -64,6 +70,9 @@
     "medKit": {
       "healValue": 30
     },
+    "meat": {
+      "hpAdd": 10
+    },
     "energyConsumption": 10,
     "zombieHealth": 100,
     "psychoHealth": 100
@@ -86,6 +95,9 @@
     },
     "medKit": {
       "healValue": 20
+    },
+    "meat": {
+      "hpAdd": 5
     },
     "energyConsumption": 10,
     "zombieHealth": 100,

@@ -59,12 +59,18 @@ public class TokenParser {
                 if (object instanceof IncorrectSentence) {
                     return object;
                 }
+                if (object instanceof Unknown) {
+                    return new IncorrectSentence(object);
+                }
                 return new SentenceG1(verb, object);
             }
             if (verbType == Token.Type.VERBG2) {
                 Sentence object = parseObjectG2();
                 if (object instanceof IncorrectSentence) {
                     return object;
+                }
+                if (object instanceof Unknown) {
+                    return new IncorrectSentence(object);
                 }
                 return new SentenceG2(verb, object);
             }
@@ -73,6 +79,9 @@ public class TokenParser {
                 if (object instanceof IncorrectSentence) {
                     return object;
                 }
+                if (object instanceof Unknown) {
+                    return new IncorrectSentence(object);
+                }
                 return new SentenceG3(verb, object);
             }
             if (verbType == Token.Type.VERBG4) {
@@ -80,9 +89,15 @@ public class TokenParser {
                 if (preposition instanceof IncorrectSentence) {
                     return preposition;
                 }
+                if (preposition instanceof Unknown) {
+                    return new IncorrectSentence(preposition);
+                }
                 Sentence object = parseObjectG4();
                 if (object instanceof IncorrectSentence) {
                     return object;
+                }
+                if (object instanceof Unknown) {
+                    return new IncorrectSentence(object);
                 }
                 return new SentenceG4(verb, preposition, object);
             }

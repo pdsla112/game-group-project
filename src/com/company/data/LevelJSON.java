@@ -2,6 +2,7 @@ package com.company.data;
 
 import com.company.enemies.Animal;
 import com.company.items.HuntingKit;
+import com.company.items.Meat;
 import com.company.items.Medkit;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +35,7 @@ public class LevelJSON {
                 Animal.BISON,
                 new HuntingKit(100, 100),
                 new Medkit(50),
+                new Meat(20),
                 2,
                 60,
                 60
@@ -53,6 +55,7 @@ public class LevelJSON {
                 Animal.DEER,
                 new HuntingKit(100, 80),
                 new Medkit(50),
+                new Meat(15),
                 5,
                 70,
                 70
@@ -72,6 +75,7 @@ public class LevelJSON {
                 Animal.TROUT,
                 new HuntingKit(80, 60),
                 new Medkit(30),
+                new Meat(10),
                 10,
                 100,
                 100
@@ -91,6 +95,7 @@ public class LevelJSON {
                 Animal.RABBIT,
                 new HuntingKit(50, 50),
                 new Medkit(20),
+                new Meat(5),
                 10,
                 100,
                 100
