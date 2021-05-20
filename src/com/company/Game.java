@@ -77,7 +77,7 @@ public class Game {
             System.out.println("You win.");
             boolean endPrompt = false;
             while (!endPrompt) {
-                System.out.println("Would you like to play again?");
+                System.out.println("Would you like to play again? yes(y)/no(n)");
                 String response = Parser.getInputString();
                 if (response.equals("y") || response.equals("yes")) {
                     // remove player save file
@@ -85,7 +85,8 @@ public class Game {
                     new MainMenu();
                 } else if (response.equals("n") || response.equals("no")) {
                     PlayerJSON.removePlayer(player.getName());
-                    System.out.println("Game exited.");;
+                    System.out.println("Game exited.");
+                    endPrompt = true;
                 }
             }
         }
