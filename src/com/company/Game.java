@@ -89,7 +89,9 @@ public class Game {
                     PlayerJSON.removePlayer(player.getName());
                     new MainMenu();
                 } else if (response.equals("n") || response.equals("no")) {
-                    PlayerJSON.removePlayer(player.getName());
+                    if(PlayerJSON.hasPlayer()){
+                        PlayerJSON.removePlayer(player.getName());
+                    }
                     System.out.println("Game exited.");
                     endPrompt = true;
                 }

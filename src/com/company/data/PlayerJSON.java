@@ -97,6 +97,11 @@ public class PlayerJSON {
         serializeJSON(playerList);
     }
 
+    public static boolean hasPlayer(){
+        ArrayList<Player> playerList = deserializeJSON();
+        return !playerList.isEmpty();
+    }
+
     public static ArrayList<Player> remove(String name) {
         ArrayList<Player> playerList = deserializeJSON();
         for (Player player : playerList) {
