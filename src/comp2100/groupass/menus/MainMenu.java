@@ -7,7 +7,7 @@ import comp2100.groupass.data.Level;
 import comp2100.groupass.data.LevelJSON;
 import comp2100.groupass.parser.Parser;
 import comp2100.groupass.data.PlayerJSON;
-
+import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -36,15 +36,9 @@ public class MainMenu {
             while (!endPrompt) {
                 mainMenu.printMenuItems();
                 String userInput = Parser.getInputString();
-                System.out.println(" ");
+                System.out.println();
                 switch (userInput) {
                     case "0": {
-                        for (int i = 0; i < 9; i++) {
-                            System.out.println(InitializeJSON.deserializeJSON().get(i).getText());
-                            if (i == 2 || i == 5 || i == 8) {
-                                System.out.println(" ");
-                            }
-                        }
                         System.out.println("Enter your username:");
                         String name = Parser.getInputString();
                         System.out.println("Hello " + name + ".");
@@ -75,6 +69,26 @@ public class MainMenu {
                         // attempt to create new player
                         Player player = PlayerJSON.createNewPlayer(name, difficulty);
                         if (player != null) {
+                            System.out.println();
+                            System.out.println("Story:");
+                            for (int i = 0; i < 9; i++) {
+                                System.out.println(InitializeJSON.deserializeJSON().get(i).getText());
+                                if (i == 2 || i == 5 || i == 8) {
+                                    Menu nextMenu = new Menu(
+                                            new ArrayList<>(Arrays.asList(new GenericMenuItem("Next"))));
+
+                                    boolean endNextPrompt = false;
+                                    while (!endNextPrompt) {
+                                        nextMenu.printMenuItems();
+                                        String next = Parser.getInputString();
+                                        if (next.equals("0") || next.toLowerCase().equals("next")) {
+                                            endNextPrompt = true;
+                                        }
+                                        System.out.println();
+                                    }
+
+                                }
+                            }
                             new Game(player);
                             endPrompt = true;
                             running = false;
