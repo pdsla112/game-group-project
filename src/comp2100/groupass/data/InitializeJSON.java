@@ -17,22 +17,22 @@ public class InitializeJSON {
     public static void main(String[] args) {
         ArrayList<Initialization> objectList = new ArrayList<>();
         Initialization object1 = new Initialization(
-                "At the end of 2021, COVID-19 vaccines" +
+                "\nAt the end of 2021, COVID-19 vaccines" +
                         " were being supplied smoothly and borders" +
-                        " were loosened one by one, showing signs of recovery.\n"
+                        " were loosened one by one, showing signs of recovery."
         );
 
         Initialization object2 = new Initialization(
                 "However, things started to change ever" +
                         " since a shocking article from New York Times" +
-                        " was published in early 2022. The article stated" +
+                        " was published in early 2022.\n\nThe article stated" +
                         " that some of the Covid-19 patients started to" +
-                        " show strange symptoms throughout states.\n"
+                        " show strange symptoms throughout states."
         );
 
         Initialization object3 = new Initialization(
                 "These were not only happening in U.S.," +
-                        " but other countries as well. The researchers" +
+                        " but other countries as well.\nThe researchers" +
                         " from laboratories across the world announced " +
                         "that the SARS-CoV-2 has been mutated, " +
                         "causing new symptoms.\n"
@@ -41,30 +41,30 @@ public class InitializeJSON {
         Initialization object4 = new Initialization(
                 "Towards November in 2022, the number of mutated" +
                         " Covid patients drastically increased and more research" +
-                        " were done. People infected with this new type of virus" +
+                        " were done.\nPeople infected with this new type of virus" +
                         " -people started to call it Covid-Z - suffered three" +
                         " consecutive fevers that came randomly.\n"
         );
 
         Initialization object5 = new Initialization(
                 "About half of Covid-Z patients, after recovering" +
-                        " from the third fever, acted like zombies. They were" +
-                        " still alive unlike typical zombies. In other words," +
-                        " patients still had heart beating, with no vital signs."
+                        " from the third fever, acted like zombies.\nThey were" +
+                        " still alive unlike typical zombies.\nIn other words," +
+                        " patients still had heart beating, with no vital signs.\n"
         );
 
         Initialization object6 = new Initialization(
                 "The common symptoms known for Covid-Z were decaying" +
-                        " bodies and slow movements. Covid-Z patients recognised" +
+                        " bodies and slow movements.\nCovid-Z patients recognised" +
                         " living humans as prey, lacking rationality, intellect " +
-                        "and social information processing."
+                        "and social information processing.\n"
         );
 
         Initialization object7 = new Initialization(
                 "The world became chaotic and all borders started to close." +
-                        " Fortunately, people with high level of immunity towards Covid-Z" +
+                        "\nFortunately, people with high level of immunity towards Covid-Z" +
                         " voluntarily became members of the Virus Centre and soon," +
-                        " vaccines for Covid-Z were invented."
+                        " vaccines for Covid-Z were invented.\n"
         );
 
         Initialization object8 = new Initialization(
@@ -76,7 +76,7 @@ public class InitializeJSON {
 
         Initialization object9 = new Initialization(
                "You are one of the people who decided to face the danger and" +
-                       " go to the Laboratory for your family and neighbours."
+                       " go to the Laboratory for your family and neighbours.\n"
         );
 
         objectList.add(object1);

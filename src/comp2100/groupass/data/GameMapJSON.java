@@ -53,10 +53,6 @@ public class GameMapJSON {
 
 
         //cottage
-        //todo cottage.levelMap = loadlevelmapfromjson();
-        //cottage.levelMap = loadlevelmapfromjson();
-        //save all these into json
-        //are we still having isVisited() -> testing? If so, will it be added in parser action
         LevelNode rootCottage = new LevelNode(null,"You head inside the cottage and see a few rooms down the hallway.", null);
         cottage.levelMap = new LevelMap(rootCottage);
 
