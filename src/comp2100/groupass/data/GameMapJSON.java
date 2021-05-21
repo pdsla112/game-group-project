@@ -127,7 +127,7 @@ public class GameMapJSON {
         hospital.levelMap.setAdjacent(hospitalOp2,new ArrayList<>(Arrays.asList(hospitalOp5)));
         hospital.levelMap.setAdjacent(hospitalOp3,new ArrayList<>(Arrays.asList(hospitalOp5)));
         hospital.levelMap.setAdjacent(hospitalOp4,new ArrayList<>(Arrays.asList(hospitalOp5)));
-        LevelNode hospitalOp6 = new LevelNode("Find for something useful.","\nType help in order to check available additional commands.",Arrays.asList("locationObject table under medkit"));
+        LevelNode hospitalOp6 = new LevelNode("Find for something useful.","\nTip: Type help in order to check available additional commands.",Arrays.asList("locationObject table under medkit"));
         hospital.levelMap.setAdjacent(hospitalOp5,new ArrayList<>(Arrays.asList(hospitalOp6)));
         LevelNode hospitalOp7 = new LevelNode("Walk downstairs","\nAt third floor, you found someone walking towards you.\n\nHe looks friendly with slightly chubby face, hooded chocolate-brown eyes, round nose and a big smile made by his heart-shaped lips.\nHe realised you coming towards him as well, and he seems to want a conversation with you.",null);
         hospital.levelMap.setAdjacent(hospitalOp6,new ArrayList<>(Arrays.asList(hospitalOp7)));
