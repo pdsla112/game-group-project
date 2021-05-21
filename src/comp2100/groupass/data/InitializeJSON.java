@@ -71,7 +71,7 @@ public class InitializeJSON {
                 "Yet, due to the zombies who were roaming the city streets," +
                         " there were difficulties in the supply of vaccine and some" +
                         " people had to directly go to the laboratory in the Virus Centre" +
-                        " and collect the vaccine."
+                        " and collect the vaccine.\n"
         );
 
         Initialization object9 = new Initialization(
