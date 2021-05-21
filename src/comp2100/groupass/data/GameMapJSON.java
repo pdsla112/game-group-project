@@ -90,7 +90,7 @@ public class GameMapJSON {
         //forest
         LevelNode rootForest =  new LevelNode(null,"Now, you are in the forest.\nYou suddenly hear the rustling sound between the trees. Stiffened nervously, you are wondering what there is.", null);
         forest.levelMap = new LevelMap(rootForest);
-        LevelNode forestOp1 = new LevelNode("Have closer look","\nAfter having a closer look, you soon realise it was an animal that was making the sound.\nGoing closer, you carefully looked through trees and soon noticed the animal.", null);
+        LevelNode forestOp1 = new LevelNode("Have closer look","\nAfter having a closer look, you soon realise it was an animal that was making the sound.", null);
         LevelNode forestOp2 = new LevelNode("Ignore","\nFeeling suspicious, you walked to the other way.",null);
         forest.levelMap.setAdjacent(rootForest,new ArrayList<>(Arrays.asList(forestOp1,forestOp2)));
         LevelNode forestOp3 = new LevelNode("Hunt","\nHaving been hungry, you decided to hunt after confirming that you didn't have enough food.",Arrays.asList("hunt"));
