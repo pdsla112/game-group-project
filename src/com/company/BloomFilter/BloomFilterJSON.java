@@ -23,7 +23,7 @@ public class BloomFilterJSON {
         saveBloomFilter(bloomFilter);
     }
     /**
-     * Saves the bloom filter (could be edited) to the database.
+     * Saves the bloom filter to the database.
      * @param bloomFilter
      * @author Dong Seok La (u6943702)
      */

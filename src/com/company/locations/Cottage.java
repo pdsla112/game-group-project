@@ -19,6 +19,7 @@ public class Cottage extends Location {
 //    public Cottage(boolean visited) {
 //        super(visited);
 //    }
+
     public Cottage (String name, String description) {
         super(name, description);
     }
