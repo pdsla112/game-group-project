@@ -140,7 +140,7 @@ public class Parser {
                 }
                 if (n.word.equals("stats")) {
                     System.out.println("You " + sentence.show() + ".");
-//                    player.showStats();
+                    player.showStats();
                 }
                 if (n.word.equals("surroundings")) {
                     System.out.println("You " + sentence.show() + ".");

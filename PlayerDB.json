@@ -132,5 +132,101 @@
       "nounG4": []
     },
     "locationName": "lab"
+  },
+  {
+    "damage1": 60,
+    "damage2": 35,
+    "health": 31,
+    "name": "TestPlayer",
+    "level": 1,
+    "itemsMap": {
+      "medkit": 1
+    },
+    "locationObjects": [],
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [
+        "medkit"
+      ],
+      "nounG4": []
+    },
+    "locationName": "lab"
+  },
+  {
+    "damage1": 60,
+    "damage2": 35,
+    "health": 73,
+    "name": "test3",
+    "level": 0,
+    "itemsMap": {
+      "meat": 1
+    },
+    "locationObjects": [],
+    "tokenizer": {
+      "_buffer": [],
+      "currentToken": {
+        "_token": "0\\",
+        "_type": "UNKNOWN"
+      },
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [
+        "meat"
+      ],
+      "nounG4": []
+    },
+    "locationName": "hospital"
   }
 ]

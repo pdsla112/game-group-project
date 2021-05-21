@@ -140,6 +140,15 @@ public class Player {
         //todo
     }
 
+    public void showStats() {
+        String text = "--------------------------------------\nYour Stats:\n";
+        text += "Hp: " + health + "\n";
+        text += "Attack 1 damage: " + damage1 + "\n";
+        text += "Attack 2 damage: " + damage2 + "\n";
+        text += "--------------------------------------\n";
+        System.out.println(text);
+    }
+
     public void showSurroundings() {
         if (locationObjects == null || locationObjects.isEmpty()) {
             System.out.println("There is nothing of interest around you.");
