@@ -42,5 +42,95 @@
       "nounG4": []
     },
     "locationName": "forest"
+  },
+  {
+    "damage1": 60,
+    "damage2": 35,
+    "health": 100,
+    "name": "ad;fjsdaaf",
+    "level": 0,
+    "itemsMap": {
+      "medkit": 1
+    },
+    "locationObjects": [],
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [
+        "medkit"
+      ],
+      "nounG4": []
+    },
+    "locationName": "lab"
+  },
+  {
+    "damage1": 60,
+    "damage2": 35,
+    "health": 100,
+    "name": "test",
+    "level": 0,
+    "itemsMap": {
+      "medkit": 1
+    },
+    "locationObjects": [],
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [],
+      "nounG4": []
+    },
+    "locationName": "lab"
   }
 ]

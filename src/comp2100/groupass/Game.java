@@ -83,13 +83,8 @@ public class Game {
                 System.out.println("Would you like to play again? yes(y)/no(n)");
                 String response = Parser.getInputString();
                 if (response.equals("y") || response.equals("yes")) {
-                    // remove player save file
-                    PlayerJSON.removePlayer(player.getName());
                     new MainMenu();
                 } else if (response.equals("n") || response.equals("no")) {
-                    if(PlayerJSON.hasPlayer()){
-                        PlayerJSON.removePlayer(player.getName());
-                    }
                     System.out.println("Game exited.");
                     endPrompt = true;
                 }
