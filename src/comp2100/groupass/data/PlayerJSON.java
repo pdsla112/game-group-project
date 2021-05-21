@@ -101,6 +101,11 @@ public class PlayerJSON {
         return !playerList.isEmpty();
     }
 
+    /**
+     * expects that player exists
+     * @param name
+     * @return
+     */
     public static ArrayList<Player> remove(String name) {
         ArrayList<Player> playerList = deserializeJSON();
         for (Player player : playerList) {
