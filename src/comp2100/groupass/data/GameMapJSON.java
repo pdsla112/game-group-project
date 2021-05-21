@@ -146,13 +146,22 @@ public class GameMapJSON {
         road.levelMap = new LevelMap(rootRoad);
         LevelNode roadOp1 = new LevelNode("Fight Zombie","\nZombie noticed you, and you need to fight back in order to survive.",Arrays.asList("zombieFight"));
         road.levelMap.setAdjacent(rootRoad,new ArrayList<>(Arrays.asList(roadOp1)));
-        LevelNode roadOp2 = new LevelNode("Approach taxidriver","\nAs you kept walking, you found a taxi that seemed to have person inside.\nYou knocked on the door to have a conversation with middle-aged woman inside.\nShe rolled down the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation.\n\nShe said she could drive you to the place where you had to go.\nHowever, the road was blocked so she needed your help to clean beforehand.",null);
+        LevelNode roadOp2 = new LevelNode("Walk further towards the lab","\nAs you continue to walk, you found a taxi with a silhouette that looks like a person.",null);
         road.levelMap.setAdjacent(roadOp1,new ArrayList<>(Arrays.asList(roadOp2)));
-        LevelNode roadOp3 = new LevelNode("Remove the debris","\nWith her, you managed to organise blocked road and safely go to the next destination.\nChoose the next location to go.",Arrays.asList("drive"));
-        road.levelMap.setAdjacent(roadOp2,new ArrayList<>(Arrays.asList(roadOp3)));
+        LevelNode roadOp4 = new LevelNode("Ignore","\nThere is no guarantee that the person in the taxi will be safe, let's continue to walk towards the lab.\n\nChoose the next location to go.",null);
+        LevelNode roadOp5 = new LevelNode("Approach and have a closer look inside taxi","\nLooking closer, there is a middle-aged woman inside.",null);
+        road.levelMap.setAdjacent(roadOp2,new ArrayList<>(Arrays.asList(roadOp4,roadOp5)));
+        LevelNode roadOp6 = new LevelNode("Talk to her","\nYou knocked on the door to have a conversation with her.\nShe opened the taxi window and asked what you were doing on the road, not being in a safe place and you explained her your situation.\nShe said she could drive you to the place where you had to go.",null);
+        LevelNode roadOp7 = new LevelNode("Walk away","\nIt's quite fishy having person in taxi alone in the middle of the nowhere.\nYou walk towards the other side quickly.\n\nChoose the next location to go.",null);
+        road.levelMap.setAdjacent(roadOp5,new ArrayList<>(Arrays.asList(roadOp6,roadOp7)));
+        LevelNode roadOp8 = new LevelNode("Get help","\nHowever, the road was blocked so she needed your help to clean beforehand.",null);
+        LevelNode roadOp9 = new LevelNode("I'm good, thank you","\nYou are grateful for the offer, but the fuel may not be enough to reach the lab.\nNot wanting to cause any trouble, you said you're fine.\n\nChoose the next location to go.",null);
+        road.levelMap.setAdjacent(roadOp6,new ArrayList<>(Arrays.asList(roadOp8,roadOp9)));
+        LevelNode roadOp3 = new LevelNode("Remove the debris","\nWith her, you managed to organise blocked road and safely go to the next destination.\n\nChoose the next location to go.",Arrays.asList("drive"));
+        road.levelMap.setAdjacent(roadOp8,new ArrayList<>(Arrays.asList(roadOp3)));
 
         //sucessfully completed level
-        road.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(roadOp3)));
+        road.levelMap.setCompletionNodes(new ArrayList<>(Arrays.asList(roadOp3,roadOp4,roadOp7,roadOp9)));
 
         //lab
         LevelNode rootLab = new LevelNode(null,"Congratultions for ending the journey safely and successfully!", null);//lab.isVisited()
