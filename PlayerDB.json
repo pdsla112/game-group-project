@@ -1,11 +1,13 @@
 [
   {
-    "damage1": 0,
-    "damage2": 0,
-    "health": 60,
-    "name": "Hermione",
-    "level": 3,
-    "itemsMap": {},
+    "damage1": 60,
+    "damage2": 35,
+    "health": 81,
+    "name": "Anson",
+    "level": 0,
+    "itemsMap": {
+      "medkit": 1
+    },
     "locationObjects": [],
     "tokenizer": {
       "_buffer": [],
@@ -39,15 +41,63 @@
       "nounG3": [],
       "nounG4": []
     },
-    "locationName": "hospital"
+    "locationName": "forest"
   },
   {
-    "damage1": 0,
-    "damage2": 0,
+    "damage1": 60,
+    "damage2": 35,
     "health": 100,
-    "name": "Phillip",
-    "level": 2,
-    "itemsMap": {},
+    "name": "ad;fjsdaaf",
+    "level": 0,
+    "itemsMap": {
+      "medkit": 1
+    },
+    "locationObjects": [],
+    "tokenizer": {
+      "_buffer": [],
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [
+        "medkit"
+      ],
+      "nounG4": []
+    },
+    "locationName": "lab"
+  },
+  {
+    "damage1": 60,
+    "damage2": 35,
+    "health": 100,
+    "name": "test",
+    "level": 0,
+    "itemsMap": {
+      "medkit": 1
+    },
     "locationObjects": [],
     "tokenizer": {
       "_buffer": [],
@@ -84,105 +134,13 @@
     "locationName": "lab"
   },
   {
-    "damage1": 0,
-    "damage2": 0,
-    "health": 80,
-    "name": "Voldemort",
-    "level": 2,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-<<<<<<< HEAD
-    "damage1": 50,
-    "damage2": 30,
-    "health": 27,
-    "name": "Sirius",
-    "level": 2,
-    "itemsMap": {
-      "medkit": 0
-=======
     "damage1": 60,
     "damage2": 35,
-    "health": 100,
-    "name": "aa",
-    "level": 0,
-    "itemsMap": {},
-    "tokenizer": {
-      "_buffer": [],
-      "verbG1": [
-        "exit"
-      ],
-      "verbG2": [
-        "examine"
-      ],
-      "verbG3": [
-        "use"
-      ],
-      "verbG4": [
-        "look"
-      ],
-      "prepositionG1": [],
-      "determinerG1": [
-        "the"
-      ],
-      "determinerG2": [
-        "your"
-      ],
-      "nounG1": [
-        "game"
-      ],
-      "nounG2": [
-        "items",
-        "stats",
-        "surroundings"
-      ],
-      "nounG3": [],
-      "nounG4": []
-    },
-    "locationName": "cottage"
-  },
-  {
-    "damage1": 50,
-    "damage2": 30,
-    "health": 28,
-    "name": "anson",
-    "level": 2,
+    "health": 31,
+    "name": "TestPlayer",
+    "level": 1,
     "itemsMap": {
       "medkit": 1
->>>>>>> c3511f2d79e3a35c64bad6508fd2864009bee735
     },
     "locationObjects": [],
     "tokenizer": {
@@ -214,26 +172,71 @@
         "stats",
         "surroundings"
       ],
-<<<<<<< HEAD
       "nounG3": [
         "medkit"
       ],
       "nounG4": []
     },
-    "locationName": "hospital"
-=======
-      "nounG3": [],
+    "locationName": "lab"
+  },
+  {
+    "damage1": 60,
+    "damage2": 35,
+    "health": 73,
+    "name": "test3",
+    "level": 0,
+    "itemsMap": {
+      "meat": 1
+    },
+    "locationObjects": [],
+    "tokenizer": {
+      "_buffer": [],
+      "currentToken": {
+        "_token": "0\\",
+        "_type": "UNKNOWN"
+      },
+      "verbG1": [
+        "exit"
+      ],
+      "verbG2": [
+        "examine"
+      ],
+      "verbG3": [
+        "use"
+      ],
+      "verbG4": [
+        "look"
+      ],
+      "prepositionG1": [],
+      "determinerG1": [
+        "the"
+      ],
+      "determinerG2": [
+        "your"
+      ],
+      "nounG1": [
+        "game"
+      ],
+      "nounG2": [
+        "items",
+        "stats",
+        "surroundings"
+      ],
+      "nounG3": [
+        "meat"
+      ],
       "nounG4": []
     },
     "locationName": "hospital"
   },
   {
-    "damage1": 60,
-    "damage2": 35,
-    "health": 100,
-    "name": "Anson",
-    "level": 1,
+    "damage1": 50,
+    "damage2": 30,
+    "health": 80,
+    "name": "forest3",
+    "level": 2,
     "itemsMap": {},
+    "locationObjects": [],
     "tokenizer": {
       "_buffer": [],
       "verbG1": [
@@ -267,6 +270,5 @@
       "nounG4": []
     },
     "locationName": "cottage"
->>>>>>> c3511f2d79e3a35c64bad6508fd2864009bee735
   }
 ]

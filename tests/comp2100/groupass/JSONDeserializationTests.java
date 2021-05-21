@@ -1,7 +1,7 @@
 package comp2100.groupass;
 
-import com.company.data.LocationData;
-import com.company.data.LocationJSON;
+import comp2100.groupass.data.LocationData;
+import comp2100.groupass.data.LocationJSON;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;

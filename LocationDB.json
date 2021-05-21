@@ -1,5 +1,9 @@
 [
   {
+    "location": "home",
+    "initialText": "Initial Place."
+  },
+  {
     "location": "hospital",
     "initialText": "You are now in the hospital. Not wanting to risk yourself taking the lift in a hospital where the electricity supply seemed to be poor, you decided to go by staircase.",
     "psychoData": {
@@ -17,10 +21,6 @@
       "itemType": "first-aid kit",
       "intoText": "You found the first aid kit near the staircase."
     }
-  },
-  {
-    "location": "home",
-    "initialText": "Choose a place to go."
   },
   {
     "location": "cottage",
