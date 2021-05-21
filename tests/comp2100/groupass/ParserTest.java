@@ -20,7 +20,6 @@ public class ParserTest {
         } catch(Exception e){
             fail();
         }
-
     }
 
     @Test
