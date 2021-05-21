@@ -7,6 +7,7 @@ import comp2100.groupass.data.LevelJSON;
 import comp2100.groupass.entities.Enemy;
 import comp2100.groupass.items.HuntingKit;
 import comp2100.groupass.items.LocationObject;
+import comp2100.groupass.items.Meat;
 import comp2100.groupass.items.Medkit;
 import comp2100.groupass.menus.Attack;
 import comp2100.groupass.parser.Tokenizer;
@@ -50,7 +51,12 @@ public class Player {
         if (name.equals("huntingkit")){
             HuntingKit huntingkit = new HuntingKit(1,10-level);
             huntingkit.use(this);
-            itemsMap.put(name,Math.max((itemsMap.get(name)-1), 0));
+            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
+        }
+        if (name.equals("meat")){
+            Meat meat = new Meat(10);
+            meat.use(this);
+            itemsMap.put(name, Math.max((itemsMap.get(name)-1), 0));
         }
 
     }
