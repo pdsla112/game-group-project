@@ -45,7 +45,7 @@ public class Game {
 
                 // check level completion
                 if (levelMap.isCompletionNode(levelMap.currentNode.id)) {
-                    if (playerLocation.name.equals(map.getFinalLocation().name)) {
+                    if (map.isFinalLocation(playerLocation.name)) {
                         throw new WinException("win");
                     } else {
                         // create menu with adjacent levels

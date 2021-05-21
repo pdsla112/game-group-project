@@ -1,12 +1,15 @@
 package com.company;
 
+import com.company.characters.Player;
 import com.company.data.GameMapJSON;
+import com.company.data.Level;
 import com.company.locations.GameMap;
 import com.company.locations.Location;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AutomaticGameTester2 {
 
@@ -18,31 +21,76 @@ public class AutomaticGameTester2 {
 
         GameMap map = GameMapJSON.deserializeJSON();
 
+        Map<String, List<Integer>> levelLengthMap = new HashMap<>();
+
         List<String> locationNames = map.getLocationNames();
         for (String locName : locationNames) {
             List<Integer> numNodesTraversedList = getNumNodesTraversedList(map.getLocationFromName(locName).levelMap);
-            int paths = numNodesTraversedList.size();
-            int sum = 0;
-            int max = Integer.MIN_VALUE;
-            int min = Integer.MAX_VALUE;
+            levelLengthMap.put(locName, numNodesTraversedList);
 
-            for (int i : numNodesTraversedList) {
-                if (i > max)
-                    max = i;
-                if (i < min)
-                    min = i;
-                sum += i;
-            }
-
-            float avg = ((float) sum)/paths;
             System.out.println("Location: " + locName);
-            System.out.println("Number of paths: " + paths);
-            System.out.println("Average number of nodes traversed: " + avg);
-            System.out.println("Max number of nodes traversed: " + max);
-            System.out.println("Min number of nodes traversed: " + min);
-            System.out.println("-------------------------------------\n");
+            displayNodeTraversalStats(numNodesTraversedList);
         }
-        //map.getAdjacent(map.getLocationFromName(location));
+
+        System.out.println("All levels:");
+        List<Integer> allNumNodesTraversedList = getAllNumNodesTraversedList(map, levelLengthMap);
+        displayNodeTraversalStats(allNumNodesTraversedList);
+
+
+    }
+
+    public static void displayNodeTraversalStats(List<Integer> list) {
+        int paths = list.size();
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        for (int i : list) {
+            if (i > max)
+                max = i;
+            if (i < min)
+                min = i;
+            sum += i;
+        }
+
+        float avg = ((float) sum)/paths;
+        System.out.println("Number of paths: " + paths);
+        System.out.println("Average number of nodes traversed: " + avg);
+        System.out.println("Max number of nodes traversed: " + max);
+        System.out.println("Min number of nodes traversed: " + min);
+        System.out.println("-------------------------------------\n");
+    }
+
+    public static List<Integer> getAllNumNodesTraversedList(GameMap gameMap, Map<String, List<Integer>> levelLengthMap) {
+        List<Integer> allNumNodesTraversedList = new ArrayList<>();
+        getAllNumNodesTraversedListHelper(gameMap, levelLengthMap, "home", 1, allNumNodesTraversedList);
+        return allNumNodesTraversedList;
+
+    }
+
+
+    /**
+     * assumes final and initial locations have only 1 node
+     * assumes adjacent is not null if not final location
+     * @param gameMap
+     * @param levelLengthMap
+     * @param loc
+     * @param nodesTraversed
+     * @param allNumNodesTraversedList
+     */
+    public static void getAllNumNodesTraversedListHelper(GameMap gameMap, Map<String, List<Integer>> levelLengthMap, String loc, int nodesTraversed, List<Integer> allNumNodesTraversedList) {
+
+        if (gameMap.isFinalLocation(loc)) {
+            allNumNodesTraversedList.add(nodesTraversed+1);
+            return;
+        }
+
+        List<String> adjacent = gameMap.getAdjacent(loc);
+        for (String adj : adjacent) {
+            for (int i : levelLengthMap.get(loc)) {
+                getAllNumNodesTraversedListHelper(gameMap, levelLengthMap, adj, nodesTraversed+i, allNumNodesTraversedList);
+            }
+        }
 
     }
 

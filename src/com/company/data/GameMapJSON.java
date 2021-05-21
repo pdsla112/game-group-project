@@ -29,20 +29,20 @@ public class GameMapJSON {
         map.addLocation(forest);
         Location lab = new Location("lab", LocationJSON.getSpecificLocationData("lab").getInitialText());
         map.addLocation(lab);
-        map.setFinalLocation(lab);
+        map.setFinalLocation("lab");
         Location road = new Location("road", LocationJSON.getSpecificLocationData("road").getInitialText());
         map.addLocation(road);
         Location home = new Location("home",LocationJSON.getSpecificLocationData("home").getInitialText());
         map.addLocation(home);
 
-        map.addEdge(home,cottage,5);
-        map.addEdge(home,forest,9);
-        map.addEdge(cottage, hospital, 6);
-        map.addEdge(cottage, forest, 4);
-        map.addEdge(forest, hospital, 7);
-        map.addEdge(forest, road, 6);
-        map.addEdge(hospital, road, 10);
-        map.addEdge(road, lab, 4);
+        map.addEdge(home,cottage);
+        map.addEdge(home,forest);
+        map.addEdge(cottage, hospital);
+        map.addEdge(cottage, forest);
+        map.addEdge(forest, hospital);
+        map.addEdge(forest, road);
+        map.addEdge(hospital, road);
+        map.addEdge(road, lab);
 
 
         LevelNode rootHome = new LevelNode(null,"You are at home, wondering where you should go.\nChoose a place to go.", null);//home.isVisited()

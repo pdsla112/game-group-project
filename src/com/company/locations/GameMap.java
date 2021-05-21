@@ -12,8 +12,8 @@ public class GameMap {
     Map<String, Location> locations;
 
     Map<String, List<String>> edges;
-    Location finalLocation = null;
-    Location currentLocation = null;
+    String finalLocation = null;
+    String currentLocation = null;
 
     public GameMap() {
         locations = new HashMap<>();
@@ -28,13 +28,17 @@ public class GameMap {
         return new ArrayList<>(locations.keySet());
     }
 
+    public List<String> getAdjacent(String locName) {
+        return edges.get(locName);
+    }
+
     public Location getLocationFromName(String name) {
         if (locations.containsKey(name)) {
             return locations.get(name);
         }
         return null;
     }
-    public Location getFinalLocation() {
+    public String getFinalLocation() {
         return finalLocation;
     }
 
@@ -46,7 +50,10 @@ public class GameMap {
 //        this.currentLocation = currentLocation;
 //    }
 
-    public void setFinalLocation(Location finalLocation) {
+    public boolean isFinalLocation(String locName) {
+        return locName.equals(finalLocation);
+    }
+    public void setFinalLocation(String finalLocation) {
         this.finalLocation = finalLocation;
     }
 
@@ -54,7 +61,7 @@ public class GameMap {
         locations.put(loc.name, loc);
     }
 
-    public void addEdge(Location from, Location to, int distance) {
+    public void addEdge(Location from, Location to) {
         if (!edges.containsKey(from.name)) {
             edges.put(from.name, new ArrayList<>());
         }
