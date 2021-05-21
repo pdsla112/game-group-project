@@ -59,8 +59,6 @@ public class AnimalHunt {
             } else {
                 System.out.println(animal + " " + animalHpInitial + "hp(-" + (animalHpInitial - animal.getHuntingDifficulty()) + "hp)\n");
             }
-
         } return true;
-
     }
 }
