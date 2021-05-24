@@ -210,6 +210,7 @@ public class Parser {
                 }
             }
         }
+
         for (String verb : tokenizer.verbG2) {
             for (String determiner : tokenizer.determinerG2) {
                 for (String noun : tokenizer.nounG2) {
